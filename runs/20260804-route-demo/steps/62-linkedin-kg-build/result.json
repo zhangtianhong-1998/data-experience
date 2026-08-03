@@ -1,0 +1,13 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 24.271,
+  "stdout_sha256": "bf154aecdca5dcec515c6c0738cd50d1454d2660b0d31bea6d055379367a16c4",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route3/linkedin_text2sql/results/kg_build.stdout.json",
+      "exists": false
+    }
+  ]
+}

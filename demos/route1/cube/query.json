@@ -1,0 +1,22 @@
+{
+  "measures": [
+    "DeviceOrders.deviceOrderAmount",
+    "DeviceOrders.deviceProfitAmount"
+  ],
+  "dimensions": ["DeviceOrders.productL1"],
+  "timeDimensions": [
+    {
+      "dimension": "DeviceOrders.orderDate",
+      "dateRange": ["2026-01-01", "2026-06-30"]
+    }
+  ],
+  "filters": [
+    {
+      "member": "DeviceOrders.orgCode",
+      "operator": "equals",
+      "values": ["ORG_1001"]
+    }
+  ],
+  "order": {"DeviceOrders.productL1": "asc"}
+}
+

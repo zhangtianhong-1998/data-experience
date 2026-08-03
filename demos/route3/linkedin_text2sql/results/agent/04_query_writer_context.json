@@ -1,0 +1,206 @@
+{
+  "question": "请统计 ORG_1001 在 2026 年上半年按产品一级分类的设备订货金额和设备利润，只统计已确认订单。",
+  "dialect": "duckdb",
+  "tables": [
+    {
+      "name": "device_orders",
+      "description": "设备订货事实表。每行是一张设备订货单；取消单不得计入订货指标。",
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": null
+        },
+        {
+          "name": "order_date",
+          "type": "DATE",
+          "nullable": true,
+          "description": "订货日期"
+        },
+        {
+          "name": "year_month",
+          "type": "INTEGER",
+          "nullable": true,
+          "description": "YYYYMM 整数月份"
+        },
+        {
+          "name": "org_code",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": "组织编码，分析必须显式限定"
+        },
+        {
+          "name": "product_code",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": null
+        },
+        {
+          "name": "product_l1",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": "产品一级分类"
+        },
+        {
+          "name": "order_amount",
+          "type": "INTEGER",
+          "nullable": true,
+          "description": "设备订货金额，演示单位为 CNY"
+        },
+        {
+          "name": "profit_amount",
+          "type": "INTEGER",
+          "nullable": true,
+          "description": "设备利润金额，演示单位为 CNY"
+        },
+        {
+          "name": "country",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": null
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": "confirmed 或 cancelled；指标只统计 confirmed"
+        }
+      ],
+      "rank": {
+        "table": "device_orders",
+        "llm_score": 10,
+        "final_score": 11.48,
+        "explanation": "设备订货事实表且为认证表。包含问题所需的 order_amount、profit_amount、status、org_code、year_month 等字段，完美匹配设备订货金额、设备利润、已确认订单、ORG_1001 及 2026 年上半年的统计需求。",
+        "deprecated": false
+      }
+    },
+    {
+      "name": "product_master",
+      "description": "产品主数据，可以通过 product_code 与设备订货表连接。",
+      "columns": [
+        {
+          "name": "product_code",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": "产品编码"
+        },
+        {
+          "name": "product_l1",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": "产品一级分类"
+        },
+        {
+          "name": "product_name",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": "产品名称"
+        }
+      ],
+      "rank": {
+        "table": "product_master",
+        "llm_score": 8,
+        "final_score": 9.26,
+        "explanation": "产品主数据表且为认证表。问题要求按产品一级分类统计，通常需要通过 product_code 与 device_orders 表连接，以获取产品一级分类信息。",
+        "deprecated": false
+      }
+    },
+    {
+      "name": "sales_orders",
+      "description": "销售订单事实表，sales_amount 是销售额，不是设备订货金额。",
+      "columns": [
+        {
+          "name": "order_date",
+          "type": "DATE",
+          "nullable": true,
+          "description": null
+        },
+        {
+          "name": "org_code",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": null
+        },
+        {
+          "name": "product_l1",
+          "type": "VARCHAR",
+          "nullable": true,
+          "description": null
+        },
+        {
+          "name": "sales_amount",
+          "type": "BIGINT",
+          "nullable": true,
+          "description": "销售金额"
+        }
+      ],
+      "rank": {
+        "table": "sales_orders",
+        "llm_score": 2,
+        "final_score": 3.41,
+        "explanation": "销售订单事实表。业务术语明确指出设备订货应使用 device_orders，且 sales_amount 是销售额而非设备订货金额，不符合问题口径。",
+        "deprecated": false
+      }
+    }
+  ],
+  "approved_examples": [
+    {
+      "description": "按产品一级分类统计指定组织、月份区间内的已确认设备订货金额。",
+      "query": "SELECT product_l1, SUM(order_amount) AS device_order_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1"
+    },
+    {
+      "description": "按月统计指定组织的已确认设备订货金额和设备利润。",
+      "query": "SELECT year_month, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND status = 'confirmed' GROUP BY year_month"
+    }
+  ],
+  "domain_knowledge": [
+    {
+      "id": "dk_device_metric",
+      "product_area": "device_business",
+      "tables": [
+        "device_orders"
+      ],
+      "columns": [
+        "order_amount",
+        "profit_amount",
+        "status",
+        "org_code"
+      ],
+      "text": "设备订货金额仅统计 status='confirmed' 的 order_amount；设备利润统计同一批订单的 profit_amount；所有查询必须显式限定 org_code，金额单位 CNY。"
+    },
+    {
+      "id": "dk_half_year",
+      "product_area": "device_business",
+      "tables": [
+        "device_orders"
+      ],
+      "columns": [
+        "year_month"
+      ],
+      "text": "2026 年上半年在 year_month 整数列上表示为 202601 到 202606（含边界）。"
+    }
+  ],
+  "jargon": {
+    "设备订货": "设备产品订单，不是 sales_orders 中的销售收入；使用 device_orders。",
+    "设备订货金额": "confirmed 设备订单的 order_amount 合计，单位 CNY。",
+    "设备利润": "与设备订货金额同口径订单的 profit_amount 合计，单位 CNY。",
+    "上半年": "自然年 1 月到 6 月，本数据中 year_month BETWEEN YYYY01 AND YYYY06。"
+  },
+  "glossary": {
+    "设备订货金额": {
+      "definition": "已确认设备订货单的 order_amount 合计。",
+      "sql_expression": "SUM(device_orders.order_amount)",
+      "required_filters": [
+        "device_orders.status = 'confirmed'",
+        "显式 org_code"
+      ],
+      "unit": "CNY",
+      "owner": "device_analytics"
+    },
+    "产品一级分类": {
+      "definition": "device_orders.product_l1，也可由 product_master.product_l1 取得。",
+      "owner": "master_data"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route3/linkedin_text2sql/run_agent.py", line 69, in <module>
+    client = OpenAI(api_key=api_key, base_url=base_url) if api_key and base_url and model else None
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/.venv-tools/lib/python3.12/site-packages/openai/_client.py", line 166, in __init__
+    super().__init__(
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/.venv-tools/lib/python3.12/site-packages/openai/_base_client.py", line 887, in __init__
+    self._client = http_client or SyncHttpxClientWrapper(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/.venv-tools/lib/python3.12/site-packages/openai/_base_client.py", line 817, in __init__
+    super().__init__(**kwargs)
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/.venv-tools/lib/python3.12/site-packages/httpx/_client.py", line 700, in __init__
+    else self._init_proxy_transport(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/.venv-tools/lib/python3.12/site-packages/httpx/_client.py", line 750, in _init_proxy_transport
+    return HTTPTransport(
+           ^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/.venv-tools/lib/python3.12/site-packages/httpx/_transports/default.py", line 191, in __init__
+    raise ImportError(
+ImportError: Using SOCKS proxy, but the 'socksio' package is not installed. Make sure to install httpx using `pip install httpx[socks]`.

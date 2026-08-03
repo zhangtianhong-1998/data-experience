@@ -1,0 +1,9 @@
+time="2026-08-04T01:19:31+08:00" level=warning msg="/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/official/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container openmetadata_server  Stopping
+ Container openmetadata_server  Stopped
+ Container execute_migrate_all  Stopping
+ Container execute_migrate_all  Stopped
+ Container openmetadata_elasticsearch  Stopping
+ Container openmetadata_mysql  Stopping
+ Container openmetadata_mysql  Stopped
+ Container openmetadata_elasticsearch  Stopped

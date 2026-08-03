@@ -1,0 +1,8 @@
+{
+  "configured": true,
+  "model": "glm-5.2",
+  "calls": 5,
+  "successful_calls": 5,
+  "fallback_calls": 0,
+  "api_key_logged": false
+}

@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 1.007,
+  "stdout_sha256": "637bd3636b2ea5a2935c64454de1b1232c480fd183fcef34d015d722b07a1898",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/wrenai/device_project/results/mcp_calls.json",
+      "exists": true,
+      "size": 11260,
+      "sha256": "a2ccec76e15f2ad60f8ec0fcc0155277ae05f71653c7854ae97c58089ee2b421"
+    }
+  ]
+}

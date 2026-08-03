@@ -1,0 +1,127 @@
+{
+  "stage": "02_table_ranker",
+  "model": "glm-5.2",
+  "prompt": {
+    "system": "You rank enterprise tables for a Text-to-SQL question. Score every table 1-10. Respect certified/deprecated status and business wording. Return {ranked_tables:[{table,score,explanation}]}.",
+    "input": {
+      "question": "请统计 ORG_1001 在 2026 年上半年按产品一级分类的设备订货金额和设备利润，只统计已确认订单。",
+      "tables_without_full_schema": [
+        {
+          "table": "deprecated_device_orders",
+          "description": "已废弃的设备订货兼容视图，不得用于新查询。",
+          "semantic_score": 0,
+          "popularity": 12,
+          "certified": false,
+          "deprecated": true,
+          "example_descriptions": []
+        },
+        {
+          "table": "device_orders",
+          "description": "设备订货事实表。每行是一张设备订货单；取消单不得计入订货指标。",
+          "semantic_score": 0,
+          "popularity": 98,
+          "certified": true,
+          "deprecated": false,
+          "example_descriptions": [
+            "按产品一级分类统计指定组织、月份区间内的已确认设备订货金额。",
+            "按月统计指定组织的已确认设备订货金额和设备利润。"
+          ]
+        },
+        {
+          "table": "product_master",
+          "description": "产品主数据，可以通过 product_code 与设备订货表连接。",
+          "semantic_score": 0,
+          "popularity": 76,
+          "certified": true,
+          "deprecated": false,
+          "example_descriptions": []
+        },
+        {
+          "table": "sales_orders",
+          "description": "销售订单事实表，sales_amount 是销售额，不是设备订货金额。",
+          "semantic_score": 0,
+          "popularity": 91,
+          "certified": true,
+          "deprecated": false,
+          "example_descriptions": []
+        }
+      ],
+      "domain_knowledge": [
+        {
+          "id": "dk_device_metric",
+          "product_area": "device_business",
+          "tables": [
+            "device_orders"
+          ],
+          "columns": [
+            "order_amount",
+            "profit_amount",
+            "status",
+            "org_code"
+          ],
+          "text": "设备订货金额仅统计 status='confirmed' 的 order_amount；设备利润统计同一批订单的 profit_amount；所有查询必须显式限定 org_code，金额单位 CNY。"
+        },
+        {
+          "id": "dk_half_year",
+          "product_area": "device_business",
+          "tables": [
+            "device_orders"
+          ],
+          "columns": [
+            "year_month"
+          ],
+          "text": "2026 年上半年在 year_month 整数列上表示为 202601 到 202606（含边界）。"
+        }
+      ],
+      "jargon": {
+        "设备订货": "设备产品订单，不是 sales_orders 中的销售收入；使用 device_orders。",
+        "设备订货金额": "confirmed 设备订单的 order_amount 合计，单位 CNY。",
+        "设备利润": "与设备订货金额同口径订单的 profit_amount 合计，单位 CNY。",
+        "上半年": "自然年 1 月到 6 月，本数据中 year_month BETWEEN YYYY01 AND YYYY06。"
+      }
+    }
+  },
+  "api_key_logged": false,
+  "success": true,
+  "fallback_used": false,
+  "response": "{\n  \"ranked_tables\": [\n    {\n      \"table\": \"device_orders\",\n      \"score\": 10,\n      \"explanation\": \"设备订货事实表且为认证表。包含问题所需的 order_amount、profit_amount、status、org_code、year_month 等字段，完美匹配设备订货金额、设备利润、已确认订单、ORG_1001 及 2026 年上半年的统计需求。\"\n    },\n    {\n      \"table\": \"product_master\",\n      \"score\": 8,\n      \"explanation\": \"产品主数据表且为认证表。问题要求按产品一级分类统计，通常需要通过 product_code 与 device_orders 表连接，以获取产品一级分类信息。\"\n    },\n    {\n      \"table\": \"sales_orders\",\n      \"score\": 2,\n      \"explanation\": \"销售订单事实表。业务术语明确指出设备订货应使用 device_orders，且 sales_amount 是销售额而非设备订货金额，不符合问题口径。\"\n    },\n    {\n      \"table\": \"deprecated_device_orders\",\n      \"score\": 1,\n      \"explanation\": \"已废弃的设备订货兼容视图，明确标注不得用于新查询，严格遵循废弃状态要求，不推荐使用。\"\n    }\n  ]\n}",
+  "result": {
+    "ranked_tables": [
+      {
+        "table": "device_orders",
+        "score": 10,
+        "explanation": "设备订货事实表且为认证表。包含问题所需的 order_amount、profit_amount、status、org_code、year_month 等字段，完美匹配设备订货金额、设备利润、已确认订单、ORG_1001 及 2026 年上半年的统计需求。"
+      },
+      {
+        "table": "product_master",
+        "score": 8,
+        "explanation": "产品主数据表且为认证表。问题要求按产品一级分类统计，通常需要通过 product_code 与 device_orders 表连接，以获取产品一级分类信息。"
+      },
+      {
+        "table": "sales_orders",
+        "score": 2,
+        "explanation": "销售订单事实表。业务术语明确指出设备订货应使用 device_orders，且 sales_amount 是销售额而非设备订货金额，不符合问题口径。"
+      },
+      {
+        "table": "deprecated_device_orders",
+        "score": 1,
+        "explanation": "已废弃的设备订货兼容视图，明确标注不得用于新查询，严格遵循废弃状态要求，不推荐使用。"
+      }
+    ]
+  },
+  "usage": {
+    "completion_tokens": 851,
+    "prompt_tokens": 631,
+    "total_tokens": 1482,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

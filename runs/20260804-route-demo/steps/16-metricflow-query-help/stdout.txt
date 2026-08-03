@@ -1,0 +1,63 @@
+Usage: mf query [OPTIONS]
+
+  Create a new query with MetricFlow and assembles a MetricFlowQueryResult.
+
+Options:
+  --metrics SEQUENCE       Specify metrics to query.
+                           
+                           Examples:
+                           
+                             Single metric: --metrics bookings   Multiple
+                             metrics: --metrics bookings,messages
+  --group-by SEQUENCE      Group by dimensions or entities.
+                           
+                           Examples:
+                           
+                             Single dimension: --group-by ds   Multiple
+                             dimensions: --group-by ds,org
+  --end-time TEXT          Optional iso8601 timestamp to constraint the end
+                           time of the data (inclusive)
+  --start-time TEXT        Optional iso8601 timestamp to constraint the start
+                           time of the data (inclusive)
+  --where TEXT             SQL-like where statement provided as a string and
+                           wrapped in quotes. All filter items must explicitly
+                           reference fields or dimensions that are part of
+                           your model.
+                           
+                           Examples:
+                           
+                             Single statement:     --where "{{
+                             Dimension('order_id__revenue') }} > 100"
+                           
+                             Multiple statements:     --where "{{
+                             Dimension('order_id__revenue') }} > 100"
+                             --where "{{ Dimension('user_count') }} < 1000"
+                           
+                           Use the `Dimension()` template wrapper to indicate
+                           that the filter item is part of your model.
+  --limit TEXT             Limit the number of rows out using an int or leave
+                           blank for no limit. For example: --limit 100
+  --order SEQUENCE         Specify metrics, dimension, or group bys to order
+                           by. Add the `-` prefix to sort query in descending
+                           (DESC) order. Leave blank for ascending (ASC)
+                           order.
+                           
+                           Examples:
+                           
+                             To sort metric_time in DESC order: --order
+                             -metric_time   To sort metric_time in ASC and
+                             revenue in DESC: --order metric_time,-revenue
+  --csv FILE               Write the data table as a CSV file to the given
+                           path
+  --explain                In the query output, show the query that was
+                           executed against the data warehouse
+  --show-dataflow-plan     Display dataflow plan in explain output
+  --display-plans          Display plans (e.g. metric dataflow) in the browser
+  --decimals INTEGER       If specified, display non-integer numeric types in
+                           fixed point with the given number of digits after
+                           the decimal point.
+  --show-sql-descriptions  Shows inline descriptions of nodes in displayed SQL
+  --saved-query TEXT       Specify the name of the saved query to use for
+                           applicable parameters
+  --quiet                  Minimize output to the console.
+  --help                   Show this message and exit.

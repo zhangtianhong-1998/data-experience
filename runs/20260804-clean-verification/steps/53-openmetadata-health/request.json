@@ -1,0 +1,21 @@
+{
+  "step": "53-openmetadata-health",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "/bin/sh",
+    "-c",
+    "i=0; while [ \"$i\" -lt 60 ]; do status=$(docker inspect -f \"{{.State.Health.Status}}\" openmetadata_server 2>/dev/null || true); if [ \"$status\" = healthy ]; then docker inspect -f \"{{.Name}} {{.State.Status}} {{.State.Health.Status}}\" openmetadata_server; exit 0; fi; i=$((i+1)); sleep 2; done; docker inspect -f \"{{json .State.Health}}\" openmetadata_server; exit 1"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785779086.3857868
+}

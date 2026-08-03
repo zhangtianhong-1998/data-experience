@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/invoke_mcp.py", line 51, in <module>
+    asyncio.run(main())
+  File "/Users/sanjiuganmaoling/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/invoke_mcp.py", line 40, in main
+    result = await client.call_tool(name, arguments)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/lab/.venv/lib/python3.12/site-packages/fastmcp/client/mixins/tools.py", line 312, in call_tool
+    return await self._parse_call_tool_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/lab/.venv/lib/python3.12/site-packages/fastmcp/client/mixins/tools.py", line 201, in _parse_call_tool_result
+    return await _parse_call_tool_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/lab/.venv/lib/python3.12/site-packages/fastmcp/client/mixins/tools.py", line 426, in _parse_call_tool_result
+    raise ToolError(msg)
+fastmcp.exceptions.ToolError: {"statusCode":500,"error":"Error executing tool: resource is marked non-null but is null"}

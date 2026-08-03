@@ -1,0 +1,47 @@
+                                                                                
+ Usage: wren [OPTIONS] COMMAND [ARGS]...                                        
+                                                                                
+ Wren Engine CLI                                                                
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --sql                 -s      <str>  SQL query to execute (runs query by     │
+│                                      default)                                │
+│ --mdl                 -m      <str>  Path to MDL JSON file or base64 string. │
+│                                      Defaults to <project>/target/mdl.json.  │
+│ --connection-info             <str>  Inline JSON connection string           │
+│ --connection-file             <str>  Path to JSON connection file. Defaults  │
+│                                      to                                      │
+│                                      /Users/sanjiuganmaoling/.wren/connecti… │
+│ --limit               -l      <int>  Max rows to return                      │
+│ --output              -o      <str>  Output format: json|csv|table           │
+│                                      [default: table]                        │
+│ --quiet               -q             Suppress informational tips (e.g. store │
+│                                      hints after query).                     │
+│ --version             -V             Print the wrenai version and exit.      │
+│ --install-completion                 Install completion for the current      │
+│                                      shell.                                  │
+│ --show-completion                    Show completion for the current shell,  │
+│                                      to copy it or customize the             │
+│                                      installation.                           │
+│ --help                               Show this message and exit.             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────────────────────╮
+│ query     Execute a SQL query through the Wren semantic layer.               │
+│ dry-plan  Plan SQL through MDL and print the expanded SQL (no DB required).  │
+│ dry-run   Dry-run SQL against the data source (parse + validate, no results  │
+│           returned).                                                         │
+│ version   Print the wrenai version.                                          │
+│ ask       Wrap PROMPT into a processed prompt for an agent.                  │
+│ docs      Generate documentation for Wren Engine                             │
+│ context   Manage MDL context — models, views, relationships, and             │
+│           instructions.                                                      │
+│ cube      Query and inspect cubes — structured measure/dimension queries     │
+│           over the semantic layer.                                           │
+│ utils     Utility commands                                                   │
+│ skills    Serve Wren agent skill guides (run `wren skills list`).            │
+│ memory    Schema and query memory backed by LanceDB.                         │
+│ genbi     Build and deploy GenBI apps from this project's context layer.     │
+│ profile   Manage connection profiles (~/.wren/profiles.yml).                 │
+│ serve     Serve wren capabilities to external clients (MCP, ...).            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+

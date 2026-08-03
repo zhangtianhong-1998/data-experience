@@ -1,0 +1,23 @@
+{
+  "node_count": 37,
+  "edge_count": 25,
+  "table_index_count": 4,
+  "approved_example_count": 3,
+  "candidate_tables_for_request": [
+    "deprecated_device_orders",
+    "device_orders",
+    "product_master",
+    "sales_orders"
+  ],
+  "candidate_contains_authoritative_table": true,
+  "paper_fidelity": {
+    "implemented": [
+      "user-dataset access matrix",
+      "FastICA soft clustering",
+      "extended clusters",
+      "user and product-area cluster association",
+      "table/column, usage, example-query, domain-knowledge and jargon indexes"
+    ],
+    "scaled_down": "200 ICA components/20 tables per cluster are reduced to 3/3 for four synthetic tables"
+  }
+}

@@ -1,0 +1,11 @@
+
+
+⠋ 🔍 Looking for all available metrics...
+
+⠙ 🔍 Looking for all available metrics...
+✔ 🌱 We've found 3 metrics.
+The list below shows metrics in the format of "metric_name: list of available dimensions"
+• device_order_amount: device_order__country, device_order__order_date, device_order__org_code, device_order__product_l1, device_order__status and 2 more
+• device_profit_amount: device_order__country, device_order__order_date, device_order__org_code, device_order__product_l1, device_order__status and 2 more
+• device_profit_margin: device_order__country, device_order__order_date, device_order__org_code, device_order__product_l1, device_order__status and 2 more
+

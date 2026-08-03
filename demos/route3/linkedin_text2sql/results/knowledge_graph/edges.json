@@ -1,0 +1,128 @@
+[
+  {
+    "from": "table:device_orders",
+    "to": "column:device_orders.order_date",
+    "type": "contains"
+  },
+  {
+    "from": "table:device_orders",
+    "to": "column:device_orders.year_month",
+    "type": "contains"
+  },
+  {
+    "from": "table:device_orders",
+    "to": "column:device_orders.org_code",
+    "type": "contains"
+  },
+  {
+    "from": "table:device_orders",
+    "to": "column:device_orders.product_l1",
+    "type": "contains"
+  },
+  {
+    "from": "table:device_orders",
+    "to": "column:device_orders.order_amount",
+    "type": "contains"
+  },
+  {
+    "from": "table:device_orders",
+    "to": "column:device_orders.profit_amount",
+    "type": "contains"
+  },
+  {
+    "from": "table:device_orders",
+    "to": "column:device_orders.status",
+    "type": "contains"
+  },
+  {
+    "from": "table:sales_orders",
+    "to": "column:sales_orders.sales_amount",
+    "type": "contains"
+  },
+  {
+    "from": "table:product_master",
+    "to": "column:product_master.product_code",
+    "type": "contains"
+  },
+  {
+    "from": "table:product_master",
+    "to": "column:product_master.product_l1",
+    "type": "contains"
+  },
+  {
+    "from": "table:product_master",
+    "to": "column:product_master.product_name",
+    "type": "contains"
+  },
+  {
+    "from": "column:device_orders.product_code",
+    "to": "column:product_master.product_code",
+    "type": "joins",
+    "usage_count": 42
+  },
+  {
+    "from": "user:analyst_a",
+    "to": "example:0",
+    "type": "authored"
+  },
+  {
+    "from": "example:0",
+    "to": "table:device_orders",
+    "type": "uses"
+  },
+  {
+    "from": "user:analyst_b",
+    "to": "example:1",
+    "type": "authored"
+  },
+  {
+    "from": "example:1",
+    "to": "table:device_orders",
+    "type": "uses"
+  },
+  {
+    "from": "user:analyst_c",
+    "to": "example:2",
+    "type": "authored"
+  },
+  {
+    "from": "example:2",
+    "to": "table:sales_orders",
+    "type": "uses"
+  },
+  {
+    "from": "product_area:device_business",
+    "to": "table:device_orders",
+    "type": "explicit_table"
+  },
+  {
+    "from": "product_area:device_business",
+    "to": "table:product_master",
+    "type": "explicit_table"
+  },
+  {
+    "from": "product_area:sales",
+    "to": "table:sales_orders",
+    "type": "explicit_table"
+  },
+  {
+    "from": "product_area:sales",
+    "to": "table:product_master",
+    "type": "explicit_table"
+  },
+  {
+    "from": "domain:dk_device_metric",
+    "to": "table:device_orders",
+    "type": "associated_with"
+  },
+  {
+    "from": "domain:dk_half_year",
+    "to": "table:device_orders",
+    "type": "associated_with"
+  },
+  {
+    "from": "domain:dk_sales_not_order",
+    "to": "table:sales_orders",
+    "type": "associated_with"
+  }
+]

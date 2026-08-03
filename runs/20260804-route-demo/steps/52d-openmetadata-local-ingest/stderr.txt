@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/run_local_ingestion.py", line 10, in <module>
+    token = (WORKSPACE / "runtime" / "openmetadata-1.13.0" / "admin.jwt").read_text(encoding="utf-8").strip()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/sanjiuganmaoling/Desktop/code/runtime/openmetadata-1.13.0/admin.jwt'

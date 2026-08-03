@@ -1,0 +1,66 @@
+{
+  "datasets": [
+    {
+      "name": "device_orders",
+      "description": "设备订货事实表。每行是一张设备订货单；取消单不得计入订货指标。",
+      "domain": "device_business",
+      "certified": true,
+      "deprecated": false,
+      "owners": ["device_analytics"],
+      "popularity": 98,
+      "columns": {
+        "order_date": "订货日期",
+        "year_month": "YYYYMM 整数月份",
+        "org_code": "组织编码，分析必须显式限定",
+        "product_l1": "产品一级分类",
+        "order_amount": "设备订货金额，演示单位为 CNY",
+        "profit_amount": "设备利润金额，演示单位为 CNY",
+        "status": "confirmed 或 cancelled；指标只统计 confirmed"
+      }
+    },
+    {
+      "name": "sales_orders",
+      "description": "销售订单事实表，sales_amount 是销售额，不是设备订货金额。",
+      "domain": "sales",
+      "certified": true,
+      "deprecated": false,
+      "owners": ["sales_analytics"],
+      "popularity": 91,
+      "columns": {
+        "sales_amount": "销售金额"
+      }
+    },
+    {
+      "name": "deprecated_device_orders",
+      "description": "已废弃的设备订货兼容视图，不得用于新查询。",
+      "domain": "device_business",
+      "certified": false,
+      "deprecated": true,
+      "owners": ["legacy_platform"],
+      "popularity": 12,
+      "columns": {}
+    },
+    {
+      "name": "product_master",
+      "description": "产品主数据，可以通过 product_code 与设备订货表连接。",
+      "domain": "master_data",
+      "certified": true,
+      "deprecated": false,
+      "owners": ["master_data"],
+      "popularity": 76,
+      "columns": {
+        "product_code": "产品编码",
+        "product_l1": "产品一级分类",
+        "product_name": "产品名称"
+      }
+    }
+  ],
+  "joins": [
+    {
+      "left": "device_orders.product_code",
+      "right": "product_master.product_code",
+      "usage_count": 42
+    }
+  ]
+}
+

@@ -1,0 +1,803 @@
+[
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca",
+    "changeType": "UPSERT",
+    "aspectName": "containerProperties",
+    "aspect": {
+        "json": {
+            "customProperties": {
+                "platform": "sqlite",
+                "env": "PROD",
+                "database": "/Users/sanjiuganmaoling/Desktop/code/data-experience/lab/input/demo_metadata.db"
+            },
+            "name": "/Users/sanjiuganmaoling/Desktop/code/data-experience/lab/input/demo_metadata.db",
+            "env": "PROD"
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530402,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca",
+    "changeType": "UPSERT",
+    "aspectName": "status",
+    "aspect": {
+        "json": {
+            "removed": false
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530403,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca",
+    "changeType": "UPSERT",
+    "aspectName": "dataPlatformInstance",
+    "aspect": {
+        "json": {
+            "platform": "urn:li:dataPlatform:sqlite"
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530403,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca",
+    "changeType": "UPSERT",
+    "aspectName": "subTypes",
+    "aspect": {
+        "json": {
+            "typeNames": [
+                "Database"
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530403,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca",
+    "changeType": "UPSERT",
+    "aspectName": "browsePathsV2",
+    "aspect": {
+        "json": {
+            "path": []
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530403,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+    "changeType": "UPSERT",
+    "aspectName": "container",
+    "aspect": {
+        "json": {
+            "container": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca"
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530405,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+    "changeType": "UPSERT",
+    "aspectName": "containerProperties",
+    "aspect": {
+        "json": {
+            "customProperties": {
+                "platform": "sqlite",
+                "env": "PROD",
+                "database": "/Users/sanjiuganmaoling/Desktop/code/data-experience/lab/input/demo_metadata.db",
+                "schema": "main"
+            },
+            "name": "main",
+            "env": "PROD"
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530405,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+    "changeType": "UPSERT",
+    "aspectName": "status",
+    "aspect": {
+        "json": {
+            "removed": false
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530405,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+    "changeType": "UPSERT",
+    "aspectName": "dataPlatformInstance",
+    "aspect": {
+        "json": {
+            "platform": "urn:li:dataPlatform:sqlite"
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530405,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+    "changeType": "UPSERT",
+    "aspectName": "subTypes",
+    "aspect": {
+        "json": {
+            "typeNames": [
+                "Schema"
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530406,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "container",
+    "entityUrn": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+    "changeType": "UPSERT",
+    "aspectName": "browsePathsV2",
+    "aspect": {
+        "json": {
+            "path": [
+                {
+                    "id": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca",
+                    "urn": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca"
+                }
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530406,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "container",
+    "aspect": {
+        "json": {
+            "container": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae"
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530406,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "proposedSnapshot": {
+        "com.linkedin.pegasus2avro.metadata.snapshot.DatasetSnapshot": {
+            "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+            "aspects": [
+                {
+                    "com.linkedin.pegasus2avro.common.Status": {
+                        "removed": false
+                    }
+                },
+                {
+                    "com.linkedin.pegasus2avro.dataset.DatasetProperties": {
+                        "customProperties": {},
+                        "name": "device_order_profit",
+                        "tags": []
+                    }
+                },
+                {
+                    "com.linkedin.pegasus2avro.schema.SchemaMetadata": {
+                        "schemaName": "main.device_order_profit",
+                        "platform": "urn:li:dataPlatform:sqlite",
+                        "version": 0,
+                        "created": {
+                            "time": 0,
+                            "actor": "urn:li:corpuser:unknown"
+                        },
+                        "lastModified": {
+                            "time": 0,
+                            "actor": "urn:li:corpuser:unknown"
+                        },
+                        "hash": "",
+                        "platformSchema": {
+                            "com.linkedin.pegasus2avro.schema.MySqlDDL": {
+                                "tableSchema": ""
+                            }
+                        },
+                        "fields": [
+                            {
+                                "fieldPath": "c0",
+                                "nullable": false,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.StringType": {}
+                                    }
+                                },
+                                "nativeDataType": "TEXT",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            },
+                            {
+                                "fieldPath": "c2",
+                                "nullable": false,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.StringType": {}
+                                    }
+                                },
+                                "nativeDataType": "TEXT",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            },
+                            {
+                                "fieldPath": "c7",
+                                "nullable": false,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.StringType": {}
+                                    }
+                                },
+                                "nativeDataType": "TEXT",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            },
+                            {
+                                "fieldPath": "c27",
+                                "nullable": true,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.NumberType": {}
+                                    }
+                                },
+                                "nativeDataType": "NUMERIC",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            },
+                            {
+                                "fieldPath": "c28",
+                                "nullable": true,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.NumberType": {}
+                                    }
+                                },
+                                "nativeDataType": "NUMERIC",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530407,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "subTypes",
+    "aspect": {
+        "json": {
+            "typeNames": [
+                "Table"
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530407,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "browsePathsV2",
+    "aspect": {
+        "json": {
+            "path": [
+                {
+                    "id": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca",
+                    "urn": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca"
+                },
+                {
+                    "id": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+                    "urn": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae"
+                }
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530407,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.product_master,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "container",
+    "aspect": {
+        "json": {
+            "container": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae"
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530408,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "proposedSnapshot": {
+        "com.linkedin.pegasus2avro.metadata.snapshot.DatasetSnapshot": {
+            "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.product_master,PROD)",
+            "aspects": [
+                {
+                    "com.linkedin.pegasus2avro.common.Status": {
+                        "removed": false
+                    }
+                },
+                {
+                    "com.linkedin.pegasus2avro.dataset.DatasetProperties": {
+                        "customProperties": {},
+                        "name": "product_master",
+                        "tags": []
+                    }
+                },
+                {
+                    "com.linkedin.pegasus2avro.schema.SchemaMetadata": {
+                        "schemaName": "main.product_master",
+                        "platform": "urn:li:dataPlatform:sqlite",
+                        "version": 0,
+                        "created": {
+                            "time": 0,
+                            "actor": "urn:li:corpuser:unknown"
+                        },
+                        "lastModified": {
+                            "time": 0,
+                            "actor": "urn:li:corpuser:unknown"
+                        },
+                        "hash": "",
+                        "platformSchema": {
+                            "com.linkedin.pegasus2avro.schema.MySqlDDL": {
+                                "tableSchema": ""
+                            }
+                        },
+                        "fields": [
+                            {
+                                "fieldPath": "product_l1",
+                                "nullable": false,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.StringType": {}
+                                    }
+                                },
+                                "nativeDataType": "TEXT",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            },
+                            {
+                                "fieldPath": "product_name",
+                                "nullable": true,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.StringType": {}
+                                    }
+                                },
+                                "nativeDataType": "TEXT",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            },
+                            {
+                                "fieldPath": "product_code",
+                                "nullable": true,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.StringType": {}
+                                    }
+                                },
+                                "nativeDataType": "TEXT",
+                                "recursive": false,
+                                "isPartOfKey": true
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530408,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.product_master,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "subTypes",
+    "aspect": {
+        "json": {
+            "typeNames": [
+                "Table"
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530408,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.product_master,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "browsePathsV2",
+    "aspect": {
+        "json": {
+            "path": [
+                {
+                    "id": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca",
+                    "urn": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca"
+                },
+                {
+                    "id": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+                    "urn": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae"
+                }
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772530409,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit_by_product,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "container",
+    "aspect": {
+        "json": {
+            "container": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae"
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772560375,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "proposedSnapshot": {
+        "com.linkedin.pegasus2avro.metadata.snapshot.DatasetSnapshot": {
+            "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit_by_product,PROD)",
+            "aspects": [
+                {
+                    "com.linkedin.pegasus2avro.common.Status": {
+                        "removed": false
+                    }
+                },
+                {
+                    "com.linkedin.pegasus2avro.dataset.DatasetProperties": {
+                        "customProperties": {
+                            "is_view": "True",
+                            "view_definition": "CREATE VIEW device_order_profit_by_product AS\nSELECT\n  c7 AS product_l1,\n  c2 AS year_month,\n  SUM(c27) AS device_order_amount,\n  SUM(c28) AS device_profit_amount\nFROM device_order_profit\nGROUP BY c7, c2"
+                        },
+                        "name": "device_order_profit_by_product",
+                        "tags": []
+                    }
+                },
+                {
+                    "com.linkedin.pegasus2avro.schema.SchemaMetadata": {
+                        "schemaName": "main.device_order_profit_by_product",
+                        "platform": "urn:li:dataPlatform:sqlite",
+                        "version": 0,
+                        "created": {
+                            "time": 0,
+                            "actor": "urn:li:corpuser:unknown"
+                        },
+                        "lastModified": {
+                            "time": 0,
+                            "actor": "urn:li:corpuser:unknown"
+                        },
+                        "hash": "",
+                        "platformSchema": {
+                            "com.linkedin.pegasus2avro.schema.MySqlDDL": {
+                                "tableSchema": ""
+                            }
+                        },
+                        "fields": [
+                            {
+                                "fieldPath": "product_l1",
+                                "nullable": true,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.StringType": {}
+                                    }
+                                },
+                                "nativeDataType": "TEXT",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            },
+                            {
+                                "fieldPath": "year_month",
+                                "nullable": true,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.StringType": {}
+                                    }
+                                },
+                                "nativeDataType": "TEXT",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            },
+                            {
+                                "fieldPath": "device_order_amount",
+                                "nullable": true,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.NullType": {}
+                                    }
+                                },
+                                "nativeDataType": "null",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            },
+                            {
+                                "fieldPath": "device_profit_amount",
+                                "nullable": true,
+                                "type": {
+                                    "type": {
+                                        "com.linkedin.pegasus2avro.schema.NullType": {}
+                                    }
+                                },
+                                "nativeDataType": "null",
+                                "recursive": false,
+                                "isPartOfKey": false
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772560375,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit_by_product,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "subTypes",
+    "aspect": {
+        "json": {
+            "typeNames": [
+                "View"
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772560377,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit_by_product,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "viewProperties",
+    "aspect": {
+        "json": {
+            "materialized": false,
+            "viewLogic": "CREATE VIEW device_order_profit_by_product AS\nSELECT\n  c7 AS product_l1,\n  c2 AS year_month,\n  SUM(c27) AS device_order_amount,\n  SUM(c28) AS device_profit_amount\nFROM device_order_profit\nGROUP BY c7, c2",
+            "viewLanguage": "SQL"
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772560377,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit_by_product,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+        "json": {
+            "upstreams": [
+                {
+                    "auditStamp": {
+                        "time": 1785772560374,
+                        "actor": "urn:li:corpuser:_ingestion"
+                    },
+                    "created": {
+                        "time": 0,
+                        "actor": "urn:li:corpuser:_ingestion"
+                    },
+                    "dataset": "urn:li:dataset:(urn:li:dataPlatform:sqlite,device_order_profit,PROD)",
+                    "type": "VIEW",
+                    "query": "urn:li:query:view_bb4815c16fa43268d947c931461c0f62396d09af74557004ce10e97a35637bb6"
+                }
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772560378,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit_by_product,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "browsePathsV2",
+    "aspect": {
+        "json": {
+            "path": [
+                {
+                    "id": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca",
+                    "urn": "urn:li:container:3fb2cac6447514aadafc44eaa237c4ca"
+                },
+                {
+                    "id": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+                    "urn": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae"
+                }
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772560378,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "query",
+    "entityUrn": "urn:li:query:view_bb4815c16fa43268d947c931461c0f62396d09af74557004ce10e97a35637bb6",
+    "changeType": "UPSERT",
+    "aspectName": "queryProperties",
+    "aspect": {
+        "json": {
+            "customProperties": {},
+            "statement": {
+                "value": "CREATE VIEW device_order_profit_by_product AS\nSELECT\n  c7 AS product_l1,\n  c2 AS year_month,\n  SUM(c27) AS device_order_amount,\n  SUM(c28) AS device_profit_amount\nFROM device_order_profit\nGROUP BY\n  c7,\n  c2",
+                "language": "SQL"
+            },
+            "source": "SYSTEM",
+            "created": {
+                "time": 0,
+                "actor": "urn:li:corpuser:_ingestion"
+            },
+            "lastModified": {
+                "time": 1785772560375,
+                "actor": "urn:li:corpuser:_ingestion"
+            }
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772560378,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "query",
+    "entityUrn": "urn:li:query:view_bb4815c16fa43268d947c931461c0f62396d09af74557004ce10e97a35637bb6",
+    "changeType": "UPSERT",
+    "aspectName": "querySubjects",
+    "aspect": {
+        "json": {
+            "subjects": [
+                {
+                    "entity": "urn:li:dataset:(urn:li:dataPlatform:sqlite,device_order_profit,PROD)"
+                },
+                {
+                    "entity": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit_by_product,PROD)"
+                }
+            ]
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772560378,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "query",
+    "entityUrn": "urn:li:query:view_bb4815c16fa43268d947c931461c0f62396d09af74557004ce10e97a35637bb6",
+    "changeType": "UPSERT",
+    "aspectName": "dataPlatformInstance",
+    "aspect": {
+        "json": {
+            "platform": "urn:li:dataPlatform:sqlite"
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772560379,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+},
+{
+    "entityType": "query",
+    "entityUrn": "urn:li:query:view_bb4815c16fa43268d947c931461c0f62396d09af74557004ce10e97a35637bb6",
+    "changeType": "UPSERT",
+    "aspectName": "status",
+    "aspect": {
+        "json": {
+            "removed": false
+        }
+    },
+    "systemMetadata": {
+        "lastObserved": 1785772560379,
+        "runId": "sqlalchemy-2026_08_03-23_55_27-kyy5n6",
+        "lastRunId": "no-run-id-provided"
+    }
+}
+]

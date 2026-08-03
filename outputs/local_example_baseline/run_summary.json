@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-08-03T22:38:40+08:00",
+  "generated_demo": false,
+  "counts": {
+    "source_records": 15,
+    "reports": 2,
+    "components": 9,
+    "datasets": 4,
+    "queries": 10,
+    "physical_tables": 0,
+    "physical_fields": 0,
+    "field_lineages": 0,
+    "reports_with_status": 2,
+    "incomplete_physical_tables": 0,
+    "evidence_packages": 6,
+    "llm_calls": 0,
+    "llm_valid_results": 0
+  },
+  "report_path_segment_distribution": {
+    "3": 2
+  },
+  "dataset_path_segment_distribution": {
+    "3": 9
+  },
+  "duplicate_query_groups": [
+    {
+      "report_id": "RPT_0002",
+      "component_no": 1,
+      "sql_index": 1,
+      "occurrence_count": 2
+    },
+    {
+      "report_id": "RPT_0002",
+      "component_no": 2,
+      "sql_index": 1,
+      "occurrence_count": 2
+    },
+    {
+      "report_id": "RPT_0002",
+      "component_no": 2,
+      "sql_index": 2,
+      "occurrence_count": 2
+    },
+    {
+      "report_id": "RPT_0002",
+      "component_no": 3,
+      "sql_index": 1,
+      "occurrence_count": 2
+    },
+    {
+      "report_id": "RPT_0002",
+      "component_no": 4,
+      "sql_index": 1,
+      "occurrence_count": 2
+    }
+  ],
+  "component_name_dataset_conflicts": [],
+  "multi_query_components": [
+    {
+      "report_id": "RPT_0002",
+      "component_no": 2,
+      "query_variant_count": 2
+    }
+  ],
+  "multi_table_queries": [],
+  "incomplete_physical_tables": [],
+  "validation_totals": {
+    "errors": 0,
+    "warnings": 0
+  }
+}

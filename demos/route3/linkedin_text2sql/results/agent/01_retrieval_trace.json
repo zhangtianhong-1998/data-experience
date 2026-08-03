@@ -1,0 +1,119 @@
+{
+  "input": {
+    "question": "请统计 ORG_1001 在 2026 年上半年按产品一级分类的设备订货金额和设备利润，只统计已确认订单。",
+    "user": "analyst_a",
+    "product_areas": [
+      "device_business"
+    ],
+    "dialect": "duckdb"
+  },
+  "candidate_tables_from_user_product_clusters": [
+    "deprecated_device_orders",
+    "device_orders",
+    "product_master",
+    "sales_orders"
+  ],
+  "table_embedding_hits": [
+    {
+      "table": "device_orders",
+      "text": "device_orders 设备订货事实表。每行是一张设备订货单；取消单不得计入订货指标。 device_business order_date year_month org_code product_l1 order_amount profit_amount status 订货日期 YYYYMM 整数月份 组织编码，分析必须显式限定 产品一级分类 设备订货金额，演示单位为 CNY 设备利润金额，演示单位为 CNY confirmed 或 cancelled；指标只统计 confirmed",
+      "certified": true,
+      "deprecated": false,
+      "popularity": 98,
+      "semantic_score": 0.095744
+    },
+    {
+      "table": "product_master",
+      "text": "product_master 产品主数据，可以通过 product_code 与设备订货表连接。 master_data product_code product_l1 product_name 产品编码 产品一级分类 产品名称",
+      "certified": true,
+      "deprecated": false,
+      "popularity": 76,
+      "semantic_score": 0.044331
+    },
+    {
+      "table": "sales_orders",
+      "text": "sales_orders 销售订单事实表，sales_amount 是销售额，不是设备订货金额。 sales sales_amount 销售金额",
+      "certified": true,
+      "deprecated": false,
+      "popularity": 91,
+      "semantic_score": 0.036606
+    },
+    {
+      "table": "deprecated_device_orders",
+      "text": "deprecated_device_orders 已废弃的设备订货兼容视图，不得用于新查询。 device_business",
+      "certified": false,
+      "deprecated": true,
+      "popularity": 12,
+      "semantic_score": 0.030177
+    }
+  ],
+  "example_query_hits": [
+    {
+      "id": "example:0",
+      "type": "example_query",
+      "team": "device_analytics",
+      "user": "analyst_a",
+      "quality": "approved",
+      "query": "SELECT product_l1, SUM(order_amount) AS device_order_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1",
+      "description": "按产品一级分类统计指定组织、月份区间内的已确认设备订货金额。",
+      "tables": [
+        "device_orders"
+      ],
+      "semantic_score": 0.155861
+    },
+    {
+      "id": "example:1",
+      "type": "example_query",
+      "team": "device_analytics",
+      "user": "analyst_b",
+      "quality": "approved",
+      "query": "SELECT year_month, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND status = 'confirmed' GROUP BY year_month",
+      "description": "按月统计指定组织的已确认设备订货金额和设备利润。",
+      "tables": [
+        "device_orders"
+      ],
+      "semantic_score": 0.1108
+    }
+  ],
+  "explicit_table_mentions": [],
+  "domain_knowledge_hits": [
+    {
+      "id": "dk_device_metric",
+      "product_area": "device_business",
+      "tables": [
+        "device_orders"
+      ],
+      "columns": [
+        "order_amount",
+        "profit_amount",
+        "status",
+        "org_code"
+      ],
+      "text": "设备订货金额仅统计 status='confirmed' 的 order_amount；设备利润统计同一批订单的 profit_amount；所有查询必须显式限定 org_code，金额单位 CNY。"
+    },
+    {
+      "id": "dk_half_year",
+      "product_area": "device_business",
+      "tables": [
+        "device_orders"
+      ],
+      "columns": [
+        "year_month"
+      ],
+      "text": "2026 年上半年在 year_month 整数列上表示为 202601 到 202606（含边界）。"
+    }
+  ],
+  "jargon_string_matches": {
+    "设备订货": "设备产品订单，不是 sales_orders 中的销售收入；使用 device_orders。",
+    "设备订货金额": "confirmed 设备订单的 order_amount 合计，单位 CNY。",
+    "设备利润": "与设备订货金额同口径订单的 profit_amount 合计，单位 CNY。",
+    "上半年": "自然年 1 月到 6 月，本数据中 year_month BETWEEN YYYY01 AND YYYY06。"
+  },
+  "retrieved_tables_union": [
+    "deprecated_device_orders",
+    "device_orders",
+    "product_master",
+    "sales_orders"
+  ],
+  "implementation_note": "Local character TF-IDF is the deterministic embedding-retrieval substitute; LinkedIn's embedding model/index is internal."
+}

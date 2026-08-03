@@ -1,0 +1,1 @@
+"cubejs/cube:latest" "sha256:7814382ac7c990fedbba3b7330e5fdbd4ad5073f4f976b3a25571d472c387e2a" "running"

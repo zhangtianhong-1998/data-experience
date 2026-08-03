@@ -1,0 +1,65 @@
+{
+  "sdk_package": "openmetadata-ingestion==1.13.0.0",
+  "server_version": "1.13.0",
+  "tables_discovered": [
+    "enterprise_mysql.default.enterprise_demo.device_orders",
+    "enterprise_mysql.default.enterprise_demo.device_orders_by_product",
+    "enterprise_mysql.default.enterprise_demo.sales_orders"
+  ],
+  "selected_fqn": "enterprise_mysql.default.enterprise_demo.device_orders",
+  "description_after_patch": "设备订货事实表。指标“设备订货金额”&#61; confirmed 订单的 order_amount 合计&#xff1b;必须显式限定 org_code&#xff1b;单位 CNY&#xff1b;取消单不得计入。",
+  "columns": [
+    {
+      "name": "order_id",
+      "data_type": "VARCHAR",
+      "description": "设备订货单唯一编号"
+    },
+    {
+      "name": "order_date",
+      "data_type": "DATE",
+      "description": "订货日期"
+    },
+    {
+      "name": "year_month",
+      "data_type": "INT",
+      "description": "自然年月，YYYYMM"
+    },
+    {
+      "name": "org_code",
+      "data_type": "VARCHAR",
+      "description": "数据权限组织编码，查询必须显式限定"
+    },
+    {
+      "name": "product_code",
+      "data_type": "VARCHAR",
+      "description": "产品编码"
+    },
+    {
+      "name": "product_l1",
+      "data_type": "VARCHAR",
+      "description": "一级产品分类"
+    },
+    {
+      "name": "country",
+      "data_type": "VARCHAR",
+      "description": "客户国家"
+    },
+    {
+      "name": "status",
+      "data_type": "VARCHAR",
+      "description": "confirmed 才计入设备订货指标"
+    },
+    {
+      "name": "order_amount",
+      "data_type": "DECIMAL",
+      "description": "设备订货金额，CNY"
+    },
+    {
+      "name": "profit_amount",
+      "data_type": "DECIMAL",
+      "description": "设备毛利金额，CNY"
+    }
+  ],
+  "intermediate_entity_id": "32dfde75-a848-41ad-afec-dd6d9b007e47",
+  "passed": true
+}

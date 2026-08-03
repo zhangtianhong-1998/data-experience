@@ -1,0 +1,5 @@
+{
+  "datasource": "duckdb",
+  "url": "../../../common",
+  "format": "duckdb"
+}

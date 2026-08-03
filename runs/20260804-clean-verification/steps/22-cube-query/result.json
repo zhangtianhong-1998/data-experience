@@ -1,0 +1,15 @@
+{
+  "exit_code": 1,
+  "launch_error": null,
+  "duration_seconds": 0.059,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "7f458c2e79d71b95a8b196e8b5c587b232e47abcfe2ed550cdc4322d0d2b74af",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/cube/results/verification.json",
+      "exists": true,
+      "size": 5423,
+      "sha256": "21b02174cb5341906c5762060175adb13d858e02562575e367536c3523b28621"
+    }
+  ]
+}

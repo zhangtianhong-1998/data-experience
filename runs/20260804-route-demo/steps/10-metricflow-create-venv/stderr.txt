@@ -1,0 +1,3 @@
+Using CPython 3.12.13
+Creating virtual environment at: runtime/metricflow-venv
+Activate with: source runtime/metricflow-venv/bin/activate

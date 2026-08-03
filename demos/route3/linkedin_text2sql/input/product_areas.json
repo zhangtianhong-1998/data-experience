@@ -1,0 +1,11 @@
+{
+  "device_business": {
+    "representative_users": ["analyst_a", "analyst_b", "engineer_device", "pm_device"],
+    "explicit_tables": ["device_orders", "product_master"]
+  },
+  "sales": {
+    "representative_users": ["analyst_c", "pm_sales", "engineer_sales"],
+    "explicit_tables": ["sales_orders", "product_master"]
+  }
+}
+

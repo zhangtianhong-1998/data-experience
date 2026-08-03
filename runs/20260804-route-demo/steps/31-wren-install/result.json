@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 12.161,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "58a0ec7e8a13d38aa96feb5ba9a400920418ef4ce496c0a41b122a82031d192c",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/wren-venv/bin/wren",
+      "exists": true,
+      "size": 353,
+      "sha256": "ed48c23a5b5af564b31f0ccb82db1f248023c0818be240745120a0dec0d4b11d"
+    }
+  ]
+}

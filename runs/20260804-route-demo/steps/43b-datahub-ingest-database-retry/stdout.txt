@@ -1,0 +1,190 @@
+
+Cli report:
+{'cli_version': '1.6.0',
+ 'cli_entry_location': '/Users/sanjiuganmaoling/Desktop/code/data-experience/lab/.venv/lib/python3.12/site-packages/datahub/ingestion/run/pipeline.py',
+ 'models_version': 'bundled',
+ 'py_version': '3.12.13 (main, Mar 10 2026, 18:18:07) [Clang 21.1.4 ]',
+ 'py_exec_path': '/Users/sanjiuganmaoling/Desktop/code/data-experience/lab/.venv/bin/python',
+ 'os_details': 'macOS-26.5.2-arm64-arm-64bit',
+ 'mem_info': '172.29 MB',
+ 'peak_memory_usage': '172.29 MB',
+ 'disk_info': {'total': '994.66 GB', 'used': '655.3 GB', 'used_initally': '655.3 GB', 'free': '339.36 GB'},
+ 'peak_disk_usage': '655.3 GB',
+ 'thread_count': 4,
+ 'peak_thread_count': 5}
+Source (sqlalchemy) report:
+{'profiling_skipped_not_updated': {},
+ 'profiling_skipped_size_limit': {},
+ 'profiling_skipped_row_limit': {},
+ 'profiling_skipped_table_profile_pattern': {},
+ 'profiling_skipped_other': {},
+ 'num_tables_not_eligible_profiling': {},
+ 'num_tables_fetch_sample_values_failed': 0,
+ 'num_tables_classification_attempted': 0,
+ 'num_tables_classification_failed': 0,
+ 'num_tables_classification_found': 0,
+ 'info_types_detected': {},
+ 'ingestion_high_stage_seconds': {},
+ 'ingestion_stage_durations': {},
+ 'aspects': {'container': {'containerProperties': 2, 'status': 2, 'dataPlatformInstance': 2, 'subTypes': 2, 'browsePathsV2': 2, 'container': 1},
+             'dataset': {'container': 4,
+                         'status': 4,
+                         'datasetProperties': 4,
+                         'schemaMetadata': 4,
+                         'subTypes': 4,
+                         'browsePathsV2': 4,
+                         'viewProperties': 1,
+                         'upstreamLineage': 1,
+                         'fineGrainedLineages': 1},
+             'query': {'queryProperties': 1, 'querySubjects': 1, 'dataPlatformInstance': 1, 'status': 1}},
+ 'aspects_by_subtypes_full_count': {'container': {'Database': {'containerProperties': 1,
+                                                               'status': 1,
+                                                               'dataPlatformInstance': 1,
+                                                               'subTypes': 1,
+                                                               'browsePathsV2': 1},
+                                                  'Schema': {'container': 1,
+                                                             'containerProperties': 1,
+                                                             'status': 1,
+                                                             'dataPlatformInstance': 1,
+                                                             'subTypes': 1,
+                                                             'browsePathsV2': 1}},
+                                    'dataset': {'Table': {'container': 3,
+                                                          'status': 3,
+                                                          'datasetProperties': 3,
+                                                          'schemaMetadata': 3,
+                                                          'subTypes': 3,
+                                                          'browsePathsV2': 3},
+                                                'View': {'container': 1,
+                                                         'status': 1,
+                                                         'datasetProperties': 1,
+                                                         'schemaMetadata': 1,
+                                                         'subTypes': 1,
+                                                         'viewProperties': 1,
+                                                         'upstreamLineage': 1,
+                                                         'fineGrainedLineages': 1,
+                                                         'browsePathsV2': 1}},
+                                    'query': {'unknown': {'queryProperties': 1, 'querySubjects': 1, 'dataPlatformInstance': 1, 'status': 1}}},
+ 'samples': {'lineage': {'View': ['urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders_by_product,PROD)']}},
+ 'compute_stats_time_seconds': 0.000383,
+ 'event_not_produced_warn': True,
+ 'events_produced': 33,
+ 'events_produced_per_sec': 10,
+ 'num_input_fields_filtered': 0,
+ 'soft_deleted_stale_entities': [],
+ 'last_state_non_deletable_entities': [],
+ 'entity_type_deletion_summary': {},
+ 'tables_scanned': 3,
+ 'views_scanned': 1,
+ 'entities_profiled': 0,
+ 'filtered': [],
+ 'num_view_definitions_parsed': 0,
+ 'num_view_definitions_view_urn_mismatch': 0,
+ 'num_view_definitions_failed_parsing': 0,
+ 'num_view_definitions_failed_column_parsing': 0,
+ 'view_definitions_parsing_failures': [],
+ 'sql_aggregator': {'num_observed_queries': 0,
+                    'num_observed_queries_failed': 0,
+                    'num_observed_queries_column_timeout': 0,
+                    'num_observed_queries_column_failed': 0,
+                    'observed_query_parse_failures': [],
+                    'num_view_definitions': 1,
+                    'num_views_failed': 0,
+                    'num_views_column_timeout': 0,
+                    'num_views_column_failed': 0,
+                    'views_parse_failures': {},
+                    'num_procedures_failed': 0,
+                    'procedure_parse_failures': [],
+                    'num_sql_parsed': 1,
+                    'sql_parsing_timer': '0.234 seconds',
+                    'sql_fingerprinting_timer': None,
+                    'sql_formatting_timer': '0.000 seconds',
+                    'sql_parsing_cache_stats': {'hits': 0, 'misses': 1, 'maxsize': 1000, 'currsize': 1},
+                    'parse_statement_cache_stats': {'hits': 1, 'misses': 1, 'maxsize': 1000, 'currsize': 1},
+                    'format_query_cache_stats': {'hits': 0, 'misses': 1, 'maxsize': 1000, 'currsize': 1},
+                    'num_known_query_lineage': 0,
+                    'num_preparsed_queries': 0,
+                    'num_known_mapping_lineage': 0,
+                    'num_table_renames': 0,
+                    'num_table_swaps': 0,
+                    'num_temp_sessions': 0,
+                    'num_inferred_temp_schemas': 0,
+                    'num_queries_with_temp_tables_in_session': 0,
+                    'queries_with_temp_upstreams': {},
+                    'queries_with_non_authoritative_session': [],
+                    'make_schema_resolver_timer': None,
+                    'schema_resolver_count': 4,
+                    'num_unique_query_fingerprints': 1,
+                    'num_urns_with_lineage': 1,
+                    'num_lineage_skipped_due_to_filters': 0,
+                    'num_table_lineage_trimmed_due_to_large_size': 0,
+                    'num_column_lineage_trimmed_due_to_large_size': 0,
+                    'num_tables_added_from_column_lineage': 0,
+                    'num_queries_with_lineage_inconsistencies_fixed': 0,
+                    'num_queries_entities_generated': 1,
+                    'num_queries_used_in_lineage': 1,
+                    'num_queries_skipped_due_to_filters': 0,
+                    'usage_skipped_missing_timestamp': 0,
+                    'num_query_usage_stats_generated': 0,
+                    'num_query_usage_stats_outside_window': 0,
+                    'num_operations_generated': 0,
+                    'num_operations_skipped_due_to_filters': 0,
+                    'tool_meta_report': {'num_queries_meta_extracted': {}, 'failures': [], 'looker_user_mapping_missing': True}},
+ 'num_queries_extracted': 0,
+ 'num_queries_parsed': 0,
+ 'num_queries_parse_failures': 0,
+ 'platform': 'sqlite',
+ 'start_time': '2026-08-04 00:55:35.610964 (3.27 seconds ago)',
+ 'running_time': '3.27 seconds',
+ 'failures': [],
+ 'warnings': [{'message': 'Failed to get default db and schema names for view',
+               'context': ["main.device_orders_by_product <class 'ValueError'>: not enough values to unpack (expected 3, got 2)"]}],
+ 'infos': []}
+
+Aspects by Subtypes:
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| Aspect               |   container (Database) |   container (Schema) |   dataset (Table) |   dataset (View) |   query (unknown) |
++======================+========================+======================+===================+==================+===================+
+| browsePathsV2        |                      1 |                    1 |                 3 |                1 |                 0 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| container            |                      0 |                    1 |                 3 |                1 |                 0 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| containerProperties  |                      1 |                    1 |                 0 |                0 |                 0 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| dataPlatformInstance |                      1 |                    1 |                 0 |                0 |                 1 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| datasetProperties    |                      0 |                    0 |                 3 |                1 |                 0 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| fineGrainedLineages  |                      0 |                    0 |                 0 |                1 |                 0 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| queryProperties      |                      0 |                    0 |                 0 |                0 |                 1 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| querySubjects        |                      0 |                    0 |                 0 |                0 |                 1 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| schemaMetadata       |                      0 |                    0 |                 3 |                1 |                 0 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| status               |                      1 |                    1 |                 3 |                1 |                 1 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| subTypes             |                      1 |                    1 |                 3 |                1 |                 0 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| upstreamLineage      |                      0 |                    0 |                 0 |                1 |                 0 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+| viewProperties       |                      0 |                    0 |                 0 |                1 |                 0 |
++----------------------+------------------------+----------------------+-------------------+------------------+-------------------+
+Sink (datahub-rest) report:
+{'total_records_written': 35,
+ 'records_written_per_second': 8,
+ 'warnings': [],
+ 'failures': [],
+ 'start_time': '2026-08-04 00:55:34.870456 (4.01 seconds ago)',
+ 'current_time': '2026-08-04 00:55:38.882896 (now)',
+ 'total_duration_in_seconds': 4.01,
+ 'mode': 'ASYNC_BATCH',
+ 'endpoint': 'RESTLI',
+ 'max_threads': 15,
+ 'gms_version': 'v1.5.0.6',
+ 'pending_requests': 0,
+ 'async_batches_prepared': 1,
+ 'async_batches_split': 0,
+ 'main_thread_blocking_timer': '0.084 seconds'}
+
+Pipeline finished with at least 1 warnings; produced 35 events in 3.27 seconds.

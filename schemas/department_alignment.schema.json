@@ -1,0 +1,99 @@
+{
+  "$defs": {
+    "AlignmentDecision": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate_ref": {
+          "title": "Candidate Ref",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "equivalent",
+            "variant",
+            "broader",
+            "narrower",
+            "related",
+            "conflict",
+            "insufficient"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "explanation": {
+          "title": "Explanation",
+          "type": "string"
+        },
+        "matching_evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Matching Evidence",
+          "type": "array"
+        },
+        "important_differences": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Important Differences",
+          "type": "array"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "recommended_action": {
+          "enum": [
+            "keep_separate",
+            "record_relation_only",
+            "eligible_for_department_merge",
+            "needs_review"
+          ],
+          "title": "Recommended Action",
+          "type": "string"
+        }
+      },
+      "required": [
+        "candidate_ref",
+        "relation",
+        "explanation",
+        "recommended_action"
+      ],
+      "title": "AlignmentDecision",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "department-alignment-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "batch_ref": {
+      "title": "Batch Ref",
+      "type": "string"
+    },
+    "department_ref": {
+      "title": "Department Ref",
+      "type": "string"
+    },
+    "decisions": {
+      "items": {
+        "$ref": "#/$defs/AlignmentDecision"
+      },
+      "title": "Decisions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "batch_ref",
+    "department_ref"
+  ],
+  "title": "AlignmentBatchResult",
+  "type": "object"
+}

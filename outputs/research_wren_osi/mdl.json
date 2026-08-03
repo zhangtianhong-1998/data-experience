@@ -1,0 +1,68 @@
+{
+  "catalog": "wren",
+  "schema": "public",
+  "dataSource": "duckdb",
+  "models": [
+    {
+      "name": "device_order_profit",
+      "columns": [
+        {
+          "name": "year_month",
+          "type": "VARCHAR",
+          "isCalculated": false,
+          "notNull": false,
+          "properties": {
+            "description": "BI 输出别名“年月”；值格式和时区未知。\n\n同义表达包括“年月”；不可自行转换为财年。"
+          }
+        },
+        {
+          "name": "product_l1",
+          "type": "VARCHAR",
+          "isCalculated": false,
+          "notNull": false,
+          "properties": {
+            "description": "BI 输出别名“产品LV1”，并在查询中作为参数过滤字段。"
+          }
+        },
+        {
+          "name": "internal_category",
+          "type": "VARCHAR",
+          "isCalculated": false,
+          "notNull": false,
+          "properties": {
+            "description": "BI 输出别名“内部分类”。"
+          }
+        },
+        {
+          "name": "device_order_amount",
+          "type": "DOUBLE",
+          "isCalculated": false,
+          "notNull": false,
+          "properties": {
+            "description": "SUM(c27) 在 BI 中被命名为“Sum_设备订货”；单位与可加性边界未知。"
+          }
+        },
+        {
+          "name": "device_profit_amount",
+          "type": "DOUBLE",
+          "isCalculated": false,
+          "notNull": false,
+          "properties": {
+            "description": "SUM(c28) 在 BI 中被命名为“Sum_设备利润”；币种、税口径与利润类型未知。"
+          }
+        }
+      ],
+      "cached": false,
+      "properties": {
+        "description": "临时物理表的实验性逻辑映射。字段含义来自重复的 BI 输出别名证据，而非物理元数据确认。\n"
+      },
+      "refSql": "SELECT\n  c2 AS year_month,\n  c7 AS product_l1,\n  c10 AS internal_category,\n  c27 AS device_order_amount,\n  c28 AS device_profit_amount\nFROM dmprjdis_pfa.datain_1783070589517_temp"
+    }
+  ],
+  "relationships": [],
+  "views": [],
+  "cubes": [],
+  "name": "bi_device_profit_experiment",
+  "layoutVersion": 2,
+  "_instructions": "只可用于复现已有看板逻辑。不得把单位、币种、含税口径、组织范围或过滤参数解释为已确认事实。\n\n\n## Metrics (from OSI)\n\n- **total_device_orders** — `SUM(device_order_profit.device_order_amount)`\n  复现多条 BI SQL 中的 SUM(c27)，尚非经审批的企业指标。\n- **total_device_profit** — `SUM(device_order_profit.device_profit_amount)`\n  复现多条 BI SQL 中的 SUM(c28)，尚非经审批的企业指标。"
+}

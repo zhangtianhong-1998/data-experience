@@ -1,0 +1,423 @@
+[
+  {
+    "operation": "tools/list",
+    "tools": [
+      {
+        "name": "run_sql",
+        "inputSchema": {
+          "properties": {
+            "sql": {
+              "title": "Sql",
+              "type": "string"
+            },
+            "limit": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Limit"
+            }
+          },
+          "required": [
+            "sql"
+          ],
+          "title": "run_sqlArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "dry_run",
+        "inputSchema": {
+          "properties": {
+            "sql": {
+              "title": "Sql",
+              "type": "string"
+            }
+          },
+          "required": [
+            "sql"
+          ],
+          "title": "dry_runArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "query_cube",
+        "inputSchema": {
+          "properties": {
+            "cube": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Cube"
+            },
+            "measures": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Measures"
+            },
+            "dimensions": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Dimensions"
+            },
+            "time_dimension": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Time Dimension"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Filters"
+            },
+            "limit": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Limit"
+            },
+            "offset": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Offset"
+            },
+            "sql_only": {
+              "default": false,
+              "title": "Sql Only",
+              "type": "boolean"
+            }
+          },
+          "title": "query_cubeArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "dry_plan",
+        "inputSchema": {
+          "properties": {
+            "sql": {
+              "title": "Sql",
+              "type": "string"
+            }
+          },
+          "required": [
+            "sql"
+          ],
+          "title": "dry_planArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "get_mdl",
+        "inputSchema": {
+          "properties": {},
+          "title": "get_mdlArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "list_models",
+        "inputSchema": {
+          "properties": {},
+          "title": "list_modelsArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "describe_model",
+        "inputSchema": {
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "title": "describe_modelArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "get_data_source",
+        "inputSchema": {
+          "properties": {},
+          "title": "get_data_sourceArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "list_cubes",
+        "inputSchema": {
+          "properties": {},
+          "title": "list_cubesArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "describe_cube",
+        "inputSchema": {
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "title": "describe_cubeArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "list_functions",
+        "inputSchema": {
+          "properties": {},
+          "title": "list_functionsArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "get_instructions",
+        "inputSchema": {
+          "properties": {},
+          "title": "get_instructionsArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "recall_queries",
+        "inputSchema": {
+          "properties": {
+            "question": {
+              "title": "Question",
+              "type": "string"
+            },
+            "limit": {
+              "default": 3,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "question"
+          ],
+          "title": "recall_queriesArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "get_context",
+        "inputSchema": {
+          "properties": {
+            "question": {
+              "title": "Question",
+              "type": "string"
+            },
+            "limit": {
+              "default": 5,
+              "title": "Limit",
+              "type": "integer"
+            },
+            "item_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Item Type"
+            },
+            "model_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Model Name"
+            }
+          },
+          "required": [
+            "question"
+          ],
+          "title": "get_contextArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "describe_schema",
+        "inputSchema": {
+          "properties": {},
+          "title": "describe_schemaArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "list_stored_queries",
+        "inputSchema": {
+          "properties": {
+            "source": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Source"
+            },
+            "limit": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Limit"
+            }
+          },
+          "title": "list_stored_queriesArguments",
+          "type": "object"
+        }
+      },
+      {
+        "name": "list_knowledge",
+        "inputSchema": {
+          "properties": {},
+          "title": "list_knowledgeArguments",
+          "type": "object"
+        }
+      }
+    ]
+  },
+  {
+    "operation": "tools/call",
+    "tool": "get_context",
+    "arguments": {
+      "question": "ORG_1001 在 2026 上半年按产品一级分类的设备订货金额"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"strategy\": \"full\",\n  \"schema\": \"Catalog: wren, Schema: public\\n\\n### Model: device_orders — 合成设备订货事实表。每行一张订货单，取消单不得计入指标。\\n  Columns:\\n    - order_id (VARCHAR) PRIMARY KEY\\n    - order_date (DATE)\\n    - year_month (INTEGER)\\n    - org_code (VARCHAR) — 组织编码；分析必须显式限定。\\n    - product_code (VARCHAR)\\n    - product_l1 (VARCHAR) — 产品一级分类。\\n    - order_amount (DOUBLE)\\n    - profit_amount (DOUBLE)\\n    - country (VARCHAR)\\n    - status (VARCHAR)\\n\\n### Cube: device_business (base: device_orders)\\n  Measures:\\n    - device_order_amount (DOUBLE): SUM(CASE WHEN status = 'confirmed' THEN order_amount ELSE 0 END)\\n    - device_profit_amount (DOUBLE): SUM(CASE WHEN status = 'confirmed' THEN profit_amount ELSE 0 END)\\n  Dimensions:\\n    - product_l1 (VARCHAR)\\n    - org_code (VARCHAR)\\n    - year_month (INTEGER)\\n    - status (VARCHAR)\\n\",\n  \"note\": \"Install wrenai[memory] and run `wren memory index` for embedding-based schema search on large schemas.\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": null,
+      "meta": null,
+      "data": null,
+      "is_error": false
+    }
+  },
+  {
+    "operation": "tools/call",
+    "tool": "query_cube",
+    "arguments": {
+      "cube": "device_business",
+      "measures": [
+        "device_order_amount",
+        "device_profit_amount"
+      ],
+      "dimensions": [
+        "product_l1"
+      ],
+      "filters": [
+        "org_code:eq:ORG_1001",
+        "year_month:gte:202601",
+        "year_month:lte:202606"
+      ]
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"columns\": [\n    \"product_l1\",\n    \"device_order_amount\",\n    \"device_profit_amount\"\n  ],\n  \"rows\": [\n    {\n      \"product_l1\": \"Compute\",\n      \"device_order_amount\": 7500.0,\n      \"device_profit_amount\": 1560.0\n    },\n    {\n      \"product_l1\": \"Network\",\n      \"device_order_amount\": 3800.0,\n      \"device_profit_amount\": 730.0\n    },\n    {\n      \"product_l1\": \"IoT\",\n      \"device_order_amount\": 3400.0,\n      \"device_profit_amount\": 650.0\n    }\n  ],\n  \"row_count\": 3,\n  \"truncated\": false\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": null,
+      "meta": null,
+      "data": null,
+      "is_error": false
+    }
+  }
+]

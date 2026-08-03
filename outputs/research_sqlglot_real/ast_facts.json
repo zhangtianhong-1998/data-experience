@@ -1,0 +1,1214 @@
+[
+  {
+    "report_id": "RPT_0001",
+    "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+    "component_no": 1,
+    "component_name": "图表4",
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ],
+    "clean_sql": "SELECT datain_1783070589517_temp.\"c7\" AS \"产品LV1\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp\nWHERE 1 = 1\nAND ( ( datain_1783070589517_temp.\"c7\" = ? ) AND ( datain_1783070589517_temp.\"c0\" = ? ))\nGROUP BY 1, 2\nORDER BY 1 ASC, 2 DESC\nLIMIT 1000000",
+    "exact_fingerprint": "fca6f294fd05aaa0f69b2ce5f9197ff051a7f2c4530e7d70a6b6396ca7a7cc76",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT datain_1783070589517_temp.\"c7\" AS \"产品LV1\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\" FROM dmprjdis_pfa.datain_1783070589517_temp AS datain_1783070589517_temp WHERE 1 = 1 AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?)) GROUP BY 1, 2 ORDER BY 1 ASC, 2 DESC LIMIT 1000000",
+    "ast_fingerprint": "111238f064dc362f397bdb4b10c87a46783a56bb58882e5dd80e52cafb4f0dec",
+    "structural_fingerprint": "9c820b2c75d7e5b3dfed4996e51cecb7d5a11405611933a67438cf52f5bb0f25",
+    "parameterized_sql": "SELECT datain_1783070589517_temp.\"c7\" AS \"产品LV1\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\" FROM dmprjdis_pfa.datain_1783070589517_temp AS datain_1783070589517_temp WHERE ? = ? AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?)) GROUP BY ?, ? ORDER BY ? ASC, ? DESC LIMIT ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ],
+    "table_aliases": {
+      "datain_1783070589517_temp": "dmprjdis_pfa.datain_1783070589517_temp"
+    },
+    "regex_table_agreement": true,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "产品LV1",
+        "expression": "datain_1783070589517_temp.\"c7\"",
+        "projection_sql": "datain_1783070589517_temp.\"c7\" AS \"产品LV1\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c7\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c7"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c7"
+        ]
+      },
+      {
+        "output_name": "年月",
+        "expression": "datain_1783070589517_temp.\"c2\"",
+        "projection_sql": "datain_1783070589517_temp.\"c2\" AS \"年月\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c2\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c2"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c2"
+        ]
+      },
+      {
+        "output_name": "Sum_设备订货",
+        "expression": "SUM(datain_1783070589517_temp.\"c27\")",
+        "projection_sql": "SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c27\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c27"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c27"
+        ]
+      },
+      {
+        "output_name": "Sum_设备利润",
+        "expression": "SUM(datain_1783070589517_temp.\"c28\")",
+        "projection_sql": "SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c28\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c28"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c28"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "1 = 1 AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?))",
+    "group_by": [
+      "1",
+      "2"
+    ],
+    "order_by": [
+      "1 ASC",
+      "2 DESC"
+    ],
+    "limit": "1000000",
+    "all_columns": [
+      {
+        "sql": "datain_1783070589517_temp.\"c0\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c0"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c2\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c2"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c27\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c27"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c28\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c28"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c7\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c7"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c7\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c7"
+      }
+    ],
+    "functions": {
+      "AND": 2,
+      "SUM": 2
+    },
+    "placeholder_count": 2,
+    "literal_count": 7
+  },
+  {
+    "report_id": "RPT_0001",
+    "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+    "component_no": 2,
+    "component_name": "图表3",
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ],
+    "clean_sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp\nWHERE 1 = 1\nAND ( ( datain_1783070589517_temp.\"c7\" = ? ) AND ( datain_1783070589517_temp.\"c0\" = ? ))\nGROUP BY 1, 2\nORDER BY 1 ASC, 2 DESC\nLIMIT 1000000",
+    "exact_fingerprint": "583f133d1813b899d4b05178dbbed8e208907c6766d41c0333dace347067aee5",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\" FROM dmprjdis_pfa.datain_1783070589517_temp AS datain_1783070589517_temp WHERE 1 = 1 AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?)) GROUP BY 1, 2 ORDER BY 1 ASC, 2 DESC LIMIT 1000000",
+    "ast_fingerprint": "c532afd5583c188495c1c184a9a6e681fa7c4f048e3dcebd4eabf7ef16ccfce5",
+    "structural_fingerprint": "b3466f47995e15ed1b627d662e2af4c7c5b5fa5fd08927ed188a9983a4d59394",
+    "parameterized_sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\" FROM dmprjdis_pfa.datain_1783070589517_temp AS datain_1783070589517_temp WHERE ? = ? AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?)) GROUP BY ?, ? ORDER BY ? ASC, ? DESC LIMIT ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ],
+    "table_aliases": {
+      "datain_1783070589517_temp": "dmprjdis_pfa.datain_1783070589517_temp"
+    },
+    "regex_table_agreement": true,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "内部分类",
+        "expression": "datain_1783070589517_temp.\"c10\"",
+        "projection_sql": "datain_1783070589517_temp.\"c10\" AS \"内部分类\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c10\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c10"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c10"
+        ]
+      },
+      {
+        "output_name": "年月",
+        "expression": "datain_1783070589517_temp.\"c2\"",
+        "projection_sql": "datain_1783070589517_temp.\"c2\" AS \"年月\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c2\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c2"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c2"
+        ]
+      },
+      {
+        "output_name": "Sum_设备订货",
+        "expression": "SUM(datain_1783070589517_temp.\"c27\")",
+        "projection_sql": "SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c27\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c27"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c27"
+        ]
+      },
+      {
+        "output_name": "Sum_设备利润",
+        "expression": "SUM(datain_1783070589517_temp.\"c28\")",
+        "projection_sql": "SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c28\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c28"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c28"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "1 = 1 AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?))",
+    "group_by": [
+      "1",
+      "2"
+    ],
+    "order_by": [
+      "1 ASC",
+      "2 DESC"
+    ],
+    "limit": "1000000",
+    "all_columns": [
+      {
+        "sql": "datain_1783070589517_temp.\"c0\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c0"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c10\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c10"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c2\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c2"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c27\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c27"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c28\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c28"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c7\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c7"
+      }
+    ],
+    "functions": {
+      "AND": 2,
+      "SUM": 2
+    },
+    "placeholder_count": 2,
+    "literal_count": 7
+  },
+  {
+    "report_id": "RPT_0001",
+    "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+    "component_no": 3,
+    "component_name": "图表6",
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ],
+    "clean_sql": "SELECT datain_1783070589517_temp.\"c6\" AS \"国家\", datain_1783070589517_temp.\"c12\" AS \"合同名称\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp\nWHERE 1 = 1\nAND ( ( datain_1783070589517_temp.\"c7\" = ? ) AND ( datain_1783070589517_temp.\"c0\" = ? ))\nGROUP BY 1, 2, 3\nORDER BY 1 ASC, 2 ASC, 3 DESC\nLIMIT 1000000",
+    "exact_fingerprint": "951f13724829854bb579fbf221348219d14b80fd213ffa9f1f3cd977b9b01a26",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT datain_1783070589517_temp.\"c6\" AS \"国家\", datain_1783070589517_temp.\"c12\" AS \"合同名称\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\" FROM dmprjdis_pfa.datain_1783070589517_temp AS datain_1783070589517_temp WHERE 1 = 1 AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?)) GROUP BY 1, 2, 3 ORDER BY 1 ASC, 2 ASC, 3 DESC LIMIT 1000000",
+    "ast_fingerprint": "e753eb86f34e3da67f537b3dfb1efa3c0e3edd2d631b05c36f7e63357aa6b08b",
+    "structural_fingerprint": "0cc8c5ba651e9929c3600f5a402b923d372d87668ddb985c4f18f3a1b185ae5f",
+    "parameterized_sql": "SELECT datain_1783070589517_temp.\"c6\" AS \"国家\", datain_1783070589517_temp.\"c12\" AS \"合同名称\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\" FROM dmprjdis_pfa.datain_1783070589517_temp AS datain_1783070589517_temp WHERE ? = ? AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?)) GROUP BY ?, ?, ? ORDER BY ? ASC, ? ASC, ? DESC LIMIT ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ],
+    "table_aliases": {
+      "datain_1783070589517_temp": "dmprjdis_pfa.datain_1783070589517_temp"
+    },
+    "regex_table_agreement": true,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "国家",
+        "expression": "datain_1783070589517_temp.\"c6\"",
+        "projection_sql": "datain_1783070589517_temp.\"c6\" AS \"国家\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c6\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c6"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c6"
+        ]
+      },
+      {
+        "output_name": "合同名称",
+        "expression": "datain_1783070589517_temp.\"c12\"",
+        "projection_sql": "datain_1783070589517_temp.\"c12\" AS \"合同名称\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c12\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c12"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c12"
+        ]
+      },
+      {
+        "output_name": "年月",
+        "expression": "datain_1783070589517_temp.\"c2\"",
+        "projection_sql": "datain_1783070589517_temp.\"c2\" AS \"年月\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c2\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c2"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c2"
+        ]
+      },
+      {
+        "output_name": "Sum_设备订货",
+        "expression": "SUM(datain_1783070589517_temp.\"c27\")",
+        "projection_sql": "SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c27\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c27"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c27"
+        ]
+      },
+      {
+        "output_name": "Sum_设备利润",
+        "expression": "SUM(datain_1783070589517_temp.\"c28\")",
+        "projection_sql": "SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c28\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c28"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c28"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "1 = 1 AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?))",
+    "group_by": [
+      "1",
+      "2",
+      "3"
+    ],
+    "order_by": [
+      "1 ASC",
+      "2 ASC",
+      "3 DESC"
+    ],
+    "limit": "1000000",
+    "all_columns": [
+      {
+        "sql": "datain_1783070589517_temp.\"c0\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c0"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c12\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c12"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c2\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c2"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c27\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c27"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c28\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c28"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c6\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c6"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c7\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c7"
+      }
+    ],
+    "functions": {
+      "AND": 2,
+      "SUM": 2
+    },
+    "placeholder_count": 2,
+    "literal_count": 9
+  },
+  {
+    "report_id": "RPT_0001",
+    "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+    "component_no": 4,
+    "component_name": "图表5",
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ],
+    "clean_sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp\nWHERE 1 = 1\nAND ( ( datain_1783070589517_temp.\"c7\" = ? ) AND ( datain_1783070589517_temp.\"c0\" = ? ))\nGROUP BY 1\nORDER BY 1 ASC\nLIMIT 1000000",
+    "exact_fingerprint": "8a16655bfe4b2f2a19c40a7b3b69317f2c37da189f67f1d94b58a4deb1871339",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\" FROM dmprjdis_pfa.datain_1783070589517_temp AS datain_1783070589517_temp WHERE 1 = 1 AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?)) GROUP BY 1 ORDER BY 1 ASC LIMIT 1000000",
+    "ast_fingerprint": "ad71809ce27e8356bad2d196c59e6eb6dc5c11230b925bba7b1c9ee58c37d1a6",
+    "structural_fingerprint": "7ef94f1443d9471af7bb4ba1ba95eb00a5c6d599946448395cebde249c3fb6a2",
+    "parameterized_sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\" FROM dmprjdis_pfa.datain_1783070589517_temp AS datain_1783070589517_temp WHERE ? = ? AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?)) GROUP BY ? ORDER BY ? ASC LIMIT ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ],
+    "table_aliases": {
+      "datain_1783070589517_temp": "dmprjdis_pfa.datain_1783070589517_temp"
+    },
+    "regex_table_agreement": true,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "内部分类",
+        "expression": "datain_1783070589517_temp.\"c10\"",
+        "projection_sql": "datain_1783070589517_temp.\"c10\" AS \"内部分类\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c10\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c10"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c10"
+        ]
+      },
+      {
+        "output_name": "Sum_设备订货",
+        "expression": "SUM(datain_1783070589517_temp.\"c27\")",
+        "projection_sql": "SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c27\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c27"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c27"
+        ]
+      },
+      {
+        "output_name": "Sum_设备利润",
+        "expression": "SUM(datain_1783070589517_temp.\"c28\")",
+        "projection_sql": "SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c28\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c28"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c28"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "1 = 1 AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?))",
+    "group_by": [
+      "1"
+    ],
+    "order_by": [
+      "1 ASC"
+    ],
+    "limit": "1000000",
+    "all_columns": [
+      {
+        "sql": "datain_1783070589517_temp.\"c0\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c0"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c10\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c10"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c27\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c27"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c28\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c28"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c7\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c7"
+      }
+    ],
+    "functions": {
+      "AND": 2,
+      "SUM": 2
+    },
+    "placeholder_count": 2,
+    "literal_count": 5
+  },
+  {
+    "report_id": "RPT_0001",
+    "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+    "component_no": 5,
+    "component_name": "图表2",
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ],
+    "clean_sql": "SELECT datain_1783070589517_temp.\"c2\" AS \"年月\", datain_1783070589517_temp.\"c7\" AS \"产品LV1\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp\nWHERE 1 = 1\nAND ( ( datain_1783070589517_temp.\"c7\" = ? ) AND ( datain_1783070589517_temp.\"c0\" = ? ))\nGROUP BY 1, 2\nORDER BY 1 ASC, 2 ASC\nLIMIT 1000000",
+    "exact_fingerprint": "af3ae3f92f838615ad33406b1d3d5322d6255409a3af08c34e41ede97b02e8c0",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT datain_1783070589517_temp.\"c2\" AS \"年月\", datain_1783070589517_temp.\"c7\" AS \"产品LV1\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\" FROM dmprjdis_pfa.datain_1783070589517_temp AS datain_1783070589517_temp WHERE 1 = 1 AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?)) GROUP BY 1, 2 ORDER BY 1 ASC, 2 ASC LIMIT 1000000",
+    "ast_fingerprint": "6a853066374bf818717796a115bbe3deb3a84688cfe60bced0939fa6c9e85590",
+    "structural_fingerprint": "5d7bf0690db480fc4fef4a504d873bc339243caab76c83d63ba2b824dbf46940",
+    "parameterized_sql": "SELECT datain_1783070589517_temp.\"c2\" AS \"年月\", datain_1783070589517_temp.\"c7\" AS \"产品LV1\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\" FROM dmprjdis_pfa.datain_1783070589517_temp AS datain_1783070589517_temp WHERE ? = ? AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?)) GROUP BY ?, ? ORDER BY ? ASC, ? ASC LIMIT ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ],
+    "table_aliases": {
+      "datain_1783070589517_temp": "dmprjdis_pfa.datain_1783070589517_temp"
+    },
+    "regex_table_agreement": true,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "年月",
+        "expression": "datain_1783070589517_temp.\"c2\"",
+        "projection_sql": "datain_1783070589517_temp.\"c2\" AS \"年月\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c2\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c2"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c2"
+        ]
+      },
+      {
+        "output_name": "产品LV1",
+        "expression": "datain_1783070589517_temp.\"c7\"",
+        "projection_sql": "datain_1783070589517_temp.\"c7\" AS \"产品LV1\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c7\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c7"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c7"
+        ]
+      },
+      {
+        "output_name": "Sum_设备订货",
+        "expression": "SUM(datain_1783070589517_temp.\"c27\")",
+        "projection_sql": "SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1783070589517_temp.\"c27\"",
+            "table": "datain_1783070589517_temp",
+            "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+            "name": "c27"
+          }
+        ],
+        "dependency_signature": [
+          "dmprjdis_pfa.datain_1783070589517_temp.c27"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "1 = 1 AND ((datain_1783070589517_temp.\"c7\" = ?) AND (datain_1783070589517_temp.\"c0\" = ?))",
+    "group_by": [
+      "1",
+      "2"
+    ],
+    "order_by": [
+      "1 ASC",
+      "2 ASC"
+    ],
+    "limit": "1000000",
+    "all_columns": [
+      {
+        "sql": "datain_1783070589517_temp.\"c0\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c0"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c2\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c2"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c27\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c27"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c7\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c7"
+      },
+      {
+        "sql": "datain_1783070589517_temp.\"c7\"",
+        "table": "datain_1783070589517_temp",
+        "resolved_table": "dmprjdis_pfa.datain_1783070589517_temp",
+        "name": "c7"
+      }
+    ],
+    "functions": {
+      "AND": 2,
+      "SUM": 1
+    },
+    "placeholder_count": 2,
+    "literal_count": 7
+  },
+  {
+    "report_id": "RPT_0002",
+    "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+    "component_no": 1,
+    "component_name": "图表2",
+    "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+    "sql_index": 1,
+    "occurrence_count": 2,
+    "regex_physical_tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ],
+    "clean_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp\nWHERE 1 = 1\nAND ( ( datain_1727073357645_temp.\"c0\" = ? ) AND ( datain_1727073357645_temp.\"c1\" = ? ))\nLIMIT 1000000",
+    "exact_fingerprint": "9502db568f8e39c6cc470641154246eae015411cb1314f6818250cecb804a6a0",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\" FROM dmgeorcdis.datain_1727073357645_temp AS datain_1727073357645_temp WHERE 1 = 1 AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?)) LIMIT 1000000",
+    "ast_fingerprint": "1dfedd802cfed40baef902c64ee8ce5a80db8649794f7a6d68b18304384492af",
+    "structural_fingerprint": "ad0b5a23ebc1fd7c880410d6c10cb4358fe4af87943327231f69f5c667a9d743",
+    "parameterized_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\" FROM dmgeorcdis.datain_1727073357645_temp AS datain_1727073357645_temp WHERE ? = ? AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?)) LIMIT ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ],
+    "table_aliases": {
+      "datain_1727073357645_temp": "dmgeorcdis.datain_1727073357645_temp"
+    },
+    "regex_table_agreement": true,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "LONG_COL_0",
+        "expression": "SUM(datain_1727073357645_temp.\"c2\")",
+        "projection_sql": "SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1727073357645_temp.\"c2\"",
+            "table": "datain_1727073357645_temp",
+            "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+            "name": "c2"
+          }
+        ],
+        "dependency_signature": [
+          "dmgeorcdis.datain_1727073357645_temp.c2"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "1 = 1 AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?))",
+    "group_by": [],
+    "order_by": [],
+    "limit": "1000000",
+    "all_columns": [
+      {
+        "sql": "datain_1727073357645_temp.\"c0\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c0"
+      },
+      {
+        "sql": "datain_1727073357645_temp.\"c1\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c1"
+      },
+      {
+        "sql": "datain_1727073357645_temp.\"c2\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c2"
+      }
+    ],
+    "functions": {
+      "AND": 2,
+      "SUM": 1
+    },
+    "placeholder_count": 2,
+    "literal_count": 3
+  },
+  {
+    "report_id": "RPT_0002",
+    "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+    "component_no": 2,
+    "component_name": "图表10",
+    "dataset_path": "Management_Analysis/w00819891/ToB补录表250511",
+    "sql_index": 1,
+    "occurrence_count": 2,
+    "regex_physical_tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ],
+    "clean_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp\nWHERE 1 = 1\nAND ( ( datain_1727073357645_temp.\"c0\" = ? ) AND ( datain_1727073357645_temp.\"c1\" = ? ))\nLIMIT 1000000",
+    "exact_fingerprint": "9502db568f8e39c6cc470641154246eae015411cb1314f6818250cecb804a6a0",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\" FROM dmgeorcdis.datain_1727073357645_temp AS datain_1727073357645_temp WHERE 1 = 1 AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?)) LIMIT 1000000",
+    "ast_fingerprint": "1dfedd802cfed40baef902c64ee8ce5a80db8649794f7a6d68b18304384492af",
+    "structural_fingerprint": "ad0b5a23ebc1fd7c880410d6c10cb4358fe4af87943327231f69f5c667a9d743",
+    "parameterized_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\" FROM dmgeorcdis.datain_1727073357645_temp AS datain_1727073357645_temp WHERE ? = ? AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?)) LIMIT ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ],
+    "table_aliases": {
+      "datain_1727073357645_temp": "dmgeorcdis.datain_1727073357645_temp"
+    },
+    "regex_table_agreement": true,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "LONG_COL_0",
+        "expression": "SUM(datain_1727073357645_temp.\"c2\")",
+        "projection_sql": "SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1727073357645_temp.\"c2\"",
+            "table": "datain_1727073357645_temp",
+            "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+            "name": "c2"
+          }
+        ],
+        "dependency_signature": [
+          "dmgeorcdis.datain_1727073357645_temp.c2"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "1 = 1 AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?))",
+    "group_by": [],
+    "order_by": [],
+    "limit": "1000000",
+    "all_columns": [
+      {
+        "sql": "datain_1727073357645_temp.\"c0\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c0"
+      },
+      {
+        "sql": "datain_1727073357645_temp.\"c1\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c1"
+      },
+      {
+        "sql": "datain_1727073357645_temp.\"c2\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c2"
+      }
+    ],
+    "functions": {
+      "AND": 2,
+      "SUM": 1
+    },
+    "placeholder_count": 2,
+    "literal_count": 3
+  },
+  {
+    "report_id": "RPT_0002",
+    "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+    "component_no": 2,
+    "component_name": "图表10",
+    "dataset_path": "Management_Analysis/w00819891/ToB补录表250511",
+    "sql_index": 2,
+    "occurrence_count": 2,
+    "regex_physical_tables": [
+      "dmregdis.datain_1757258241454_temp"
+    ],
+    "clean_sql": "SELECT MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\"\nFROM dmregdis.datain_1757258241454_temp datain_1757258241454_temp\nWHERE 1 = 1\nAND ( datain_1757258241454_temp.\"c0\" = ? )\nLIMIT 1000000",
+    "exact_fingerprint": "35500715d3de9aed9d6d6ba436dada9ca73fd9072c60e459a24d3f2772a9d85e",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\" FROM dmregdis.datain_1757258241454_temp AS datain_1757258241454_temp WHERE 1 = 1 AND (datain_1757258241454_temp.\"c0\" = ?) LIMIT 1000000",
+    "ast_fingerprint": "c28189fd9083a558d65c1ca68d1258d8ce97ebc158ed32a9623b7fc64fd1d43d",
+    "structural_fingerprint": "eb975de5dcbbc11e7d6359d374fc6d49da56fa8bc96882e5c966b98c7f64341d",
+    "parameterized_sql": "SELECT MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\" FROM dmregdis.datain_1757258241454_temp AS datain_1757258241454_temp WHERE ? = ? AND (datain_1757258241454_temp.\"c0\" = ?) LIMIT ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dmregdis.datain_1757258241454_temp"
+    ],
+    "table_aliases": {
+      "datain_1757258241454_temp": "dmregdis.datain_1757258241454_temp"
+    },
+    "regex_table_agreement": true,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "LONG_COL_0",
+        "expression": "MAX(datain_1757258241454_temp.\"c2\")",
+        "projection_sql": "MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "MAX"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1757258241454_temp.\"c2\"",
+            "table": "datain_1757258241454_temp",
+            "resolved_table": "dmregdis.datain_1757258241454_temp",
+            "name": "c2"
+          }
+        ],
+        "dependency_signature": [
+          "dmregdis.datain_1757258241454_temp.c2"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "1 = 1 AND (datain_1757258241454_temp.\"c0\" = ?)",
+    "group_by": [],
+    "order_by": [],
+    "limit": "1000000",
+    "all_columns": [
+      {
+        "sql": "datain_1757258241454_temp.\"c0\"",
+        "table": "datain_1757258241454_temp",
+        "resolved_table": "dmregdis.datain_1757258241454_temp",
+        "name": "c0"
+      },
+      {
+        "sql": "datain_1757258241454_temp.\"c2\"",
+        "table": "datain_1757258241454_temp",
+        "resolved_table": "dmregdis.datain_1757258241454_temp",
+        "name": "c2"
+      }
+    ],
+    "functions": {
+      "AND": 1,
+      "MAX": 1
+    },
+    "placeholder_count": 1,
+    "literal_count": 3
+  },
+  {
+    "report_id": "RPT_0002",
+    "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+    "component_no": 3,
+    "component_name": "图表12",
+    "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+    "sql_index": 1,
+    "occurrence_count": 2,
+    "regex_physical_tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ],
+    "clean_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp\nWHERE 1 = 1\nAND ( ( datain_1727073357645_temp.\"c0\" = ? ) AND ( datain_1727073357645_temp.\"c1\" = ? ))\nLIMIT 1000000",
+    "exact_fingerprint": "9502db568f8e39c6cc470641154246eae015411cb1314f6818250cecb804a6a0",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\" FROM dmgeorcdis.datain_1727073357645_temp AS datain_1727073357645_temp WHERE 1 = 1 AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?)) LIMIT 1000000",
+    "ast_fingerprint": "1dfedd802cfed40baef902c64ee8ce5a80db8649794f7a6d68b18304384492af",
+    "structural_fingerprint": "ad0b5a23ebc1fd7c880410d6c10cb4358fe4af87943327231f69f5c667a9d743",
+    "parameterized_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\" FROM dmgeorcdis.datain_1727073357645_temp AS datain_1727073357645_temp WHERE ? = ? AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?)) LIMIT ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ],
+    "table_aliases": {
+      "datain_1727073357645_temp": "dmgeorcdis.datain_1727073357645_temp"
+    },
+    "regex_table_agreement": true,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "LONG_COL_0",
+        "expression": "SUM(datain_1727073357645_temp.\"c2\")",
+        "projection_sql": "SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1727073357645_temp.\"c2\"",
+            "table": "datain_1727073357645_temp",
+            "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+            "name": "c2"
+          }
+        ],
+        "dependency_signature": [
+          "dmgeorcdis.datain_1727073357645_temp.c2"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "1 = 1 AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?))",
+    "group_by": [],
+    "order_by": [],
+    "limit": "1000000",
+    "all_columns": [
+      {
+        "sql": "datain_1727073357645_temp.\"c0\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c0"
+      },
+      {
+        "sql": "datain_1727073357645_temp.\"c1\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c1"
+      },
+      {
+        "sql": "datain_1727073357645_temp.\"c2\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c2"
+      }
+    ],
+    "functions": {
+      "AND": 2,
+      "SUM": 1
+    },
+    "placeholder_count": 2,
+    "literal_count": 3
+  },
+  {
+    "report_id": "RPT_0002",
+    "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+    "component_no": 4,
+    "component_name": "图表16",
+    "dataset_path": "Management_Analysis/w00819891/【北京】经营月报",
+    "sql_index": 1,
+    "occurrence_count": 2,
+    "regex_physical_tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ],
+    "clean_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp\nWHERE 1 = 1\nAND ( ( datain_1727073357645_temp.\"c0\" = ? ) AND ( datain_1727073357645_temp.\"c1\" = ? ))\nLIMIT 1000000",
+    "exact_fingerprint": "9502db568f8e39c6cc470641154246eae015411cb1314f6818250cecb804a6a0",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\" FROM dmgeorcdis.datain_1727073357645_temp AS datain_1727073357645_temp WHERE 1 = 1 AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?)) LIMIT 1000000",
+    "ast_fingerprint": "1dfedd802cfed40baef902c64ee8ce5a80db8649794f7a6d68b18304384492af",
+    "structural_fingerprint": "ad0b5a23ebc1fd7c880410d6c10cb4358fe4af87943327231f69f5c667a9d743",
+    "parameterized_sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\" FROM dmgeorcdis.datain_1727073357645_temp AS datain_1727073357645_temp WHERE ? = ? AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?)) LIMIT ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ],
+    "table_aliases": {
+      "datain_1727073357645_temp": "dmgeorcdis.datain_1727073357645_temp"
+    },
+    "regex_table_agreement": true,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "LONG_COL_0",
+        "expression": "SUM(datain_1727073357645_temp.\"c2\")",
+        "projection_sql": "SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "datain_1727073357645_temp.\"c2\"",
+            "table": "datain_1727073357645_temp",
+            "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+            "name": "c2"
+          }
+        ],
+        "dependency_signature": [
+          "dmgeorcdis.datain_1727073357645_temp.c2"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "1 = 1 AND ((datain_1727073357645_temp.\"c0\" = ?) AND (datain_1727073357645_temp.\"c1\" = ?))",
+    "group_by": [],
+    "order_by": [],
+    "limit": "1000000",
+    "all_columns": [
+      {
+        "sql": "datain_1727073357645_temp.\"c0\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c0"
+      },
+      {
+        "sql": "datain_1727073357645_temp.\"c1\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c1"
+      },
+      {
+        "sql": "datain_1727073357645_temp.\"c2\"",
+        "table": "datain_1727073357645_temp",
+        "resolved_table": "dmgeorcdis.datain_1727073357645_temp",
+        "name": "c2"
+      }
+    ],
+    "functions": {
+      "AND": 2,
+      "SUM": 1
+    },
+    "placeholder_count": 2,
+    "literal_count": 3
+  }
+]

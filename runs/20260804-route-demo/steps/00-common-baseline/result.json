@@ -1,0 +1,8 @@
+{
+  "exit_code": 127,
+  "launch_error": "FileNotFoundError: relative interpreter path was resolved after changing cwd; no demo code ran.",
+  "duration_seconds": 0.0,
+  "outputs": [],
+  "classification": "harness_path_error",
+  "demo_code_executed": false
+}

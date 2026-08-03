@@ -1,0 +1,1023 @@
+[
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 1,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "产品LV1",
+    "normalized_label": "产品lv1",
+    "is_generic_label": false,
+    "implementation_key": "db208423f1bd5095",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c7"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 1,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "年月",
+    "normalized_label": "年月",
+    "is_generic_label": false,
+    "implementation_key": "9d69ae265d50bd9f",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c2"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 1,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "Sum_设备订货",
+    "normalized_label": "设备订货",
+    "is_generic_label": false,
+    "implementation_key": "941ca9bc20aba393",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c27"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 1,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "Sum_设备利润",
+    "normalized_label": "设备利润",
+    "is_generic_label": false,
+    "implementation_key": "195ebb63b03a73b1",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c28"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 2,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "内部分类",
+    "normalized_label": "内部分类",
+    "is_generic_label": false,
+    "implementation_key": "cb1e3cab5d5a0fcf",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c10"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 2,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "年月",
+    "normalized_label": "年月",
+    "is_generic_label": false,
+    "implementation_key": "9d69ae265d50bd9f",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c2"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 2,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "Sum_设备订货",
+    "normalized_label": "设备订货",
+    "is_generic_label": false,
+    "implementation_key": "941ca9bc20aba393",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c27"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 2,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "Sum_设备利润",
+    "normalized_label": "设备利润",
+    "is_generic_label": false,
+    "implementation_key": "195ebb63b03a73b1",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c28"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 3,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "国家",
+    "normalized_label": "国家",
+    "is_generic_label": false,
+    "implementation_key": "00a8fecb437398a9",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c6"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 3,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "合同名称",
+    "normalized_label": "合同名称",
+    "is_generic_label": false,
+    "implementation_key": "a82000c4bdf550f0",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c12"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 3,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "年月",
+    "normalized_label": "年月",
+    "is_generic_label": false,
+    "implementation_key": "9d69ae265d50bd9f",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c2"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 3,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "Sum_设备订货",
+    "normalized_label": "设备订货",
+    "is_generic_label": false,
+    "implementation_key": "941ca9bc20aba393",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c27"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 3,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "Sum_设备利润",
+    "normalized_label": "设备利润",
+    "is_generic_label": false,
+    "implementation_key": "195ebb63b03a73b1",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c28"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 4,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "内部分类",
+    "normalized_label": "内部分类",
+    "is_generic_label": false,
+    "implementation_key": "cb1e3cab5d5a0fcf",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c10"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 4,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "Sum_设备订货",
+    "normalized_label": "设备订货",
+    "is_generic_label": false,
+    "implementation_key": "941ca9bc20aba393",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c27"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 4,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "Sum_设备利润",
+    "normalized_label": "设备利润",
+    "is_generic_label": false,
+    "implementation_key": "195ebb63b03a73b1",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c28"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 5,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "年月",
+    "normalized_label": "年月",
+    "is_generic_label": false,
+    "implementation_key": "9d69ae265d50bd9f",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c2"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 5,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "产品LV1",
+    "normalized_label": "产品lv1",
+    "is_generic_label": false,
+    "implementation_key": "db208423f1bd5095",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c7"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 5,
+    "dataset_path": "ipfm/w79184/集05订货利润",
+    "label": "Sum_设备订货",
+    "normalized_label": "设备订货",
+    "is_generic_label": false,
+    "implementation_key": "941ca9bc20aba393",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmprjdis_pfa.datain_1783070589517_temp.c27"
+    ],
+    "query_tables": [
+      "dmprjdis_pfa.datain_1783070589517_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 1,
+    "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+    "label": "LONG_COL_0",
+    "normalized_label": "longcol0",
+    "is_generic_label": true,
+    "implementation_key": "2b0a293f4b4aa829",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmgeorcdis.datain_1727073357645_temp.c2"
+    ],
+    "query_tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 2,
+    "dataset_path": "Management_Analysis/w00819891/ToB补录表250511",
+    "label": "LONG_COL_0",
+    "normalized_label": "longcol0",
+    "is_generic_label": true,
+    "implementation_key": "2b0a293f4b4aa829",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmgeorcdis.datain_1727073357645_temp.c2"
+    ],
+    "query_tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 2,
+    "dataset_path": "Management_Analysis/w00819891/ToB补录表250511",
+    "label": "LONG_COL_0",
+    "normalized_label": "longcol0",
+    "is_generic_label": true,
+    "implementation_key": "bf399d5f14084e9e",
+    "role": "measure_candidate",
+    "aggregates": [
+      "MAX"
+    ],
+    "dependencies": [
+      "dmregdis.datain_1757258241454_temp.c2"
+    ],
+    "query_tables": [
+      "dmregdis.datain_1757258241454_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 3,
+    "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+    "label": "LONG_COL_0",
+    "normalized_label": "longcol0",
+    "is_generic_label": true,
+    "implementation_key": "2b0a293f4b4aa829",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmgeorcdis.datain_1727073357645_temp.c2"
+    ],
+    "query_tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_real/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 4,
+    "dataset_path": "Management_Analysis/w00819891/【北京】经营月报",
+    "label": "LONG_COL_0",
+    "normalized_label": "longcol0",
+    "is_generic_label": true,
+    "implementation_key": "2b0a293f4b4aa829",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dmgeorcdis.datain_1727073357645_temp.c2"
+    ],
+    "query_tables": [
+      "dmgeorcdis.datain_1727073357645_temp"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0001",
+    "component_no": 1,
+    "dataset_path": "经营汇总",
+    "label": "LONG_COL_0",
+    "normalized_label": "longcol0",
+    "is_generic_label": true,
+    "implementation_key": "b8bb59aea362cf8d",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "ads.ads_operation_daily.metric_value"
+    ],
+    "query_tables": [
+      "ads.ads_operation_daily"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 1,
+    "dataset_path": null,
+    "label": "日期",
+    "normalized_label": "日期",
+    "is_generic_label": false,
+    "implementation_key": "f0861c7c83efbea5",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "iot.dwd_device_status.stat_date"
+    ],
+    "query_tables": [
+      "iot.dim_device",
+      "iot.dwd_device_status"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 1,
+    "dataset_path": null,
+    "label": "设备类型",
+    "normalized_label": "设备类型",
+    "is_generic_label": false,
+    "implementation_key": "a3020692b1e6ec86",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "iot.dim_device.device_type"
+    ],
+    "query_tables": [
+      "iot.dim_device",
+      "iot.dwd_device_status"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 1,
+    "dataset_path": null,
+    "label": "告警次数",
+    "normalized_label": "告警次数",
+    "is_generic_label": false,
+    "implementation_key": "41efcbcb93442ea4",
+    "role": "measure_candidate",
+    "aggregates": [
+      "COUNT"
+    ],
+    "dependencies": [
+      "iot.dwd_device_status.alarm_code"
+    ],
+    "query_tables": [
+      "iot.dim_device",
+      "iot.dwd_device_status"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 2,
+    "dataset_path": "Operations/华东/设备运行主题/设备状态宽表",
+    "label": "日期",
+    "normalized_label": "日期",
+    "is_generic_label": false,
+    "implementation_key": "f0861c7c83efbea5",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "iot.dwd_device_status.stat_date"
+    ],
+    "query_tables": [
+      "iot.dim_device",
+      "iot.dwd_device_status"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 2,
+    "dataset_path": "Operations/华东/设备运行主题/设备状态宽表",
+    "label": "设备类型",
+    "normalized_label": "设备类型",
+    "is_generic_label": false,
+    "implementation_key": "a3020692b1e6ec86",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "iot.dim_device.device_type"
+    ],
+    "query_tables": [
+      "iot.dim_device",
+      "iot.dwd_device_status"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 2,
+    "dataset_path": "Operations/华东/设备运行主题/设备状态宽表",
+    "label": "告警次数",
+    "normalized_label": "告警次数",
+    "is_generic_label": false,
+    "implementation_key": "41efcbcb93442ea4",
+    "role": "measure_candidate",
+    "aggregates": [
+      "COUNT"
+    ],
+    "dependencies": [
+      "iot.dwd_device_status.alarm_code"
+    ],
+    "query_tables": [
+      "iot.dim_device",
+      "iot.dwd_device_status"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 2,
+    "dataset_path": "Operations/华东/设备运行主题/设备状态宽表",
+    "label": "日期",
+    "normalized_label": "日期",
+    "is_generic_label": false,
+    "implementation_key": "f0861c7c83efbea5",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "iot.dwd_device_status.stat_date"
+    ],
+    "query_tables": [
+      "iot.dwd_device_status"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0002",
+    "component_no": 2,
+    "dataset_path": "Operations/华东/设备运行主题/设备状态宽表",
+    "label": "最高温度",
+    "normalized_label": "最高温度",
+    "is_generic_label": false,
+    "implementation_key": "efba11c4f1f6116e",
+    "role": "measure_candidate",
+    "aggregates": [
+      "MAX"
+    ],
+    "dependencies": [
+      "iot.dwd_device_status.temperature"
+    ],
+    "query_tables": [
+      "iot.dwd_device_status"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 1,
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "label": "月份",
+    "normalized_label": "月份",
+    "is_generic_label": false,
+    "implementation_key": "7da13b6534916dae",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dw.dwd_sales_order.month_key"
+    ],
+    "query_tables": [
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 1,
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "label": "区域",
+    "normalized_label": "区域",
+    "is_generic_label": false,
+    "implementation_key": "9106d5d9637f6841",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dw.dwd_sales_order.region_name"
+    ],
+    "query_tables": [
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 1,
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "label": "销售金额",
+    "normalized_label": "销售金额",
+    "is_generic_label": false,
+    "implementation_key": "30edc4be35638bb5",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dw.dwd_sales_order.sales_amount"
+    ],
+    "query_tables": [
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 2,
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "label": "产品类型",
+    "normalized_label": "产品类型",
+    "is_generic_label": false,
+    "implementation_key": "5872c7a34d5628f9",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dw.dwd_sales_order.product_type"
+    ],
+    "query_tables": [
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 2,
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "label": "订单数",
+    "normalized_label": "订单数",
+    "is_generic_label": false,
+    "implementation_key": "9d348c06798e0a90",
+    "role": "measure_candidate",
+    "aggregates": [
+      "COUNT"
+    ],
+    "dependencies": [
+      "dw.dwd_sales_order.order_id"
+    ],
+    "query_tables": [
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 2,
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "label": "销售金额",
+    "normalized_label": "销售金额",
+    "is_generic_label": false,
+    "implementation_key": "30edc4be35638bb5",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dw.dwd_sales_order.sales_amount"
+    ],
+    "query_tables": [
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 3,
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "label": "产品类型",
+    "normalized_label": "产品类型",
+    "is_generic_label": false,
+    "implementation_key": "5872c7a34d5628f9",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dw.dwd_sales_order.product_type"
+    ],
+    "query_tables": [
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 3,
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "label": "订单数",
+    "normalized_label": "订单数",
+    "is_generic_label": false,
+    "implementation_key": "9d348c06798e0a90",
+    "role": "measure_candidate",
+    "aggregates": [
+      "COUNT"
+    ],
+    "dependencies": [
+      "dw.dwd_sales_order.order_id"
+    ],
+    "query_tables": [
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 3,
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "label": "销售金额",
+    "normalized_label": "销售金额",
+    "is_generic_label": false,
+    "implementation_key": "30edc4be35638bb5",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dw.dwd_sales_order.sales_amount"
+    ],
+    "query_tables": [
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 4,
+    "dataset_path": "Finance/回款事实集",
+    "label": "月份",
+    "normalized_label": "月份",
+    "is_generic_label": false,
+    "implementation_key": "c2c218c81c802051",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dw.dwd_receipt.month_key"
+    ],
+    "query_tables": [
+      "dw.dwd_receipt",
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 4,
+    "dataset_path": "Finance/回款事实集",
+    "label": "回款金额",
+    "normalized_label": "回款金额",
+    "is_generic_label": false,
+    "implementation_key": "c07dd74d9af535f8",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dw.dwd_receipt.receipt_amount"
+    ],
+    "query_tables": [
+      "dw.dwd_receipt",
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0003",
+    "component_no": 4,
+    "dataset_path": "Finance/回款事实集",
+    "label": "销售金额",
+    "normalized_label": "销售金额",
+    "is_generic_label": false,
+    "implementation_key": "30edc4be35638bb5",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dw.dwd_sales_order.sales_amount"
+    ],
+    "query_tables": [
+      "dw.dwd_receipt",
+      "dw.dwd_sales_order"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0004",
+    "component_no": 2,
+    "dataset_path": "集团/制造中心/设备一部/u7788/温度传感器明细",
+    "label": "采集时间",
+    "normalized_label": "采集时间",
+    "is_generic_label": false,
+    "implementation_key": "c5f76431c83f6401",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "iot.dwd_sensor_temperature.collect_time"
+    ],
+    "query_tables": [
+      "iot.dwd_sensor_temperature"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0004",
+    "component_no": 2,
+    "dataset_path": "集团/制造中心/设备一部/u7788/温度传感器明细",
+    "label": "传感器编号",
+    "normalized_label": "传感器编号",
+    "is_generic_label": false,
+    "implementation_key": "7210b2ebedbce2df",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "iot.dwd_sensor_temperature.sensor_code"
+    ],
+    "query_tables": [
+      "iot.dwd_sensor_temperature"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0004",
+    "component_no": 2,
+    "dataset_path": "集团/制造中心/设备一部/u7788/温度传感器明细",
+    "label": "平均温度",
+    "normalized_label": "平均温度",
+    "is_generic_label": false,
+    "implementation_key": "33aa1a6d3426b783",
+    "role": "measure_candidate",
+    "aggregates": [
+      "AVG"
+    ],
+    "dependencies": [
+      "iot.dwd_sensor_temperature.temperature"
+    ],
+    "query_tables": [
+      "iot.dwd_sensor_temperature"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0005",
+    "component_no": 1,
+    "dataset_path": "经营汇总",
+    "label": "LONG_COL_0",
+    "normalized_label": "longcol0",
+    "is_generic_label": true,
+    "implementation_key": "b8bb59aea362cf8d",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "ads.ads_operation_daily.metric_value"
+    ],
+    "query_tables": [
+      "ads.ads_operation_daily"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0006",
+    "component_no": 1,
+    "dataset_path": "Finance/回款事实集",
+    "label": "客户等级",
+    "normalized_label": "客户等级",
+    "is_generic_label": false,
+    "implementation_key": "2d2a0212c9b75d3c",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dw.dim_customer.customer_level"
+    ],
+    "query_tables": [
+      "dw.dim_customer",
+      "dw.dwd_receipt"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0006",
+    "component_no": 1,
+    "dataset_path": "Finance/回款事实集",
+    "label": "回款金额",
+    "normalized_label": "回款金额",
+    "is_generic_label": false,
+    "implementation_key": "c07dd74d9af535f8",
+    "role": "measure_candidate",
+    "aggregates": [
+      "SUM"
+    ],
+    "dependencies": [
+      "dw.dwd_receipt.receipt_amount"
+    ],
+    "query_tables": [
+      "dw.dim_customer",
+      "dw.dwd_receipt"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0006",
+    "component_no": 2,
+    "dataset_path": "公共/组织日历",
+    "label": "日期",
+    "normalized_label": "日期",
+    "is_generic_label": false,
+    "implementation_key": "cec7ba6185c63be8",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dim.dim_calendar.calendar_date"
+    ],
+    "query_tables": [
+      "dim.dim_calendar"
+    ]
+  },
+  {
+    "source_file": "outputs/research_sqlglot_demo_v2/ast_facts.json",
+    "report_id": "RPT_0006",
+    "component_no": 2,
+    "dataset_path": "公共/组织日历",
+    "label": "月份名称",
+    "normalized_label": "月份名称",
+    "is_generic_label": false,
+    "implementation_key": "3664aa916db82594",
+    "role": "dimension_candidate",
+    "aggregates": [],
+    "dependencies": [
+      "dim.dim_calendar.month_name"
+    ],
+    "query_tables": [
+      "dim.dim_calendar"
+    ]
+  }
+]

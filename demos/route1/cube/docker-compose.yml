@@ -1,0 +1,17 @@
+services:
+  cube:
+    image: cubejs/cube:latest
+    container_name: data-experience-cube
+    ports:
+      - "4000:4000"
+    environment:
+      CUBEJS_DEV_MODE: "true"
+      CUBEJS_DB_TYPE: duckdb
+      CUBEJS_DB_DUCKDB_DATABASE_PATH: /cube/data/demo.duckdb
+      CUBEJS_DB_DUCKDB_SCHEMA: main
+      CUBEJS_API_SECRET: local-demo-not-for-production
+    volumes:
+      - ./cube.js:/cube/conf/cube.js:ro
+      - ./model:/cube/conf/model:ro
+      - ../../common/demo.duckdb:/cube/data/demo.duckdb
+

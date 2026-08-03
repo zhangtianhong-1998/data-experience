@@ -1,0 +1,8 @@
+
+
+⠋ Initiating query…
+
+⠙ Initiating query…
+✔ Success 🦄 - query completed after 0.04 seconds
+🖨 Wrote query output to results/org1001_h1_by_product.csv
+

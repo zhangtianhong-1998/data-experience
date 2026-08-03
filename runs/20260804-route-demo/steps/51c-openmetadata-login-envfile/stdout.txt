@@ -1,0 +1,7 @@
+{
+  "token_saved_outside_git": true,
+  "token_length": 718,
+  "subject": "admin",
+  "issuer": "open-metadata.org",
+  "token_value_logged": false
+}

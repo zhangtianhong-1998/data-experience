@@ -1,0 +1,13 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 80.514,
+  "stdout_sha256": "9d1e722ef016ed451d54e33424c479fdbaf97d7408742bf74a7b3d95686815a2",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route3/linkedin_text2sql/results/agent_run.stdout.json",
+      "exists": false
+    }
+  ]
+}

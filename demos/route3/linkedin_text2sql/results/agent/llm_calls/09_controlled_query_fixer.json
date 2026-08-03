@@ -1,0 +1,161 @@
+{
+  "stage": "09_controlled_query_fixer",
+  "model": "glm-5.2",
+  "prompt": {
+    "system": "Repair the SQL using the recommended table while preserving all filters. Return {sql,changes:[]}.",
+    "input": {
+      "bad_sql": "SELECT product_l1, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_order_fact WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1 ORDER BY product_l1",
+      "researcher": {
+        "diagnosis": "SQL 使用了不存在的表 `device_order_fact`。根据索引，正确的设备订货事实表为已认证表 `device_orders`，该表包含所需字段：`org_code`、`year_month`、`product_l1`、`order_amount`、`profit_amount`、`status`，并明确只统计 `confirmed` 订单。",
+        "replacement_table": "device_orders",
+        "evidence": "device_orders 设备订货事实表，字段包括：device_business order_date year_month org_code product_l1 order_amount profit_amount status；状态为 confirmed 或 cancelled，指标只统计 confirmed；certified=true，deprecated=false。"
+      },
+      "schemas": {
+        "device_orders": [
+          {
+            "name": "order_id",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": null
+          },
+          {
+            "name": "order_date",
+            "type": "DATE",
+            "nullable": true,
+            "description": "订货日期"
+          },
+          {
+            "name": "year_month",
+            "type": "INTEGER",
+            "nullable": true,
+            "description": "YYYYMM 整数月份"
+          },
+          {
+            "name": "org_code",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": "组织编码，分析必须显式限定"
+          },
+          {
+            "name": "product_code",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": null
+          },
+          {
+            "name": "product_l1",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": "产品一级分类"
+          },
+          {
+            "name": "order_amount",
+            "type": "INTEGER",
+            "nullable": true,
+            "description": "设备订货金额，演示单位为 CNY"
+          },
+          {
+            "name": "profit_amount",
+            "type": "INTEGER",
+            "nullable": true,
+            "description": "设备利润金额，演示单位为 CNY"
+          },
+          {
+            "name": "country",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": null
+          },
+          {
+            "name": "status",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": "confirmed 或 cancelled；指标只统计 confirmed"
+          }
+        ],
+        "product_master": [
+          {
+            "name": "product_code",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": "产品编码"
+          },
+          {
+            "name": "product_l1",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": "产品一级分类"
+          },
+          {
+            "name": "product_name",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": "产品名称"
+          }
+        ],
+        "sales_orders": [
+          {
+            "name": "sales_order_id",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": null
+          },
+          {
+            "name": "order_date",
+            "type": "DATE",
+            "nullable": true,
+            "description": null
+          },
+          {
+            "name": "org_code",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": null
+          },
+          {
+            "name": "product_l1",
+            "type": "VARCHAR",
+            "nullable": true,
+            "description": null
+          },
+          {
+            "name": "sales_amount",
+            "type": "BIGINT",
+            "nullable": true,
+            "description": "销售金额"
+          }
+        ]
+      }
+    }
+  },
+  "api_key_logged": false,
+  "success": true,
+  "fallback_used": false,
+  "response": "```json\n{\n  \"sql\": \"SELECT product_l1, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1 ORDER BY product_l1\",\n  \"changes\": [\n    {\n      \"type\": \"table_replacement\",\n      \"from\": \"device_order_fact\",\n      \"to\": \"device_orders\",\n      \"reason\": \"表 device_order_fact 不存在；根据索引，已认证的设备订货事实表为 device_orders，且包含全部所需字段（org_code、year_month、product_l1、order_amount、profit_amount、status）。\"\n    }\n  ]\n}\n```",
+  "result": {
+    "sql": "SELECT product_l1, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1 ORDER BY product_l1",
+    "changes": [
+      {
+        "type": "table_replacement",
+        "from": "device_order_fact",
+        "to": "device_orders",
+        "reason": "表 device_order_fact 不存在；根据索引，已认证的设备订货事实表为 device_orders，且包含全部所需字段（org_code、year_month、product_l1、order_amount、profit_amount、status）。"
+      }
+    ]
+  },
+  "usage": {
+    "completion_tokens": 316,
+    "prompt_tokens": 744,
+    "total_tokens": 1060,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

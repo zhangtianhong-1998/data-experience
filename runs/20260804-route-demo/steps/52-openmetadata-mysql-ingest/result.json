@@ -1,0 +1,13 @@
+{
+  "exit_code": 125,
+  "launch_error": null,
+  "duration_seconds": 0.019,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "7496e0141dea9e7093b991965300ddca6b138d22c3ae8e9656899ac0a19ab263",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/results/ingestion_report.txt",
+      "exists": false
+    }
+  ]
+}

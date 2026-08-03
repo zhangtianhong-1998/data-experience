@@ -1,0 +1,19 @@
+[0m17:33:25  Running with dbt=1.11.12
+[0m17:33:26  Registered adapter: duckdb=1.10.1
+[0m17:33:26  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m17:33:26  Found 2 models, 1 seed, 3 metrics, 486 macros, 1 semantic model
+[0m17:33:26  
+[0m17:33:26  Concurrency: 1 threads (target='dev')
+[0m17:33:26  
+[0m17:33:26  1 of 3 START sql table model main.all_days ..................................... [RUN]
+[0m17:33:26  1 of 3 OK created sql table model main.all_days ................................ [[32mOK[0m in 0.04s]
+[0m17:33:26  2 of 3 START seed file main.device_orders_seed ................................. [RUN]
+[0m17:33:26  2 of 3 OK loaded seed file main.device_orders_seed ............................. [[32mINSERT 17[0m in 0.02s]
+[0m17:33:26  3 of 3 START sql view model main.device_orders ................................. [RUN]
+[0m17:33:26  3 of 3 OK created sql view model main.device_orders ............................ [[32mOK[0m in 0.05s]
+[0m17:33:26  
+[0m17:33:26  Finished running 1 seed, 1 table model, 1 view model in 0 hours 0 minutes and 0.16 seconds (0.16s).
+[0m17:33:26  
+[0m17:33:26  [32mCompleted successfully[0m
+[0m17:33:26  
+[0m17:33:26  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3

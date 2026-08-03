@@ -1,0 +1,27 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.855,
+  "stdout_sha256": "bf154aecdca5dcec515c6c0738cd50d1454d2660b0d31bea6d055379367a16c4",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route3/linkedin_text2sql/results/knowledge_graph/build_summary.json",
+      "exists": true,
+      "size": 673,
+      "sha256": "9aea54d3c9dd52f5be1ec31c56c6bc81f18e372d8465d28a494512141af8ae7e"
+    },
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route3/linkedin_text2sql/results/knowledge_graph/nodes.json",
+      "exists": true,
+      "size": 11111,
+      "sha256": "c7fd80a1694229736e1ed65eb90fcb9bf4c84494a8c611e48221c5f806bac527"
+    },
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route3/linkedin_text2sql/results/knowledge_graph/edges.json",
+      "exists": true,
+      "size": 2675,
+      "sha256": "75fefbbcbf9379c39dc7d9a1aadb45f5db853daf6b4f3368feddc57084a1d806"
+    }
+  ]
+}

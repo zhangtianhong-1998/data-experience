@@ -1,0 +1,28 @@
+{
+  "sqlglot_version": "30.14.0",
+  "query_count": 10,
+  "parsed_count": 10,
+  "failed_count": 0,
+  "parse_coverage": 1.0,
+  "regex_table_agreement_count": 10,
+  "regex_table_leaf_agreement_count": 10,
+  "projection_count": 24,
+  "projection_role_counts": {
+    "dimension_candidate": 10,
+    "measure_candidate": 14
+  },
+  "distinct_alias_count": 8,
+  "aliases": {
+    "LONG_COL_0": 5,
+    "Sum_设备利润": 4,
+    "Sum_设备订货": 5,
+    "产品LV1": 2,
+    "内部分类": 2,
+    "合同名称": 1,
+    "国家": 1,
+    "年月": 4
+  },
+  "exact_duplicate_group_count": 1,
+  "structural_duplicate_group_count": 1,
+  "failures": []
+}

@@ -1,0 +1,35 @@
+{
+  "started_at": "2026-08-03T22:38:40+08:00",
+  "completed_at": "2026-08-03T22:38:40+08:00",
+  "fact_schema_version": "bi-report-facts-v2",
+  "prompt_version": "bi-semantic-prompt-v1",
+  "semantic_schema_version": "bi-semantic-result-v1",
+  "inputs": {
+    "execution_excel": "/Users/sanjiuganmaoling/Desktop/code/data-ex/示例表.xlsx",
+    "table_metadata": null,
+    "report_mapping": null,
+    "lineage_excel": null
+  },
+  "llm": {
+    "enabled": false,
+    "selected_package_ids": [],
+    "configured": false,
+    "base_url": null,
+    "model": null,
+    "timeout_seconds": 120,
+    "max_tokens": 4500,
+    "thinking": "disabled",
+    "output_capability": null
+  },
+  "outputs": [
+    "facts.json",
+    "physical_metadata_enriched.json",
+    "report_structure.json",
+    "evidences.json",
+    "evidence_packages.json",
+    "llm_results.json",
+    "validation_report.json",
+    "run_summary.json",
+    "run_summary.md"
+  ]
+}

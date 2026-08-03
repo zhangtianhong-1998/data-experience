@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.834,
+  "stdout_sha256": "aa9823aaf1c756cc545f49e8feaa5781fc0a2072367ef037ffaf339089a0e58f",
+  "stderr_sha256": "70b9264bac8d3a723979cd0c2b729a3b88bdd5f276445231a9b395045a0bfe1d",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/datahub/results/sdk_upsert.json",
+      "exists": true,
+      "size": 217,
+      "sha256": "115c2e30e5c8f9deccde65bc4f14cbf0373eba37e69c5043333cb8759e5a7c61"
+    }
+  ]
+}

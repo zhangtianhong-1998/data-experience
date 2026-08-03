@@ -1,0 +1,1551 @@
+[
+  {
+    "report_id": "RPT_0001",
+    "report_path": "经营日报",
+    "component_no": 1,
+    "component_name": null,
+    "dataset_path": "经营汇总",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "ads_operation_daily"
+    ],
+    "clean_sql": "SELECT SUM(a.metric_value) AS \"LONG_COL_0\"\nFROM ads.ads_operation_daily a\nWHERE a.stat_date = ?",
+    "exact_fingerprint": "c612831fe79ba34c30f0c4ae3533ad3c32683a9c465654ab92d897f357fa6f66",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT SUM(a.metric_value) AS \"LONG_COL_0\" FROM ads.ads_operation_daily AS a WHERE a.stat_date = ?",
+    "ast_fingerprint": "7d10fa3a3420d2d645057b1082cb438619beb80dedba4993922128cd66580e99",
+    "structural_fingerprint": "7d10fa3a3420d2d645057b1082cb438619beb80dedba4993922128cd66580e99",
+    "parameterized_sql": "SELECT SUM(a.metric_value) AS \"LONG_COL_0\" FROM ads.ads_operation_daily AS a WHERE a.stat_date = ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "ads.ads_operation_daily"
+    ],
+    "table_aliases": {
+      "a": "ads.ads_operation_daily"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "LONG_COL_0",
+        "expression": "SUM(a.metric_value)",
+        "projection_sql": "SUM(a.metric_value) AS \"LONG_COL_0\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "a.metric_value",
+            "table": "a",
+            "resolved_table": "ads.ads_operation_daily",
+            "name": "metric_value"
+          }
+        ],
+        "dependency_signature": [
+          "ads.ads_operation_daily.metric_value"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "a.stat_date = ?",
+    "group_by": [],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "a.metric_value",
+        "table": "a",
+        "resolved_table": "ads.ads_operation_daily",
+        "name": "metric_value"
+      },
+      {
+        "sql": "a.stat_date",
+        "table": "a",
+        "resolved_table": "ads.ads_operation_daily",
+        "name": "stat_date"
+      }
+    ],
+    "functions": {
+      "SUM": 1
+    },
+    "placeholder_count": 1,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0002",
+    "report_path": "Operations/华东/w00991/设备运行监控",
+    "component_no": 1,
+    "component_name": "组件12",
+    "dataset_path": null,
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dwd_device_status",
+      "dim_device"
+    ],
+    "clean_sql": "SELECT s.stat_date AS \"日期\",\nd.device_type AS \"设备类型\",\nCOUNT(s.alarm_code) AS \"告警次数\"\nFROM iot.dwd_device_status s\nJOIN iot.dim_device d ON s.device_id = d.device_id\nWHERE s.org_id = ?\nGROUP BY s.stat_date, d.device_type",
+    "exact_fingerprint": "a11bfad48928db88743901dc185c9dff2f51d4f0d4797df725ca901ab8b33b2d",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT s.stat_date AS \"日期\", d.device_type AS \"设备类型\", COUNT(s.alarm_code) AS \"告警次数\" FROM iot.dwd_device_status AS s JOIN iot.dim_device AS d ON s.device_id = d.device_id WHERE s.org_id = ? GROUP BY s.stat_date, d.device_type",
+    "ast_fingerprint": "f32e07426a6a39bcde8962803417d468916603ceb3e6b9c6c93409af5de0ffb6",
+    "structural_fingerprint": "f32e07426a6a39bcde8962803417d468916603ceb3e6b9c6c93409af5de0ffb6",
+    "parameterized_sql": "SELECT s.stat_date AS \"日期\", d.device_type AS \"设备类型\", COUNT(s.alarm_code) AS \"告警次数\" FROM iot.dwd_device_status AS s JOIN iot.dim_device AS d ON s.device_id = d.device_id WHERE s.org_id = ? GROUP BY s.stat_date, d.device_type",
+    "statement_type": "SELECT",
+    "tables": [
+      "iot.dim_device",
+      "iot.dwd_device_status"
+    ],
+    "table_aliases": {
+      "d": "iot.dim_device",
+      "s": "iot.dwd_device_status"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "日期",
+        "expression": "s.stat_date",
+        "projection_sql": "s.stat_date AS \"日期\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "s.stat_date",
+            "table": "s",
+            "resolved_table": "iot.dwd_device_status",
+            "name": "stat_date"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dwd_device_status.stat_date"
+        ]
+      },
+      {
+        "output_name": "设备类型",
+        "expression": "d.device_type",
+        "projection_sql": "d.device_type AS \"设备类型\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "d.device_type",
+            "table": "d",
+            "resolved_table": "iot.dim_device",
+            "name": "device_type"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dim_device.device_type"
+        ]
+      },
+      {
+        "output_name": "告警次数",
+        "expression": "COUNT(s.alarm_code)",
+        "projection_sql": "COUNT(s.alarm_code) AS \"告警次数\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "COUNT"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "s.alarm_code",
+            "table": "s",
+            "resolved_table": "iot.dwd_device_status",
+            "name": "alarm_code"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dwd_device_status.alarm_code"
+        ]
+      }
+    ],
+    "joins": [
+      {
+        "kind": "INNER",
+        "side": "",
+        "target": "iot.dim_device",
+        "condition": "s.device_id = d.device_id",
+        "using": []
+      }
+    ],
+    "where": "s.org_id = ?",
+    "group_by": [
+      "s.stat_date",
+      "d.device_type"
+    ],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "d.device_id",
+        "table": "d",
+        "resolved_table": "iot.dim_device",
+        "name": "device_id"
+      },
+      {
+        "sql": "d.device_type",
+        "table": "d",
+        "resolved_table": "iot.dim_device",
+        "name": "device_type"
+      },
+      {
+        "sql": "d.device_type",
+        "table": "d",
+        "resolved_table": "iot.dim_device",
+        "name": "device_type"
+      },
+      {
+        "sql": "s.alarm_code",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "alarm_code"
+      },
+      {
+        "sql": "s.device_id",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "device_id"
+      },
+      {
+        "sql": "s.org_id",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "org_id"
+      },
+      {
+        "sql": "s.stat_date",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "stat_date"
+      },
+      {
+        "sql": "s.stat_date",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "stat_date"
+      }
+    ],
+    "functions": {
+      "COUNT": 1
+    },
+    "placeholder_count": 1,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0002",
+    "report_path": "Operations/华东/w00991/设备运行监控",
+    "component_no": 2,
+    "component_name": "设备告警趋势",
+    "dataset_path": "Operations/华东/设备运行主题/设备状态宽表",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dwd_device_status",
+      "dim_device"
+    ],
+    "clean_sql": "SELECT s.stat_date AS \"日期\",\nd.device_type AS \"设备类型\",\nCOUNT(s.alarm_code) AS \"告警次数\"\nFROM iot.dwd_device_status s\nJOIN iot.dim_device d ON s.device_id = d.device_id\nWHERE s.org_id = ?\nGROUP BY s.stat_date, d.device_type",
+    "exact_fingerprint": "a11bfad48928db88743901dc185c9dff2f51d4f0d4797df725ca901ab8b33b2d",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT s.stat_date AS \"日期\", d.device_type AS \"设备类型\", COUNT(s.alarm_code) AS \"告警次数\" FROM iot.dwd_device_status AS s JOIN iot.dim_device AS d ON s.device_id = d.device_id WHERE s.org_id = ? GROUP BY s.stat_date, d.device_type",
+    "ast_fingerprint": "f32e07426a6a39bcde8962803417d468916603ceb3e6b9c6c93409af5de0ffb6",
+    "structural_fingerprint": "f32e07426a6a39bcde8962803417d468916603ceb3e6b9c6c93409af5de0ffb6",
+    "parameterized_sql": "SELECT s.stat_date AS \"日期\", d.device_type AS \"设备类型\", COUNT(s.alarm_code) AS \"告警次数\" FROM iot.dwd_device_status AS s JOIN iot.dim_device AS d ON s.device_id = d.device_id WHERE s.org_id = ? GROUP BY s.stat_date, d.device_type",
+    "statement_type": "SELECT",
+    "tables": [
+      "iot.dim_device",
+      "iot.dwd_device_status"
+    ],
+    "table_aliases": {
+      "d": "iot.dim_device",
+      "s": "iot.dwd_device_status"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "日期",
+        "expression": "s.stat_date",
+        "projection_sql": "s.stat_date AS \"日期\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "s.stat_date",
+            "table": "s",
+            "resolved_table": "iot.dwd_device_status",
+            "name": "stat_date"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dwd_device_status.stat_date"
+        ]
+      },
+      {
+        "output_name": "设备类型",
+        "expression": "d.device_type",
+        "projection_sql": "d.device_type AS \"设备类型\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "d.device_type",
+            "table": "d",
+            "resolved_table": "iot.dim_device",
+            "name": "device_type"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dim_device.device_type"
+        ]
+      },
+      {
+        "output_name": "告警次数",
+        "expression": "COUNT(s.alarm_code)",
+        "projection_sql": "COUNT(s.alarm_code) AS \"告警次数\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "COUNT"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "s.alarm_code",
+            "table": "s",
+            "resolved_table": "iot.dwd_device_status",
+            "name": "alarm_code"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dwd_device_status.alarm_code"
+        ]
+      }
+    ],
+    "joins": [
+      {
+        "kind": "INNER",
+        "side": "",
+        "target": "iot.dim_device",
+        "condition": "s.device_id = d.device_id",
+        "using": []
+      }
+    ],
+    "where": "s.org_id = ?",
+    "group_by": [
+      "s.stat_date",
+      "d.device_type"
+    ],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "d.device_id",
+        "table": "d",
+        "resolved_table": "iot.dim_device",
+        "name": "device_id"
+      },
+      {
+        "sql": "d.device_type",
+        "table": "d",
+        "resolved_table": "iot.dim_device",
+        "name": "device_type"
+      },
+      {
+        "sql": "d.device_type",
+        "table": "d",
+        "resolved_table": "iot.dim_device",
+        "name": "device_type"
+      },
+      {
+        "sql": "s.alarm_code",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "alarm_code"
+      },
+      {
+        "sql": "s.device_id",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "device_id"
+      },
+      {
+        "sql": "s.org_id",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "org_id"
+      },
+      {
+        "sql": "s.stat_date",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "stat_date"
+      },
+      {
+        "sql": "s.stat_date",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "stat_date"
+      }
+    ],
+    "functions": {
+      "COUNT": 1
+    },
+    "placeholder_count": 1,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0002",
+    "report_path": "Operations/华东/w00991/设备运行监控",
+    "component_no": 2,
+    "component_name": "设备告警趋势",
+    "dataset_path": "Operations/华东/设备运行主题/设备状态宽表",
+    "sql_index": 2,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dwd_device_status"
+    ],
+    "clean_sql": "SELECT s.stat_date AS \"日期\",\nMAX(s.temperature) AS \"最高温度\"\nFROM iot.dwd_device_status s\nWHERE s.device_id = ?\nGROUP BY s.stat_date",
+    "exact_fingerprint": "ef259c77d38218f4f16cf0e6464ae4c81d9e83262c9b5f6f30c4e075fd3cc7f8",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT s.stat_date AS \"日期\", MAX(s.temperature) AS \"最高温度\" FROM iot.dwd_device_status AS s WHERE s.device_id = ? GROUP BY s.stat_date",
+    "ast_fingerprint": "58e6c1952cdd680a8d6581588f7d1268edab37b4200a7a430f2bd5b293afc045",
+    "structural_fingerprint": "58e6c1952cdd680a8d6581588f7d1268edab37b4200a7a430f2bd5b293afc045",
+    "parameterized_sql": "SELECT s.stat_date AS \"日期\", MAX(s.temperature) AS \"最高温度\" FROM iot.dwd_device_status AS s WHERE s.device_id = ? GROUP BY s.stat_date",
+    "statement_type": "SELECT",
+    "tables": [
+      "iot.dwd_device_status"
+    ],
+    "table_aliases": {
+      "s": "iot.dwd_device_status"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "日期",
+        "expression": "s.stat_date",
+        "projection_sql": "s.stat_date AS \"日期\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "s.stat_date",
+            "table": "s",
+            "resolved_table": "iot.dwd_device_status",
+            "name": "stat_date"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dwd_device_status.stat_date"
+        ]
+      },
+      {
+        "output_name": "最高温度",
+        "expression": "MAX(s.temperature)",
+        "projection_sql": "MAX(s.temperature) AS \"最高温度\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "MAX"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "s.temperature",
+            "table": "s",
+            "resolved_table": "iot.dwd_device_status",
+            "name": "temperature"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dwd_device_status.temperature"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "s.device_id = ?",
+    "group_by": [
+      "s.stat_date"
+    ],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "s.device_id",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "device_id"
+      },
+      {
+        "sql": "s.stat_date",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "stat_date"
+      },
+      {
+        "sql": "s.stat_date",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "stat_date"
+      },
+      {
+        "sql": "s.temperature",
+        "table": "s",
+        "resolved_table": "iot.dwd_device_status",
+        "name": "temperature"
+      }
+    ],
+    "functions": {
+      "MAX": 1
+    },
+    "placeholder_count": 1,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0003",
+    "report_path": "Sales/w00123/【202607】销售经营驾驶舱",
+    "component_no": 1,
+    "component_name": "销售金额趋势",
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "sql_index": 1,
+    "occurrence_count": 3,
+    "regex_physical_tables": [
+      "dwd_sales_order"
+    ],
+    "clean_sql": "SELECT o.month_key AS \"月份\",\no.region_name AS \"区域\",\nSUM(o.sales_amount) AS \"销售金额\"\nFROM dw.dwd_sales_order o\nWHERE o.month_key = ?\nGROUP BY o.month_key, o.region_name\nORDER BY o.month_key",
+    "exact_fingerprint": "871078b835079f465ff25f7ad9e29694a5087a4cbcbc5c38dbd0e696ecbc3384",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT o.month_key AS \"月份\", o.region_name AS \"区域\", SUM(o.sales_amount) AS \"销售金额\" FROM dw.dwd_sales_order AS o WHERE o.month_key = ? GROUP BY o.month_key, o.region_name ORDER BY o.month_key",
+    "ast_fingerprint": "a42e0e3f8b755708762ebe3aaa3df01ab69606e2e9a57b3966a718916fa877cc",
+    "structural_fingerprint": "a42e0e3f8b755708762ebe3aaa3df01ab69606e2e9a57b3966a718916fa877cc",
+    "parameterized_sql": "SELECT o.month_key AS \"月份\", o.region_name AS \"区域\", SUM(o.sales_amount) AS \"销售金额\" FROM dw.dwd_sales_order AS o WHERE o.month_key = ? GROUP BY o.month_key, o.region_name ORDER BY o.month_key",
+    "statement_type": "SELECT",
+    "tables": [
+      "dw.dwd_sales_order"
+    ],
+    "table_aliases": {
+      "o": "dw.dwd_sales_order"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "月份",
+        "expression": "o.month_key",
+        "projection_sql": "o.month_key AS \"月份\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "o.month_key",
+            "table": "o",
+            "resolved_table": "dw.dwd_sales_order",
+            "name": "month_key"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_sales_order.month_key"
+        ]
+      },
+      {
+        "output_name": "区域",
+        "expression": "o.region_name",
+        "projection_sql": "o.region_name AS \"区域\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "o.region_name",
+            "table": "o",
+            "resolved_table": "dw.dwd_sales_order",
+            "name": "region_name"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_sales_order.region_name"
+        ]
+      },
+      {
+        "output_name": "销售金额",
+        "expression": "SUM(o.sales_amount)",
+        "projection_sql": "SUM(o.sales_amount) AS \"销售金额\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "o.sales_amount",
+            "table": "o",
+            "resolved_table": "dw.dwd_sales_order",
+            "name": "sales_amount"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_sales_order.sales_amount"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "o.month_key = ?",
+    "group_by": [
+      "o.month_key",
+      "o.region_name"
+    ],
+    "order_by": [
+      "o.month_key"
+    ],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "o.month_key",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "month_key"
+      },
+      {
+        "sql": "o.month_key",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "month_key"
+      },
+      {
+        "sql": "o.month_key",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "month_key"
+      },
+      {
+        "sql": "o.month_key",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "month_key"
+      },
+      {
+        "sql": "o.region_name",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "region_name"
+      },
+      {
+        "sql": "o.region_name",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "region_name"
+      },
+      {
+        "sql": "o.sales_amount",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "sales_amount"
+      }
+    ],
+    "functions": {
+      "SUM": 1
+    },
+    "placeholder_count": 1,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0003",
+    "report_path": "Sales/w00123/【202607】销售经营驾驶舱",
+    "component_no": 2,
+    "component_name": "图表4",
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dwd_sales_order"
+    ],
+    "clean_sql": "SELECT o.product_type AS \"产品类型\",\nCOUNT(DISTINCT o.order_id) AS \"订单数\",\nSUM(o.sales_amount) AS \"销售金额\"\nFROM dw.dwd_sales_order o\nWHERE o.org_id = ?\nGROUP BY o.product_type",
+    "exact_fingerprint": "f38e7a24ec13a8d5537a8841795bd644acb097f0ca5a6e59a153ff1b7d351a17",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT o.product_type AS \"产品类型\", COUNT(DISTINCT o.order_id) AS \"订单数\", SUM(o.sales_amount) AS \"销售金额\" FROM dw.dwd_sales_order AS o WHERE o.org_id = ? GROUP BY o.product_type",
+    "ast_fingerprint": "9363a4de5ca3eb002c37e36084d0cc2cee1233ae7ea0ecf318279b8e90331e16",
+    "structural_fingerprint": "9363a4de5ca3eb002c37e36084d0cc2cee1233ae7ea0ecf318279b8e90331e16",
+    "parameterized_sql": "SELECT o.product_type AS \"产品类型\", COUNT(DISTINCT o.order_id) AS \"订单数\", SUM(o.sales_amount) AS \"销售金额\" FROM dw.dwd_sales_order AS o WHERE o.org_id = ? GROUP BY o.product_type",
+    "statement_type": "SELECT",
+    "tables": [
+      "dw.dwd_sales_order"
+    ],
+    "table_aliases": {
+      "o": "dw.dwd_sales_order"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "产品类型",
+        "expression": "o.product_type",
+        "projection_sql": "o.product_type AS \"产品类型\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "o.product_type",
+            "table": "o",
+            "resolved_table": "dw.dwd_sales_order",
+            "name": "product_type"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_sales_order.product_type"
+        ]
+      },
+      {
+        "output_name": "订单数",
+        "expression": "COUNT(DISTINCT o.order_id)",
+        "projection_sql": "COUNT(DISTINCT o.order_id) AS \"订单数\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "COUNT"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "o.order_id",
+            "table": "o",
+            "resolved_table": "dw.dwd_sales_order",
+            "name": "order_id"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_sales_order.order_id"
+        ]
+      },
+      {
+        "output_name": "销售金额",
+        "expression": "SUM(o.sales_amount)",
+        "projection_sql": "SUM(o.sales_amount) AS \"销售金额\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "o.sales_amount",
+            "table": "o",
+            "resolved_table": "dw.dwd_sales_order",
+            "name": "sales_amount"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_sales_order.sales_amount"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "o.org_id = ?",
+    "group_by": [
+      "o.product_type"
+    ],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "o.order_id",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "order_id"
+      },
+      {
+        "sql": "o.org_id",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "org_id"
+      },
+      {
+        "sql": "o.product_type",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "product_type"
+      },
+      {
+        "sql": "o.product_type",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "product_type"
+      },
+      {
+        "sql": "o.sales_amount",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "sales_amount"
+      }
+    ],
+    "functions": {
+      "COUNT": 1,
+      "SUM": 1
+    },
+    "placeholder_count": 1,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0003",
+    "report_path": "Sales/w00123/【202607】销售经营驾驶舱",
+    "component_no": 3,
+    "component_name": "订单回款率",
+    "dataset_path": "Sales/w00123/订单利润数据集",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dwd_sales_order"
+    ],
+    "clean_sql": "SELECT o.product_type AS \"产品类型\",\nCOUNT(DISTINCT o.order_id) AS \"订单数\",\nSUM(o.sales_amount) AS \"销售金额\"\nFROM dw.dwd_sales_order o\nWHERE o.org_id = ?\nGROUP BY o.product_type",
+    "exact_fingerprint": "f38e7a24ec13a8d5537a8841795bd644acb097f0ca5a6e59a153ff1b7d351a17",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT o.product_type AS \"产品类型\", COUNT(DISTINCT o.order_id) AS \"订单数\", SUM(o.sales_amount) AS \"销售金额\" FROM dw.dwd_sales_order AS o WHERE o.org_id = ? GROUP BY o.product_type",
+    "ast_fingerprint": "9363a4de5ca3eb002c37e36084d0cc2cee1233ae7ea0ecf318279b8e90331e16",
+    "structural_fingerprint": "9363a4de5ca3eb002c37e36084d0cc2cee1233ae7ea0ecf318279b8e90331e16",
+    "parameterized_sql": "SELECT o.product_type AS \"产品类型\", COUNT(DISTINCT o.order_id) AS \"订单数\", SUM(o.sales_amount) AS \"销售金额\" FROM dw.dwd_sales_order AS o WHERE o.org_id = ? GROUP BY o.product_type",
+    "statement_type": "SELECT",
+    "tables": [
+      "dw.dwd_sales_order"
+    ],
+    "table_aliases": {
+      "o": "dw.dwd_sales_order"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "产品类型",
+        "expression": "o.product_type",
+        "projection_sql": "o.product_type AS \"产品类型\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "o.product_type",
+            "table": "o",
+            "resolved_table": "dw.dwd_sales_order",
+            "name": "product_type"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_sales_order.product_type"
+        ]
+      },
+      {
+        "output_name": "订单数",
+        "expression": "COUNT(DISTINCT o.order_id)",
+        "projection_sql": "COUNT(DISTINCT o.order_id) AS \"订单数\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "COUNT"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "o.order_id",
+            "table": "o",
+            "resolved_table": "dw.dwd_sales_order",
+            "name": "order_id"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_sales_order.order_id"
+        ]
+      },
+      {
+        "output_name": "销售金额",
+        "expression": "SUM(o.sales_amount)",
+        "projection_sql": "SUM(o.sales_amount) AS \"销售金额\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "o.sales_amount",
+            "table": "o",
+            "resolved_table": "dw.dwd_sales_order",
+            "name": "sales_amount"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_sales_order.sales_amount"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "o.org_id = ?",
+    "group_by": [
+      "o.product_type"
+    ],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "o.order_id",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "order_id"
+      },
+      {
+        "sql": "o.org_id",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "org_id"
+      },
+      {
+        "sql": "o.product_type",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "product_type"
+      },
+      {
+        "sql": "o.product_type",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "product_type"
+      },
+      {
+        "sql": "o.sales_amount",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "sales_amount"
+      }
+    ],
+    "functions": {
+      "COUNT": 1,
+      "SUM": 1
+    },
+    "placeholder_count": 1,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0003",
+    "report_path": "Sales/w00123/【202607】销售经营驾驶舱",
+    "component_no": 4,
+    "component_name": "订单回款率",
+    "dataset_path": "Finance/回款事实集",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dwd_receipt",
+      "dwd_sales_order"
+    ],
+    "clean_sql": "SELECT r.month_key AS \"月份\",\nSUM(r.receipt_amount) AS \"回款金额\",\nSUM(o.sales_amount) AS \"销售金额\"\nFROM dw.dwd_receipt r\nLEFT JOIN dw.dwd_sales_order o ON r.contract_id = o.contract_id\nWHERE r.receipt_status = ?\nGROUP BY r.month_key",
+    "exact_fingerprint": "91de107fe1e3fed4019f297475cb6ebfe446b7f92404f8e56f02815224dd597e",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT r.month_key AS \"月份\", SUM(r.receipt_amount) AS \"回款金额\", SUM(o.sales_amount) AS \"销售金额\" FROM dw.dwd_receipt AS r LEFT JOIN dw.dwd_sales_order AS o ON r.contract_id = o.contract_id WHERE r.receipt_status = ? GROUP BY r.month_key",
+    "ast_fingerprint": "86c2111001d4eb9f72cf94498896745e58498c923a583393675b89450a5716d4",
+    "structural_fingerprint": "86c2111001d4eb9f72cf94498896745e58498c923a583393675b89450a5716d4",
+    "parameterized_sql": "SELECT r.month_key AS \"月份\", SUM(r.receipt_amount) AS \"回款金额\", SUM(o.sales_amount) AS \"销售金额\" FROM dw.dwd_receipt AS r LEFT JOIN dw.dwd_sales_order AS o ON r.contract_id = o.contract_id WHERE r.receipt_status = ? GROUP BY r.month_key",
+    "statement_type": "SELECT",
+    "tables": [
+      "dw.dwd_receipt",
+      "dw.dwd_sales_order"
+    ],
+    "table_aliases": {
+      "o": "dw.dwd_sales_order",
+      "r": "dw.dwd_receipt"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "月份",
+        "expression": "r.month_key",
+        "projection_sql": "r.month_key AS \"月份\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "r.month_key",
+            "table": "r",
+            "resolved_table": "dw.dwd_receipt",
+            "name": "month_key"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_receipt.month_key"
+        ]
+      },
+      {
+        "output_name": "回款金额",
+        "expression": "SUM(r.receipt_amount)",
+        "projection_sql": "SUM(r.receipt_amount) AS \"回款金额\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "r.receipt_amount",
+            "table": "r",
+            "resolved_table": "dw.dwd_receipt",
+            "name": "receipt_amount"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_receipt.receipt_amount"
+        ]
+      },
+      {
+        "output_name": "销售金额",
+        "expression": "SUM(o.sales_amount)",
+        "projection_sql": "SUM(o.sales_amount) AS \"销售金额\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "o.sales_amount",
+            "table": "o",
+            "resolved_table": "dw.dwd_sales_order",
+            "name": "sales_amount"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_sales_order.sales_amount"
+        ]
+      }
+    ],
+    "joins": [
+      {
+        "kind": "INNER",
+        "side": "LEFT",
+        "target": "dw.dwd_sales_order",
+        "condition": "r.contract_id = o.contract_id",
+        "using": []
+      }
+    ],
+    "where": "r.receipt_status = ?",
+    "group_by": [
+      "r.month_key"
+    ],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "o.contract_id",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "contract_id"
+      },
+      {
+        "sql": "o.sales_amount",
+        "table": "o",
+        "resolved_table": "dw.dwd_sales_order",
+        "name": "sales_amount"
+      },
+      {
+        "sql": "r.contract_id",
+        "table": "r",
+        "resolved_table": "dw.dwd_receipt",
+        "name": "contract_id"
+      },
+      {
+        "sql": "r.month_key",
+        "table": "r",
+        "resolved_table": "dw.dwd_receipt",
+        "name": "month_key"
+      },
+      {
+        "sql": "r.month_key",
+        "table": "r",
+        "resolved_table": "dw.dwd_receipt",
+        "name": "month_key"
+      },
+      {
+        "sql": "r.receipt_amount",
+        "table": "r",
+        "resolved_table": "dw.dwd_receipt",
+        "name": "receipt_amount"
+      },
+      {
+        "sql": "r.receipt_status",
+        "table": "r",
+        "resolved_table": "dw.dwd_receipt",
+        "name": "receipt_status"
+      }
+    ],
+    "functions": {
+      "SUM": 2
+    },
+    "placeholder_count": 1,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0004",
+    "report_path": "集团/制造中心/设备一部/u7788/传感器异常看板",
+    "component_no": 1,
+    "component_name": "温度异常明细",
+    "dataset_path": "集团/制造中心/设备一部/u7788/温度传感器明细",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [],
+    "clean_sql": "",
+    "exact_fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "parse_status": "failed",
+    "parse_error": "No expression was parsed from ''"
+  },
+  {
+    "report_id": "RPT_0004",
+    "report_path": "集团/制造中心/设备一部/u7788/传感器异常看板",
+    "component_no": 2,
+    "component_name": "图表9",
+    "dataset_path": "集团/制造中心/设备一部/u7788/温度传感器明细",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "dwd_sensor_temperature"
+    ],
+    "clean_sql": "SELECT t.collect_time AS \"采集时间\",\nt.sensor_code AS \"传感器编号\",\nAVG(t.temperature) AS \"平均温度\"\nFROM iot.dwd_sensor_temperature t\nWHERE t.device_id = ?\nGROUP BY t.collect_time, t.sensor_code",
+    "exact_fingerprint": "3fd0a5e88a1b36c6a5e98af6fad85d157002e885375b54f2a14e65749b19a101",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT t.collect_time AS \"采集时间\", t.sensor_code AS \"传感器编号\", AVG(t.temperature) AS \"平均温度\" FROM iot.dwd_sensor_temperature AS t WHERE t.device_id = ? GROUP BY t.collect_time, t.sensor_code",
+    "ast_fingerprint": "9680031a5959f1e1ee0ca75d2a2e472c68fc75aaae8dbe6f5c0c9f7b9bd69014",
+    "structural_fingerprint": "9680031a5959f1e1ee0ca75d2a2e472c68fc75aaae8dbe6f5c0c9f7b9bd69014",
+    "parameterized_sql": "SELECT t.collect_time AS \"采集时间\", t.sensor_code AS \"传感器编号\", AVG(t.temperature) AS \"平均温度\" FROM iot.dwd_sensor_temperature AS t WHERE t.device_id = ? GROUP BY t.collect_time, t.sensor_code",
+    "statement_type": "SELECT",
+    "tables": [
+      "iot.dwd_sensor_temperature"
+    ],
+    "table_aliases": {
+      "t": "iot.dwd_sensor_temperature"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "采集时间",
+        "expression": "t.collect_time",
+        "projection_sql": "t.collect_time AS \"采集时间\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "t.collect_time",
+            "table": "t",
+            "resolved_table": "iot.dwd_sensor_temperature",
+            "name": "collect_time"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dwd_sensor_temperature.collect_time"
+        ]
+      },
+      {
+        "output_name": "传感器编号",
+        "expression": "t.sensor_code",
+        "projection_sql": "t.sensor_code AS \"传感器编号\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "t.sensor_code",
+            "table": "t",
+            "resolved_table": "iot.dwd_sensor_temperature",
+            "name": "sensor_code"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dwd_sensor_temperature.sensor_code"
+        ]
+      },
+      {
+        "output_name": "平均温度",
+        "expression": "AVG(t.temperature)",
+        "projection_sql": "AVG(t.temperature) AS \"平均温度\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "AVG"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "t.temperature",
+            "table": "t",
+            "resolved_table": "iot.dwd_sensor_temperature",
+            "name": "temperature"
+          }
+        ],
+        "dependency_signature": [
+          "iot.dwd_sensor_temperature.temperature"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "t.device_id = ?",
+    "group_by": [
+      "t.collect_time",
+      "t.sensor_code"
+    ],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "t.collect_time",
+        "table": "t",
+        "resolved_table": "iot.dwd_sensor_temperature",
+        "name": "collect_time"
+      },
+      {
+        "sql": "t.collect_time",
+        "table": "t",
+        "resolved_table": "iot.dwd_sensor_temperature",
+        "name": "collect_time"
+      },
+      {
+        "sql": "t.device_id",
+        "table": "t",
+        "resolved_table": "iot.dwd_sensor_temperature",
+        "name": "device_id"
+      },
+      {
+        "sql": "t.sensor_code",
+        "table": "t",
+        "resolved_table": "iot.dwd_sensor_temperature",
+        "name": "sensor_code"
+      },
+      {
+        "sql": "t.sensor_code",
+        "table": "t",
+        "resolved_table": "iot.dwd_sensor_temperature",
+        "name": "sensor_code"
+      },
+      {
+        "sql": "t.temperature",
+        "table": "t",
+        "resolved_table": "iot.dwd_sensor_temperature",
+        "name": "temperature"
+      }
+    ],
+    "functions": {
+      "AVG": 1
+    },
+    "placeholder_count": 1,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0005",
+    "report_path": "集团经营/经营日报",
+    "component_no": 1,
+    "component_name": "经营指标概览",
+    "dataset_path": "经营汇总",
+    "sql_index": 1,
+    "occurrence_count": 1,
+    "regex_physical_tables": [
+      "ads_operation_daily"
+    ],
+    "clean_sql": "SELECT SUM(a.metric_value) AS \"LONG_COL_0\"\nFROM ads.ads_operation_daily a\nWHERE a.stat_date = ?",
+    "exact_fingerprint": "c612831fe79ba34c30f0c4ae3533ad3c32683a9c465654ab92d897f357fa6f66",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT SUM(a.metric_value) AS \"LONG_COL_0\" FROM ads.ads_operation_daily AS a WHERE a.stat_date = ?",
+    "ast_fingerprint": "7d10fa3a3420d2d645057b1082cb438619beb80dedba4993922128cd66580e99",
+    "structural_fingerprint": "7d10fa3a3420d2d645057b1082cb438619beb80dedba4993922128cd66580e99",
+    "parameterized_sql": "SELECT SUM(a.metric_value) AS \"LONG_COL_0\" FROM ads.ads_operation_daily AS a WHERE a.stat_date = ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "ads.ads_operation_daily"
+    ],
+    "table_aliases": {
+      "a": "ads.ads_operation_daily"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "LONG_COL_0",
+        "expression": "SUM(a.metric_value)",
+        "projection_sql": "SUM(a.metric_value) AS \"LONG_COL_0\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "a.metric_value",
+            "table": "a",
+            "resolved_table": "ads.ads_operation_daily",
+            "name": "metric_value"
+          }
+        ],
+        "dependency_signature": [
+          "ads.ads_operation_daily.metric_value"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "a.stat_date = ?",
+    "group_by": [],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "a.metric_value",
+        "table": "a",
+        "resolved_table": "ads.ads_operation_daily",
+        "name": "metric_value"
+      },
+      {
+        "sql": "a.stat_date",
+        "table": "a",
+        "resolved_table": "ads.ads_operation_daily",
+        "name": "stat_date"
+      }
+    ],
+    "functions": {
+      "SUM": 1
+    },
+    "placeholder_count": 1,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0006",
+    "report_path": "Finance/应收回款分析",
+    "component_no": 1,
+    "component_name": "回款金额按客户等级",
+    "dataset_path": "Finance/回款事实集",
+    "sql_index": 1,
+    "occurrence_count": 2,
+    "regex_physical_tables": [
+      "dwd_receipt",
+      "dim_customer"
+    ],
+    "clean_sql": "SELECT c.customer_level AS \"客户等级\",\nSUM(r.receipt_amount) AS \"回款金额\"\nFROM dw.dwd_receipt r\nJOIN dw.dim_customer c ON r.customer_id = c.customer_id\nGROUP BY c.customer_level",
+    "exact_fingerprint": "3c21745ec93fe68a19a2b063ca58ae096e45bccda91f9050051f683cc815a9db",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT c.customer_level AS \"客户等级\", SUM(r.receipt_amount) AS \"回款金额\" FROM dw.dwd_receipt AS r JOIN dw.dim_customer AS c ON r.customer_id = c.customer_id GROUP BY c.customer_level",
+    "ast_fingerprint": "8921464b3bd7b2b54db99f718b9a3f7f13c53d18c476c790f57dda3d4d79d07a",
+    "structural_fingerprint": "8921464b3bd7b2b54db99f718b9a3f7f13c53d18c476c790f57dda3d4d79d07a",
+    "parameterized_sql": "SELECT c.customer_level AS \"客户等级\", SUM(r.receipt_amount) AS \"回款金额\" FROM dw.dwd_receipt AS r JOIN dw.dim_customer AS c ON r.customer_id = c.customer_id GROUP BY c.customer_level",
+    "statement_type": "SELECT",
+    "tables": [
+      "dw.dim_customer",
+      "dw.dwd_receipt"
+    ],
+    "table_aliases": {
+      "c": "dw.dim_customer",
+      "r": "dw.dwd_receipt"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "客户等级",
+        "expression": "c.customer_level",
+        "projection_sql": "c.customer_level AS \"客户等级\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "c.customer_level",
+            "table": "c",
+            "resolved_table": "dw.dim_customer",
+            "name": "customer_level"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dim_customer.customer_level"
+        ]
+      },
+      {
+        "output_name": "回款金额",
+        "expression": "SUM(r.receipt_amount)",
+        "projection_sql": "SUM(r.receipt_amount) AS \"回款金额\"",
+        "role_heuristic": "measure_candidate",
+        "aggregate_functions": [
+          "SUM"
+        ],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "r.receipt_amount",
+            "table": "r",
+            "resolved_table": "dw.dwd_receipt",
+            "name": "receipt_amount"
+          }
+        ],
+        "dependency_signature": [
+          "dw.dwd_receipt.receipt_amount"
+        ]
+      }
+    ],
+    "joins": [
+      {
+        "kind": "INNER",
+        "side": "",
+        "target": "dw.dim_customer",
+        "condition": "r.customer_id = c.customer_id",
+        "using": []
+      }
+    ],
+    "where": null,
+    "group_by": [
+      "c.customer_level"
+    ],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "c.customer_id",
+        "table": "c",
+        "resolved_table": "dw.dim_customer",
+        "name": "customer_id"
+      },
+      {
+        "sql": "c.customer_level",
+        "table": "c",
+        "resolved_table": "dw.dim_customer",
+        "name": "customer_level"
+      },
+      {
+        "sql": "c.customer_level",
+        "table": "c",
+        "resolved_table": "dw.dim_customer",
+        "name": "customer_level"
+      },
+      {
+        "sql": "r.customer_id",
+        "table": "r",
+        "resolved_table": "dw.dwd_receipt",
+        "name": "customer_id"
+      },
+      {
+        "sql": "r.receipt_amount",
+        "table": "r",
+        "resolved_table": "dw.dwd_receipt",
+        "name": "receipt_amount"
+      }
+    ],
+    "functions": {
+      "SUM": 1
+    },
+    "placeholder_count": 0,
+    "literal_count": 0
+  },
+  {
+    "report_id": "RPT_0006",
+    "report_path": "Finance/应收回款分析",
+    "component_no": 2,
+    "component_name": "筛选器2",
+    "dataset_path": "公共/组织日历",
+    "sql_index": 1,
+    "occurrence_count": 2,
+    "regex_physical_tables": [
+      "dim_calendar"
+    ],
+    "clean_sql": "SELECT c.calendar_date AS \"日期\", c.month_name AS \"月份名称\"\nFROM dim.dim_calendar c\nWHERE c.calendar_date BETWEEN ? AND ?",
+    "exact_fingerprint": "42211e9b3f1dc74a6825964c5d271cf36532a05e66399eae34644baf124eda9a",
+    "parse_status": "parsed",
+    "parse_error": null,
+    "normalized_sql": "SELECT c.calendar_date AS \"日期\", c.month_name AS \"月份名称\" FROM dim.dim_calendar AS c WHERE c.calendar_date BETWEEN ? AND ?",
+    "ast_fingerprint": "b3784a5c55b4daa90e50cf75eb714d223747f738dd4355ae14c3c3e1b8cc6183",
+    "structural_fingerprint": "b3784a5c55b4daa90e50cf75eb714d223747f738dd4355ae14c3c3e1b8cc6183",
+    "parameterized_sql": "SELECT c.calendar_date AS \"日期\", c.month_name AS \"月份名称\" FROM dim.dim_calendar AS c WHERE c.calendar_date BETWEEN ? AND ?",
+    "statement_type": "SELECT",
+    "tables": [
+      "dim.dim_calendar"
+    ],
+    "table_aliases": {
+      "c": "dim.dim_calendar"
+    },
+    "regex_table_agreement": false,
+    "regex_table_leaf_agreement": true,
+    "projections": [
+      {
+        "output_name": "日期",
+        "expression": "c.calendar_date",
+        "projection_sql": "c.calendar_date AS \"日期\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "c.calendar_date",
+            "table": "c",
+            "resolved_table": "dim.dim_calendar",
+            "name": "calendar_date"
+          }
+        ],
+        "dependency_signature": [
+          "dim.dim_calendar.calendar_date"
+        ]
+      },
+      {
+        "output_name": "月份名称",
+        "expression": "c.month_name",
+        "projection_sql": "c.month_name AS \"月份名称\"",
+        "role_heuristic": "dimension_candidate",
+        "aggregate_functions": [],
+        "window_functions": [],
+        "source_columns": [
+          {
+            "sql": "c.month_name",
+            "table": "c",
+            "resolved_table": "dim.dim_calendar",
+            "name": "month_name"
+          }
+        ],
+        "dependency_signature": [
+          "dim.dim_calendar.month_name"
+        ]
+      }
+    ],
+    "joins": [],
+    "where": "c.calendar_date BETWEEN ? AND ?",
+    "group_by": [],
+    "order_by": [],
+    "limit": null,
+    "all_columns": [
+      {
+        "sql": "c.calendar_date",
+        "table": "c",
+        "resolved_table": "dim.dim_calendar",
+        "name": "calendar_date"
+      },
+      {
+        "sql": "c.calendar_date",
+        "table": "c",
+        "resolved_table": "dim.dim_calendar",
+        "name": "calendar_date"
+      },
+      {
+        "sql": "c.month_name",
+        "table": "c",
+        "resolved_table": "dim.dim_calendar",
+        "name": "month_name"
+      }
+    ],
+    "functions": {},
+    "placeholder_count": 2,
+    "literal_count": 0
+  }
+]

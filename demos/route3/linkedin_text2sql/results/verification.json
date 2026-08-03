@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "checks": {
+    "knowledge_graph_built": true,
+    "cluster_candidate_contains_authoritative_table": true,
+    "multi_index_retrieval_ranks_device_orders_first": true,
+    "examples_retrieve_two_device_queries": true,
+    "llm_ranker_demotes_deprecated_table": true,
+    "two_tier_column_recall_covers_required_columns": true,
+    "primary_query_valid_on_first_attempt": true,
+    "controlled_hallucination_detected": true,
+    "researcher_and_fixer_recover": true,
+    "five_real_llm_calls_without_fallback": true,
+    "execution_matches_golden": true
+  },
+  "evidence": {
+    "candidate_tables": [
+      "deprecated_device_orders",
+      "device_orders",
+      "product_master",
+      "sales_orders"
+    ],
+    "ranked_first": "device_orders",
+    "final_sql": "SELECT product_l1, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1",
+    "rows": [
+      {
+        "product_l1": "Compute",
+        "device_order_amount": 7500.0,
+        "device_profit_amount": 1560.0
+      },
+      {
+        "product_l1": "IoT",
+        "device_order_amount": 3400.0,
+        "device_profit_amount": 650.0
+      },
+      {
+        "product_l1": "Network",
+        "device_order_amount": 3800.0,
+        "device_profit_amount": 730.0
+      }
+    ],
+    "llm": {
+      "configured": true,
+      "model": "glm-5.2",
+      "calls": 5,
+      "successful_calls": 5,
+      "fallback_calls": 0,
+      "api_key_logged": false
+    }
+  }
+}

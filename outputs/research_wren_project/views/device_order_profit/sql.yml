@@ -1,0 +1,8 @@
+statement: >
+  SELECT
+    c2 AS year_month,
+    c7 AS product_l1,
+    c10 AS internal_category,
+    c27 AS device_order_amount,
+    c28 AS device_profit_amount
+  FROM device_order_profit_raw

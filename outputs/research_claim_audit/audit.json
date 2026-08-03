@@ -1,0 +1,593 @@
+{
+  "claim_count": 53,
+  "normalized_label_count": 23,
+  "implementation_count": 27,
+  "ambiguous_non_generic_labels": [
+    {
+      "normalized_label": "日期",
+      "surface_labels": [
+        "日期"
+      ],
+      "observation_count": 4,
+      "implementation_count": 2,
+      "implementations": [
+        {
+          "implementation_key": "cec7ba6185c63be8",
+          "examples": [
+            {
+              "label": "日期",
+              "aggregates": [],
+              "dependencies": [
+                "dim.dim_calendar.calendar_date"
+              ],
+              "dataset_path": "公共/组织日历"
+            }
+          ]
+        },
+        {
+          "implementation_key": "f0861c7c83efbea5",
+          "examples": [
+            {
+              "label": "日期",
+              "aggregates": [],
+              "dependencies": [
+                "iot.dwd_device_status.stat_date"
+              ],
+              "dataset_path": null
+            },
+            {
+              "label": "日期",
+              "aggregates": [],
+              "dependencies": [
+                "iot.dwd_device_status.stat_date"
+              ],
+              "dataset_path": "Operations/华东/设备运行主题/设备状态宽表"
+            },
+            {
+              "label": "日期",
+              "aggregates": [],
+              "dependencies": [
+                "iot.dwd_device_status.stat_date"
+              ],
+              "dataset_path": "Operations/华东/设备运行主题/设备状态宽表"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "月份",
+      "surface_labels": [
+        "月份"
+      ],
+      "observation_count": 2,
+      "implementation_count": 2,
+      "implementations": [
+        {
+          "implementation_key": "7da13b6534916dae",
+          "examples": [
+            {
+              "label": "月份",
+              "aggregates": [],
+              "dependencies": [
+                "dw.dwd_sales_order.month_key"
+              ],
+              "dataset_path": "Sales/w00123/订单利润数据集"
+            }
+          ]
+        },
+        {
+          "implementation_key": "c2c218c81c802051",
+          "examples": [
+            {
+              "label": "月份",
+              "aggregates": [],
+              "dependencies": [
+                "dw.dwd_receipt.month_key"
+              ],
+              "dataset_path": "Finance/回款事实集"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generic_label_groups": [
+    {
+      "normalized_label": "longcol0",
+      "surface_labels": [
+        "LONG_COL_0"
+      ],
+      "observation_count": 7,
+      "implementation_count": 3,
+      "implementations": [
+        {
+          "implementation_key": "2b0a293f4b4aa829",
+          "examples": [
+            {
+              "label": "LONG_COL_0",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dmgeorcdis.datain_1727073357645_temp.c2"
+              ],
+              "dataset_path": "Management_Analysis/w00819891/北京区域大屏"
+            },
+            {
+              "label": "LONG_COL_0",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dmgeorcdis.datain_1727073357645_temp.c2"
+              ],
+              "dataset_path": "Management_Analysis/w00819891/ToB补录表250511"
+            },
+            {
+              "label": "LONG_COL_0",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dmgeorcdis.datain_1727073357645_temp.c2"
+              ],
+              "dataset_path": "Management_Analysis/w00819891/北京区域大屏"
+            }
+          ]
+        },
+        {
+          "implementation_key": "b8bb59aea362cf8d",
+          "examples": [
+            {
+              "label": "LONG_COL_0",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "ads.ads_operation_daily.metric_value"
+              ],
+              "dataset_path": "经营汇总"
+            },
+            {
+              "label": "LONG_COL_0",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "ads.ads_operation_daily.metric_value"
+              ],
+              "dataset_path": "经营汇总"
+            }
+          ]
+        },
+        {
+          "implementation_key": "bf399d5f14084e9e",
+          "examples": [
+            {
+              "label": "LONG_COL_0",
+              "aggregates": [
+                "MAX"
+              ],
+              "dependencies": [
+                "dmregdis.datain_1757258241454_temp.c2"
+              ],
+              "dataset_path": "Management_Analysis/w00819891/ToB补录表250511"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "repeated_consistent_labels": [
+    {
+      "normalized_label": "产品lv1",
+      "surface_labels": [
+        "产品LV1"
+      ],
+      "observation_count": 2,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "db208423f1bd5095",
+          "examples": [
+            {
+              "label": "产品LV1",
+              "aggregates": [],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c7"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            },
+            {
+              "label": "产品LV1",
+              "aggregates": [],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c7"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "产品类型",
+      "surface_labels": [
+        "产品类型"
+      ],
+      "observation_count": 2,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "5872c7a34d5628f9",
+          "examples": [
+            {
+              "label": "产品类型",
+              "aggregates": [],
+              "dependencies": [
+                "dw.dwd_sales_order.product_type"
+              ],
+              "dataset_path": "Sales/w00123/订单利润数据集"
+            },
+            {
+              "label": "产品类型",
+              "aggregates": [],
+              "dependencies": [
+                "dw.dwd_sales_order.product_type"
+              ],
+              "dataset_path": "Sales/w00123/订单利润数据集"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "内部分类",
+      "surface_labels": [
+        "内部分类"
+      ],
+      "observation_count": 2,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "cb1e3cab5d5a0fcf",
+          "examples": [
+            {
+              "label": "内部分类",
+              "aggregates": [],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c10"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            },
+            {
+              "label": "内部分类",
+              "aggregates": [],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c10"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "告警次数",
+      "surface_labels": [
+        "告警次数"
+      ],
+      "observation_count": 2,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "41efcbcb93442ea4",
+          "examples": [
+            {
+              "label": "告警次数",
+              "aggregates": [
+                "COUNT"
+              ],
+              "dependencies": [
+                "iot.dwd_device_status.alarm_code"
+              ],
+              "dataset_path": null
+            },
+            {
+              "label": "告警次数",
+              "aggregates": [
+                "COUNT"
+              ],
+              "dependencies": [
+                "iot.dwd_device_status.alarm_code"
+              ],
+              "dataset_path": "Operations/华东/设备运行主题/设备状态宽表"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "回款金额",
+      "surface_labels": [
+        "回款金额"
+      ],
+      "observation_count": 2,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "c07dd74d9af535f8",
+          "examples": [
+            {
+              "label": "回款金额",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dw.dwd_receipt.receipt_amount"
+              ],
+              "dataset_path": "Finance/回款事实集"
+            },
+            {
+              "label": "回款金额",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dw.dwd_receipt.receipt_amount"
+              ],
+              "dataset_path": "Finance/回款事实集"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "年月",
+      "surface_labels": [
+        "年月"
+      ],
+      "observation_count": 4,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "9d69ae265d50bd9f",
+          "examples": [
+            {
+              "label": "年月",
+              "aggregates": [],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c2"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            },
+            {
+              "label": "年月",
+              "aggregates": [],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c2"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            },
+            {
+              "label": "年月",
+              "aggregates": [],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c2"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "订单数",
+      "surface_labels": [
+        "订单数"
+      ],
+      "observation_count": 2,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "9d348c06798e0a90",
+          "examples": [
+            {
+              "label": "订单数",
+              "aggregates": [
+                "COUNT"
+              ],
+              "dependencies": [
+                "dw.dwd_sales_order.order_id"
+              ],
+              "dataset_path": "Sales/w00123/订单利润数据集"
+            },
+            {
+              "label": "订单数",
+              "aggregates": [
+                "COUNT"
+              ],
+              "dependencies": [
+                "dw.dwd_sales_order.order_id"
+              ],
+              "dataset_path": "Sales/w00123/订单利润数据集"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "设备利润",
+      "surface_labels": [
+        "Sum_设备利润"
+      ],
+      "observation_count": 4,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "195ebb63b03a73b1",
+          "examples": [
+            {
+              "label": "Sum_设备利润",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c28"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            },
+            {
+              "label": "Sum_设备利润",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c28"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            },
+            {
+              "label": "Sum_设备利润",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c28"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "设备类型",
+      "surface_labels": [
+        "设备类型"
+      ],
+      "observation_count": 2,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "a3020692b1e6ec86",
+          "examples": [
+            {
+              "label": "设备类型",
+              "aggregates": [],
+              "dependencies": [
+                "iot.dim_device.device_type"
+              ],
+              "dataset_path": null
+            },
+            {
+              "label": "设备类型",
+              "aggregates": [],
+              "dependencies": [
+                "iot.dim_device.device_type"
+              ],
+              "dataset_path": "Operations/华东/设备运行主题/设备状态宽表"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "设备订货",
+      "surface_labels": [
+        "Sum_设备订货"
+      ],
+      "observation_count": 5,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "941ca9bc20aba393",
+          "examples": [
+            {
+              "label": "Sum_设备订货",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c27"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            },
+            {
+              "label": "Sum_设备订货",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c27"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            },
+            {
+              "label": "Sum_设备订货",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dmprjdis_pfa.datain_1783070589517_temp.c27"
+              ],
+              "dataset_path": "ipfm/w79184/集05订货利润"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "normalized_label": "销售金额",
+      "surface_labels": [
+        "销售金额"
+      ],
+      "observation_count": 4,
+      "implementation_count": 1,
+      "implementations": [
+        {
+          "implementation_key": "30edc4be35638bb5",
+          "examples": [
+            {
+              "label": "销售金额",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dw.dwd_sales_order.sales_amount"
+              ],
+              "dataset_path": "Sales/w00123/订单利润数据集"
+            },
+            {
+              "label": "销售金额",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dw.dwd_sales_order.sales_amount"
+              ],
+              "dataset_path": "Sales/w00123/订单利润数据集"
+            },
+            {
+              "label": "销售金额",
+              "aggregates": [
+                "SUM"
+              ],
+              "dependencies": [
+                "dw.dwd_sales_order.sales_amount"
+              ],
+              "dataset_path": "Sales/w00123/订单利润数据集"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cross_label_same_implementation_candidates": [],
+  "policy": {
+    "auto_merge": "仅在非通用标签、规范标签相同、实现签名相同且来源边界兼容时合并局部 claim。",
+    "keep_separate": "同名但实现签名不同；通用系统别名；过滤/粒度/权限边界冲突。",
+    "candidate_only": "实现签名相同但标签不同，只生成同义候选，不自动提升为规范概念。"
+  }
+}

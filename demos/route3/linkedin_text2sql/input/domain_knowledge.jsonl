@@ -1,0 +1,4 @@
+{"id":"dk_device_metric","product_area":"device_business","tables":["device_orders"],"columns":["order_amount","profit_amount","status","org_code"],"text":"设备订货金额仅统计 status='confirmed' 的 order_amount；设备利润统计同一批订单的 profit_amount；所有查询必须显式限定 org_code，金额单位 CNY。"}
+{"id":"dk_half_year","product_area":"device_business","tables":["device_orders"],"columns":["year_month"],"text":"2026 年上半年在 year_month 整数列上表示为 202601 到 202606（含边界）。"}
+{"id":"dk_sales_not_order","product_area":"sales","tables":["sales_orders"],"columns":["sales_amount"],"text":"销售额是 sales_orders.sales_amount，不等同于设备订货金额。"}
+

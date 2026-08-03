@@ -1,0 +1,7 @@
+name: device_metricflow_demo
+version: 1.0.0
+config-version: 2
+profile: device_metricflow_demo
+model-paths: ["models"]
+seed-paths: ["seeds"]
+

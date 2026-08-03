@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.024,
+  "stdout_sha256": "8b80edcc3519ed65afc76bb9970933d6da254b854f94c8b88f0a436aa2cc790e",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/metricflow/device_project/results/verification.json",
+      "exists": true,
+      "size": 753,
+      "sha256": "2387c0de0570fa4737afde6da4dbdaa61854da6fbce8e2709ecd72a6664fd5f0"
+    }
+  ]
+}

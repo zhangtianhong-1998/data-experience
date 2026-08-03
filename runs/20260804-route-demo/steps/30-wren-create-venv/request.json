@@ -1,0 +1,23 @@
+{
+  "step": "30-wren-create-venv",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "uv",
+    "venv",
+    "--python",
+    "3.12",
+    "runtime/wren-venv"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785775584.143847
+}

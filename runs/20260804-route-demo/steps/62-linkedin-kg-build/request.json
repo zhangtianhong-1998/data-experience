@@ -1,0 +1,20 @@
+{
+  "step": "62-linkedin-kg-build",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route3/linkedin_text2sql",
+  "argv": [
+    "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/.venv-tools/bin/python",
+    "build_knowledge_graph.py"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785777895.017036
+}

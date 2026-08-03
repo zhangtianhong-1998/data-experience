@@ -1,0 +1,43 @@
+{
+  "sqlglot_version": "30.14.0",
+  "query_count": 13,
+  "parsed_count": 12,
+  "failed_count": 1,
+  "parse_coverage": 0.9231,
+  "regex_table_agreement_count": 0,
+  "regex_table_leaf_agreement_count": 12,
+  "projection_count": 29,
+  "projection_role_counts": {
+    "dimension_candidate": 15,
+    "measure_candidate": 14
+  },
+  "distinct_alias_count": 16,
+  "aliases": {
+    "LONG_COL_0": 2,
+    "产品类型": 2,
+    "传感器编号": 1,
+    "区域": 1,
+    "告警次数": 2,
+    "回款金额": 2,
+    "客户等级": 1,
+    "平均温度": 1,
+    "日期": 4,
+    "最高温度": 1,
+    "月份": 2,
+    "月份名称": 1,
+    "订单数": 2,
+    "设备类型": 2,
+    "采集时间": 1,
+    "销售金额": 4
+  },
+  "exact_duplicate_group_count": 3,
+  "structural_duplicate_group_count": 3,
+  "failures": [
+    {
+      "report_id": "RPT_0004",
+      "component_no": 1,
+      "sql_index": 1,
+      "error": "No expression was parsed from ''"
+    }
+  ]
+}

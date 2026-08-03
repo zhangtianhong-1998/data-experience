@@ -1,0 +1,53 @@
+Using Python 3.12.13 environment at: runtime/wren-venv
+Resolved 41 packages in 3.40s
+Downloading pyarrow (34.2MiB)
+Downloading numpy (5.1MiB)
+Downloading pandas (9.5MiB)
+Downloading lxml (8.2MiB)
+ Downloaded numpy
+ Downloaded lxml
+ Downloaded pandas
+ Downloaded pyarrow
+Prepared 4 packages in 8.47s
+Installed 41 packages in 192ms
+ + annotated-doc==0.0.5
+ + annotated-types==0.8.0
+ + boto3==1.43.62
+ + botocore==1.43.62
+ + certifi==2026.7.22
+ + cffi==2.1.0
+ + charset-normalizer==3.4.9
+ + cryptography==50.0.0
+ + duckdb==1.5.5
+ + idna==3.18
+ + jmespath==1.1.0
+ + loguru==0.7.3
+ + lxml==6.1.1
+ + markdown-it-py==4.2.0
+ + mdurl==0.1.2
+ + numpy==2.5.1
+ + opendal==0.47.5
+ + pandas==3.0.5
+ + pyarrow==25.0.0
+ + pyarrow-hotfix==0.7
+ + pyasn1==0.6.4
+ + pycparser==3.0
+ + pydantic==2.13.4
+ + pydantic-core==2.46.4
+ + pygments==2.20.0
+ + pyopenssl==26.4.0
+ + python-dateutil==2.9.0.post0
+ + python-dotenv==1.2.2
+ + pyyaml==6.0.3
+ + requests==2.34.2
+ + rich==15.0.0
+ + s3transfer==0.19.2
+ + shellingham==1.5.4
+ + six==1.17.0
+ + sqlglot==30.14.0
+ + typer==0.27.1
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.2
+ + urllib3==2.7.0
+ + wren-core-py==0.7.3
+ + wrenai==0.13.2

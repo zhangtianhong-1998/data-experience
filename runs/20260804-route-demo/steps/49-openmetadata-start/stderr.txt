@@ -1,0 +1,1098 @@
+time="2026-08-04T01:02:25+08:00" level=warning msg="/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/official/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ mysql Pulling 
+ openmetadata-server Pulling 
+ elasticsearch Pulling 
+ execute-migrate-all Pulling 
+ 1ff28c38cb50 Pulling fs layer 
+ b82e1bfb1b28 Pulling fs layer 
+ 75ad6c223f92 Pulling fs layer 
+ cfa1344c1fe4 Pulling fs layer 
+ 4ca545ee6d5d Pulling fs layer 
+ 00c06c2ece05 Pulling fs layer 
+ 8be65385107b Pulling fs layer 
+ c218464d127f Pulling fs layer 
+ 78403f798ab3 Pulling fs layer 
+ 9d077f5efbda Pulling fs layer 
+ 4ca545ee6d5d Waiting 
+ 00c06c2ece05 Waiting 
+ 8be65385107b Waiting 
+ c218464d127f Waiting 
+ 78403f798ab3 Waiting 
+ 9d077f5efbda Waiting 
+ cfa1344c1fe4 Waiting 
+ 75ad6c223f92 Downloading [================================>                  ]  1.072kB/1.658kB
+ 75ad6c223f92 Downloading [==================================================>]  1.658kB/1.658kB
+ 75ad6c223f92 Verifying Checksum 
+ 75ad6c223f92 Download complete 
+ b82e1bfb1b28 Downloading [>                                                  ]  45.11kB/4.508MB
+ b82e1bfb1b28 Downloading [=>                                                 ]  90.91kB/4.508MB
+ b82e1bfb1b28 Downloading [=>                                                 ]  139.5kB/4.508MB
+ 1ff28c38cb50 Downloading [>                                                  ]  393.2kB/38.49MB
+ 1ff28c38cb50 Downloading [=>                                                 ]  786.4kB/38.49MB
+ b82e1bfb1b28 Downloading [==>                                                ]  234.1kB/4.508MB
+ 1ff28c38cb50 Downloading [=>                                                 ]   1.18MB/38.49MB
+ b82e1bfb1b28 Downloading [=======>                                           ]    639kB/4.508MB
+ 1ff28c38cb50 Downloading [==>                                                ]   1.97MB/38.49MB
+ b82e1bfb1b28 Downloading [========>                                          ]  786.4kB/4.508MB
+ b82e1bfb1b28 Downloading [============>                                      ]   1.13MB/4.508MB
+ 1ff28c38cb50 Downloading [===>                                               ]  2.359MB/38.49MB
+ b82e1bfb1b28 Downloading [================>                                  ]  1.485MB/4.508MB
+ 1ff28c38cb50 Downloading [=======>                                           ]  5.889MB/38.49MB
+ b82e1bfb1b28 Downloading [===================>                               ]  1.786MB/4.508MB
+ 1ff28c38cb50 Downloading [=========>                                         ]  7.465MB/38.49MB
+ b82e1bfb1b28 Downloading [=========================>                         ]  2.287MB/4.508MB
+ b82e1bfb1b28 Downloading [===================================>               ]  3.234MB/4.508MB
+ 1ff28c38cb50 Downloading [============>                                      ]  9.824MB/38.49MB
+ b82e1bfb1b28 Downloading [==============================================>    ]  4.227MB/4.508MB
+ 1ff28c38cb50 Downloading [===============>                                   ]  12.19MB/38.49MB
+ b82e1bfb1b28 Download complete 
+ 1ff28c38cb50 Downloading [==================>                                ]  14.15MB/38.49MB
+ 1ff28c38cb50 Downloading [=====================>                             ]  16.51MB/38.49MB
+ 1ff28c38cb50 Downloading [========================>                          ]  18.48MB/38.49MB
+ 1ff28c38cb50 Downloading [===========================>                       ]  20.84MB/38.49MB
+ 1ff28c38cb50 Downloading [=============================>                     ]  22.81MB/38.49MB
+ 1ff28c38cb50 Downloading [=================================>                 ]  25.55MB/38.49MB
+ 1ff28c38cb50 Downloading [====================================>              ]   27.9MB/38.49MB
+ 022417830bcf Pulling fs layer 
+ fe10b20dcdae Pulling fs layer 
+ 624f2f22548b Pulling fs layer 
+ 0eb07ea8ad2a Pulling fs layer 
+ 8b517dfb74ad Pulling fs layer 
+ ebef84d68e30 Pulling fs layer 
+ 604975d7252e Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ 71439a8c4cbd Pulling fs layer 
+ ef08903b4dcb Pulling fs layer 
+ 022417830bcf Waiting 
+ fe10b20dcdae Waiting 
+ 624f2f22548b Waiting 
+ 0eb07ea8ad2a Waiting 
+ 8b517dfb74ad Waiting 
+ ebef84d68e30 Waiting 
+ 604975d7252e Waiting 
+ 4f4fb700ef54 Waiting 
+ 71439a8c4cbd Waiting 
+ ef08903b4dcb Waiting 
+ d17f077ada11 Already exists 
+ 8e07f8f5a277 Pulling fs layer 
+ f69025247e93 Pulling fs layer 
+ 5cb362653ac0 Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ 8e07f8f5a277 Waiting 
+ f69025247e93 Waiting 
+ 5cb362653ac0 Waiting 
+ 4f4fb700ef54 Waiting 
+ d17f077ada11 Already exists 
+ 8e07f8f5a277 Pulling fs layer 
+ f69025247e93 Pulling fs layer 
+ 5cb362653ac0 Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ 4f4fb700ef54 Waiting 
+ 8e07f8f5a277 Waiting 
+ f69025247e93 Waiting 
+ 5cb362653ac0 Waiting 
+ 1ff28c38cb50 Downloading [======================================>            ]  29.87MB/38.49MB
+ 1ff28c38cb50 Downloading [============================================>      ]   34.2MB/38.49MB
+ 1ff28c38cb50 Downloading [=================================================> ]  38.13MB/38.49MB
+ 1ff28c38cb50 Verifying Checksum 
+ 1ff28c38cb50 Download complete 
+ 1ff28c38cb50 Extracting [>                                                  ]  393.2kB/38.49MB
+ 1ff28c38cb50 Extracting [=======>                                           ]  5.898MB/38.49MB
+ 1ff28c38cb50 Extracting [============>                                      ]  9.437MB/38.49MB
+ cfa1344c1fe4 Downloading [=====>                                             ]  1.072kB/9.32kB
+ cfa1344c1fe4 Download complete 
+ 1ff28c38cb50 Extracting [=============================>                     ]  22.41MB/38.49MB
+ 1ff28c38cb50 Extracting [==========================================>        ]  33.03MB/38.49MB
+ 1ff28c38cb50 Extracting [================================================>  ]  37.36MB/38.49MB
+ 1ff28c38cb50 Extracting [==================================================>]  38.49MB/38.49MB
+ 1ff28c38cb50 Pull complete 
+ b82e1bfb1b28 Extracting [>                                                  ]  65.54kB/4.508MB
+ b82e1bfb1b28 Extracting [==================================================>]  4.508MB/4.508MB
+ b82e1bfb1b28 Pull complete 
+ 75ad6c223f92 Extracting [==================================================>]  1.658kB/1.658kB
+ 75ad6c223f92 Extracting [==================================================>]  1.658kB/1.658kB
+ 75ad6c223f92 Pull complete 
+ cfa1344c1fe4 Extracting [==================================================>]   9.32kB/9.32kB
+ cfa1344c1fe4 Extracting [==================================================>]   9.32kB/9.32kB
+ cfa1344c1fe4 Pull complete 
+ 4ca545ee6d5d Downloading [==================================================>]      42B/42B
+ 4ca545ee6d5d Verifying Checksum 
+ 4ca545ee6d5d Extracting [==================================================>]      42B/42B
+ 4ca545ee6d5d Extracting [==================================================>]      42B/42B
+ 4ca545ee6d5d Pull complete 
+ 8be65385107b Downloading [==================================================>]     299B/299B
+ 8be65385107b Verifying Checksum 
+ 8be65385107b Download complete 
+ c218464d127f Downloading [=======================================>           ]  1.369kB/1.755kB
+ c218464d127f Downloading [==================================================>]  1.755kB/1.755kB
+ c218464d127f Verifying Checksum 
+ c218464d127f Download complete 
+ 00c06c2ece05 Downloading [>                                                  ]  540.7kB/535.1MB
+ 00c06c2ece05 Downloading [>                                                  ]  1.081MB/535.1MB
+ 00c06c2ece05 Downloading [>                                                  ]  1.616MB/535.1MB
+ 00c06c2ece05 Downloading [>                                                  ]  2.694MB/535.1MB
+ 00c06c2ece05 Downloading [>                                                  ]    4.3MB/535.1MB
+ 00c06c2ece05 Downloading [>                                                  ]  5.912MB/535.1MB
+ 00c06c2ece05 Downloading [>                                                  ]    8.6MB/535.1MB
+ 00c06c2ece05 Downloading [>                                                  ]  10.21MB/535.1MB
+ 00c06c2ece05 Downloading [=>                                                 ]   12.9MB/535.1MB
+ 00c06c2ece05 Downloading [=>                                                 ]  14.49MB/535.1MB
+ 00c06c2ece05 Downloading [=>                                                 ]  17.18MB/535.1MB
+ 00c06c2ece05 Downloading [=>                                                 ]  19.31MB/535.1MB
+ 00c06c2ece05 Downloading [==>                                                ]  21.99MB/535.1MB
+ 00c06c2ece05 Downloading [==>                                                ]  24.64MB/535.1MB
+ 00c06c2ece05 Downloading [==>                                                ]  26.79MB/535.1MB
+ 00c06c2ece05 Downloading [==>                                                ]  29.48MB/535.1MB
+ 00c06c2ece05 Downloading [==>                                                ]   31.1MB/535.1MB
+ 00c06c2ece05 Downloading [===>                                               ]  33.76MB/535.1MB
+ 00c06c2ece05 Downloading [===>                                               ]  35.36MB/535.1MB
+ 00c06c2ece05 Downloading [===>                                               ]  38.05MB/535.1MB
+ 00c06c2ece05 Downloading [===>                                               ]   40.2MB/535.1MB
+ 00c06c2ece05 Downloading [====>                                              ]  42.88MB/535.1MB
+ 9d077f5efbda Downloading [============================>                      ]  1.072kB/1.883kB
+ 9d077f5efbda Downloading [==================================================>]  1.883kB/1.883kB
+ 9d077f5efbda Download complete 
+ 00c06c2ece05 Downloading [====>                                              ]  45.56MB/535.1MB
+ 78403f798ab3 Downloading [>                                                  ]  1.369kB/76.06kB
+ 00c06c2ece05 Downloading [====>                                              ]   47.7MB/535.1MB
+ 00c06c2ece05 Downloading [====>                                              ]  50.36MB/535.1MB
+ 78403f798ab3 Downloading [============>                                      ]  19.14kB/76.06kB
+ 78403f798ab3 Downloading [===========================>                       ]  42.42kB/76.06kB
+ 00c06c2ece05 Downloading [====>                                              ]  52.51MB/535.1MB
+ 78403f798ab3 Downloading [===========================================>       ]  65.54kB/76.06kB
+ 78403f798ab3 Downloading [==================================================>]  76.06kB/76.06kB
+ 78403f798ab3 Verifying Checksum 
+ 78403f798ab3 Download complete 
+ 00c06c2ece05 Downloading [=====>                                             ]  55.19MB/535.1MB
+ 00c06c2ece05 Downloading [=====>                                             ]  57.87MB/535.1MB
+ 00c06c2ece05 Downloading [=====>                                             ]  60.01MB/535.1MB
+ 00c06c2ece05 Downloading [=====>                                             ]   62.7MB/535.1MB
+ 00c06c2ece05 Downloading [======>                                            ]  64.83MB/535.1MB
+ 00c06c2ece05 Downloading [======>                                            ]  67.51MB/535.1MB
+ 00c06c2ece05 Downloading [======>                                            ]  69.12MB/535.1MB
+ 00c06c2ece05 Downloading [======>                                            ]  71.78MB/535.1MB
+ 00c06c2ece05 Downloading [======>                                            ]  73.92MB/535.1MB
+ 00c06c2ece05 Downloading [=======>                                           ]  76.07MB/535.1MB
+ 00c06c2ece05 Downloading [=======>                                           ]  78.23MB/535.1MB
+ 00c06c2ece05 Downloading [=======>                                           ]  80.38MB/535.1MB
+ 00c06c2ece05 Downloading [=======>                                           ]  82.53MB/535.1MB
+ 00c06c2ece05 Downloading [=======>                                           ]  84.68MB/535.1MB
+ 00c06c2ece05 Downloading [========>                                          ]  86.82MB/535.1MB
+ 00c06c2ece05 Downloading [========>                                          ]  88.95MB/535.1MB
+ 00c06c2ece05 Downloading [========>                                          ]  91.09MB/535.1MB
+ 00c06c2ece05 Downloading [========>                                          ]  93.24MB/535.1MB
+ 00c06c2ece05 Downloading [========>                                          ]  95.37MB/535.1MB
+ 00c06c2ece05 Downloading [=========>                                         ]   97.5MB/535.1MB
+ 00c06c2ece05 Downloading [=========>                                         ]  99.65MB/535.1MB
+ 00c06c2ece05 Downloading [=========>                                         ]  101.8MB/535.1MB
+ 00c06c2ece05 Downloading [=========>                                         ]  103.9MB/535.1MB
+ 00c06c2ece05 Downloading [=========>                                         ]  106.1MB/535.1MB
+ 00c06c2ece05 Downloading [==========>                                        ]  108.2MB/535.1MB
+ 00c06c2ece05 Downloading [==========>                                        ]  110.4MB/535.1MB
+ 00c06c2ece05 Downloading [==========>                                        ]  112.5MB/535.1MB
+ 00c06c2ece05 Downloading [==========>                                        ]  114.6MB/535.1MB
+ 00c06c2ece05 Downloading [==========>                                        ]  116.8MB/535.1MB
+ 00c06c2ece05 Downloading [===========>                                       ]  118.9MB/535.1MB
+ 00c06c2ece05 Downloading [===========>                                       ]  121.1MB/535.1MB
+ 00c06c2ece05 Downloading [===========>                                       ]  123.2MB/535.1MB
+ fe10b20dcdae Downloading [>                                                  ]  32.77kB/2.091MB
+ 00c06c2ece05 Downloading [===========>                                       ]  125.3MB/535.1MB
+ 00c06c2ece05 Downloading [===========>                                       ]  127.5MB/535.1MB
+ fe10b20dcdae Downloading [=>                                                 ]  63.96kB/2.091MB
+ 00c06c2ece05 Downloading [============>                                      ]  129.6MB/535.1MB
+ fe10b20dcdae Downloading [==>                                                ]  96.73kB/2.091MB
+ 00c06c2ece05 Downloading [============>                                      ]  131.7MB/535.1MB
+ 022417830bcf Downloading [>                                                  ]  472.3kB/46.84MB
+ fe10b20dcdae Downloading [===>                                               ]  162.5kB/2.091MB
+ 00c06c2ece05 Downloading [============>                                      ]  133.9MB/535.1MB
+ fe10b20dcdae Downloading [======>                                            ]  259.3kB/2.091MB
+ 022417830bcf Downloading [=>                                                 ]    949kB/46.84MB
+ 00c06c2ece05 Downloading [============>                                      ]    136MB/535.1MB
+ fe10b20dcdae Downloading [=========>                                         ]  390.3kB/2.091MB
+ 022417830bcf Downloading [=>                                                 ]  1.423MB/46.84MB
+ 00c06c2ece05 Downloading [============>                                      ]  138.2MB/535.1MB
+ fe10b20dcdae Downloading [=============>                                     ]  554.2kB/2.091MB
+ 00c06c2ece05 Downloading [=============>                                     ]  140.3MB/535.1MB
+ 022417830bcf Downloading [==>                                                ]  2.378MB/46.84MB
+ fe10b20dcdae Downloading [==================>                                ]    782kB/2.091MB
+ 00c06c2ece05 Downloading [=============>                                     ]  142.5MB/535.1MB
+ fe10b20dcdae Downloading [==========================>                        ]  1.111MB/2.091MB
+ 022417830bcf Downloading [====>                                              ]  3.801MB/46.84MB
+ fe10b20dcdae Downloading [============================>                      ]   1.21MB/2.091MB
+ 022417830bcf Downloading [====>                                              ]  4.285MB/46.84MB
+ 00c06c2ece05 Downloading [=============>                                     ]  144.6MB/535.1MB
+ fe10b20dcdae Downloading [========================================>          ]  1.701MB/2.091MB
+ 022417830bcf Downloading [======>                                            ]  6.184MB/46.84MB
+ 00c06c2ece05 Downloading [=============>                                     ]  145.7MB/535.1MB
+ fe10b20dcdae Download complete 
+ 00c06c2ece05 Downloading [=============>                                     ]  146.8MB/535.1MB
+ 022417830bcf Downloading [========>                                          ]  7.629MB/46.84MB
+ 022417830bcf Downloading [==========>                                        ]  10.01MB/46.84MB
+ 00c06c2ece05 Downloading [=============>                                     ]  148.9MB/535.1MB
+ 022417830bcf Downloading [============>                                      ]  11.94MB/46.84MB
+ 00c06c2ece05 Downloading [==============>                                    ]  150.5MB/535.1MB
+ 022417830bcf Downloading [===============>                                   ]   14.3MB/46.84MB
+ 022417830bcf Downloading [===============>                                   ]  14.78MB/46.84MB
+ 00c06c2ece05 Downloading [==============>                                    ]  152.1MB/535.1MB
+ 022417830bcf Downloading [================>                                  ]  15.73MB/46.84MB
+ 00c06c2ece05 Downloading [==============>                                    ]  154.8MB/535.1MB
+ 00c06c2ece05 Downloading [==============>                                    ]    157MB/535.1MB
+ 022417830bcf Downloading [===================>                               ]   18.1MB/46.84MB
+ 022417830bcf Downloading [=====================>                             ]  20.02MB/46.84MB
+ 00c06c2ece05 Downloading [==============>                                    ]  158.6MB/535.1MB
+ 022417830bcf Downloading [=======================>                           ]   22.4MB/46.84MB
+ 00c06c2ece05 Downloading [===============>                                   ]  161.3MB/535.1MB
+ 022417830bcf Downloading [==========================>                        ]  24.78MB/46.84MB
+ 00c06c2ece05 Downloading [===============>                                   ]  162.9MB/535.1MB
+ 022417830bcf Downloading [==========================>                        ]  25.26MB/46.84MB
+ 022417830bcf Downloading [=============================>                     ]  27.65MB/46.84MB
+ 022417830bcf Downloading [================================>                  ]  30.04MB/46.84MB
+ 022417830bcf Downloading [==================================>                ]  31.95MB/46.84MB
+ 00c06c2ece05 Downloading [===============>                                   ]    165MB/535.1MB
+ 022417830bcf Downloading [====================================>              ]  34.35MB/46.84MB
+ 00c06c2ece05 Downloading [===============>                                   ]  168.2MB/535.1MB
+ 00c06c2ece05 Downloading [===============>                                   ]  168.8MB/535.1MB
+ 00c06c2ece05 Downloading [===============>                                   ]  169.9MB/535.1MB
+ 00c06c2ece05 Downloading [================>                                  ]    172MB/535.1MB
+ 022417830bcf Downloading [======================================>            ]  35.78MB/46.84MB
+ 00c06c2ece05 Downloading [================>                                  ]  174.7MB/535.1MB
+ 022417830bcf Downloading [==========================================>        ]  40.09MB/46.84MB
+ 00c06c2ece05 Downloading [================>                                  ]  176.8MB/535.1MB
+ 022417830bcf Downloading [===========================================>       ]  41.05MB/46.84MB
+ 00c06c2ece05 Downloading [================>                                  ]  177.9MB/535.1MB
+ 022417830bcf Downloading [==============================================>    ]  43.41MB/46.84MB
+ 00c06c2ece05 Downloading [================>                                  ]    180MB/535.1MB
+ 022417830bcf Downloading [================================================>  ]  45.32MB/46.84MB
+ 022417830bcf Downloading [================================================>  ]   45.8MB/46.84MB
+ 00c06c2ece05 Downloading [=================>                                 ]  182.2MB/535.1MB
+ 022417830bcf Download complete 
+ 00c06c2ece05 Downloading [=================>                                 ]  185.9MB/535.1MB
+ 022417830bcf Extracting [>                                                  ]  491.5kB/46.84MB
+ 00c06c2ece05 Downloading [=================>                                 ]  187.5MB/535.1MB
+ 022417830bcf Extracting [=======>                                           ]  7.373MB/46.84MB
+ 00c06c2ece05 Downloading [=================>                                 ]  189.6MB/535.1MB
+ 022417830bcf Extracting [==================>                                ]  17.69MB/46.84MB
+ 624f2f22548b Downloading [>                                                  ]  536.2kB/114.5MB
+ 00c06c2ece05 Downloading [=================>                                 ]  191.8MB/535.1MB
+ 022417830bcf Extracting [=================================>                 ]  30.97MB/46.84MB
+ 022417830bcf Extracting [============================================>      ]  41.29MB/46.84MB
+ 00c06c2ece05 Downloading [==================>                                ]  193.9MB/535.1MB
+ 00c06c2ece05 Downloading [==================>                                ]  196.1MB/535.1MB
+ 022417830bcf Extracting [===============================================>   ]  44.73MB/46.84MB
+ 624f2f22548b Downloading [>                                                  ]  1.062MB/114.5MB
+ 00c06c2ece05 Downloading [==================>                                ]  198.2MB/535.1MB
+ 022417830bcf Extracting [================================================>  ]  45.71MB/46.84MB
+ 022417830bcf Extracting [==================================================>]  46.84MB/46.84MB
+ 022417830bcf Pull complete 
+ fe10b20dcdae Extracting [>                                                  ]  32.77kB/2.091MB
+ fe10b20dcdae Extracting [==================================================>]  2.091MB/2.091MB
+ fe10b20dcdae Extracting [==================================================>]  2.091MB/2.091MB
+ 624f2f22548b Downloading [>                                                  ]  1.603MB/114.5MB
+ fe10b20dcdae Pull complete 
+ 00c06c2ece05 Downloading [==================>                                ]  200.4MB/535.1MB
+ 00c06c2ece05 Downloading [==================>                                ]  203.1MB/535.1MB
+ 624f2f22548b Downloading [=>                                                 ]  2.684MB/114.5MB
+ 00c06c2ece05 Downloading [===================>                               ]  205.2MB/535.1MB
+ 624f2f22548b Downloading [=>                                                 ]  3.743MB/114.5MB
+ 00c06c2ece05 Downloading [===================>                               ]  206.3MB/535.1MB
+ 624f2f22548b Downloading [==>                                                ]  5.346MB/114.5MB
+ 00c06c2ece05 Downloading [===================>                               ]  208.4MB/535.1MB
+ 00c06c2ece05 Downloading [===================>                               ]    210MB/535.1MB
+ 624f2f22548b Downloading [===>                                               ]   6.93MB/114.5MB
+ 624f2f22548b Downloading [===>                                               ]  9.081MB/114.5MB
+ 00c06c2ece05 Downloading [===================>                               ]  211.1MB/535.1MB
+ 624f2f22548b Downloading [=====>                                             ]  12.82MB/114.5MB
+ 00c06c2ece05 Downloading [====================>                              ]  215.4MB/535.1MB
+ 624f2f22548b Downloading [======>                                            ]  14.43MB/114.5MB
+ 00c06c2ece05 Downloading [====================>                              ]  217.5MB/535.1MB
+ 624f2f22548b Downloading [======>                                            ]  16.01MB/114.5MB
+ 00c06c2ece05 Downloading [====================>                              ]  219.1MB/535.1MB
+ 00c06c2ece05 Downloading [====================>                              ]  221.8MB/535.1MB
+ 624f2f22548b Downloading [=======>                                           ]  17.61MB/114.5MB
+ 00c06c2ece05 Downloading [====================>                              ]  222.3MB/535.1MB
+ 624f2f22548b Downloading [========>                                          ]  19.22MB/114.5MB
+ 00c06c2ece05 Downloading [====================>                              ]  224.5MB/535.1MB
+ 0eb07ea8ad2a Downloading [==================================================>]     694B/694B
+ 0eb07ea8ad2a Verifying Checksum 
+ 0eb07ea8ad2a Download complete 
+ 624f2f22548b Downloading [=========>                                         ]  22.42MB/114.5MB
+ 624f2f22548b Downloading [==========>                                        ]  23.49MB/114.5MB
+ 00c06c2ece05 Downloading [=====================>                             ]  227.1MB/535.1MB
+ 624f2f22548b Downloading [============>                                      ]  27.76MB/114.5MB
+ 00c06c2ece05 Downloading [=====================>                             ]  231.4MB/535.1MB
+ 00c06c2ece05 Downloading [=====================>                             ]  233.6MB/535.1MB
+ 624f2f22548b Downloading [============>                                      ]  29.35MB/114.5MB
+ 00c06c2ece05 Downloading [======================>                            ]  235.7MB/535.1MB
+ 624f2f22548b Downloading [=============>                                     ]  30.96MB/114.5MB
+ 00c06c2ece05 Downloading [======================>                            ]  237.9MB/535.1MB
+ 624f2f22548b Downloading [=============>                                     ]  32.02MB/114.5MB
+ 624f2f22548b Downloading [==============>                                    ]  33.62MB/114.5MB
+ 00c06c2ece05 Downloading [======================>                            ]    240MB/535.1MB
+ 624f2f22548b Downloading [===============>                                   ]  36.28MB/114.5MB
+ 00c06c2ece05 Downloading [======================>                            ]  241.1MB/535.1MB
+ 00c06c2ece05 Downloading [======================>                            ]  242.7MB/535.1MB
+ 624f2f22548b Downloading [================>                                  ]  37.36MB/114.5MB
+ 00c06c2ece05 Downloading [======================>                            ]  243.8MB/535.1MB
+ 624f2f22548b Downloading [==================>                                ]   41.6MB/114.5MB
+ 00c06c2ece05 Downloading [=======================>                           ]  248.1MB/535.1MB
+ 00c06c2ece05 Downloading [=======================>                           ]  250.2MB/535.1MB
+ 624f2f22548b Downloading [==================>                                ]  42.68MB/114.5MB
+ 00c06c2ece05 Downloading [=======================>                           ]  252.4MB/535.1MB
+ 624f2f22548b Downloading [===================>                               ]  44.81MB/114.5MB
+ 624f2f22548b Downloading [====================>                              ]  46.42MB/114.5MB
+ 00c06c2ece05 Downloading [=======================>                           ]    254MB/535.1MB
+ 624f2f22548b Downloading [====================>                              ]  46.95MB/114.5MB
+ 00c06c2ece05 Downloading [=======================>                           ]  256.7MB/535.1MB
+ 624f2f22548b Downloading [======================>                            ]  51.21MB/114.5MB
+ 8b517dfb74ad Downloading [==================================================>]     274B/274B
+ 8b517dfb74ad Verifying Checksum 
+ 8b517dfb74ad Download complete 
+ 00c06c2ece05 Downloading [========================>                          ]  258.8MB/535.1MB
+ 624f2f22548b Downloading [=======================>                           ]  52.82MB/114.5MB
+ 00c06c2ece05 Downloading [========================>                          ]    261MB/535.1MB
+ 624f2f22548b Downloading [=======================>                           ]  54.41MB/114.5MB
+ 624f2f22548b Downloading [=======================>                           ]  54.95MB/114.5MB
+ 00c06c2ece05 Downloading [========================>                          ]  262.1MB/535.1MB
+ 624f2f22548b Downloading [========================>                          ]  56.56MB/114.5MB
+ 00c06c2ece05 Downloading [========================>                          ]  264.2MB/535.1MB
+ 00c06c2ece05 Downloading [========================>                          ]  264.7MB/535.1MB
+ 624f2f22548b Downloading [=========================>                         ]  59.23MB/114.5MB
+ 00c06c2ece05 Downloading [========================>                          ]  267.4MB/535.1MB
+ 624f2f22548b Downloading [==========================>                        ]  60.82MB/114.5MB
+ 00c06c2ece05 Downloading [=========================>                         ]  267.9MB/535.1MB
+ 624f2f22548b Downloading [===========================>                       ]  62.41MB/114.5MB
+ 00c06c2ece05 Downloading [=========================>                         ]  268.5MB/535.1MB
+ 624f2f22548b Downloading [============================>                      ]  64.52MB/114.5MB
+ 624f2f22548b Downloading [=============================>                     ]  66.67MB/114.5MB
+ 00c06c2ece05 Downloading [=========================>                         ]  270.1MB/535.1MB
+ 00c06c2ece05 Downloading [=========================>                         ]  272.8MB/535.1MB
+ 624f2f22548b Downloading [=============================>                     ]  68.28MB/114.5MB
+ 00c06c2ece05 Downloading [=========================>                         ]  273.3MB/535.1MB
+ 624f2f22548b Downloading [==============================>                    ]  69.89MB/114.5MB
+ 00c06c2ece05 Downloading [=========================>                         ]  274.4MB/535.1MB
+ 00c06c2ece05 Downloading [=========================>                         ]  276.5MB/535.1MB
+ 624f2f22548b Downloading [==============================>                    ]  70.43MB/114.5MB
+ 00c06c2ece05 Downloading [=========================>                         ]  278.2MB/535.1MB
+ 00c06c2ece05 Downloading [==========================>                        ]  280.3MB/535.1MB
+ 624f2f22548b Downloading [================================>                  ]   74.7MB/114.5MB
+ 00c06c2ece05 Downloading [==========================>                        ]  281.9MB/535.1MB
+ 624f2f22548b Downloading [=================================>                 ]  76.31MB/114.5MB
+ 00c06c2ece05 Downloading [==========================>                        ]    284MB/535.1MB
+ 00c06c2ece05 Downloading [==========================>                        ]  285.6MB/535.1MB
+ 624f2f22548b Downloading [=================================>                 ]  76.84MB/114.5MB
+ 00c06c2ece05 Downloading [==========================>                        ]  287.2MB/535.1MB
+ 00c06c2ece05 Downloading [===========================>                       ]  289.9MB/535.1MB
+ 624f2f22548b Downloading [===================================>               ]  81.09MB/114.5MB
+ 00c06c2ece05 Downloading [===========================>                       ]    291MB/535.1MB
+ 624f2f22548b Downloading [====================================>              ]  82.67MB/114.5MB
+ 00c06c2ece05 Downloading [===========================>                       ]  292.6MB/535.1MB
+ 624f2f22548b Downloading [====================================>              ]  83.73MB/114.5MB
+ 00c06c2ece05 Downloading [===========================>                       ]  293.7MB/535.1MB
+ 00c06c2ece05 Downloading [===========================>                       ]  295.3MB/535.1MB
+ 00c06c2ece05 Downloading [===========================>                       ]  296.9MB/535.1MB
+ 624f2f22548b Downloading [=====================================>             ]  84.79MB/114.5MB
+ 00c06c2ece05 Downloading [===========================>                       ]  299.6MB/535.1MB
+ 624f2f22548b Downloading [=====================================>             ]  85.33MB/114.5MB
+ 624f2f22548b Downloading [======================================>            ]  89.06MB/114.5MB
+ 624f2f22548b Downloading [=======================================>           ]  90.12MB/114.5MB
+ 624f2f22548b Downloading [========================================>          ]  91.72MB/114.5MB
+ 00c06c2ece05 Downloading [============================>                      ]  301.7MB/535.1MB
+ 00c06c2ece05 Downloading [============================>                      ]  303.3MB/535.1MB
+ 624f2f22548b Downloading [========================================>          ]  92.25MB/114.5MB
+ 00c06c2ece05 Downloading [============================>                      ]  304.9MB/535.1MB
+ 00c06c2ece05 Downloading [============================>                      ]  306.5MB/535.1MB
+ 624f2f22548b Downloading [==========================================>        ]  96.51MB/114.5MB
+ 00c06c2ece05 Downloading [============================>                      ]  308.1MB/535.1MB
+ 624f2f22548b Downloading [==========================================>        ]  98.11MB/114.5MB
+ 00c06c2ece05 Downloading [============================>                      ]  309.8MB/535.1MB
+ 624f2f22548b Downloading [===========================================>       ]   99.7MB/114.5MB
+ 00c06c2ece05 Downloading [=============================>                     ]  311.4MB/535.1MB
+ 00c06c2ece05 Downloading [=============================>                     ]  311.9MB/535.1MB
+ 00c06c2ece05 Downloading [=============================>                     ]  314.1MB/535.1MB
+ 624f2f22548b Downloading [===========================================>       ]  100.8MB/114.5MB
+ 00c06c2ece05 Downloading [=============================>                     ]  315.7MB/535.1MB
+ 624f2f22548b Downloading [=============================================>     ]  105.1MB/114.5MB
+ 00c06c2ece05 Downloading [=============================>                     ]  317.8MB/535.1MB
+ 00c06c2ece05 Downloading [=============================>                     ]    320MB/535.1MB
+ 624f2f22548b Downloading [==============================================>    ]  107.2MB/114.5MB
+ 624f2f22548b Downloading [===============================================>   ]  107.7MB/114.5MB
+ 00c06c2ece05 Downloading [=============================>                     ]    321MB/535.1MB
+ 00c06c2ece05 Downloading [==============================>                    ]  323.2MB/535.1MB
+ 624f2f22548b Downloading [===============================================>   ]  108.3MB/114.5MB
+ 00c06c2ece05 Downloading [==============================>                    ]  324.8MB/535.1MB
+ 624f2f22548b Downloading [================================================>  ]    112MB/114.5MB
+ 00c06c2ece05 Downloading [==============================>                    ]  327.5MB/535.1MB
+ 624f2f22548b Downloading [=================================================> ]  113.6MB/114.5MB
+ 00c06c2ece05 Downloading [==============================>                    ]  329.1MB/535.1MB
+ 00c06c2ece05 Downloading [==============================>                    ]  331.2MB/535.1MB
+ 624f2f22548b Downloading [=================================================> ]  114.2MB/114.5MB
+ 624f2f22548b Verifying Checksum 
+ 624f2f22548b Download complete 
+ 00c06c2ece05 Downloading [===============================>                   ]  333.4MB/535.1MB
+ 624f2f22548b Extracting [>                                                  ]  557.1kB/114.5MB
+ 624f2f22548b Extracting [=====>                                             ]   11.7MB/114.5MB
+ 00c06c2ece05 Downloading [===============================>                   ]  335.5MB/535.1MB
+ 624f2f22548b Extracting [==========>                                        ]  23.95MB/114.5MB
+ 00c06c2ece05 Downloading [===============================>                   ]  337.6MB/535.1MB
+ 624f2f22548b Extracting [================>                                  ]  37.88MB/114.5MB
+ 00c06c2ece05 Downloading [===============================>                   ]  339.8MB/535.1MB
+ 624f2f22548b Extracting [==================>                                ]  42.89MB/114.5MB
+ 00c06c2ece05 Downloading [===============================>                   ]  341.9MB/535.1MB
+ 624f2f22548b Extracting [===================>                               ]  44.01MB/114.5MB
+ 00c06c2ece05 Downloading [================================>                  ]  343.5MB/535.1MB
+ 624f2f22548b Extracting [===================>                               ]  45.12MB/114.5MB
+ 00c06c2ece05 Downloading [================================>                  ]  345.7MB/535.1MB
+ 624f2f22548b Extracting [====================>                              ]  46.79MB/114.5MB
+ 00c06c2ece05 Downloading [================================>                  ]  347.8MB/535.1MB
+ 00c06c2ece05 Downloading [================================>                  ]    350MB/535.1MB
+ 624f2f22548b Extracting [====================>                              ]  47.35MB/114.5MB
+ 00c06c2ece05 Downloading [================================>                  ]  352.1MB/535.1MB
+ 624f2f22548b Extracting [=====================>                             ]  48.46MB/114.5MB
+ 00c06c2ece05 Downloading [=================================>                 ]  354.2MB/535.1MB
+ 624f2f22548b Extracting [=====================>                             ]  49.58MB/114.5MB
+ 00c06c2ece05 Downloading [=================================>                 ]  356.4MB/535.1MB
+ 624f2f22548b Extracting [======================>                            ]  50.69MB/114.5MB
+ 00c06c2ece05 Downloading [=================================>                 ]  358.5MB/535.1MB
+ 624f2f22548b Extracting [======================>                            ]  51.81MB/114.5MB
+ 00c06c2ece05 Downloading [=================================>                 ]  360.7MB/535.1MB
+ 624f2f22548b Extracting [=======================>                           ]  52.92MB/114.5MB
+ 00c06c2ece05 Downloading [=================================>                 ]  362.8MB/535.1MB
+ 624f2f22548b Extracting [=======================>                           ]  54.03MB/114.5MB
+ 624f2f22548b Extracting [========================>                          ]  55.15MB/114.5MB
+ 624f2f22548b Extracting [========================>                          ]  56.26MB/114.5MB
+ 00c06c2ece05 Downloading [==================================>                ]  364.4MB/535.1MB
+ 624f2f22548b Extracting [=============================>                     ]  68.52MB/114.5MB
+ 624f2f22548b Extracting [================================>                  ]  73.53MB/114.5MB
+ 00c06c2ece05 Downloading [==================================>                ]  366.6MB/535.1MB
+ 624f2f22548b Extracting [=================================>                 ]  76.87MB/114.5MB
+ 00c06c2ece05 Downloading [==================================>                ]  370.3MB/535.1MB
+ 624f2f22548b Extracting [===================================>               ]  80.22MB/114.5MB
+ 00c06c2ece05 Downloading [==================================>                ]  371.4MB/535.1MB
+ 624f2f22548b Extracting [=========================================>         ]   94.7MB/114.5MB
+ 00c06c2ece05 Downloading [==================================>                ]  373.5MB/535.1MB
+ 624f2f22548b Extracting [==============================================>    ]  105.8MB/114.5MB
+ 00c06c2ece05 Downloading [===================================>               ]  375.7MB/535.1MB
+ 624f2f22548b Extracting [==================================================>]  114.5MB/114.5MB
+ 00c06c2ece05 Downloading [===================================>               ]  377.8MB/535.1MB
+ 624f2f22548b Pull complete 
+ 0eb07ea8ad2a Extracting [==================================================>]     694B/694B
+ 0eb07ea8ad2a Extracting [==================================================>]     694B/694B
+ 0eb07ea8ad2a Pull complete 
+ 8b517dfb74ad Extracting [==================================================>]     274B/274B
+ 8b517dfb74ad Extracting [==================================================>]     274B/274B
+ 8b517dfb74ad Pull complete 
+ 00c06c2ece05 Downloading [===================================>               ]    380MB/535.1MB
+ 00c06c2ece05 Downloading [===================================>               ]  382.1MB/535.1MB
+ 00c06c2ece05 Downloading [===================================>               ]  384.3MB/535.1MB
+ 00c06c2ece05 Downloading [====================================>              ]  386.4MB/535.1MB
+ 00c06c2ece05 Downloading [====================================>              ]  388.5MB/535.1MB
+ 00c06c2ece05 Downloading [====================================>              ]  390.7MB/535.1MB
+ 604975d7252e Downloading [==================================================>]     765B/765B
+ 604975d7252e Download complete 
+ 00c06c2ece05 Downloading [====================================>              ]  392.8MB/535.1MB
+ ebef84d68e30 Verifying Checksum 
+ ebef84d68e30 Download complete 
+ ebef84d68e30 Extracting  3.785kB
+ ebef84d68e30 Pull complete 
+ 604975d7252e Extracting [==================================================>]     765B/765B
+ 604975d7252e Extracting [==================================================>]     765B/765B
+ 604975d7252e Pull complete 
+ 00c06c2ece05 Downloading [====================================>              ]    395MB/535.1MB
+ 00c06c2ece05 Downloading [=====================================>             ]  397.1MB/535.1MB
+ 00c06c2ece05 Downloading [=====================================>             ]  399.3MB/535.1MB
+ 00c06c2ece05 Downloading [=====================================>             ]  401.4MB/535.1MB
+ 00c06c2ece05 Downloading [=====================================>             ]  403.6MB/535.1MB
+ 00c06c2ece05 Downloading [=====================================>             ]  406.3MB/535.1MB
+ 00c06c2ece05 Downloading [======================================>            ]  408.9MB/535.1MB
+ 00c06c2ece05 Downloading [======================================>            ]  411.1MB/535.1MB
+ 00c06c2ece05 Downloading [======================================>            ]  413.2MB/535.1MB
+ 00c06c2ece05 Downloading [======================================>            ]  415.4MB/535.1MB
+ 00c06c2ece05 Downloading [=======================================>           ]  417.5MB/535.1MB
+ 00c06c2ece05 Downloading [=======================================>           ]  419.7MB/535.1MB
+ 00c06c2ece05 Downloading [=======================================>           ]  421.8MB/535.1MB
+ 00c06c2ece05 Downloading [=======================================>           ]    424MB/535.1MB
+ 00c06c2ece05 Downloading [=======================================>           ]  426.1MB/535.1MB
+ 00c06c2ece05 Downloading [========================================>          ]  428.2MB/535.1MB
+ 00c06c2ece05 Downloading [========================================>          ]  430.4MB/535.1MB
+ 00c06c2ece05 Downloading [========================================>          ]  432.5MB/535.1MB
+ 00c06c2ece05 Downloading [========================================>          ]  434.7MB/535.1MB
+ 00c06c2ece05 Downloading [========================================>          ]  437.3MB/535.1MB
+ 00c06c2ece05 Downloading [=========================================>         ]  439.5MB/535.1MB
+ 00c06c2ece05 Downloading [=========================================>         ]  441.6MB/535.1MB
+ 00c06c2ece05 Downloading [=========================================>         ]  443.7MB/535.1MB
+ 00c06c2ece05 Downloading [=========================================>         ]  445.9MB/535.1MB
+ 00c06c2ece05 Downloading [=========================================>         ]  448.6MB/535.1MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ 00c06c2ece05 Downloading [==========================================>        ]  452.8MB/535.1MB
+ 00c06c2ece05 Downloading [==========================================>        ]    455MB/535.1MB
+ 00c06c2ece05 Downloading [==========================================>        ]  456.1MB/535.1MB
+ 71439a8c4cbd Downloading [==================================================>]     390B/390B
+ 71439a8c4cbd Download complete 
+ 71439a8c4cbd Extracting [==================================================>]     390B/390B
+ 71439a8c4cbd Pull complete 
+ 00c06c2ece05 Downloading [==========================================>        ]  458.2MB/535.1MB
+ 00c06c2ece05 Downloading [===========================================>       ]  460.3MB/535.1MB
+ 00c06c2ece05 Downloading [===========================================>       ]  462.5MB/535.1MB
+ 00c06c2ece05 Downloading [===========================================>       ]  464.6MB/535.1MB
+ 00c06c2ece05 Downloading [===========================================>       ]  466.7MB/535.1MB
+ 00c06c2ece05 Downloading [===========================================>       ]  468.9MB/535.1MB
+ 00c06c2ece05 Downloading [============================================>      ]    471MB/535.1MB
+ 00c06c2ece05 Downloading [============================================>      ]  473.1MB/535.1MB
+ 00c06c2ece05 Downloading [============================================>      ]  475.3MB/535.1MB
+ 00c06c2ece05 Downloading [============================================>      ]  477.5MB/535.1MB
+ 00c06c2ece05 Downloading [============================================>      ]  479.6MB/535.1MB
+ 00c06c2ece05 Downloading [=============================================>     ]  481.7MB/535.1MB
+ 00c06c2ece05 Downloading [=============================================>     ]  483.9MB/535.1MB
+ 00c06c2ece05 Downloading [=============================================>     ]    486MB/535.1MB
+ 00c06c2ece05 Downloading [=============================================>     ]  488.7MB/535.1MB
+ 00c06c2ece05 Downloading [=============================================>     ]  490.8MB/535.1MB
+ 00c06c2ece05 Downloading [==============================================>    ]  493.5MB/535.1MB
+ 00c06c2ece05 Downloading [==============================================>    ]  495.7MB/535.1MB
+ 00c06c2ece05 Downloading [==============================================>    ]  498.3MB/535.1MB
+ 00c06c2ece05 Downloading [==============================================>    ]  500.5MB/535.1MB
+ 00c06c2ece05 Downloading [==============================================>    ]  502.6MB/535.1MB
+ 00c06c2ece05 Downloading [===============================================>   ]  504.8MB/535.1MB
+ 00c06c2ece05 Downloading [===============================================>   ]  506.9MB/535.1MB
+ 00c06c2ece05 Downloading [===============================================>   ]    509MB/535.1MB
+ 00c06c2ece05 Downloading [===============================================>   ]  511.2MB/535.1MB
+ 00c06c2ece05 Downloading [===============================================>   ]  513.3MB/535.1MB
+ ef08903b4dcb Downloading [==================================================>]     386B/386B
+ ef08903b4dcb Verifying Checksum 
+ ef08903b4dcb Download complete 
+ ef08903b4dcb Extracting [==================================================>]     386B/386B
+ ef08903b4dcb Extracting [==================================================>]     386B/386B
+ 00c06c2ece05 Downloading [================================================>  ]  515.5MB/535.1MB
+ 00c06c2ece05 Downloading [================================================>  ]  517.6MB/535.1MB
+ ef08903b4dcb Pull complete 
+ mysql Pulled 
+ 00c06c2ece05 Downloading [================================================>  ]  520.3MB/535.1MB
+ 00c06c2ece05 Downloading [================================================>  ]  522.4MB/535.1MB
+ 00c06c2ece05 Downloading [=================================================> ]  524.6MB/535.1MB
+ 00c06c2ece05 Downloading [=================================================> ]  527.2MB/535.1MB
+ 00c06c2ece05 Downloading [=================================================> ]  527.8MB/535.1MB
+ 00c06c2ece05 Downloading [=================================================> ]  530.5MB/535.1MB
+ 00c06c2ece05 Downloading [=================================================> ]  532.6MB/535.1MB
+ 8e07f8f5a277 Downloading [>                                                  ]  539.6kB/74.46MB
+ 8e07f8f5a277 Downloading [>                                                  ]  539.6kB/74.46MB
+ 00c06c2ece05 Downloading [=================================================> ]  534.8MB/535.1MB
+ 00c06c2ece05 Verifying Checksum 
+ 00c06c2ece05 Download complete 
+ 00c06c2ece05 Extracting [>                                                  ]  557.1kB/535.1MB
+ 00c06c2ece05 Extracting [==>                                                ]  27.85MB/535.1MB
+ 8e07f8f5a277 Downloading [>                                                  ]  1.073MB/74.46MB
+ 8e07f8f5a277 Downloading [>                                                  ]  1.073MB/74.46MB
+ 00c06c2ece05 Extracting [=====>                                             ]  62.95MB/535.1MB
+ 8e07f8f5a277 Downloading [=>                                                 ]  1.613MB/74.46MB
+ 8e07f8f5a277 Downloading [=>                                                 ]  1.613MB/74.46MB
+ 00c06c2ece05 Extracting [========>                                          ]  89.69MB/535.1MB
+ 00c06c2ece05 Extracting [=========>                                         ]  106.4MB/535.1MB
+ 8e07f8f5a277 Downloading [=>                                                 ]  2.688MB/74.46MB
+ 8e07f8f5a277 Downloading [=>                                                 ]  2.688MB/74.46MB
+ 00c06c2ece05 Extracting [===========>                                       ]  120.3MB/535.1MB
+ 8e07f8f5a277 Downloading [==>                                                ]  4.271MB/74.46MB
+ 8e07f8f5a277 Downloading [==>                                                ]  4.271MB/74.46MB
+ 00c06c2ece05 Extracting [============>                                      ]  132.6MB/535.1MB
+ 8e07f8f5a277 Downloading [====>                                              ]   6.39MB/74.46MB
+ 8e07f8f5a277 Downloading [====>                                              ]   6.39MB/74.46MB
+ 00c06c2ece05 Extracting [=============>                                     ]  145.9MB/535.1MB
+ 8e07f8f5a277 Downloading [======>                                            ]  9.069MB/74.46MB
+ 8e07f8f5a277 Downloading [======>                                            ]  9.069MB/74.46MB
+ 00c06c2ece05 Extracting [==============>                                    ]  159.3MB/535.1MB
+ 00c06c2ece05 Extracting [===============>                                   ]  170.5MB/535.1MB
+ 8e07f8f5a277 Downloading [=======>                                           ]  11.72MB/74.46MB
+ 8e07f8f5a277 Downloading [=======>                                           ]  11.72MB/74.46MB
+ 00c06c2ece05 Extracting [=================>                                 ]  182.2MB/535.1MB
+ 8e07f8f5a277 Downloading [=========>                                         ]   14.4MB/74.46MB
+ 8e07f8f5a277 Downloading [=========>                                         ]   14.4MB/74.46MB
+ 00c06c2ece05 Extracting [====================>                              ]  218.9MB/535.1MB
+ 8e07f8f5a277 Downloading [===========>                                       ]  16.55MB/74.46MB
+ 8e07f8f5a277 Downloading [===========>                                       ]  16.55MB/74.46MB
+ 00c06c2ece05 Extracting [=======================>                           ]  250.1MB/535.1MB
+ 8e07f8f5a277 Downloading [============>                                      ]  18.71MB/74.46MB
+ 8e07f8f5a277 Downloading [============>                                      ]  18.71MB/74.46MB
+ 00c06c2ece05 Extracting [==========================>                        ]  279.1MB/535.1MB
+ 8e07f8f5a277 Downloading [==============>                                    ]   21.4MB/74.46MB
+ 8e07f8f5a277 Downloading [==============>                                    ]   21.4MB/74.46MB
+ 00c06c2ece05 Extracting [============================>                      ]  310.3MB/535.1MB
+ 8e07f8f5a277 Downloading [===============>                                   ]  23.54MB/74.46MB
+ 8e07f8f5a277 Downloading [===============>                                   ]  23.54MB/74.46MB
+ 00c06c2ece05 Extracting [================================>                  ]  343.1MB/535.1MB
+ 8e07f8f5a277 Downloading [=================>                                 ]  26.18MB/74.46MB
+ 8e07f8f5a277 Downloading [=================>                                 ]  26.18MB/74.46MB
+ 00c06c2ece05 Extracting [===================================>               ]  376.6MB/535.1MB
+ 00c06c2ece05 Extracting [======================================>            ]  409.4MB/535.1MB
+ 8e07f8f5a277 Downloading [===================>                               ]  28.85MB/74.46MB
+ 8e07f8f5a277 Downloading [===================>                               ]  28.85MB/74.46MB
+ 00c06c2ece05 Extracting [========================================>          ]  438.4MB/535.1MB
+ 8e07f8f5a277 Downloading [=====================>                             ]  31.52MB/74.46MB
+ 8e07f8f5a277 Downloading [=====================>                             ]  31.52MB/74.46MB
+ 00c06c2ece05 Extracting [==========================================>        ]  452.3MB/535.1MB
+ 8e07f8f5a277 Downloading [======================>                            ]  34.19MB/74.46MB
+ 8e07f8f5a277 Downloading [======================>                            ]  34.19MB/74.46MB
+ 00c06c2ece05 Extracting [===========================================>       ]  464.6MB/535.1MB
+ 8e07f8f5a277 Downloading [========================>                          ]  36.35MB/74.46MB
+ 8e07f8f5a277 Downloading [========================>                          ]  36.35MB/74.46MB
+ 00c06c2ece05 Extracting [============================================>      ]    478MB/535.1MB
+ 8e07f8f5a277 Downloading [=========================>                         ]   38.5MB/74.46MB
+ 8e07f8f5a277 Downloading [=========================>                         ]   38.5MB/74.46MB
+ 00c06c2ece05 Extracting [=============================================>     ]  490.8MB/535.1MB
+ 8e07f8f5a277 Downloading [===========================>                       ]  40.65MB/74.46MB
+ 8e07f8f5a277 Downloading [===========================>                       ]  40.65MB/74.46MB
+ 00c06c2ece05 Extracting [==============================================>    ]  502.5MB/535.1MB
+ 8e07f8f5a277 Downloading [============================>                      ]  42.78MB/74.46MB
+ 8e07f8f5a277 Downloading [============================>                      ]  42.78MB/74.46MB
+ 00c06c2ece05 Extracting [=================================================> ]  525.3MB/535.1MB
+ 00c06c2ece05 Extracting [==================================================>]  535.1MB/535.1MB
+ 8e07f8f5a277 Downloading [==============================>                    ]  44.92MB/74.46MB
+ 8e07f8f5a277 Downloading [==============================>                    ]  44.92MB/74.46MB
+ 8e07f8f5a277 Downloading [===============================>                   ]  47.56MB/74.46MB
+ 8e07f8f5a277 Downloading [===============================>                   ]  47.56MB/74.46MB
+ 8e07f8f5a277 Downloading [=================================>                 ]  49.71MB/74.46MB
+ 8e07f8f5a277 Downloading [=================================>                 ]  49.71MB/74.46MB
+ 00c06c2ece05 Pull complete 
+ 8be65385107b Extracting [==================================================>]     299B/299B
+ 8be65385107b Extracting [==================================================>]     299B/299B
+ 8be65385107b Pull complete 
+ c218464d127f Extracting [==================================================>]  1.755kB/1.755kB
+ c218464d127f Pull complete 
+ 78403f798ab3 Extracting [=====================>                             ]  32.77kB/76.06kB
+ 78403f798ab3 Extracting [==================================================>]  76.06kB/76.06kB
+ 78403f798ab3 Pull complete 
+ 8e07f8f5a277 Downloading [===================================>               ]  52.35MB/74.46MB
+ 8e07f8f5a277 Downloading [===================================>               ]  52.35MB/74.46MB
+ 9d077f5efbda Extracting [==================================================>]  1.883kB/1.883kB
+ 9d077f5efbda Extracting [==================================================>]  1.883kB/1.883kB
+ 9d077f5efbda Pull complete 
+ elasticsearch Pulled 
+ 8e07f8f5a277 Downloading [====================================>              ]  54.47MB/74.46MB
+ 8e07f8f5a277 Downloading [====================================>              ]  54.47MB/74.46MB
+ 8e07f8f5a277 Downloading [======================================>            ]   56.6MB/74.46MB
+ 8e07f8f5a277 Downloading [======================================>            ]   56.6MB/74.46MB
+ 5cb362653ac0 Downloading [==================================================>]     752B/752B
+ 5cb362653ac0 Verifying Checksum 
+ 5cb362653ac0 Download complete 
+ 5cb362653ac0 Verifying Checksum 
+ 5cb362653ac0 Download complete 
+ 8e07f8f5a277 Downloading [=======================================>           ]  58.74MB/74.46MB
+ 8e07f8f5a277 Downloading [=======================================>           ]  58.74MB/74.46MB
+ 8e07f8f5a277 Downloading [========================================>          ]  60.88MB/74.46MB
+ 8e07f8f5a277 Downloading [========================================>          ]  60.88MB/74.46MB
+ 8e07f8f5a277 Downloading [==========================================>        ]  63.05MB/74.46MB
+ 8e07f8f5a277 Downloading [==========================================>        ]  63.05MB/74.46MB
+ 8e07f8f5a277 Downloading [============================================>      ]  65.72MB/74.46MB
+ 8e07f8f5a277 Downloading [============================================>      ]  65.72MB/74.46MB
+ 8e07f8f5a277 Downloading [=============================================>     ]  67.87MB/74.46MB
+ 8e07f8f5a277 Downloading [=============================================>     ]  67.87MB/74.46MB
+ 8e07f8f5a277 Downloading [===============================================>   ]  70.53MB/74.46MB
+ 8e07f8f5a277 Downloading [===============================================>   ]  70.53MB/74.46MB
+ 8e07f8f5a277 Downloading [================================================>  ]  72.68MB/74.46MB
+ 8e07f8f5a277 Downloading [================================================>  ]  72.68MB/74.46MB
+ 8e07f8f5a277 Verifying Checksum 
+ 8e07f8f5a277 Download complete 
+ 8e07f8f5a277 Verifying Checksum 
+ 8e07f8f5a277 Download complete 
+ 8e07f8f5a277 Extracting [>                                                  ]  557.1kB/74.46MB
+ 8e07f8f5a277 Extracting [>                                                  ]  557.1kB/74.46MB
+ 8e07f8f5a277 Extracting [==>                                                ]  3.342MB/74.46MB
+ 8e07f8f5a277 Extracting [==>                                                ]  3.342MB/74.46MB
+ 8e07f8f5a277 Extracting [=======>                                           ]  10.58MB/74.46MB
+ 8e07f8f5a277 Extracting [=======>                                           ]  10.58MB/74.46MB
+ 8e07f8f5a277 Extracting [================>                                  ]  24.51MB/74.46MB
+ 8e07f8f5a277 Extracting [================>                                  ]  24.51MB/74.46MB
+ 8e07f8f5a277 Extracting [=========================>                         ]  37.32MB/74.46MB
+ 8e07f8f5a277 Extracting [=========================>                         ]  37.32MB/74.46MB
+ 8e07f8f5a277 Extracting [=================================>                 ]  50.14MB/74.46MB
+ 8e07f8f5a277 Extracting [=================================>                 ]  50.14MB/74.46MB
+ 8e07f8f5a277 Extracting [========================================>          ]  60.16MB/74.46MB
+ 8e07f8f5a277 Extracting [========================================>          ]  60.16MB/74.46MB
+ 8e07f8f5a277 Extracting [===============================================>   ]   71.3MB/74.46MB
+ 8e07f8f5a277 Extracting [===============================================>   ]   71.3MB/74.46MB
+ 8e07f8f5a277 Extracting [==================================================>]  74.46MB/74.46MB
+ 8e07f8f5a277 Extracting [==================================================>]  74.46MB/74.46MB
+ 8e07f8f5a277 Pull complete 
+ 8e07f8f5a277 Pull complete 
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ f69025247e93 Downloading  539.6kB
+ f69025247e93 Downloading  539.6kB
+ f69025247e93 Downloading  1.618MB
+ f69025247e93 Downloading  1.618MB
+ f69025247e93 Downloading  2.691MB
+ f69025247e93 Downloading  2.691MB
+ f69025247e93 Downloading  3.759MB
+ f69025247e93 Downloading  3.759MB
+ f69025247e93 Downloading  5.356MB
+ f69025247e93 Downloading  5.356MB
+ f69025247e93 Downloading  6.959MB
+ f69025247e93 Downloading  6.959MB
+ f69025247e93 Downloading  9.106MB
+ f69025247e93 Downloading  9.106MB
+ f69025247e93 Downloading  11.77MB
+ f69025247e93 Downloading  11.77MB
+ f69025247e93 Downloading  13.89MB
+ f69025247e93 Downloading  13.89MB
+ f69025247e93 Downloading  16.56MB
+ f69025247e93 Downloading  16.56MB
+ f69025247e93 Downloading  18.71MB
+ f69025247e93 Downloading  18.71MB
+ f69025247e93 Downloading  21.38MB
+ f69025247e93 Downloading  21.38MB
+ f69025247e93 Downloading  24.04MB
+ f69025247e93 Downloading  24.04MB
+ f69025247e93 Downloading  26.16MB
+ f69025247e93 Downloading  26.16MB
+ f69025247e93 Downloading  28.83MB
+ f69025247e93 Downloading  28.83MB
+ f69025247e93 Downloading  30.98MB
+ f69025247e93 Downloading  30.98MB
+ f69025247e93 Downloading  33.64MB
+ f69025247e93 Downloading  33.64MB
+ f69025247e93 Downloading  35.75MB
+ f69025247e93 Downloading  35.75MB
+ f69025247e93 Downloading  37.88MB
+ f69025247e93 Downloading  37.88MB
+ f69025247e93 Downloading  40.55MB
+ f69025247e93 Downloading  40.55MB
+ f69025247e93 Downloading  42.68MB
+ f69025247e93 Downloading  42.68MB
+ f69025247e93 Downloading  44.83MB
+ f69025247e93 Downloading  44.83MB
+ f69025247e93 Downloading  48.59MB
+ f69025247e93 Downloading  48.59MB
+ f69025247e93 Downloading  52.87MB
+ f69025247e93 Downloading  52.87MB
+ f69025247e93 Downloading  55.56MB
+ f69025247e93 Downloading  55.56MB
+ f69025247e93 Downloading  57.17MB
+ f69025247e93 Downloading  57.17MB
+ f69025247e93 Downloading   61.4MB
+ f69025247e93 Downloading   61.4MB
+ f69025247e93 Downloading  63.54MB
+ f69025247e93 Downloading  63.54MB
+ f69025247e93 Downloading  65.67MB
+ f69025247e93 Downloading  65.67MB
+ f69025247e93 Downloading  67.82MB
+ f69025247e93 Downloading  67.82MB
+ f69025247e93 Downloading  68.36MB
+ f69025247e93 Downloading  68.36MB
+ f69025247e93 Downloading  70.51MB
+ f69025247e93 Downloading  70.51MB
+ f69025247e93 Downloading  72.64MB
+ f69025247e93 Downloading  72.64MB
+ f69025247e93 Downloading  75.32MB
+ f69025247e93 Downloading  75.32MB
+ f69025247e93 Downloading  78.01MB
+ f69025247e93 Downloading  78.01MB
+ f69025247e93 Downloading  79.61MB
+ f69025247e93 Downloading  79.61MB
+ f69025247e93 Downloading  83.36MB
+ f69025247e93 Downloading  83.36MB
+ f69025247e93 Downloading  85.51MB
+ f69025247e93 Downloading  85.51MB
+ f69025247e93 Downloading  87.66MB
+ f69025247e93 Downloading  87.66MB
+ f69025247e93 Downloading  89.79MB
+ f69025247e93 Downloading  89.79MB
+ f69025247e93 Downloading   91.9MB
+ f69025247e93 Downloading   91.9MB
+ f69025247e93 Downloading  94.01MB
+ f69025247e93 Downloading  94.01MB
+ f69025247e93 Downloading  96.14MB
+ f69025247e93 Downloading  96.14MB
+ f69025247e93 Downloading  98.28MB
+ f69025247e93 Downloading  98.28MB
+ f69025247e93 Downloading   99.9MB
+ f69025247e93 Downloading   99.9MB
+ f69025247e93 Downloading  104.2MB
+ f69025247e93 Downloading  104.2MB
+ f69025247e93 Downloading  106.8MB
+ f69025247e93 Downloading  106.8MB
+ f69025247e93 Downloading    109MB
+ f69025247e93 Downloading    109MB
+ f69025247e93 Downloading  109.5MB
+ f69025247e93 Downloading  109.5MB
+ f69025247e93 Downloading  113.8MB
+ f69025247e93 Downloading  113.8MB
+ f69025247e93 Downloading  115.9MB
+ f69025247e93 Downloading  115.9MB
+ f69025247e93 Downloading  120.2MB
+ f69025247e93 Downloading  120.2MB
+ f69025247e93 Downloading  122.3MB
+ f69025247e93 Downloading  122.3MB
+ f69025247e93 Downloading  126.5MB
+ f69025247e93 Downloading  126.5MB
+ f69025247e93 Downloading  128.7MB
+ f69025247e93 Downloading  128.7MB
+ f69025247e93 Downloading  131.3MB
+ f69025247e93 Downloading  131.3MB
+ f69025247e93 Downloading  133.5MB
+ f69025247e93 Downloading  133.5MB
+ f69025247e93 Downloading  135.6MB
+ f69025247e93 Downloading  135.6MB
+ f69025247e93 Downloading  137.8MB
+ f69025247e93 Downloading  137.8MB
+ f69025247e93 Downloading  139.9MB
+ f69025247e93 Downloading  139.9MB
+ f69025247e93 Downloading  142.1MB
+ f69025247e93 Downloading  142.1MB
+ f69025247e93 Downloading  144.8MB
+ f69025247e93 Downloading  144.8MB
+ f69025247e93 Downloading  146.9MB
+ f69025247e93 Downloading  146.9MB
+ f69025247e93 Downloading  147.4MB
+ f69025247e93 Downloading  147.4MB
+ f69025247e93 Downloading  151.2MB
+ f69025247e93 Downloading  151.2MB
+ f69025247e93 Downloading  153.3MB
+ f69025247e93 Downloading  153.3MB
+ f69025247e93 Downloading  155.4MB
+ f69025247e93 Downloading  155.4MB
+ f69025247e93 Downloading  157.5MB
+ f69025247e93 Downloading  157.5MB
+ f69025247e93 Downloading  159.7MB
+ f69025247e93 Downloading  159.7MB
+ f69025247e93 Downloading  161.8MB
+ f69025247e93 Downloading  161.8MB
+ f69025247e93 Downloading    164MB
+ f69025247e93 Downloading    164MB
+ f69025247e93 Downloading  165.6MB
+ f69025247e93 Downloading  165.6MB
+ f69025247e93 Downloading  169.9MB
+ f69025247e93 Downloading  169.9MB
+ f69025247e93 Downloading  172.5MB
+ f69025247e93 Downloading  172.5MB
+ f69025247e93 Downloading  174.2MB
+ f69025247e93 Downloading  174.2MB
+ f69025247e93 Downloading  176.8MB
+ f69025247e93 Downloading  176.8MB
+ f69025247e93 Downloading  178.4MB
+ f69025247e93 Downloading  178.4MB
+ f69025247e93 Downloading    180MB
+ f69025247e93 Downloading    180MB
+ f69025247e93 Downloading  183.8MB
+ f69025247e93 Downloading  183.8MB
+ f69025247e93 Downloading  186.5MB
+ f69025247e93 Downloading  186.5MB
+ f69025247e93 Downloading  187.5MB
+ f69025247e93 Downloading  187.5MB
+ f69025247e93 Downloading  189.7MB
+ f69025247e93 Downloading  189.7MB
+ f69025247e93 Downloading  191.8MB
+ f69025247e93 Downloading  191.8MB
+ f69025247e93 Downloading  193.9MB
+ f69025247e93 Downloading  193.9MB
+ f69025247e93 Downloading  196.1MB
+ f69025247e93 Downloading  196.1MB
+ f69025247e93 Downloading  198.2MB
+ f69025247e93 Downloading  198.2MB
+ f69025247e93 Downloading  198.8MB
+ f69025247e93 Downloading  198.8MB
+ f69025247e93 Downloading  202.4MB
+ f69025247e93 Downloading  202.4MB
+ f69025247e93 Downloading  205.1MB
+ f69025247e93 Downloading  205.1MB
+ f69025247e93 Downloading  206.7MB
+ f69025247e93 Downloading  206.7MB
+ f69025247e93 Downloading  208.8MB
+ f69025247e93 Downloading  208.8MB
+ f69025247e93 Downloading  209.9MB
+ f69025247e93 Downloading  209.9MB
+ f69025247e93 Downloading  214.2MB
+ f69025247e93 Downloading  214.2MB
+ f69025247e93 Downloading  216.3MB
+ f69025247e93 Downloading  216.3MB
+ f69025247e93 Downloading  218.4MB
+ f69025247e93 Downloading  218.4MB
+ f69025247e93 Downloading  220.6MB
+ f69025247e93 Downloading  220.6MB
+ f69025247e93 Downloading  222.7MB
+ f69025247e93 Downloading  222.7MB
+ f69025247e93 Downloading  224.3MB
+ f69025247e93 Downloading  224.3MB
+ f69025247e93 Downloading  228.6MB
+ f69025247e93 Downloading  228.6MB
+ f69025247e93 Downloading  231.2MB
+ f69025247e93 Downloading  231.2MB
+ f69025247e93 Downloading  233.3MB
+ f69025247e93 Downloading  233.3MB
+ f69025247e93 Downloading  235.5MB
+ f69025247e93 Downloading  235.5MB
+ f69025247e93 Downloading  237.6MB
+ f69025247e93 Downloading  237.6MB
+ f69025247e93 Downloading  238.1MB
+ f69025247e93 Downloading  238.1MB
+ f69025247e93 Downloading  242.4MB
+ f69025247e93 Downloading  242.4MB
+ f69025247e93 Downloading  244.6MB
+ f69025247e93 Downloading  244.6MB
+ f69025247e93 Downloading  246.7MB
+ f69025247e93 Downloading  246.7MB
+ f69025247e93 Downloading  248.9MB
+ f69025247e93 Downloading  248.9MB
+ f69025247e93 Downloading  252.7MB
+ f69025247e93 Downloading  252.7MB
+ f69025247e93 Downloading  254.8MB
+ f69025247e93 Downloading  254.8MB
+ f69025247e93 Downloading  256.9MB
+ f69025247e93 Downloading  256.9MB
+ f69025247e93 Downloading  259.1MB
+ f69025247e93 Downloading  259.1MB
+ f69025247e93 Downloading  259.6MB
+ f69025247e93 Downloading  259.6MB
+ f69025247e93 Downloading  263.9MB
+ f69025247e93 Downloading  263.9MB
+ f69025247e93 Downloading    266MB
+ f69025247e93 Downloading    266MB
+ f69025247e93 Downloading  268.2MB
+ f69025247e93 Downloading  268.2MB
+ f69025247e93 Downloading  269.2MB
+ f69025247e93 Downloading  269.2MB
+ f69025247e93 Downloading  271.9MB
+ f69025247e93 Downloading  271.9MB
+ f69025247e93 Downloading  274.1MB
+ f69025247e93 Downloading  274.1MB
+ f69025247e93 Downloading  276.2MB
+ f69025247e93 Downloading  276.2MB
+ f69025247e93 Downloading  278.3MB
+ f69025247e93 Downloading  278.3MB
+ f69025247e93 Downloading  280.5MB
+ f69025247e93 Downloading  280.5MB
+ f69025247e93 Downloading  282.6MB
+ f69025247e93 Downloading  282.6MB
+ f69025247e93 Downloading  284.2MB
+ f69025247e93 Downloading  284.2MB
+ f69025247e93 Downloading  288.5MB
+ f69025247e93 Downloading  288.5MB
+ f69025247e93 Downloading  290.6MB
+ f69025247e93 Downloading  290.6MB
+ f69025247e93 Downloading  293.3MB
+ f69025247e93 Downloading  293.3MB
+ f69025247e93 Downloading  295.4MB
+ f69025247e93 Downloading  295.4MB
+ f69025247e93 Downloading  297.6MB
+ f69025247e93 Downloading  297.6MB
+ f69025247e93 Downloading  299.7MB
+ f69025247e93 Downloading  299.7MB
+ f69025247e93 Downloading  301.9MB
+ f69025247e93 Downloading  301.9MB
+ f69025247e93 Downloading    304MB
+ f69025247e93 Downloading    304MB
+ f69025247e93 Downloading  308.3MB
+ f69025247e93 Downloading  308.3MB
+ f69025247e93 Downloading  310.4MB
+ f69025247e93 Downloading  310.4MB
+ f69025247e93 Downloading  312.5MB
+ f69025247e93 Downloading  312.5MB
+ f69025247e93 Downloading  314.7MB
+ f69025247e93 Downloading  314.7MB
+ f69025247e93 Downloading  316.8MB
+ f69025247e93 Downloading  316.8MB
+ f69025247e93 Downloading  317.4MB
+ f69025247e93 Downloading  317.4MB
+ f69025247e93 Downloading  321.6MB
+ f69025247e93 Downloading  321.6MB
+ f69025247e93 Downloading  324.3MB
+ f69025247e93 Downloading  324.3MB
+ f69025247e93 Downloading  326.4MB
+ f69025247e93 Downloading  326.4MB
+ f69025247e93 Downloading  328.5MB
+ f69025247e93 Downloading  328.5MB
+ f69025247e93 Downloading  330.1MB
+ f69025247e93 Downloading  330.1MB
+ f69025247e93 Downloading  332.2MB
+ f69025247e93 Downloading  332.2MB
+ f69025247e93 Downloading  334.4MB
+ f69025247e93 Downloading  334.4MB
+ f69025247e93 Downloading  336.5MB
+ f69025247e93 Downloading  336.5MB
+ f69025247e93 Downloading  338.6MB
+ f69025247e93 Downloading  338.6MB
+ f69025247e93 Downloading  340.7MB
+ f69025247e93 Downloading  340.7MB
+ f69025247e93 Verifying Checksum 
+ f69025247e93 Download complete 
+ f69025247e93 Verifying Checksum 
+ f69025247e93 Download complete 
+ f69025247e93 Extracting  557.1kB
+ f69025247e93 Extracting  557.1kB
+ f69025247e93 Extracting   31.2MB
+ f69025247e93 Extracting   31.2MB
+ f69025247e93 Extracting  46.24MB
+ f69025247e93 Extracting  46.24MB
+ f69025247e93 Extracting  68.52MB
+ f69025247e93 Extracting  68.52MB
+ f69025247e93 Extracting  93.59MB
+ f69025247e93 Extracting  93.59MB
+ f69025247e93 Extracting  120.3MB
+ f69025247e93 Extracting  120.3MB
+ f69025247e93 Extracting  148.2MB
+ f69025247e93 Extracting  148.2MB
+ f69025247e93 Extracting  176.6MB
+ f69025247e93 Extracting  176.6MB
+ f69025247e93 Extracting  202.2MB
+ f69025247e93 Extracting  202.2MB
+ f69025247e93 Extracting    229MB
+ f69025247e93 Extracting    229MB
+ f69025247e93 Extracting  265.2MB
+ f69025247e93 Extracting  265.2MB
+ f69025247e93 Extracting  292.5MB
+ f69025247e93 Extracting  292.5MB
+ f69025247e93 Extracting  320.3MB
+ f69025247e93 Extracting  320.3MB
+ f69025247e93 Extracting  335.3MB
+ f69025247e93 Extracting  335.3MB
+ f69025247e93 Extracting  342.4MB
+ f69025247e93 Extracting  342.4MB
+ f69025247e93 Pull complete 
+ f69025247e93 Pull complete 
+ 5cb362653ac0 Extracting [==================================================>]     752B/752B
+ 5cb362653ac0 Extracting [==================================================>]     752B/752B
+ 5cb362653ac0 Extracting [==================================================>]     752B/752B
+ 5cb362653ac0 Pull complete 
+ 5cb362653ac0 Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ 4f4fb700ef54 Pull complete 
+ openmetadata-server Pulled 
+ execute-migrate-all Pulled 
+ Network data-experience-openmetadata_app_net  Creating
+ Network data-experience-openmetadata_app_net  Created
+ Volume "data-experience-openmetadata_es-data"  Creating
+ Volume "data-experience-openmetadata_es-data"  Created
+ Container openmetadata_mysql  Creating
+ Container openmetadata_elasticsearch  Creating
+ Container openmetadata_mysql  Created
+ Container openmetadata_elasticsearch  Created
+ Container execute_migrate_all  Creating
+ Container execute_migrate_all  Created
+ Container openmetadata_server  Creating
+ Container openmetadata_server  Created
+ Container openmetadata_mysql  Starting
+ Container openmetadata_elasticsearch  Starting
+ Container openmetadata_elasticsearch  Started
+ Container openmetadata_mysql  Started
+ Container openmetadata_elasticsearch  Waiting
+ Container openmetadata_mysql  Waiting
+ Container openmetadata_elasticsearch  Healthy
+ Container openmetadata_mysql  Healthy
+ Container execute_migrate_all  Starting
+ Container execute_migrate_all  Started
+ Container execute_migrate_all  Waiting
+ Container openmetadata_elasticsearch  Waiting
+ Container openmetadata_mysql  Waiting
+ Container openmetadata_mysql  Healthy
+ Container openmetadata_elasticsearch  Healthy
+ Container execute_migrate_all  service "execute-migrate-all" didn't complete successfully: exit 1
+service "execute-migrate-all" didn't complete successfully: exit 1

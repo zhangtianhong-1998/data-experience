@@ -1,0 +1,30 @@
+[
+  {
+    "table": "device_orders",
+    "text": "device_orders 设备订货事实表。每行是一张设备订货单；取消单不得计入订货指标。 device_business order_date year_month org_code product_l1 order_amount profit_amount status 订货日期 YYYYMM 整数月份 组织编码，分析必须显式限定 产品一级分类 设备订货金额，演示单位为 CNY 设备利润金额，演示单位为 CNY confirmed 或 cancelled；指标只统计 confirmed",
+    "certified": true,
+    "deprecated": false,
+    "popularity": 98
+  },
+  {
+    "table": "sales_orders",
+    "text": "sales_orders 销售订单事实表，sales_amount 是销售额，不是设备订货金额。 sales sales_amount 销售金额",
+    "certified": true,
+    "deprecated": false,
+    "popularity": 91
+  },
+  {
+    "table": "deprecated_device_orders",
+    "text": "deprecated_device_orders 已废弃的设备订货兼容视图，不得用于新查询。 device_business",
+    "certified": false,
+    "deprecated": true,
+    "popularity": 12
+  },
+  {
+    "table": "product_master",
+    "text": "product_master 产品主数据，可以通过 product_code 与设备订货表连接。 master_data product_code product_l1 product_name 产品编码 产品一级分类 产品名称",
+    "certified": true,
+    "deprecated": false,
+    "popularity": 76
+  }
+]

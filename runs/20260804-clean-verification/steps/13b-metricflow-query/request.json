@@ -1,0 +1,34 @@
+{
+  "step": "13b-metricflow-query",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/metricflow/device_project",
+  "argv": [
+    "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/metricflow-venv/bin/mf",
+    "query",
+    "--metrics",
+    "device_order_amount,device_profit_amount",
+    "--group-by",
+    "device_order__product_l1",
+    "--where",
+    "{{ Dimension('device_order__org_code') }} = 'ORG_1001'",
+    "--start-time",
+    "2026-01-01",
+    "--end-time",
+    "2026-06-30",
+    "--order",
+    "device_order__product_l1",
+    "--csv",
+    "results/org1001_h1_by_product.csv"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785778324.885966
+}

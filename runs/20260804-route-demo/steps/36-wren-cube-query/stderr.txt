@@ -1,0 +1,1 @@
+Error: [DUCKDB_FILE_NOT_FOUND] No DuckDB files found.

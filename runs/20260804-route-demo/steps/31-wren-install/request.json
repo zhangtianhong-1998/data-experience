@@ -1,0 +1,24 @@
+{
+  "step": "31-wren-install",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "uv",
+    "pip",
+    "install",
+    "--python",
+    "runtime/wren-venv/bin/python",
+    "wrenai"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785775584.257219
+}

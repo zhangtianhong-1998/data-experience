@@ -1,0 +1,2 @@
+{"query":"SELECT c7 AS product_l1, c2 AS year_month, SUM(c27) AS device_order_amount, SUM(c28) AS device_profit_amount FROM device_order_profit WHERE c2 BETWEEN '202601' AND '202606' AND c0 = 'ORG_1001' GROUP BY c7, c2","timestamp":"2026-07-15T10:00:00+08:00","user":"urn:li:corpuser:zhangsan"}
+{"query":"SELECT c7, SUM(c27) AS device_order_amount FROM device_order_profit WHERE c0 = 'ORG_1001' GROUP BY c7 ORDER BY device_order_amount DESC","timestamp":"2026-07-16T11:00:00+08:00","user":"urn:li:corpuser:zhangsan"}

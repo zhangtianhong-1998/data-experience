@@ -1,0 +1,3 @@
+name: device_order_profit
+properties:
+  description: "实验性业务视图：将 BI 中反复出现的中文别名映射为稳定字段名。映射尚待物理元数据和业务证据确认。"

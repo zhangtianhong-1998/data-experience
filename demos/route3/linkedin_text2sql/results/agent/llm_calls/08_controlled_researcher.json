@@ -1,0 +1,70 @@
+{
+  "stage": "08_controlled_researcher",
+  "model": "glm-5.2",
+  "prompt": {
+    "system": "Given a hallucinated table error, search the supplied index and recommend the exact replacement. Return {diagnosis,replacement_table,evidence}.",
+    "input": {
+      "question": "请统计 ORG_1001 在 2026 年上半年按产品一级分类的设备订货金额和设备利润，只统计已确认订单。",
+      "bad_sql": "SELECT product_l1, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_order_fact WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1 ORDER BY product_l1",
+      "errors": [
+        "unknown tables: ['device_order_fact']",
+        "tables outside selected context: ['device_order_fact']",
+        "unknown columns: ['order_amount', 'org_code', 'product_l1', 'profit_amount', 'status', 'year_month']"
+      ],
+      "table_index": [
+        {
+          "table": "device_orders",
+          "text": "device_orders 设备订货事实表。每行是一张设备订货单；取消单不得计入订货指标。 device_business order_date year_month org_code product_l1 order_amount profit_amount status 订货日期 YYYYMM 整数月份 组织编码，分析必须显式限定 产品一级分类 设备订货金额，演示单位为 CNY 设备利润金额，演示单位为 CNY confirmed 或 cancelled；指标只统计 confirmed",
+          "certified": true,
+          "deprecated": false,
+          "popularity": 98
+        },
+        {
+          "table": "sales_orders",
+          "text": "sales_orders 销售订单事实表，sales_amount 是销售额，不是设备订货金额。 sales sales_amount 销售金额",
+          "certified": true,
+          "deprecated": false,
+          "popularity": 91
+        },
+        {
+          "table": "deprecated_device_orders",
+          "text": "deprecated_device_orders 已废弃的设备订货兼容视图，不得用于新查询。 device_business",
+          "certified": false,
+          "deprecated": true,
+          "popularity": 12
+        },
+        {
+          "table": "product_master",
+          "text": "product_master 产品主数据，可以通过 product_code 与设备订货表连接。 master_data product_code product_l1 product_name 产品编码 产品一级分类 产品名称",
+          "certified": true,
+          "deprecated": false,
+          "popularity": 76
+        }
+      ]
+    }
+  },
+  "api_key_logged": false,
+  "success": true,
+  "fallback_used": false,
+  "response": "{\n  \"diagnosis\": \"SQL 使用了不存在的表 `device_order_fact`。根据索引，正确的设备订货事实表为已认证表 `device_orders`，该表包含所需字段：`org_code`、`year_month`、`product_l1`、`order_amount`、`profit_amount`、`status`，并明确只统计 `confirmed` 订单。\",\n  \"replacement_table\": \"device_orders\",\n  \"evidence\": \"device_orders 设备订货事实表，字段包括：device_business order_date year_month org_code product_l1 order_amount profit_amount status；状态为 confirmed 或 cancelled，指标只统计 confirmed；certified=true，deprecated=false。\"\n}",
+  "result": {
+    "diagnosis": "SQL 使用了不存在的表 `device_order_fact`。根据索引，正确的设备订货事实表为已认证表 `device_orders`，该表包含所需字段：`org_code`、`year_month`、`product_l1`、`order_amount`、`profit_amount`、`status`，并明确只统计 `confirmed` 订单。",
+    "replacement_table": "device_orders",
+    "evidence": "device_orders 设备订货事实表，字段包括：device_business order_date year_month org_code product_l1 order_amount profit_amount status；状态为 confirmed 或 cancelled，指标只统计 confirmed；certified=true，deprecated=false。"
+  },
+  "usage": {
+    "completion_tokens": 670,
+    "prompt_tokens": 497,
+    "total_tokens": 1167,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}

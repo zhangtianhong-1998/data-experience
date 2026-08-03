@@ -1,0 +1,5 @@
+sales_order_id,order_date,org_code,product_l1,sales_amount
+SO-001,2026-01-15,ORG_1001,Network,9200
+SO-002,2026-02-20,ORG_1001,Compute,15100
+SO-003,2026-03-12,ORG_2002,IoT,7800
+

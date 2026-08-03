@@ -1,0 +1,21 @@
+{
+  "step": "70b-linkedin-archive-order-sensitive-failure",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "/bin/mv",
+    "demos/route3/linkedin_text2sql/results",
+    "runtime/linkedin-text2sql/clean-predecessors/results-order-sensitive-failure"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785779247.619352
+}

@@ -1,0 +1,27 @@
+Python versions above 3.11 are not actively tested with yet. Please use Python 3.11 for now.
+[2026-08-04 00:59:15,817] INFO     {datahub.cli.quickstart_versioning:181} - Saved quickstart config to /Users/sanjiuganmaoling/.datahub/quickstart/quickstart_version_mapping.yaml.
+[2026-08-04 00:59:15,819] INFO     {datahub.cli.docker_cli:676} - Using quickstart plan: composefile_git_ref='v1.5.0.6' docker_tag='v1.5.0.6' mysql_tag='8.2'
+time="2026-08-04T00:59:16+08:00" level=warning msg="The \"DATAHUB_VERSION\" variable is not set. Defaulting to a blank string."
+time="2026-08-04T00:59:16+08:00" level=warning msg="The \"DATAHUB_TOKEN_SERVICE_SALT\" variable is not set. Defaulting to a blank string."
+time="2026-08-04T00:59:16+08:00" level=warning msg="The \"DATAHUB_TOKEN_SERVICE_SIGNING_KEY\" variable is not set. Defaulting to a blank string."
+time="2026-08-04T00:59:16+08:00" level=warning msg="The \"DATAHUB_VERSION\" variable is not set. Defaulting to a blank string."
+time="2026-08-04T00:59:16+08:00" level=warning msg="The \"DATAHUB_TOKEN_SERVICE_SALT\" variable is not set. Defaulting to a blank string."
+time="2026-08-04T00:59:16+08:00" level=warning msg="The \"UI_INGESTION_DEFAULT_CLI_VERSION\" variable is not set. Defaulting to a blank string."
+time="2026-08-04T00:59:16+08:00" level=warning msg="The \"DATAHUB_TOKEN_SERVICE_SIGNING_KEY\" variable is not set. Defaulting to a blank string."
+time="2026-08-04T00:59:16+08:00" level=warning msg="The \"DATAHUB_VERSION\" variable is not set. Defaulting to a blank string."
+time="2026-08-04T00:59:16+08:00" level=warning msg="The \"DATAHUB_VERSION\" variable is not set. Defaulting to a blank string."
+time="2026-08-04T00:59:16+08:00" level=warning msg="The \"DATAHUB_VERSION\" variable is not set. Defaulting to a blank string."
+ Container datahub-frontend-quickstart-1  Stopping
+ Container datahub-datahub-actions-quickstart-1  Stopping
+ Container datahub-frontend-quickstart-1  Stopped
+ Container datahub-datahub-actions-quickstart-1  Stopped
+ Container datahub-datahub-gms-quickstart-1  Stopping
+ Container datahub-datahub-gms-quickstart-1  Stopped
+ Container datahub-system-update-quickstart-1  Stopping
+ Container datahub-system-update-quickstart-1  Stopped
+ Container datahub-kafka-broker-1  Stopping
+ Container datahub-mysql-1  Stopping
+ Container datahub-opensearch-1  Stopping
+ Container datahub-opensearch-1  Stopped
+ Container datahub-kafka-broker-1  Stopped
+ Container datahub-mysql-1  Stopped

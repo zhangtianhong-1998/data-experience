@@ -1,0 +1,11 @@
+{
+  "cube": "device_business",
+  "measures": ["device_order_amount", "device_profit_amount"],
+  "dimensions": ["product_l1"],
+  "filters": [
+    {"dimension": "org_code", "operator": "eq", "value": "ORG_1001"},
+    {"dimension": "year_month", "operator": "gte", "value": 202601},
+    {"dimension": "year_month", "operator": "lte", "value": 202606}
+  ]
+}
+

@@ -1,0 +1,4 @@
+[0m17:31:32  Running with dbt=1.11.12
+[0m17:31:32  Checking /Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/metricflow/device_project/target/*
+[0m17:31:32  Cleaned /Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/metricflow/device_project/target/*
+[0m17:31:32  Finished cleaning all paths.

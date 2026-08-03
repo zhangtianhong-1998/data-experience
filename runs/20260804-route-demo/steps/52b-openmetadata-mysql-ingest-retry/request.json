@@ -1,0 +1,33 @@
+{
+  "step": "52b-openmetadata-mysql-ingest-retry",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "data-experience-openmetadata_app_net",
+    "--env-file",
+    "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/openmetadata-1.13.0/ingestion.env",
+    "-v",
+    "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata:/demo:ro",
+    "--entrypoint",
+    "metadata",
+    "docker.getcollate.io/openmetadata/ingestion:1.13.0",
+    "ingest",
+    "-c",
+    "/demo/ingest_mysql.yml"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785777213.210768
+}

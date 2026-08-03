@@ -1,0 +1,51 @@
+{
+  "why_controlled": "A correct primary answer would otherwise skip the paper's correction path.",
+  "faulty_sql": "SELECT product_l1, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_order_fact WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1 ORDER BY product_l1",
+  "fault_validation": {
+    "valid": false,
+    "errors": [
+      "unknown tables: ['device_order_fact']",
+      "tables outside selected context: ['device_order_fact']",
+      "unknown columns: ['order_amount', 'org_code', 'product_l1', 'profit_amount', 'status', 'year_month']"
+    ],
+    "used_tables": [
+      "device_order_fact"
+    ],
+    "business_rule_checks": {
+      "explicit_org_code": true,
+      "confirmed_only": true,
+      "h1_range": true
+    },
+    "duckdb_explain": null
+  },
+  "researcher_output": {
+    "diagnosis": "SQL 使用了不存在的表 `device_order_fact`。根据索引，正确的设备订货事实表为已认证表 `device_orders`，该表包含所需字段：`org_code`、`year_month`、`product_l1`、`order_amount`、`profit_amount`、`status`，并明确只统计 `confirmed` 订单。",
+    "replacement_table": "device_orders",
+    "evidence": "device_orders 设备订货事实表，字段包括：device_business order_date year_month org_code product_l1 order_amount profit_amount status；状态为 confirmed 或 cancelled，指标只统计 confirmed；certified=true，deprecated=false。"
+  },
+  "fixer_output": {
+    "sql": "SELECT product_l1, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1 ORDER BY product_l1",
+    "changes": [
+      {
+        "type": "table_replacement",
+        "from": "device_order_fact",
+        "to": "device_orders",
+        "reason": "表 device_order_fact 不存在；根据索引，已认证的设备订货事实表为 device_orders，且包含全部所需字段（org_code、year_month、product_l1、order_amount、profit_amount、status）。"
+      }
+    ]
+  },
+  "final_fixed_sql": "SELECT product_l1, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1 ORDER BY product_l1",
+  "final_validation": {
+    "valid": true,
+    "errors": [],
+    "used_tables": [
+      "device_orders"
+    ],
+    "business_rule_checks": {
+      "explicit_org_code": true,
+      "confirmed_only": true,
+      "h1_range": true
+    },
+    "duckdb_explain": "┌───────────────────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│__internal_decompress_strin│\n│           g(#0)           │\n│             #1            │\n│             #2            │\n│                           │\n│          ~0 rows          │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│          ORDER_BY         │\n│    ────────────────────   │\n│  demo.main.device_orders  │\n│      .product_l1 ASC      │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│__internal_compress_string_│\n│        ubigint(#0)        │\n│             #1            │\n│             #2            │\n│                           │\n│          ~2 rows          │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│__internal_decompress_strin│\n│           g(#0)           │\n│             #1            │\n│             #2            │\n│                           │\n│          ~2 rows          │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│       HASH_GROUP_BY       │\n│    ────────────────────   │\n│         Groups: #0        │\n│                           │\n│        Aggregates:        │\n│    sum_no_overflow(#1)    │\n│    sum_no_overflow(#2)    │\n│                           │\n│          ~2 rows          │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│         product_l1        │\n│        order_amount       │\n│       profit_amount       │\n│                           │\n│          ~8 rows          │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         PROJECTION        │\n│    ────────────────────   │\n│__internal_compress_string_│\n│        ubigint(#0)        │\n│             #1            │\n│             #2            │\n│                           │\n│          ~8 rows          │\n└─────────────┬─────────────┘\n┌─────────────┴─────────────┐\n│         SEQ_SCAN          │\n│    ────────────────────   │\n│           Table:          │\n│     device_orders_seed    │\n│                           │\n│   Type: Sequential Scan   │\n│                           │\n│        Projections:       │\n│         product_l1        │\n│        order_amount       │\n│       profit_amount       │\n│                           │\n│          Filters:         │\n│    org_code='ORG_1001'    │\n│     status='confirmed'    │\n│                           │\n│          ~8 rows          │\n└───────────────────────────┘\n"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "exit_code": 1,
+  "launch_error": null,
+  "duration_seconds": 0.063,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "c07c740fe362b6ff1711f11e9a7679a7d51f26b9e50bbe5d53e13dcc83c38a73",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/common/expected/baseline_verification.json",
+      "exists": true,
+      "size": 950,
+      "sha256": "ace1d5bf05eda11075c6591b5da61fce33f4a50e33b932c056a60a2585dd8ca8"
+    }
+  ]
+}

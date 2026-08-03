@@ -1,0 +1,16 @@
+{
+  "openmetadata_health": "healthy",
+  "source_container": "openmetadata_mysql",
+  "source_database": "enterprise_demo",
+  "row_counts": {
+    "device_orders": 16,
+    "device_orders_by_product": 3,
+    "sales_orders": 3
+  },
+  "expected": {
+    "device_orders": 16,
+    "device_orders_by_product": 3,
+    "sales_orders": 3
+  },
+  "passed": true
+}

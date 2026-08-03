@@ -1,0 +1,25 @@
+name: device_business
+base_object: device_orders
+measures:
+  - name: device_order_amount
+    expression: SUM(CASE WHEN status = 'confirmed' THEN order_amount ELSE 0 END)
+    type: DOUBLE
+  - name: device_profit_amount
+    expression: SUM(CASE WHEN status = 'confirmed' THEN profit_amount ELSE 0 END)
+    type: DOUBLE
+dimensions:
+  - name: product_l1
+    expression: product_l1
+    type: VARCHAR
+  - name: org_code
+    expression: org_code
+    type: VARCHAR
+  - name: year_month
+    expression: year_month
+    type: INTEGER
+  - name: status
+    expression: status
+    type: VARCHAR
+properties:
+  description: "已确认设备订货金额和利润的可执行 cube。"
+

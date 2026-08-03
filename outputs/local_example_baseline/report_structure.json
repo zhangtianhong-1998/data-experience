@@ -1,0 +1,248 @@
+{
+  "RPT_0001": {
+    "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+    "report_path_segments": [
+      "ipfm",
+      "w79184",
+      "【202606】Orange系统部设备订货制毛看板"
+    ],
+    "components": [
+      {
+        "component_no": 1,
+        "component_name": "图表4",
+        "dataset": {
+          "dataset_path": "ipfm/w79184/集05订货利润",
+          "dataset_path_segments": [
+            "ipfm",
+            "w79184",
+            "集05订货利润"
+          ],
+          "sql_list": [
+            {
+              "sql": "SELECT datain_1783070589517_temp.\"c7\" AS \"产品LV1\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+              "physical_tables": [
+                "dmprjdis_pfa.datain_1783070589517_temp"
+              ],
+              "occurrence_count": 1
+            }
+          ],
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ]
+        }
+      },
+      {
+        "component_no": 2,
+        "component_name": "图表3",
+        "dataset": {
+          "dataset_path": "ipfm/w79184/集05订货利润",
+          "dataset_path_segments": [
+            "ipfm",
+            "w79184",
+            "集05订货利润"
+          ],
+          "sql_list": [
+            {
+              "sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+              "physical_tables": [
+                "dmprjdis_pfa.datain_1783070589517_temp"
+              ],
+              "occurrence_count": 1
+            }
+          ],
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ]
+        }
+      },
+      {
+        "component_no": 3,
+        "component_name": "图表6",
+        "dataset": {
+          "dataset_path": "ipfm/w79184/集05订货利润",
+          "dataset_path_segments": [
+            "ipfm",
+            "w79184",
+            "集05订货利润"
+          ],
+          "sql_list": [
+            {
+              "sql": "SELECT datain_1783070589517_temp.\"c6\" AS \"国家\", datain_1783070589517_temp.\"c12\" AS \"合同名称\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2, 3_x000D_\nORDER BY 1 ASC, 2 ASC, 3 DESC_x000D_\nLIMIT 1000000",
+              "physical_tables": [
+                "dmprjdis_pfa.datain_1783070589517_temp"
+              ],
+              "occurrence_count": 1
+            }
+          ],
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ]
+        }
+      },
+      {
+        "component_no": 4,
+        "component_name": "图表5",
+        "dataset": {
+          "dataset_path": "ipfm/w79184/集05订货利润",
+          "dataset_path_segments": [
+            "ipfm",
+            "w79184",
+            "集05订货利润"
+          ],
+          "sql_list": [
+            {
+              "sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1_x000D_\nORDER BY 1 ASC_x000D_\nLIMIT 1000000",
+              "physical_tables": [
+                "dmprjdis_pfa.datain_1783070589517_temp"
+              ],
+              "occurrence_count": 1
+            }
+          ],
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ]
+        }
+      },
+      {
+        "component_no": 5,
+        "component_name": "图表2",
+        "dataset": {
+          "dataset_path": "ipfm/w79184/集05订货利润",
+          "dataset_path_segments": [
+            "ipfm",
+            "w79184",
+            "集05订货利润"
+          ],
+          "sql_list": [
+            {
+              "sql": "SELECT datain_1783070589517_temp.\"c2\" AS \"年月\", datain_1783070589517_temp.\"c7\" AS \"产品LV1\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 ASC_x000D_\nLIMIT 1000000",
+              "physical_tables": [
+                "dmprjdis_pfa.datain_1783070589517_temp"
+              ],
+              "occurrence_count": 1
+            }
+          ],
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ]
+        }
+      }
+    ],
+    "status": "信息不充分：组件1使用系统默认名称“图表4”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件2使用系统默认名称“图表3”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件3使用系统默认名称“图表6”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件4使用系统默认名称“图表5”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件5使用系统默认名称“图表2”；物理表匹配异常：组件5的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp"
+  },
+  "RPT_0002": {
+    "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+    "report_path_segments": [
+      "Management_Analysis",
+      "w00819891",
+      "【北京代表处大屏】"
+    ],
+    "components": [
+      {
+        "component_no": 1,
+        "component_name": "图表2",
+        "dataset": {
+          "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+          "dataset_path_segments": [
+            "Management_Analysis",
+            "w00819891",
+            "北京区域大屏"
+          ],
+          "sql_list": [
+            {
+              "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+              "physical_tables": [
+                "dmgeorcdis.datain_1727073357645_temp"
+              ],
+              "occurrence_count": 2
+            }
+          ],
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ]
+        }
+      },
+      {
+        "component_no": 2,
+        "component_name": "图表10",
+        "dataset": {
+          "dataset_path": "Management_Analysis/w00819891/ToB补录表250511",
+          "dataset_path_segments": [
+            "Management_Analysis",
+            "w00819891",
+            "ToB补录表250511"
+          ],
+          "sql_list": [
+            {
+              "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+              "physical_tables": [
+                "dmgeorcdis.datain_1727073357645_temp"
+              ],
+              "occurrence_count": 2
+            },
+            {
+              "sql": "SELECT MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmregdis.datain_1757258241454_temp datain_1757258241454_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( datain_1757258241454_temp.\"c0\" =  ?  )_x000D_\nLIMIT 1000000",
+              "physical_tables": [
+                "dmregdis.datain_1757258241454_temp"
+              ],
+              "occurrence_count": 2
+            }
+          ],
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp",
+            "dmregdis.datain_1757258241454_temp"
+          ]
+        }
+      },
+      {
+        "component_no": 3,
+        "component_name": "图表12",
+        "dataset": {
+          "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+          "dataset_path_segments": [
+            "Management_Analysis",
+            "w00819891",
+            "北京区域大屏"
+          ],
+          "sql_list": [
+            {
+              "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+              "physical_tables": [
+                "dmgeorcdis.datain_1727073357645_temp"
+              ],
+              "occurrence_count": 2
+            }
+          ],
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ]
+        }
+      },
+      {
+        "component_no": 4,
+        "component_name": "图表16",
+        "dataset": {
+          "dataset_path": "Management_Analysis/w00819891/【北京】经营月报",
+          "dataset_path_segments": [
+            "Management_Analysis",
+            "w00819891",
+            "【北京】经营月报"
+          ],
+          "sql_list": [
+            {
+              "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+              "physical_tables": [
+                "dmgeorcdis.datain_1727073357645_temp"
+              ],
+              "occurrence_count": 2
+            }
+          ],
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ]
+        }
+      }
+    ],
+    "status": "信息不充分：组件1使用系统默认名称“图表2”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件2使用系统默认名称“图表10”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmregdis.datain_1757258241454_temp；信息不充分：组件3使用系统默认名称“图表12”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件4使用系统默认名称“图表16”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp"
+  }
+}

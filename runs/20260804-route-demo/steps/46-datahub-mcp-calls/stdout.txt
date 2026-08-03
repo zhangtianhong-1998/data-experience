@@ -1,0 +1,1394 @@
+[
+  {
+    "operation": "tools/list",
+    "tool_names": [
+      "search",
+      "get_lineage",
+      "get_dataset_queries",
+      "get_entities",
+      "list_schema_fields",
+      "get_lineage_paths_between"
+    ]
+  },
+  {
+    "operation": "tools/call",
+    "tool": "search",
+    "arguments": {
+      "query": "/q device+orders",
+      "filter": "entity_type = dataset",
+      "num_results": 5
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"start\":0,\"count\":5,\"total\":2,\"searchResults\":[{\"entity\":{\"urn\":\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)\",\"properties\":{\"name\":\"设备订货事实表\"}}},{\"entity\":{\"urn\":\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders_by_product,PROD)\",\"properties\":{\"name\":\"device_orders_by_product\"}}}],\"facets\":[{\"field\":\"container\",\"displayName\":\"Container\",\"aggregations\":[{\"value\":\"urn:li:container:cdbfb61dabf709435aeaac4c2b8b25d8\",\"count\":2,\"entity\":{\"subTypes\":{\"typeNames\":[\"Schema\"]},\"properties\":{\"name\":\"main\"}}}]},{\"field\":\"_entityType␞typeNames\",\"displayName\":\"Type␞Sub Type\",\"aggregations\":[{\"value\":\"DATASET\",\"count\":2},{\"value\":\"DATASET␞Table\",\"count\":1},{\"value\":\"DATASET␞View\",\"count\":1}]},{\"field\":\"_entityType\",\"displayName\":\"Type\",\"aggregations\":[{\"value\":\"DATASET\",\"count\":2}]},{\"field\":\"origin\",\"displayName\":\"Environment\",\"aggregations\":[{\"value\":\"PROD\",\"count\":2}]},{\"field\":\"owners\",\"displayName\":\"Owned By\",\"aggregations\":[{\"value\":\"urn:li:corpuser:device_analytics\",\"count\":1}]},{\"field\":\"platform\",\"displayName\":\"Platform\",\"aggregations\":[{\"value\":\"urn:li:dataPlatform:sqlite\",\"count\":2}]},{\"field\":\"tags\",\"displayName\":\"Tagged With\",\"aggregations\":[{\"value\":\"urn:li:tag:CertifiedDeviceMetric\",\"count\":1}]},{\"field\":\"typeNames\",\"displayName\":\"Sub Type\",\"aggregations\":[{\"value\":\"Table\",\"count\":1},{\"value\":\"View\",\"count\":1}]},{\"field\":\"glossaryTerms\",\"displayName\":\"Glossary Term\",\"aggregations\":[{\"value\":\"urn:li:glossaryTerm:device_order_amount\",\"count\":1,\"entity\":{\"properties\":{\"name\":\"设备订货金额\"}}}]},{\"field\":\"_index\",\"displayName\":\"_index\",\"aggregations\":[{\"value\":\"datasetindex_v2\",\"count\":0}]},{\"field\":\"removed\",\"displayName\":\"removed\",\"aggregations\":[{\"value\":\"true\",\"count\":0}]},{\"field\":\"entity\",\"displayName\":\"Type\",\"aggregations\":[{\"value\":\"DATASET\",\"count\":2}]}]}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "start": 0,
+        "count": 5,
+        "total": 2,
+        "searchResults": [
+          {
+            "entity": {
+              "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+              "properties": {
+                "name": "设备订货事实表"
+              }
+            }
+          },
+          {
+            "entity": {
+              "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders_by_product,PROD)",
+              "properties": {
+                "name": "device_orders_by_product"
+              }
+            }
+          }
+        ],
+        "facets": [
+          {
+            "field": "container",
+            "displayName": "Container",
+            "aggregations": [
+              {
+                "value": "urn:li:container:cdbfb61dabf709435aeaac4c2b8b25d8",
+                "count": 2,
+                "entity": {
+                  "subTypes": {
+                    "typeNames": [
+                      "Schema"
+                    ]
+                  },
+                  "properties": {
+                    "name": "main"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "field": "_entityType␞typeNames",
+            "displayName": "Type␞Sub Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 2
+              },
+              {
+                "value": "DATASET␞Table",
+                "count": 1
+              },
+              {
+                "value": "DATASET␞View",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "_entityType",
+            "displayName": "Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "field": "origin",
+            "displayName": "Environment",
+            "aggregations": [
+              {
+                "value": "PROD",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "field": "owners",
+            "displayName": "Owned By",
+            "aggregations": [
+              {
+                "value": "urn:li:corpuser:device_analytics",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "platform",
+            "displayName": "Platform",
+            "aggregations": [
+              {
+                "value": "urn:li:dataPlatform:sqlite",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "field": "tags",
+            "displayName": "Tagged With",
+            "aggregations": [
+              {
+                "value": "urn:li:tag:CertifiedDeviceMetric",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "typeNames",
+            "displayName": "Sub Type",
+            "aggregations": [
+              {
+                "value": "Table",
+                "count": 1
+              },
+              {
+                "value": "View",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "glossaryTerms",
+            "displayName": "Glossary Term",
+            "aggregations": [
+              {
+                "value": "urn:li:glossaryTerm:device_order_amount",
+                "count": 1,
+                "entity": {
+                  "properties": {
+                    "name": "设备订货金额"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "field": "_index",
+            "displayName": "_index",
+            "aggregations": [
+              {
+                "value": "datasetindex_v2",
+                "count": 0
+              }
+            ]
+          },
+          {
+            "field": "removed",
+            "displayName": "removed",
+            "aggregations": [
+              {
+                "value": "true",
+                "count": 0
+              }
+            ]
+          },
+          {
+            "field": "entity",
+            "displayName": "Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 2
+              }
+            ]
+          }
+        ]
+      },
+      "meta": null,
+      "data": {
+        "start": 0,
+        "count": 5,
+        "total": 2,
+        "searchResults": [
+          {
+            "entity": {
+              "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+              "properties": {
+                "name": "设备订货事实表"
+              }
+            }
+          },
+          {
+            "entity": {
+              "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders_by_product,PROD)",
+              "properties": {
+                "name": "device_orders_by_product"
+              }
+            }
+          }
+        ],
+        "facets": [
+          {
+            "field": "container",
+            "displayName": "Container",
+            "aggregations": [
+              {
+                "value": "urn:li:container:cdbfb61dabf709435aeaac4c2b8b25d8",
+                "count": 2,
+                "entity": {
+                  "subTypes": {
+                    "typeNames": [
+                      "Schema"
+                    ]
+                  },
+                  "properties": {
+                    "name": "main"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "field": "_entityType␞typeNames",
+            "displayName": "Type␞Sub Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 2
+              },
+              {
+                "value": "DATASET␞Table",
+                "count": 1
+              },
+              {
+                "value": "DATASET␞View",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "_entityType",
+            "displayName": "Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "field": "origin",
+            "displayName": "Environment",
+            "aggregations": [
+              {
+                "value": "PROD",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "field": "owners",
+            "displayName": "Owned By",
+            "aggregations": [
+              {
+                "value": "urn:li:corpuser:device_analytics",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "platform",
+            "displayName": "Platform",
+            "aggregations": [
+              {
+                "value": "urn:li:dataPlatform:sqlite",
+                "count": 2
+              }
+            ]
+          },
+          {
+            "field": "tags",
+            "displayName": "Tagged With",
+            "aggregations": [
+              {
+                "value": "urn:li:tag:CertifiedDeviceMetric",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "typeNames",
+            "displayName": "Sub Type",
+            "aggregations": [
+              {
+                "value": "Table",
+                "count": 1
+              },
+              {
+                "value": "View",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "glossaryTerms",
+            "displayName": "Glossary Term",
+            "aggregations": [
+              {
+                "value": "urn:li:glossaryTerm:device_order_amount",
+                "count": 1,
+                "entity": {
+                  "properties": {
+                    "name": "设备订货金额"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "field": "_index",
+            "displayName": "_index",
+            "aggregations": [
+              {
+                "value": "datasetindex_v2",
+                "count": 0
+              }
+            ]
+          },
+          {
+            "field": "removed",
+            "displayName": "removed",
+            "aggregations": [
+              {
+                "value": "true",
+                "count": 0
+              }
+            ]
+          },
+          {
+            "field": "entity",
+            "displayName": "Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 2
+              }
+            ]
+          }
+        ]
+      },
+      "is_error": false
+    }
+  },
+  {
+    "operation": "tools/call",
+    "tool": "get_entities",
+    "arguments": {
+      "urns": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"urn\":\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)\",\"name\":\"设备订货事实表\",\"platform\":{\"urn\":\"urn:li:dataPlatform:sqlite\",\"name\":\"sqlite\"},\"editableProperties\":{\"description\":\"合成 Demo。每行一张设备订货单；取消单不得计入指标。\"},\"properties\":{\"name\":\"设备订货事实表\",\"customProperties\":[{\"key\":\"required_filter\",\"value\":\"status=confirmed and explicit org_code\"},{\"key\":\"unit\",\"value\":\"CNY\"},{\"key\":\"certification\",\"value\":\"demo_certified\"}]},\"ownership\":{\"owners\":[{\"owner\":{\"urn\":\"urn:li:corpuser:device_analytics\"},\"type\":\"TECHNICAL_OWNER\",\"ownershipType\":{\"urn\":\"urn:li:ownershipType:__system__technical_owner\",\"type\":\"CUSTOM_OWNERSHIP_TYPE\",\"info\":{\"name\":\"Technical Owner\",\"description\":\"Involved in the production, maintenance, or distribution of the asset(s).\"}}}]},\"tags\":{\"tags\":[{\"tag\":{\"urn\":\"urn:li:tag:CertifiedDeviceMetric\",\"properties\":{\"name\":\"已认证设备指标\",\"description\":\"仅用于合成 Demo 的治理标签。\"}}}]},\"glossaryTerms\":{\"terms\":[{\"term\":{\"urn\":\"urn:li:glossaryTerm:device_order_amount\",\"hierarchicalName\":\"device_order_amount\",\"properties\":{\"name\":\"设备订货金额\",\"description\":\"confirmed 设备订货单的 order_amount 合计；必须限定 org_code，单位 CNY。\",\"termSource\":\"INTERNAL\"},\"parentNodes\":{\"count\":0}}}]},\"subTypes\":{\"typeNames\":[\"Table\"]},\"health\":[{\"type\":\"INCIDENTS\",\"status\":\"PASS\"}],\"schemaMetadata\":{\"name\":\"main.device_orders\",\"platformUrn\":\"urn:li:dataPlatform:sqlite\",\"fields\":[{\"fieldPath\":\"order_id\",\"nativeDataType\":\"TEXT\",\"nullable\":true,\"isPartOfKey\":true},{\"fieldPath\":\"country\",\"nativeDataType\":\"TEXT\",\"nullable\":true},{\"fieldPath\":\"order_amount\",\"nativeDataType\":\"NUMERIC\",\"nullable\":true},{\"fieldPath\":\"order_date\",\"nativeDataType\":\"TEXT\",\"nullable\":false},{\"fieldPath\":\"org_code\",\"nativeDataType\":\"TEXT\",\"nullable\":false},{\"fieldPath\":\"product_code\",\"nativeDataType\":\"TEXT\",\"nullable\":false},{\"fieldPath\":\"product_l1\",\"nativeDataType\":\"TEXT\",\"nullable\":false},{\"fieldPath\":\"profit_amount\",\"nativeDataType\":\"NUMERIC\",\"nullable\":true},{\"fieldPath\":\"status\",\"nativeDataType\":\"TEXT\",\"nullable\":false},{\"fieldPath\":\"year_month\",\"nativeDataType\":\"INTEGER\",\"nullable\":false}]},\"relatedDocuments\":{\"start\":0,\"count\":10,\"total\":0}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "result": {
+          "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+          "name": "设备订货事实表",
+          "platform": {
+            "urn": "urn:li:dataPlatform:sqlite",
+            "name": "sqlite"
+          },
+          "editableProperties": {
+            "description": "合成 Demo。每行一张设备订货单；取消单不得计入指标。"
+          },
+          "properties": {
+            "name": "设备订货事实表",
+            "customProperties": [
+              {
+                "key": "required_filter",
+                "value": "status=confirmed and explicit org_code"
+              },
+              {
+                "key": "unit",
+                "value": "CNY"
+              },
+              {
+                "key": "certification",
+                "value": "demo_certified"
+              }
+            ]
+          },
+          "ownership": {
+            "owners": [
+              {
+                "owner": {
+                  "urn": "urn:li:corpuser:device_analytics"
+                },
+                "type": "TECHNICAL_OWNER",
+                "ownershipType": {
+                  "urn": "urn:li:ownershipType:__system__technical_owner",
+                  "type": "CUSTOM_OWNERSHIP_TYPE",
+                  "info": {
+                    "name": "Technical Owner",
+                    "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                  }
+                }
+              }
+            ]
+          },
+          "tags": {
+            "tags": [
+              {
+                "tag": {
+                  "urn": "urn:li:tag:CertifiedDeviceMetric",
+                  "properties": {
+                    "name": "已认证设备指标",
+                    "description": "仅用于合成 Demo 的治理标签。"
+                  }
+                }
+              }
+            ]
+          },
+          "glossaryTerms": {
+            "terms": [
+              {
+                "term": {
+                  "urn": "urn:li:glossaryTerm:device_order_amount",
+                  "hierarchicalName": "device_order_amount",
+                  "properties": {
+                    "name": "设备订货金额",
+                    "description": "confirmed 设备订货单的 order_amount 合计；必须限定 org_code，单位 CNY。",
+                    "termSource": "INTERNAL"
+                  },
+                  "parentNodes": {
+                    "count": 0
+                  }
+                }
+              }
+            ]
+          },
+          "subTypes": {
+            "typeNames": [
+              "Table"
+            ]
+          },
+          "health": [
+            {
+              "type": "INCIDENTS",
+              "status": "PASS"
+            }
+          ],
+          "schemaMetadata": {
+            "name": "main.device_orders",
+            "platformUrn": "urn:li:dataPlatform:sqlite",
+            "fields": [
+              {
+                "fieldPath": "order_id",
+                "nativeDataType": "TEXT",
+                "nullable": true,
+                "isPartOfKey": true
+              },
+              {
+                "fieldPath": "country",
+                "nativeDataType": "TEXT",
+                "nullable": true
+              },
+              {
+                "fieldPath": "order_amount",
+                "nativeDataType": "NUMERIC",
+                "nullable": true
+              },
+              {
+                "fieldPath": "order_date",
+                "nativeDataType": "TEXT",
+                "nullable": false
+              },
+              {
+                "fieldPath": "org_code",
+                "nativeDataType": "TEXT",
+                "nullable": false
+              },
+              {
+                "fieldPath": "product_code",
+                "nativeDataType": "TEXT",
+                "nullable": false
+              },
+              {
+                "fieldPath": "product_l1",
+                "nativeDataType": "TEXT",
+                "nullable": false
+              },
+              {
+                "fieldPath": "profit_amount",
+                "nativeDataType": "NUMERIC",
+                "nullable": true
+              },
+              {
+                "fieldPath": "status",
+                "nativeDataType": "TEXT",
+                "nullable": false
+              },
+              {
+                "fieldPath": "year_month",
+                "nativeDataType": "INTEGER",
+                "nullable": false
+              }
+            ]
+          },
+          "relatedDocuments": {
+            "start": 0,
+            "count": 10,
+            "total": 0
+          }
+        }
+      },
+      "meta": {
+        "fastmcp": {
+          "wrap_result": true
+        }
+      },
+      "data": {
+        "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+        "name": "设备订货事实表",
+        "platform": {
+          "urn": "urn:li:dataPlatform:sqlite",
+          "name": "sqlite"
+        },
+        "editableProperties": {
+          "description": "合成 Demo。每行一张设备订货单；取消单不得计入指标。"
+        },
+        "properties": {
+          "name": "设备订货事实表",
+          "customProperties": [
+            {
+              "key": "required_filter",
+              "value": "status=confirmed and explicit org_code"
+            },
+            {
+              "key": "unit",
+              "value": "CNY"
+            },
+            {
+              "key": "certification",
+              "value": "demo_certified"
+            }
+          ]
+        },
+        "ownership": {
+          "owners": [
+            {
+              "owner": {
+                "urn": "urn:li:corpuser:device_analytics"
+              },
+              "type": "TECHNICAL_OWNER",
+              "ownershipType": {
+                "urn": "urn:li:ownershipType:__system__technical_owner",
+                "type": "CUSTOM_OWNERSHIP_TYPE",
+                "info": {
+                  "name": "Technical Owner",
+                  "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                }
+              }
+            }
+          ]
+        },
+        "tags": {
+          "tags": [
+            {
+              "tag": {
+                "urn": "urn:li:tag:CertifiedDeviceMetric",
+                "properties": {
+                  "name": "已认证设备指标",
+                  "description": "仅用于合成 Demo 的治理标签。"
+                }
+              }
+            }
+          ]
+        },
+        "glossaryTerms": {
+          "terms": [
+            {
+              "term": {
+                "urn": "urn:li:glossaryTerm:device_order_amount",
+                "hierarchicalName": "device_order_amount",
+                "properties": {
+                  "name": "设备订货金额",
+                  "description": "confirmed 设备订货单的 order_amount 合计；必须限定 org_code，单位 CNY。",
+                  "termSource": "INTERNAL"
+                },
+                "parentNodes": {
+                  "count": 0
+                }
+              }
+            }
+          ]
+        },
+        "subTypes": {
+          "typeNames": [
+            "Table"
+          ]
+        },
+        "health": [
+          {
+            "type": "INCIDENTS",
+            "status": "PASS"
+          }
+        ],
+        "schemaMetadata": {
+          "name": "main.device_orders",
+          "platformUrn": "urn:li:dataPlatform:sqlite",
+          "fields": [
+            {
+              "fieldPath": "order_id",
+              "nativeDataType": "TEXT",
+              "nullable": true,
+              "isPartOfKey": true
+            },
+            {
+              "fieldPath": "country",
+              "nativeDataType": "TEXT",
+              "nullable": true
+            },
+            {
+              "fieldPath": "order_amount",
+              "nativeDataType": "NUMERIC",
+              "nullable": true
+            },
+            {
+              "fieldPath": "order_date",
+              "nativeDataType": "TEXT",
+              "nullable": false
+            },
+            {
+              "fieldPath": "org_code",
+              "nativeDataType": "TEXT",
+              "nullable": false
+            },
+            {
+              "fieldPath": "product_code",
+              "nativeDataType": "TEXT",
+              "nullable": false
+            },
+            {
+              "fieldPath": "product_l1",
+              "nativeDataType": "TEXT",
+              "nullable": false
+            },
+            {
+              "fieldPath": "profit_amount",
+              "nativeDataType": "NUMERIC",
+              "nullable": true
+            },
+            {
+              "fieldPath": "status",
+              "nativeDataType": "TEXT",
+              "nullable": false
+            },
+            {
+              "fieldPath": "year_month",
+              "nativeDataType": "INTEGER",
+              "nullable": false
+            }
+          ]
+        },
+        "relatedDocuments": {
+          "start": 0,
+          "count": 10,
+          "total": 0
+        }
+      },
+      "is_error": false
+    }
+  },
+  {
+    "operation": "tools/call",
+    "tool": "list_schema_fields",
+    "arguments": {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+      "limit": 30
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"urn\":\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)\",\"fields\":[{\"fieldPath\":\"order_id\",\"nativeDataType\":\"TEXT\",\"nullable\":true,\"isPartOfKey\":true},{\"fieldPath\":\"country\",\"nativeDataType\":\"TEXT\",\"nullable\":true},{\"fieldPath\":\"order_amount\",\"nativeDataType\":\"NUMERIC\",\"nullable\":true},{\"fieldPath\":\"order_date\",\"nativeDataType\":\"TEXT\",\"nullable\":false},{\"fieldPath\":\"org_code\",\"nativeDataType\":\"TEXT\",\"nullable\":false},{\"fieldPath\":\"product_code\",\"nativeDataType\":\"TEXT\",\"nullable\":false},{\"fieldPath\":\"product_l1\",\"nativeDataType\":\"TEXT\",\"nullable\":false},{\"fieldPath\":\"profit_amount\",\"nativeDataType\":\"NUMERIC\",\"nullable\":true},{\"fieldPath\":\"status\",\"nativeDataType\":\"TEXT\",\"nullable\":false},{\"fieldPath\":\"year_month\",\"nativeDataType\":\"INTEGER\",\"nullable\":false}],\"totalFields\":10,\"returned\":10,\"remainingCount\":0,\"matchingCount\":null,\"offset\":0}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+        "fields": [
+          {
+            "fieldPath": "order_id",
+            "nativeDataType": "TEXT",
+            "nullable": true,
+            "isPartOfKey": true
+          },
+          {
+            "fieldPath": "country",
+            "nativeDataType": "TEXT",
+            "nullable": true
+          },
+          {
+            "fieldPath": "order_amount",
+            "nativeDataType": "NUMERIC",
+            "nullable": true
+          },
+          {
+            "fieldPath": "order_date",
+            "nativeDataType": "TEXT",
+            "nullable": false
+          },
+          {
+            "fieldPath": "org_code",
+            "nativeDataType": "TEXT",
+            "nullable": false
+          },
+          {
+            "fieldPath": "product_code",
+            "nativeDataType": "TEXT",
+            "nullable": false
+          },
+          {
+            "fieldPath": "product_l1",
+            "nativeDataType": "TEXT",
+            "nullable": false
+          },
+          {
+            "fieldPath": "profit_amount",
+            "nativeDataType": "NUMERIC",
+            "nullable": true
+          },
+          {
+            "fieldPath": "status",
+            "nativeDataType": "TEXT",
+            "nullable": false
+          },
+          {
+            "fieldPath": "year_month",
+            "nativeDataType": "INTEGER",
+            "nullable": false
+          }
+        ],
+        "totalFields": 10,
+        "returned": 10,
+        "remainingCount": 0,
+        "matchingCount": null,
+        "offset": 0
+      },
+      "meta": null,
+      "data": {
+        "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+        "fields": [
+          {
+            "fieldPath": "order_id",
+            "nativeDataType": "TEXT",
+            "nullable": true,
+            "isPartOfKey": true
+          },
+          {
+            "fieldPath": "country",
+            "nativeDataType": "TEXT",
+            "nullable": true
+          },
+          {
+            "fieldPath": "order_amount",
+            "nativeDataType": "NUMERIC",
+            "nullable": true
+          },
+          {
+            "fieldPath": "order_date",
+            "nativeDataType": "TEXT",
+            "nullable": false
+          },
+          {
+            "fieldPath": "org_code",
+            "nativeDataType": "TEXT",
+            "nullable": false
+          },
+          {
+            "fieldPath": "product_code",
+            "nativeDataType": "TEXT",
+            "nullable": false
+          },
+          {
+            "fieldPath": "product_l1",
+            "nativeDataType": "TEXT",
+            "nullable": false
+          },
+          {
+            "fieldPath": "profit_amount",
+            "nativeDataType": "NUMERIC",
+            "nullable": true
+          },
+          {
+            "fieldPath": "status",
+            "nativeDataType": "TEXT",
+            "nullable": false
+          },
+          {
+            "fieldPath": "year_month",
+            "nativeDataType": "INTEGER",
+            "nullable": false
+          }
+        ],
+        "totalFields": 10,
+        "returned": 10,
+        "remainingCount": 0,
+        "matchingCount": null,
+        "offset": 0
+      },
+      "is_error": false
+    }
+  },
+  {
+    "operation": "tools/call",
+    "tool": "get_dataset_queries",
+    "arguments": {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+      "count": 10
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"start\":0,\"total\":2,\"count\":10,\"queries\":[{\"urn\":\"urn:li:query:5caa6d250d76a5c2b089c68a6728e9f8ff8195cbf8817520c2bfd8697dbed7a9\",\"properties\":{\"source\":\"SYSTEM\",\"statement\":{\"value\":\"SELECT year_month, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND status = 'confirmed' GROUP BY year_month\",\"language\":\"SQL\"},\"lastModified\":{\"actor\":\"urn:li:corpuser:analyst_b\"}},\"platform\":{\"urn\":\"urn:li:dataPlatform:sqlite\",\"name\":\"sqlite\"},\"subjects\":[\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)\"]},{\"urn\":\"urn:li:query:267dc0b200b40cc9cc98f13bc875407debf5599b66d030f39dfd1909e49448f6\",\"properties\":{\"source\":\"SYSTEM\",\"statement\":{\"value\":\"SELECT product_l1, SUM(order_amount) AS device_order_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1\",\"language\":\"SQL\"},\"lastModified\":{\"actor\":\"urn:li:corpuser:analyst_a\"}},\"platform\":{\"urn\":\"urn:li:dataPlatform:sqlite\",\"name\":\"sqlite\"},\"subjects\":[\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)\"]}]}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "start": 0,
+        "total": 2,
+        "count": 10,
+        "queries": [
+          {
+            "urn": "urn:li:query:5caa6d250d76a5c2b089c68a6728e9f8ff8195cbf8817520c2bfd8697dbed7a9",
+            "properties": {
+              "source": "SYSTEM",
+              "statement": {
+                "value": "SELECT year_month, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND status = 'confirmed' GROUP BY year_month",
+                "language": "SQL"
+              },
+              "lastModified": {
+                "actor": "urn:li:corpuser:analyst_b"
+              }
+            },
+            "platform": {
+              "urn": "urn:li:dataPlatform:sqlite",
+              "name": "sqlite"
+            },
+            "subjects": [
+              "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)"
+            ]
+          },
+          {
+            "urn": "urn:li:query:267dc0b200b40cc9cc98f13bc875407debf5599b66d030f39dfd1909e49448f6",
+            "properties": {
+              "source": "SYSTEM",
+              "statement": {
+                "value": "SELECT product_l1, SUM(order_amount) AS device_order_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1",
+                "language": "SQL"
+              },
+              "lastModified": {
+                "actor": "urn:li:corpuser:analyst_a"
+              }
+            },
+            "platform": {
+              "urn": "urn:li:dataPlatform:sqlite",
+              "name": "sqlite"
+            },
+            "subjects": [
+              "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)"
+            ]
+          }
+        ]
+      },
+      "meta": null,
+      "data": {
+        "start": 0,
+        "total": 2,
+        "count": 10,
+        "queries": [
+          {
+            "urn": "urn:li:query:5caa6d250d76a5c2b089c68a6728e9f8ff8195cbf8817520c2bfd8697dbed7a9",
+            "properties": {
+              "source": "SYSTEM",
+              "statement": {
+                "value": "SELECT year_month, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND status = 'confirmed' GROUP BY year_month",
+                "language": "SQL"
+              },
+              "lastModified": {
+                "actor": "urn:li:corpuser:analyst_b"
+              }
+            },
+            "platform": {
+              "urn": "urn:li:dataPlatform:sqlite",
+              "name": "sqlite"
+            },
+            "subjects": [
+              "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)"
+            ]
+          },
+          {
+            "urn": "urn:li:query:267dc0b200b40cc9cc98f13bc875407debf5599b66d030f39dfd1909e49448f6",
+            "properties": {
+              "source": "SYSTEM",
+              "statement": {
+                "value": "SELECT product_l1, SUM(order_amount) AS device_order_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1",
+                "language": "SQL"
+              },
+              "lastModified": {
+                "actor": "urn:li:corpuser:analyst_a"
+              }
+            },
+            "platform": {
+              "urn": "urn:li:dataPlatform:sqlite",
+              "name": "sqlite"
+            },
+            "subjects": [
+              "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)"
+            ]
+          }
+        ]
+      },
+      "is_error": false
+    }
+  },
+  {
+    "operation": "tools/call",
+    "tool": "get_lineage",
+    "arguments": {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+      "upstream": false,
+      "max_hops": 2
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"downstreams\":{\"total\":2,\"facets\":[{\"field\":\"degree\",\"displayName\":\"Degree of Dependencies\",\"aggregations\":[{\"value\":\"1\",\"count\":0},{\"value\":\"2\",\"count\":0},{\"value\":\"3+\",\"count\":0}]},{\"field\":\"_entityType\",\"displayName\":\"Type\",\"aggregations\":[{\"value\":\"DASHBOARD\",\"count\":1},{\"value\":\"CHART\",\"count\":1}]},{\"field\":\"platform\",\"displayName\":\"Platform\",\"aggregations\":[{\"value\":\"urn:li:dataPlatform:powerbi\",\"count\":2,\"entity\":{\"urn\":\"urn:li:dataPlatform:powerbi\"}}]},{\"field\":\"owners\",\"displayName\":\"Owned By\",\"aggregations\":[{\"value\":\"urn:li:corpuser:device_analytics\",\"count\":2,\"entity\":{\"urn\":\"urn:li:corpuser:device_analytics\"}}]},{\"field\":\"_entityType␞typeNames\",\"displayName\":\"Type␞Sub Type\",\"aggregations\":[{\"value\":\"DASHBOARD\",\"count\":1},{\"value\":\"CHART\",\"count\":1}]},{\"field\":\"removed\",\"displayName\":\"removed\",\"aggregations\":[{\"value\":\"true\",\"count\":0}]},{\"field\":\"type\",\"displayName\":\"Chart Type\",\"aggregations\":[{\"value\":\"BAR\",\"count\":1}]},{\"field\":\"entity\",\"displayName\":\"Type\",\"aggregations\":[{\"value\":\"CHART\",\"count\":1},{\"value\":\"DASHBOARD\",\"count\":1}]}],\"searchResults\":[{\"entity\":{\"urn\":\"urn:li:chart:(powerbi,device_orders_by_product)\",\"type\":\"CHART\",\"tool\":\"powerbi\",\"chartId\":\"device_orders_by_product\",\"properties\":{\"name\":\"各产品设备订货金额\",\"description\":\"\",\"type\":\"BAR\",\"lastModified\":{\"time\":0}},\"ownership\":{\"owners\":[{\"owner\":{\"urn\":\"urn:li:corpuser:device_analytics\"},\"type\":\"TECHNICAL_OWNER\",\"ownershipType\":{\"urn\":\"urn:li:ownershipType:__system__technical_owner\",\"type\":\"CUSTOM_OWNERSHIP_TYPE\",\"info\":{\"name\":\"Technical Owner\",\"description\":\"Involved in the production, maintenance, or distribution of the asset(s).\"}}}]},\"platform\":{\"urn\":\"urn:li:dataPlatform:powerbi\",\"name\":\"powerbi\"},\"health\":[{\"type\":\"INCIDENTS\",\"status\":\"PASS\"}]},\"degree\":1},{\"entity\":{\"urn\":\"urn:li:dashboard:(powerbi,device_business_h1_2026)\",\"type\":\"DASHBOARD\",\"tool\":\"powerbi\",\"dashboardId\":\"device_business_h1_2026\",\"properties\":{\"name\":\"2026 上半年设备经营看板\",\"description\":\"\",\"lastModified\":{\"time\":0}},\"ownership\":{\"owners\":[{\"owner\":{\"urn\":\"urn:li:corpuser:device_analytics\"},\"type\":\"TECHNICAL_OWNER\",\"ownershipType\":{\"urn\":\"urn:li:ownershipType:__system__technical_owner\",\"type\":\"CUSTOM_OWNERSHIP_TYPE\",\"info\":{\"name\":\"Technical Owner\",\"description\":\"Involved in the production, maintenance, or distribution of the asset(s).\"}}}]},\"platform\":{\"urn\":\"urn:li:dataPlatform:powerbi\",\"name\":\"powerbi\"},\"health\":[{\"type\":\"INCIDENTS\",\"status\":\"PASS\"}]},\"degree\":1}],\"offset\":0,\"returned\":2,\"hasMore\":false}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "downstreams": {
+          "total": 2,
+          "facets": [
+            {
+              "field": "degree",
+              "displayName": "Degree of Dependencies",
+              "aggregations": [
+                {
+                  "value": "1",
+                  "count": 0
+                },
+                {
+                  "value": "2",
+                  "count": 0
+                },
+                {
+                  "value": "3+",
+                  "count": 0
+                }
+              ]
+            },
+            {
+              "field": "_entityType",
+              "displayName": "Type",
+              "aggregations": [
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                },
+                {
+                  "value": "CHART",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "platform",
+              "displayName": "Platform",
+              "aggregations": [
+                {
+                  "value": "urn:li:dataPlatform:powerbi",
+                  "count": 2,
+                  "entity": {
+                    "urn": "urn:li:dataPlatform:powerbi"
+                  }
+                }
+              ]
+            },
+            {
+              "field": "owners",
+              "displayName": "Owned By",
+              "aggregations": [
+                {
+                  "value": "urn:li:corpuser:device_analytics",
+                  "count": 2,
+                  "entity": {
+                    "urn": "urn:li:corpuser:device_analytics"
+                  }
+                }
+              ]
+            },
+            {
+              "field": "_entityType␞typeNames",
+              "displayName": "Type␞Sub Type",
+              "aggregations": [
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                },
+                {
+                  "value": "CHART",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "removed",
+              "displayName": "removed",
+              "aggregations": [
+                {
+                  "value": "true",
+                  "count": 0
+                }
+              ]
+            },
+            {
+              "field": "type",
+              "displayName": "Chart Type",
+              "aggregations": [
+                {
+                  "value": "BAR",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "entity",
+              "displayName": "Type",
+              "aggregations": [
+                {
+                  "value": "CHART",
+                  "count": 1
+                },
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "searchResults": [
+            {
+              "entity": {
+                "urn": "urn:li:chart:(powerbi,device_orders_by_product)",
+                "type": "CHART",
+                "tool": "powerbi",
+                "chartId": "device_orders_by_product",
+                "properties": {
+                  "name": "各产品设备订货金额",
+                  "description": "",
+                  "type": "BAR",
+                  "lastModified": {
+                    "time": 0
+                  }
+                },
+                "ownership": {
+                  "owners": [
+                    {
+                      "owner": {
+                        "urn": "urn:li:corpuser:device_analytics"
+                      },
+                      "type": "TECHNICAL_OWNER",
+                      "ownershipType": {
+                        "urn": "urn:li:ownershipType:__system__technical_owner",
+                        "type": "CUSTOM_OWNERSHIP_TYPE",
+                        "info": {
+                          "name": "Technical Owner",
+                          "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                        }
+                      }
+                    }
+                  ]
+                },
+                "platform": {
+                  "urn": "urn:li:dataPlatform:powerbi",
+                  "name": "powerbi"
+                },
+                "health": [
+                  {
+                    "type": "INCIDENTS",
+                    "status": "PASS"
+                  }
+                ]
+              },
+              "degree": 1
+            },
+            {
+              "entity": {
+                "urn": "urn:li:dashboard:(powerbi,device_business_h1_2026)",
+                "type": "DASHBOARD",
+                "tool": "powerbi",
+                "dashboardId": "device_business_h1_2026",
+                "properties": {
+                  "name": "2026 上半年设备经营看板",
+                  "description": "",
+                  "lastModified": {
+                    "time": 0
+                  }
+                },
+                "ownership": {
+                  "owners": [
+                    {
+                      "owner": {
+                        "urn": "urn:li:corpuser:device_analytics"
+                      },
+                      "type": "TECHNICAL_OWNER",
+                      "ownershipType": {
+                        "urn": "urn:li:ownershipType:__system__technical_owner",
+                        "type": "CUSTOM_OWNERSHIP_TYPE",
+                        "info": {
+                          "name": "Technical Owner",
+                          "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                        }
+                      }
+                    }
+                  ]
+                },
+                "platform": {
+                  "urn": "urn:li:dataPlatform:powerbi",
+                  "name": "powerbi"
+                },
+                "health": [
+                  {
+                    "type": "INCIDENTS",
+                    "status": "PASS"
+                  }
+                ]
+              },
+              "degree": 1
+            }
+          ],
+          "offset": 0,
+          "returned": 2,
+          "hasMore": false
+        }
+      },
+      "meta": null,
+      "data": {
+        "downstreams": {
+          "total": 2,
+          "facets": [
+            {
+              "field": "degree",
+              "displayName": "Degree of Dependencies",
+              "aggregations": [
+                {
+                  "value": "1",
+                  "count": 0
+                },
+                {
+                  "value": "2",
+                  "count": 0
+                },
+                {
+                  "value": "3+",
+                  "count": 0
+                }
+              ]
+            },
+            {
+              "field": "_entityType",
+              "displayName": "Type",
+              "aggregations": [
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                },
+                {
+                  "value": "CHART",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "platform",
+              "displayName": "Platform",
+              "aggregations": [
+                {
+                  "value": "urn:li:dataPlatform:powerbi",
+                  "count": 2,
+                  "entity": {
+                    "urn": "urn:li:dataPlatform:powerbi"
+                  }
+                }
+              ]
+            },
+            {
+              "field": "owners",
+              "displayName": "Owned By",
+              "aggregations": [
+                {
+                  "value": "urn:li:corpuser:device_analytics",
+                  "count": 2,
+                  "entity": {
+                    "urn": "urn:li:corpuser:device_analytics"
+                  }
+                }
+              ]
+            },
+            {
+              "field": "_entityType␞typeNames",
+              "displayName": "Type␞Sub Type",
+              "aggregations": [
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                },
+                {
+                  "value": "CHART",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "removed",
+              "displayName": "removed",
+              "aggregations": [
+                {
+                  "value": "true",
+                  "count": 0
+                }
+              ]
+            },
+            {
+              "field": "type",
+              "displayName": "Chart Type",
+              "aggregations": [
+                {
+                  "value": "BAR",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "entity",
+              "displayName": "Type",
+              "aggregations": [
+                {
+                  "value": "CHART",
+                  "count": 1
+                },
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "searchResults": [
+            {
+              "entity": {
+                "urn": "urn:li:chart:(powerbi,device_orders_by_product)",
+                "type": "CHART",
+                "tool": "powerbi",
+                "chartId": "device_orders_by_product",
+                "properties": {
+                  "name": "各产品设备订货金额",
+                  "description": "",
+                  "type": "BAR",
+                  "lastModified": {
+                    "time": 0
+                  }
+                },
+                "ownership": {
+                  "owners": [
+                    {
+                      "owner": {
+                        "urn": "urn:li:corpuser:device_analytics"
+                      },
+                      "type": "TECHNICAL_OWNER",
+                      "ownershipType": {
+                        "urn": "urn:li:ownershipType:__system__technical_owner",
+                        "type": "CUSTOM_OWNERSHIP_TYPE",
+                        "info": {
+                          "name": "Technical Owner",
+                          "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                        }
+                      }
+                    }
+                  ]
+                },
+                "platform": {
+                  "urn": "urn:li:dataPlatform:powerbi",
+                  "name": "powerbi"
+                },
+                "health": [
+                  {
+                    "type": "INCIDENTS",
+                    "status": "PASS"
+                  }
+                ]
+              },
+              "degree": 1
+            },
+            {
+              "entity": {
+                "urn": "urn:li:dashboard:(powerbi,device_business_h1_2026)",
+                "type": "DASHBOARD",
+                "tool": "powerbi",
+                "dashboardId": "device_business_h1_2026",
+                "properties": {
+                  "name": "2026 上半年设备经营看板",
+                  "description": "",
+                  "lastModified": {
+                    "time": 0
+                  }
+                },
+                "ownership": {
+                  "owners": [
+                    {
+                      "owner": {
+                        "urn": "urn:li:corpuser:device_analytics"
+                      },
+                      "type": "TECHNICAL_OWNER",
+                      "ownershipType": {
+                        "urn": "urn:li:ownershipType:__system__technical_owner",
+                        "type": "CUSTOM_OWNERSHIP_TYPE",
+                        "info": {
+                          "name": "Technical Owner",
+                          "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                        }
+                      }
+                    }
+                  ]
+                },
+                "platform": {
+                  "urn": "urn:li:dataPlatform:powerbi",
+                  "name": "powerbi"
+                },
+                "health": [
+                  {
+                    "type": "INCIDENTS",
+                    "status": "PASS"
+                  }
+                ]
+              },
+              "degree": 1
+            }
+          ],
+          "offset": 0,
+          "returned": 2,
+          "hasMore": false
+        }
+      },
+      "is_error": false
+    }
+  }
+]

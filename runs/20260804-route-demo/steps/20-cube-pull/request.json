@@ -1,0 +1,21 @@
+{
+  "step": "20-cube-pull",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/cube",
+  "argv": [
+    "docker",
+    "compose",
+    "pull"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785775510.733304
+}

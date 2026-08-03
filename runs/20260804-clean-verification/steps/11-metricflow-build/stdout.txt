@@ -1,0 +1,4 @@
+[0m17:31:35  Running with dbt=1.11.12
+[0m17:31:35  Encountered an error:
+Parsing Error
+  Env var required but not provided: 'MF_DUCKDB_PATH'

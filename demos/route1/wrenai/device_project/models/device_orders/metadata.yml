@@ -1,0 +1,33 @@
+name: device_orders
+table_reference:
+  catalog: demo
+  schema: main
+  table: device_orders
+columns:
+  - name: order_id
+    type: VARCHAR
+    is_primary_key: true
+  - name: order_date
+    type: DATE
+  - name: year_month
+    type: INTEGER
+  - name: org_code
+    type: VARCHAR
+    properties:
+      description: "组织编码；分析必须显式限定。"
+  - name: product_code
+    type: VARCHAR
+  - name: product_l1
+    type: VARCHAR
+    properties:
+      description: "产品一级分类。"
+  - name: order_amount
+    type: DOUBLE
+  - name: profit_amount
+    type: DOUBLE
+  - name: country
+    type: VARCHAR
+  - name: status
+    type: VARCHAR
+properties:
+  description: "合成设备订货事实表。每行一张订货单，取消单不得计入指标。"

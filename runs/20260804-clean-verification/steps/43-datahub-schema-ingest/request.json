@@ -1,0 +1,22 @@
+{
+  "step": "43-datahub-schema-ingest",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/datahub",
+  "argv": [
+    "lab/.venv/bin/datahub",
+    "ingest",
+    "-c",
+    "ingest_sqlite.yml"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785778841.305961
+}

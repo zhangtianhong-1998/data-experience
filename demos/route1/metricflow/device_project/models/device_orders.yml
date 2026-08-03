@@ -1,0 +1,54 @@
+semantic_models:
+  - name: device_orders
+    description: 每行一张设备订货单；订货和利润指标只统计 confirmed 状态。
+    defaults:
+      agg_time_dimension: order_date
+    model: ref('device_orders')
+    entities:
+      - name: device_order
+        type: primary
+        expr: order_id
+    dimensions:
+      - name: order_date
+        type: time
+        type_params:
+          time_granularity: day
+      - name: year_month
+        type: categorical
+      - name: org_code
+        type: categorical
+      - name: product_l1
+        type: categorical
+      - name: country
+        type: categorical
+      - name: status
+        type: categorical
+    measures:
+      - name: confirmed_device_order_amount
+        description: 已确认设备订货单的订货金额合计，演示单位 CNY。
+        expr: CASE WHEN status = 'confirmed' THEN order_amount ELSE 0 END
+        agg: SUM
+      - name: confirmed_device_profit_amount
+        description: 已确认设备订货单的利润金额合计，演示单位 CNY。
+        expr: CASE WHEN status = 'confirmed' THEN profit_amount ELSE 0 END
+        agg: SUM
+
+metrics:
+  - name: device_order_amount
+    label: 设备订货金额
+    description: 已确认设备订货单的订货金额合计。
+    type: simple
+    type_params:
+      measure: confirmed_device_order_amount
+  - name: device_profit_amount
+    label: 设备利润金额
+    description: 已确认设备订货单的利润金额合计。
+    type: simple
+    type_params:
+      measure: confirmed_device_profit_amount
+  - name: device_profit_margin
+    label: 设备利润率
+    type: ratio
+    type_params:
+      numerator: device_profit_amount
+      denominator: device_order_amount

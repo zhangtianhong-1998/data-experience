@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/tools/build_evidence_manifest.py", line 42, in <module>
+    result = read_json(step_dir.relative_to(ROOT) / "result.json")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/tools/build_evidence_manifest.py", line 35, in read_json
+    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/sanjiuganmaoling/Desktop/code/data-experience/runs/20260804-clean-verification/steps/90-build-evidence-manifest/result.json'

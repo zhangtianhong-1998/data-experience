@@ -1,0 +1,13 @@
+{
+  "exit_code": 1,
+  "launch_error": null,
+  "duration_seconds": 0.147,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "d86c4e7e77e4d6dc58b79411576bed323185be8f678a8e0b98f09426c5270d4d",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/results/login_metadata.json",
+      "exists": false
+    }
+  ]
+}

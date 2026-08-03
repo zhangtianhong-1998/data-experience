@@ -1,0 +1,9 @@
+{
+  "database": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/datahub/input/datahub_demo.db",
+  "row_counts": {
+    "device_orders": 16,
+    "product_master": 3,
+    "sales_orders": 3
+  },
+  "view_count": 1
+}

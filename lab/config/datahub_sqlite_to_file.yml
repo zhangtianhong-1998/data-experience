@@ -1,0 +1,13 @@
+source:
+  type: sqlalchemy
+  config:
+    platform: sqlite
+    connect_uri: sqlite:////Users/sanjiuganmaoling/Desktop/code/data-experience/lab/input/demo_metadata.db
+    include_tables: true
+    include_views: true
+    profiling:
+      enabled: false
+sink:
+  type: file
+  config:
+    filename: /Users/sanjiuganmaoling/Desktop/code/data-experience/lab/output/datahub_connector_events.json

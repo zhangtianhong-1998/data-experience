@@ -1,0 +1,13 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 3.039,
+  "stdout_sha256": "1335b9c406f80944a00b40c16ea0689c3fd0abd821bc8ae4055f72f8eb8eadd9",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/metricflow/device_project/results/org1001_h1_by_product.csv",
+      "exists": false
+    }
+  ]
+}

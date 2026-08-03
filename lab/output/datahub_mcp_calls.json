@@ -1,0 +1,1610 @@
+[
+  {
+    "operation": "tools/list",
+    "result": [
+      {
+        "name": "search",
+        "description": "Search across DataHub entities using structured full-text search.\n    Results are ordered by relevance and importance - examine top results first.\n\n    SEARCH SYNTAX:\n    - Structured full-text search - **always start queries with /q**\n    - **Recommended: Use + operator for AND** (handles punctuation better than quotes)\n    - Supports full boolean logic: AND (default), OR, NOT, parentheses, field searches\n    - Examples:\n      * /q user+transaction -> requires both terms (better for field names with _ or punctuation)\n      * /q point+sale+app -> requires all terms (works with point_of_sale_app_usage)\n      * /q wizard OR pet -> entities containing either term\n      * /q revenue* -> wildcard matching (revenue_2023, revenue_2024, revenue_monthly, etc.)\n      * /q tag:PII -> search by tag name\n      * /q \"exact table name\" -> exact phrase matching (use sparingly)\n      * /q (sales OR revenue) AND quarterly -> complex boolean combinations\n    - Fast and precise for exact matching, technical terms, and complex queries\n    - Best for: entity names, identifiers, column names, or any search needing boolean logic\n\n    PAGINATION:\n    - num_results: Number of results to return per page (max: 50)\n    - offset: Starting position in results (default: 0)\n    - Examples:\n      * First page: offset=0, num_results=10\n      * Second page: offset=10, num_results=10\n      * Third page: offset=20, num_results=10\n\n    FACET EXPLORATION - Discover metadata without returning results:\n    - Set num_results=0 to get ONLY facets (no search results)\n    - Facets show ALL tags, glossaryTerms, platforms, domains used in the catalog\n    - Example: search(query=\"*\", filter=\"entity_type = dataset\", num_results=0)\n      -> Returns facets showing all tags/glossaryTerms applied to datasets\n    - Use this to discover what metadata exists before doing filtered searches\n\n    TYPICAL WORKFLOW:\n    1. Facet exploration: search(query=\"*\", filter=\"entity_type = dataset\", num_results=0)\n       -> Examine tags/glossaryTerms facets to see what metadata exists\n    2. Filtered search: search(query=\"*\", filter=\"tag = urn:li:tag:pii\", num_results=30)\n       -> Get entities with specific tag using URN from step 1\n    3. Get details: Use get_entities() on specific results\n\n    FILTER SYNTAX (SQL-like WHERE clause):\n    Uses simple SQL-like syntax with AND, OR, NOT, and parentheses.\n\n    Basic filters:\n      platform = snowflake\n      entity_type = dataset\n      env = PROD\n\n    Multiple values (IN):\n      platform IN (snowflake, bigquery, redshift)\n      entity_type IN (dataset, dashboard)\n\n    Combining filters:\n      platform = snowflake AND env = PROD\n      entity_type = dataset AND platform IN (snowflake, bigquery)\n\n    OR and parentheses:\n      platform = snowflake OR platform = bigquery\n      entity_type = dataset AND (platform = snowflake OR platform = bigquery)\n\n    NOT:\n      NOT env = DEV\n      entity_type = dataset AND NOT platform = looker\n\n    Comparison operators (>, >=, <, <=):\n      columnCount > 10\n      columnCount >= 5\n      columnCount <= 100\n\n    Existence checks (IS NULL / IS NOT NULL):\n      glossary_term IS NOT NULL\n      tag IS NOT NULL\n      owner IS NULL\n\n    Complex:\n      entity_type = dataset AND env = PROD AND (platform = snowflake OR platform = bigquery)\n\n    SUPPORTED FILTER FIELDS:\n    - entity_type: dataset, dashboard, chart, corp_user, corp_group, dataProduct, etc.\n    - entity_subtype (or subtype): Table, View, Model, etc.\n    - platform: snowflake, bigquery, looker, tableau, etc.\n    - domain: full URN required, e.g. urn:li:domain:marketing\n    - container: full URN required, e.g. urn:li:container:abc123\n    - tag: full URN required, e.g. urn:li:tag:PII\n    - glossary_term: full URN required, e.g. urn:li:glossaryTerm:uuid\n    - owner: full URN required, e.g. urn:li:corpuser:alice or urn:li:corpGroup:team\n    - env: PROD, DEV, STAGING (only use if explicitly requested)\n    - status: NOT_SOFT_DELETED, ALL, ONLY_SOFT_DELETED\n    - deprecated: true or false (whether the entity is marked as deprecated)\n    - hasActiveIncidents: true or false (whether the entity has active incidents)\n    - hasFailingAssertions: true or false (whether the entity has failing assertions)\n    - columnCount: number of columns (from dataset profiling)\n\n    IMPORTANT: Domain, container, tag, glossary_term, and owner filters require\n    full URN format (urn:li:...). Search with entity_type = domain first to find\n    valid domain URNs, then use the exact URN from the results.\n\n    STRUCTURED PROPERTY FILTERS:\n    Use structuredProperties.<qualifiedName> as the field name. The qualifiedName\n    is the ID portion of the structured property URN (urn:li:structuredProperty:<qualifiedName>).\n      structuredProperties.io.acryl.privacy.retentionTime = 30\n      structuredProperties.31b94813-7667-4ae8-b93a-a72cc5e0c75b IN (Published, Certified)\n      structuredProperties.my.custom.property IS NOT NULL\n    Values are CASE-SENSITIVE. Some structured properties have fixed allowed values\n    (e.g. \"Published\", \"Certified\"). Use get_entities on the structured property URN\n    to check definition.allowedValues and match the exact casing.\n\n    Values containing special characters (spaces, =, parentheses) must be quoted:\n      tag = \"urn:li:tag:my tag\"\n      customProperties = \"key=value\"\n\n    SEARCH STRATEGY EXAMPLES:\n    - /q customer+behavior -> finds tables with both terms (works with customer_behavior fields)\n    - /q customer OR user -> finds tables with either term\n    - /q (financial OR revenue) AND metrics -> complex boolean logic\n\n    SORTING - Order results by specific fields:\n    - sort_by: Field name to sort by (optional)\n    - sort_order: \"desc\" (default) or \"asc\"\n\n    Available sort fields:\n    - lastOperationTime: Last modified timestamp in source system\n\n    Sorting examples:\n    - Most recently updated:\n      search(query=\"*\", filter=\"entity_type = dataset\", sort_by=\"lastOperationTime\", sort_order=\"desc\", num_results=10)\n\n    Note: If sort_by is not provided, search results use default ranking by relevance and\n    importance. When using sort_by, results are strictly ordered by that field.\n    ",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "query": {
+              "default": "*",
+              "type": "string"
+            },
+            "filter": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "num_results": {
+              "default": 10,
+              "type": "integer"
+            },
+            "sort_by": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "sort_order": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "asc",
+                    "desc"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": "desc"
+            },
+            "offset": {
+              "default": 0,
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      {
+        "name": "get_lineage",
+        "description": "Get upstream or downstream lineage for any entity, including datasets, schemaFields, dashboards, charts, etc.\n\n    Set upstream to True for upstream lineage, False for downstream lineage.\n    Set `column: null` to get lineage for entire dataset or for entity type other than dataset.\n    Setting max_hops to 3 is equivalent to unlimited hops.\n\n    FILTER SYNTAX (SQL-like WHERE clause):\n    Uses simple SQL-like syntax with AND, OR, NOT, and parentheses.\n\n    Basic filters:\n      platform = snowflake\n      entity_type = dataset\n      env = PROD\n\n    Multiple values (IN):\n      platform IN (snowflake, bigquery, redshift)\n      entity_type IN (dataset, dashboard)\n\n    Combining filters:\n      platform = snowflake AND env = PROD\n      entity_type = dataset AND platform IN (snowflake, bigquery)\n\n    OR and parentheses:\n      platform = snowflake OR platform = bigquery\n      entity_type = dataset AND (platform = snowflake OR platform = bigquery)\n\n    NOT:\n      NOT env = DEV\n      entity_type = dataset AND NOT platform = looker\n\n    Comparison operators (>, >=, <, <=):\n      columnCount > 10\n      columnCount >= 5\n      columnCount <= 100\n\n    Existence checks (IS NULL / IS NOT NULL):\n      glossary_term IS NOT NULL\n      tag IS NOT NULL\n      owner IS NULL\n\n    Complex:\n      entity_type = dataset AND env = PROD AND (platform = snowflake OR platform = bigquery)\n\n    SUPPORTED FILTER FIELDS:\n    - entity_type: dataset, dashboard, chart, corp_user, corp_group, dataProduct, etc.\n    - entity_subtype (or subtype): Table, View, Model, etc.\n    - platform: snowflake, bigquery, looker, tableau, etc.\n    - domain: full URN required, e.g. urn:li:domain:marketing\n    - container: full URN required, e.g. urn:li:container:abc123\n    - tag: full URN required, e.g. urn:li:tag:PII\n    - glossary_term: full URN required, e.g. urn:li:glossaryTerm:uuid\n    - owner: full URN required, e.g. urn:li:corpuser:alice or urn:li:corpGroup:team\n    - env: PROD, DEV, STAGING (only use if explicitly requested)\n    - status: NOT_SOFT_DELETED, ALL, ONLY_SOFT_DELETED\n    - deprecated: true or false (whether the entity is marked as deprecated)\n    - hasActiveIncidents: true or false (whether the entity has active incidents)\n    - hasFailingAssertions: true or false (whether the entity has failing assertions)\n    - columnCount: number of columns (from dataset profiling)\n\n    IMPORTANT: Domain, container, tag, glossary_term, and owner filters require\n    full URN format (urn:li:...). Search with entity_type = domain first to find\n    valid domain URNs, then use the exact URN from the results.\n\n    STRUCTURED PROPERTY FILTERS:\n    Use structuredProperties.<qualifiedName> as the field name. The qualifiedName\n    is the ID portion of the structured property URN (urn:li:structuredProperty:<qualifiedName>).\n      structuredProperties.io.acryl.privacy.retentionTime = 30\n      structuredProperties.31b94813-7667-4ae8-b93a-a72cc5e0c75b IN (Published, Certified)\n      structuredProperties.my.custom.property IS NOT NULL\n    Values are CASE-SENSITIVE. Some structured properties have fixed allowed values\n    (e.g. \"Published\", \"Certified\"). Use get_entities on the structured property URN\n    to check definition.allowedValues and match the exact casing.\n\n    Values containing special characters (spaces, =, parentheses) must be quoted:\n      tag = \"urn:li:tag:my tag\"\n      customProperties = \"key=value\"\n\n    PAGINATION:\n    Use offset to paginate through large lineage graphs:\n    - offset=0, max_results=30 -> first 30 entities\n    - offset=30, max_results=30 -> next 30 entities\n\n    Note: Token budget constraints may return fewer entities than max_results.\n    Check the returned metadata (hasMore, returned, etc.) to understand truncation.\n\n    QUERY PARAMETER - Search within lineage results:\n    You can filter lineage results using the `query` parameter with same /q syntax as search tool:\n    - /q workspace.growthgestaofin -> find tables in specific schema\n    - /q customer+transactions -> find entities with both terms\n    - /q looker OR tableau -> find dashboards on either platform\n    - /q * -> get all lineage results (default)\n\n    Examples:\n    - Find specific table in 643 downstreams: query=\"workspace.growthgestaofin.qs_retention\"\n    - Find Looker dashboards in lineage: query=\"/q tag:looker\"\n    - Get all results: query=\"*\" or omit parameter\n\n    COUNT PARAMETER - Control result size:\n    - Default: 30 results\n    - For aggregation: count=30 is sufficient (facets computed on ALL items server-side)\n    - For finding specific item: Increase count or use query to filter\n    - Example: count=100 for larger result sets\n\n    WHEN TO USE QUERY vs COUNT:\n    - User asks \"is X affected?\" -> Use query to filter for X specifically\n    - Large lineage (>30 items) -> Keep count=30, use facets for aggregation\n    - Need complete list -> Increase count only if total <=100\n    ",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "urn": {
+              "type": "string"
+            },
+            "column": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "query": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "filter": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "upstream": {
+              "default": true,
+              "type": "boolean"
+            },
+            "max_hops": {
+              "default": 1,
+              "type": "integer"
+            },
+            "max_results": {
+              "default": 30,
+              "type": "integer"
+            },
+            "offset": {
+              "default": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "urn"
+          ],
+          "type": "object"
+        }
+      },
+      {
+        "name": "get_dataset_queries",
+        "description": "Get SQL queries associated with a dataset or column to understand usage patterns.\n\n    This tool retrieves actual SQL queries that reference a specific dataset or column.\n    Useful for understanding how data is used, common JOIN patterns, typical filters,\n    and aggregation logic.\n\n    PARAMETERS:\n\n    source - Filter by query origin:\n    - \"MANUAL\": Queries written by users in query editors (real SQL patterns)\n    - \"SYSTEM\": Queries extracted from BI tools/dashboards (production usage)\n    - null: Return both types (default)\n\n    COMMON USE CASES:\n\n    1. SQL Generation - Learn real query patterns:\n       get_dataset_queries(urn, source=\"MANUAL\", count=5-10)\n       → See how users actually write SQL against this table\n       → Discover common JOINs, aggregations, filters\n       → Match organizational SQL conventions and patterns\n\n    2. Production usage analysis:\n       get_dataset_queries(urn, source=\"SYSTEM\", count=20)\n       → See how dashboards and reports query this data\n       → Understand which queries run in production\n       → Identify critical query patterns\n\n    3. Column usage patterns:\n       get_dataset_queries(urn, column=\"customer_id\", source=\"MANUAL\", count=5)\n       → See how a specific column is used in queries\n       → Learn filtering and grouping patterns for that column\n       → Discover relationships via JOIN patterns\n\n    4. General usage exploration:\n       get_dataset_queries(urn, count=10)\n       → Get mix of manual and system queries\n       → Understand overall table usage\n\n    EXAMPLES:\n\n    - Get manual queries for SQL generation:\n      get_dataset_queries(\n          urn=\"urn:li:dataset:(urn:li:dataPlatform:snowflake,prod.sales.orders,PROD)\",\n          source=\"MANUAL\",\n          count=10\n      )\n\n    - Get dashboard queries (production usage):\n      get_dataset_queries(\n          urn=\"urn:li:dataset:(...)\",\n          source=\"SYSTEM\",\n          count=20\n      )\n\n    - Column-specific query patterns:\n      get_dataset_queries(\n          urn=\"urn:li:dataset:(...)\",\n          column=\"created_at\",\n          source=\"MANUAL\",\n          count=5\n      )\n\n    RESPONSE STRUCTURE:\n    - total: Total number of queries matching criteria\n    - start: Starting offset\n    - count: Number of results returned\n    - queries: Array of query objects with:\n      - urn: Query identifier\n      - properties.statement.value: The actual SQL text\n      - properties.statement.language: Query language (SQL, etc.)\n      - properties.source: MANUAL or SYSTEM\n      - properties.name: Optional query name\n      - platform: Source platform\n      - subjects: Referenced datasets/columns (deduplicated to dataset URNs)\n\n    ANALYZING RETRIEVED QUERIES:\n    Once you retrieve queries, examine the SQL statements to identify:\n    - JOIN patterns: Which tables are joined? On what keys?\n    - Aggregations: Common SUM, COUNT, AVG, GROUP BY patterns\n    - Filters: Typical WHERE clauses, date range logic\n    - Column usage: Which columns appear frequently vs rarely\n    - CTEs and subqueries: Complex query structures\n\n    BEST PRACTICES:\n    - For SQL generation: Use source=\"MANUAL\" (count=5-10) to see real user patterns\n    - For production analysis: Use source=\"SYSTEM\" to see dashboard/report queries\n    - Start with moderate count (5-10) to avoid overwhelming context\n    - If no queries found (total=0), proceed without query examples - not all tables have queries\n    - Parse the SQL statements yourself to find patterns - they are not full-text searchable\n    ",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "urn": {
+              "type": "string"
+            },
+            "column": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "source": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "MANUAL",
+                    "SYSTEM"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "start": {
+              "default": 0,
+              "type": "integer"
+            },
+            "count": {
+              "default": 10,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "urn"
+          ],
+          "type": "object"
+        }
+      },
+      {
+        "name": "get_entities",
+        "description": "Get detailed information about one or more entities by their DataHub URNs.\n\n    IMPORTANT: Pass an array of URNs to retrieve multiple entities in a single call - this is much\n    more efficient than calling this tool multiple times. When examining search results, always pass\n    an array with the top 3-10 result URNs to compare and find the best match.\n\n    Accepts an array of URNs or a single URN. Supports all entity types including datasets,\n    assertions, incidents, dashboards, charts, users, groups, and more. The response fields vary\n    based on the entity type.\n    ",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "urns": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "urns"
+          ],
+          "type": "object"
+        }
+      },
+      {
+        "name": "list_schema_fields",
+        "description": "List schema fields for a dataset, with optional keyword filtering and pagination.\n\n    Useful when schema fields were truncated in search results (schemaFieldsTruncated present)\n    and you need to explore specific columns. Supports pagination for large schemas.\n\n    Args:\n        urn: Dataset URN\n        keywords: Optional list of keywords to filter schema fields (OR matching).\n                 - Single keyword: Treated as one keyword (NOT split on whitespace). Use for field names or exact phrases.\n                 - Multiple keywords: Multiple keywords, matches any (OR logic).\n                 - None or empty list: Returns all fields in priority order (same as get_entities).\n                 Matches against fieldPath, description, label, tags, and glossary terms.\n                 Matching fields are returned first, sorted by match count.\n        limit: Maximum number of fields to return (default: 100)\n        offset: Number of fields to skip for pagination (default: 0)\n\n    Returns:\n        Dictionary with:\n        - urn: The dataset URN\n        - fields: List of schema fields (paginated)\n        - totalFields: Total number of fields in the schema\n        - returned: Number of fields actually returned\n        - remainingCount: Number of fields not included after offset (accounts for limit and token budget)\n        - matchingCount: Number of fields that matched keywords (if keywords provided, None otherwise)\n        - offset: The offset used\n\n    Examples:\n        # Single keyword (list) - search for exact field name or phrase\n        list_schema_fields(urn=\"urn:li:dataset:(...)\", keywords=[\"user_email\"])\n        # Returns fields matching \"user_email\" (like user_email_address, primary_user_email)\n\n        # Multiple keywords (list) - OR matching\n        list_schema_fields(urn=\"urn:li:dataset:(...)\", keywords=[\"email\", \"user\"])\n        # Returns fields containing \"email\" OR \"user\" (user_email, contact_email, user_id, etc.)\n\n        # Pagination through all fields\n        list_schema_fields(urn=\"urn:li:dataset:(...)\", limit=100, offset=0)   # First 100\n        list_schema_fields(urn=\"urn:li:dataset:(...)\", limit=100, offset=100) # Next 100\n\n        # Combine filtering + pagination\n        list_schema_fields(urn=\"urn:li:dataset:(...)\", keywords=[\"user\"], limit=50, offset=0)\n    ",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "urn": {
+              "type": "string",
+              "description": "Dataset URN"
+            },
+            "keywords": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional list of keywords to filter schema fields (OR matching).\n     - Single keyword: Treated as one keyword (NOT split on whitespace). Use for field names or exact phrases.\n     - Multiple keywords: Multiple keywords, matches any (OR logic).\n     - None or empty list: Returns all fields in priority order (same as get_entities).\n     Matches against fieldPath, description, label, tags, and glossary terms.\n     Matching fields are returned first, sorted by match count."
+            },
+            "limit": {
+              "default": 100,
+              "type": "integer",
+              "description": "Maximum number of fields to return (default: 100)"
+            },
+            "offset": {
+              "default": 0,
+              "type": "integer",
+              "description": "Number of fields to skip for pagination (default: 0)"
+            }
+          },
+          "required": [
+            "urn"
+          ],
+          "type": "object"
+        }
+      },
+      {
+        "name": "get_lineage_paths_between",
+        "description": "Get detailed lineage path(s) between two specific entities or columns.\n\n    Returns the paths array from searchAcrossLineage, showing the exact transformation\n    chain(s) including intermediate entities, columns, and transformation query URNs.\n\n    Unlike get_lineage() which returns all lineage targets with compact lineageColumns,\n    this tool focuses on ONE specific target and returns detailed path information.\n\n    Args:\n        source_urn: URN of the source dataset\n        target_urn: URN of the target dataset\n        source_column: Optional column name in source dataset\n        target_column: Optional column name in target dataset (required if source_column provided)\n        direction: Optional direction to search. If None (default), automatically discovers\n                  the path by trying downstream first, then upstream. Specify \"downstream\" or\n                  \"upstream\" explicitly for better performance if you know the direction.\n\n    Returns:\n        Dictionary with:\n        - source: Source entity/column info\n        - target: Target entity/column info\n        - paths: Array of path objects from GraphQL (with QUERY URNs)\n        - pathCount: Number of paths found\n\n    Examples:\n        # Column-level paths\n        paths_result = get_lineage_paths_between(\n            source_urn=\"urn:li:dataset:(urn:li:dataPlatform:snowflake,db.schema.base_table,PROD)\",\n            target_urn=\"urn:li:dataset:(urn:li:dataPlatform:snowflake,db.schema.final_table,PROD)\",\n            source_column=\"user_id\",\n            target_column=\"customer_id\"\n        )\n        # Returns paths with QUERY URNs showing transformation chain\n\n        # Fetch SQL for specific query of interest\n        query_details = get_entities(paths_result[\"paths\"][0][\"path\"][1][\"urn\"])\n\n        # Dataset-level paths (auto-discover direction)\n        get_lineage_paths_between(\n            source_urn=\"urn:li:dataset:(...):base_table\",\n            target_urn=\"urn:li:dataset:(...):final_table\"\n        )\n\n        # Explicit direction for better performance\n        get_lineage_paths_between(\n            source_urn=\"urn:li:dataset:(...):base_table\",\n            target_urn=\"urn:li:dataset:(...):final_table\",\n            direction=\"downstream\"\n        )\n    ",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "source_urn": {
+              "type": "string",
+              "description": "URN of the source dataset"
+            },
+            "target_urn": {
+              "type": "string",
+              "description": "URN of the target dataset"
+            },
+            "source_column": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional column name in source dataset"
+            },
+            "target_column": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional column name in target dataset (required if source_column provided)"
+            },
+            "direction": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "upstream",
+                    "downstream"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional direction to search. If None (default), automatically discovers\n      the path by trying downstream first, then upstream. Specify \"downstream\" or\n      \"upstream\" explicitly for better performance if you know the direction."
+            }
+          },
+          "required": [
+            "source_urn",
+            "target_urn"
+          ],
+          "type": "object"
+        }
+      }
+    ]
+  },
+  {
+    "operation": "tools/call",
+    "tool": "search",
+    "arguments": {
+      "query": "/q device+order",
+      "filter": "entity_type = dataset",
+      "num_results": 5
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"start\":0,\"count\":5,\"total\":3,\"searchResults\":[{\"entity\":{\"urn\":\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit_by_product,PROD)\",\"properties\":{\"name\":\"device_order_profit_by_product\"}}},{\"entity\":{\"urn\":\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)\",\"properties\":{\"name\":\"设备订货与利润事实表\"}}},{\"entity\":{\"urn\":\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.main.device_order_profit,PROD)\"}}],\"facets\":[{\"field\":\"container\",\"displayName\":\"Container\",\"aggregations\":[{\"value\":\"urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae\",\"count\":2,\"entity\":{\"subTypes\":{\"typeNames\":[\"Schema\"]},\"properties\":{\"name\":\"main\"}}}]},{\"field\":\"_entityType␞typeNames\",\"displayName\":\"Type␞Sub Type\",\"aggregations\":[{\"value\":\"DATASET\",\"count\":3},{\"value\":\"DATASET␞Table\",\"count\":1},{\"value\":\"DATASET␞View\",\"count\":1}]},{\"field\":\"_entityType\",\"displayName\":\"Type\",\"aggregations\":[{\"value\":\"DATASET\",\"count\":3}]},{\"field\":\"origin\",\"displayName\":\"Environment\",\"aggregations\":[{\"value\":\"PROD\",\"count\":3}]},{\"field\":\"owners\",\"displayName\":\"Owned By\",\"aggregations\":[{\"value\":\"urn:li:corpuser:zhangsan\",\"count\":1}]},{\"field\":\"platform\",\"displayName\":\"Platform\",\"aggregations\":[{\"value\":\"urn:li:dataPlatform:sqlite\",\"count\":3}]},{\"field\":\"tags\",\"displayName\":\"Tagged With\",\"aggregations\":[{\"value\":\"urn:li:tag:FinancialMetricCandidate\",\"count\":1}]},{\"field\":\"typeNames\",\"displayName\":\"Sub Type\",\"aggregations\":[{\"value\":\"Table\",\"count\":1},{\"value\":\"View\",\"count\":1}]},{\"field\":\"glossaryTerms\",\"displayName\":\"Glossary Term\",\"aggregations\":[{\"value\":\"urn:li:glossaryTerm:device_order_amount\",\"count\":1,\"entity\":{\"properties\":{\"name\":\"设备订货金额\"}}}]},{\"field\":\"_index\",\"displayName\":\"_index\",\"aggregations\":[{\"value\":\"datasetindex_v2\",\"count\":0}]},{\"field\":\"removed\",\"displayName\":\"removed\",\"aggregations\":[{\"value\":\"true\",\"count\":0}]},{\"field\":\"entity\",\"displayName\":\"Type\",\"aggregations\":[{\"value\":\"DATASET\",\"count\":3}]}]}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "start": 0,
+        "count": 5,
+        "total": 3,
+        "searchResults": [
+          {
+            "entity": {
+              "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit_by_product,PROD)",
+              "properties": {
+                "name": "device_order_profit_by_product"
+              }
+            }
+          },
+          {
+            "entity": {
+              "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+              "properties": {
+                "name": "设备订货与利润事实表"
+              }
+            }
+          },
+          {
+            "entity": {
+              "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.main.device_order_profit,PROD)"
+            }
+          }
+        ],
+        "facets": [
+          {
+            "field": "container",
+            "displayName": "Container",
+            "aggregations": [
+              {
+                "value": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+                "count": 2,
+                "entity": {
+                  "subTypes": {
+                    "typeNames": [
+                      "Schema"
+                    ]
+                  },
+                  "properties": {
+                    "name": "main"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "field": "_entityType␞typeNames",
+            "displayName": "Type␞Sub Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 3
+              },
+              {
+                "value": "DATASET␞Table",
+                "count": 1
+              },
+              {
+                "value": "DATASET␞View",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "_entityType",
+            "displayName": "Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "field": "origin",
+            "displayName": "Environment",
+            "aggregations": [
+              {
+                "value": "PROD",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "field": "owners",
+            "displayName": "Owned By",
+            "aggregations": [
+              {
+                "value": "urn:li:corpuser:zhangsan",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "platform",
+            "displayName": "Platform",
+            "aggregations": [
+              {
+                "value": "urn:li:dataPlatform:sqlite",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "field": "tags",
+            "displayName": "Tagged With",
+            "aggregations": [
+              {
+                "value": "urn:li:tag:FinancialMetricCandidate",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "typeNames",
+            "displayName": "Sub Type",
+            "aggregations": [
+              {
+                "value": "Table",
+                "count": 1
+              },
+              {
+                "value": "View",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "glossaryTerms",
+            "displayName": "Glossary Term",
+            "aggregations": [
+              {
+                "value": "urn:li:glossaryTerm:device_order_amount",
+                "count": 1,
+                "entity": {
+                  "properties": {
+                    "name": "设备订货金额"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "field": "_index",
+            "displayName": "_index",
+            "aggregations": [
+              {
+                "value": "datasetindex_v2",
+                "count": 0
+              }
+            ]
+          },
+          {
+            "field": "removed",
+            "displayName": "removed",
+            "aggregations": [
+              {
+                "value": "true",
+                "count": 0
+              }
+            ]
+          },
+          {
+            "field": "entity",
+            "displayName": "Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 3
+              }
+            ]
+          }
+        ]
+      },
+      "meta": null,
+      "data": {
+        "start": 0,
+        "count": 5,
+        "total": 3,
+        "searchResults": [
+          {
+            "entity": {
+              "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit_by_product,PROD)",
+              "properties": {
+                "name": "device_order_profit_by_product"
+              }
+            }
+          },
+          {
+            "entity": {
+              "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+              "properties": {
+                "name": "设备订货与利润事实表"
+              }
+            }
+          },
+          {
+            "entity": {
+              "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.main.device_order_profit,PROD)"
+            }
+          }
+        ],
+        "facets": [
+          {
+            "field": "container",
+            "displayName": "Container",
+            "aggregations": [
+              {
+                "value": "urn:li:container:e26c9b8f1df9b1c164d0fc1d3a51baae",
+                "count": 2,
+                "entity": {
+                  "subTypes": {
+                    "typeNames": [
+                      "Schema"
+                    ]
+                  },
+                  "properties": {
+                    "name": "main"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "field": "_entityType␞typeNames",
+            "displayName": "Type␞Sub Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 3
+              },
+              {
+                "value": "DATASET␞Table",
+                "count": 1
+              },
+              {
+                "value": "DATASET␞View",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "_entityType",
+            "displayName": "Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "field": "origin",
+            "displayName": "Environment",
+            "aggregations": [
+              {
+                "value": "PROD",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "field": "owners",
+            "displayName": "Owned By",
+            "aggregations": [
+              {
+                "value": "urn:li:corpuser:zhangsan",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "platform",
+            "displayName": "Platform",
+            "aggregations": [
+              {
+                "value": "urn:li:dataPlatform:sqlite",
+                "count": 3
+              }
+            ]
+          },
+          {
+            "field": "tags",
+            "displayName": "Tagged With",
+            "aggregations": [
+              {
+                "value": "urn:li:tag:FinancialMetricCandidate",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "typeNames",
+            "displayName": "Sub Type",
+            "aggregations": [
+              {
+                "value": "Table",
+                "count": 1
+              },
+              {
+                "value": "View",
+                "count": 1
+              }
+            ]
+          },
+          {
+            "field": "glossaryTerms",
+            "displayName": "Glossary Term",
+            "aggregations": [
+              {
+                "value": "urn:li:glossaryTerm:device_order_amount",
+                "count": 1,
+                "entity": {
+                  "properties": {
+                    "name": "设备订货金额"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "field": "_index",
+            "displayName": "_index",
+            "aggregations": [
+              {
+                "value": "datasetindex_v2",
+                "count": 0
+              }
+            ]
+          },
+          {
+            "field": "removed",
+            "displayName": "removed",
+            "aggregations": [
+              {
+                "value": "true",
+                "count": 0
+              }
+            ]
+          },
+          {
+            "field": "entity",
+            "displayName": "Type",
+            "aggregations": [
+              {
+                "value": "DATASET",
+                "count": 3
+              }
+            ]
+          }
+        ]
+      },
+      "is_error": false
+    }
+  },
+  {
+    "operation": "tools/call",
+    "tool": "get_entities",
+    "arguments": {
+      "urns": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"urn\":\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)\",\"name\":\"设备订货与利润事实表\",\"platform\":{\"urn\":\"urn:li:dataPlatform:sqlite\",\"name\":\"sqlite\"},\"editableProperties\":{\"description\":\"实验资产：字段来自 BI 中间表头，不含业务行数据。c27、c28 的中文含义来自历史 SQL 别名，尚不能据此认定正式口径。\"},\"properties\":{\"name\":\"设备订货与利润事实表\",\"customProperties\":[{\"key\":\"evidence_status\",\"value\":\"observed_not_certified\"},{\"key\":\"source_kind\",\"value\":\"BI_SQL_and_physical_header\"}]},\"ownership\":{\"owners\":[{\"owner\":{\"urn\":\"urn:li:corpuser:zhangsan\"},\"type\":\"TECHNICAL_OWNER\",\"ownershipType\":{\"urn\":\"urn:li:ownershipType:__system__technical_owner\",\"type\":\"CUSTOM_OWNERSHIP_TYPE\",\"info\":{\"name\":\"Technical Owner\",\"description\":\"Involved in the production, maintenance, or distribution of the asset(s).\"}}}]},\"tags\":{\"tags\":[{\"tag\":{\"urn\":\"urn:li:tag:FinancialMetricCandidate\",\"properties\":{\"name\":\"财务指标候选\",\"description\":\"来自历史 BI 资产、尚需核验统计口径的候选指标。\"}}}]},\"glossaryTerms\":{\"terms\":[{\"term\":{\"urn\":\"urn:li:glossaryTerm:device_order_amount\",\"hierarchicalName\":\"device_order_amount\",\"properties\":{\"name\":\"设备订货金额\",\"description\":\"设备订货金额候选术语；当前实验只记录 SUM(c27) 的历史使用事实。\",\"termSource\":\"INTERNAL\"},\"parentNodes\":{\"count\":0}}}]},\"subTypes\":{\"typeNames\":[\"Table\"]},\"health\":[{\"type\":\"INCIDENTS\",\"status\":\"PASS\"}],\"schemaMetadata\":{\"name\":\"\",\"platformUrn\":\"urn:li:dataPlatform:sqlite\",\"fields\":[{\"fieldPath\":\"c0\",\"nativeDataType\":\"TEXT\",\"description\":\"历史 SQL 中的必填过滤字段；业务含义待确认。\",\"nullable\":false},{\"fieldPath\":\"c2\",\"nativeDataType\":\"TEXT\",\"description\":\"历史 SQL 中常被别名为“年月”；格式待确认。\",\"nullable\":false},{\"fieldPath\":\"c27\",\"nativeDataType\":\"NUMERIC\",\"description\":\"历史 SQL 中常以 SUM(c27) 命名为设备订货。\",\"nullable\":false},{\"fieldPath\":\"c28\",\"nativeDataType\":\"NUMERIC\",\"description\":\"历史 SQL 中常以 SUM(c28) 命名为设备利润。\",\"nullable\":false},{\"fieldPath\":\"c7\",\"nativeDataType\":\"TEXT\",\"description\":\"历史 SQL 中常被别名为“产品LV1”。\",\"nullable\":false}]},\"relatedDocuments\":{\"start\":0,\"count\":10,\"total\":0}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "result": {
+          "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+          "name": "设备订货与利润事实表",
+          "platform": {
+            "urn": "urn:li:dataPlatform:sqlite",
+            "name": "sqlite"
+          },
+          "editableProperties": {
+            "description": "实验资产：字段来自 BI 中间表头，不含业务行数据。c27、c28 的中文含义来自历史 SQL 别名，尚不能据此认定正式口径。"
+          },
+          "properties": {
+            "name": "设备订货与利润事实表",
+            "customProperties": [
+              {
+                "key": "evidence_status",
+                "value": "observed_not_certified"
+              },
+              {
+                "key": "source_kind",
+                "value": "BI_SQL_and_physical_header"
+              }
+            ]
+          },
+          "ownership": {
+            "owners": [
+              {
+                "owner": {
+                  "urn": "urn:li:corpuser:zhangsan"
+                },
+                "type": "TECHNICAL_OWNER",
+                "ownershipType": {
+                  "urn": "urn:li:ownershipType:__system__technical_owner",
+                  "type": "CUSTOM_OWNERSHIP_TYPE",
+                  "info": {
+                    "name": "Technical Owner",
+                    "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                  }
+                }
+              }
+            ]
+          },
+          "tags": {
+            "tags": [
+              {
+                "tag": {
+                  "urn": "urn:li:tag:FinancialMetricCandidate",
+                  "properties": {
+                    "name": "财务指标候选",
+                    "description": "来自历史 BI 资产、尚需核验统计口径的候选指标。"
+                  }
+                }
+              }
+            ]
+          },
+          "glossaryTerms": {
+            "terms": [
+              {
+                "term": {
+                  "urn": "urn:li:glossaryTerm:device_order_amount",
+                  "hierarchicalName": "device_order_amount",
+                  "properties": {
+                    "name": "设备订货金额",
+                    "description": "设备订货金额候选术语；当前实验只记录 SUM(c27) 的历史使用事实。",
+                    "termSource": "INTERNAL"
+                  },
+                  "parentNodes": {
+                    "count": 0
+                  }
+                }
+              }
+            ]
+          },
+          "subTypes": {
+            "typeNames": [
+              "Table"
+            ]
+          },
+          "health": [
+            {
+              "type": "INCIDENTS",
+              "status": "PASS"
+            }
+          ],
+          "schemaMetadata": {
+            "name": "",
+            "platformUrn": "urn:li:dataPlatform:sqlite",
+            "fields": [
+              {
+                "fieldPath": "c0",
+                "nativeDataType": "TEXT",
+                "description": "历史 SQL 中的必填过滤字段；业务含义待确认。",
+                "nullable": false
+              },
+              {
+                "fieldPath": "c2",
+                "nativeDataType": "TEXT",
+                "description": "历史 SQL 中常被别名为“年月”；格式待确认。",
+                "nullable": false
+              },
+              {
+                "fieldPath": "c27",
+                "nativeDataType": "NUMERIC",
+                "description": "历史 SQL 中常以 SUM(c27) 命名为设备订货。",
+                "nullable": false
+              },
+              {
+                "fieldPath": "c28",
+                "nativeDataType": "NUMERIC",
+                "description": "历史 SQL 中常以 SUM(c28) 命名为设备利润。",
+                "nullable": false
+              },
+              {
+                "fieldPath": "c7",
+                "nativeDataType": "TEXT",
+                "description": "历史 SQL 中常被别名为“产品LV1”。",
+                "nullable": false
+              }
+            ]
+          },
+          "relatedDocuments": {
+            "start": 0,
+            "count": 10,
+            "total": 0
+          }
+        }
+      },
+      "meta": {
+        "fastmcp": {
+          "wrap_result": true
+        }
+      },
+      "data": {
+        "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+        "name": "设备订货与利润事实表",
+        "platform": {
+          "urn": "urn:li:dataPlatform:sqlite",
+          "name": "sqlite"
+        },
+        "editableProperties": {
+          "description": "实验资产：字段来自 BI 中间表头，不含业务行数据。c27、c28 的中文含义来自历史 SQL 别名，尚不能据此认定正式口径。"
+        },
+        "properties": {
+          "name": "设备订货与利润事实表",
+          "customProperties": [
+            {
+              "key": "evidence_status",
+              "value": "observed_not_certified"
+            },
+            {
+              "key": "source_kind",
+              "value": "BI_SQL_and_physical_header"
+            }
+          ]
+        },
+        "ownership": {
+          "owners": [
+            {
+              "owner": {
+                "urn": "urn:li:corpuser:zhangsan"
+              },
+              "type": "TECHNICAL_OWNER",
+              "ownershipType": {
+                "urn": "urn:li:ownershipType:__system__technical_owner",
+                "type": "CUSTOM_OWNERSHIP_TYPE",
+                "info": {
+                  "name": "Technical Owner",
+                  "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                }
+              }
+            }
+          ]
+        },
+        "tags": {
+          "tags": [
+            {
+              "tag": {
+                "urn": "urn:li:tag:FinancialMetricCandidate",
+                "properties": {
+                  "name": "财务指标候选",
+                  "description": "来自历史 BI 资产、尚需核验统计口径的候选指标。"
+                }
+              }
+            }
+          ]
+        },
+        "glossaryTerms": {
+          "terms": [
+            {
+              "term": {
+                "urn": "urn:li:glossaryTerm:device_order_amount",
+                "hierarchicalName": "device_order_amount",
+                "properties": {
+                  "name": "设备订货金额",
+                  "description": "设备订货金额候选术语；当前实验只记录 SUM(c27) 的历史使用事实。",
+                  "termSource": "INTERNAL"
+                },
+                "parentNodes": {
+                  "count": 0
+                }
+              }
+            }
+          ]
+        },
+        "subTypes": {
+          "typeNames": [
+            "Table"
+          ]
+        },
+        "health": [
+          {
+            "type": "INCIDENTS",
+            "status": "PASS"
+          }
+        ],
+        "schemaMetadata": {
+          "name": "",
+          "platformUrn": "urn:li:dataPlatform:sqlite",
+          "fields": [
+            {
+              "fieldPath": "c0",
+              "nativeDataType": "TEXT",
+              "description": "历史 SQL 中的必填过滤字段；业务含义待确认。",
+              "nullable": false
+            },
+            {
+              "fieldPath": "c2",
+              "nativeDataType": "TEXT",
+              "description": "历史 SQL 中常被别名为“年月”；格式待确认。",
+              "nullable": false
+            },
+            {
+              "fieldPath": "c27",
+              "nativeDataType": "NUMERIC",
+              "description": "历史 SQL 中常以 SUM(c27) 命名为设备订货。",
+              "nullable": false
+            },
+            {
+              "fieldPath": "c28",
+              "nativeDataType": "NUMERIC",
+              "description": "历史 SQL 中常以 SUM(c28) 命名为设备利润。",
+              "nullable": false
+            },
+            {
+              "fieldPath": "c7",
+              "nativeDataType": "TEXT",
+              "description": "历史 SQL 中常被别名为“产品LV1”。",
+              "nullable": false
+            }
+          ]
+        },
+        "relatedDocuments": {
+          "start": 0,
+          "count": 10,
+          "total": 0
+        }
+      },
+      "is_error": false
+    }
+  },
+  {
+    "operation": "tools/call",
+    "tool": "list_schema_fields",
+    "arguments": {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+      "limit": 20
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"urn\":\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)\",\"fields\":[{\"fieldPath\":\"c0\",\"nativeDataType\":\"TEXT\",\"description\":\"历史 SQL 中的必填过滤字段；业务含义待确认。\",\"nullable\":false},{\"fieldPath\":\"c2\",\"nativeDataType\":\"TEXT\",\"description\":\"历史 SQL 中常被别名为“年月”；格式待确认。\",\"nullable\":false},{\"fieldPath\":\"c27\",\"nativeDataType\":\"NUMERIC\",\"description\":\"历史 SQL 中常以 SUM(c27) 命名为设备订货。\",\"nullable\":false},{\"fieldPath\":\"c28\",\"nativeDataType\":\"NUMERIC\",\"description\":\"历史 SQL 中常以 SUM(c28) 命名为设备利润。\",\"nullable\":false},{\"fieldPath\":\"c7\",\"nativeDataType\":\"TEXT\",\"description\":\"历史 SQL 中常被别名为“产品LV1”。\",\"nullable\":false}],\"totalFields\":5,\"returned\":5,\"remainingCount\":0,\"matchingCount\":null,\"offset\":0}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+        "fields": [
+          {
+            "fieldPath": "c0",
+            "nativeDataType": "TEXT",
+            "description": "历史 SQL 中的必填过滤字段；业务含义待确认。",
+            "nullable": false
+          },
+          {
+            "fieldPath": "c2",
+            "nativeDataType": "TEXT",
+            "description": "历史 SQL 中常被别名为“年月”；格式待确认。",
+            "nullable": false
+          },
+          {
+            "fieldPath": "c27",
+            "nativeDataType": "NUMERIC",
+            "description": "历史 SQL 中常以 SUM(c27) 命名为设备订货。",
+            "nullable": false
+          },
+          {
+            "fieldPath": "c28",
+            "nativeDataType": "NUMERIC",
+            "description": "历史 SQL 中常以 SUM(c28) 命名为设备利润。",
+            "nullable": false
+          },
+          {
+            "fieldPath": "c7",
+            "nativeDataType": "TEXT",
+            "description": "历史 SQL 中常被别名为“产品LV1”。",
+            "nullable": false
+          }
+        ],
+        "totalFields": 5,
+        "returned": 5,
+        "remainingCount": 0,
+        "matchingCount": null,
+        "offset": 0
+      },
+      "meta": null,
+      "data": {
+        "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+        "fields": [
+          {
+            "fieldPath": "c0",
+            "nativeDataType": "TEXT",
+            "description": "历史 SQL 中的必填过滤字段；业务含义待确认。",
+            "nullable": false
+          },
+          {
+            "fieldPath": "c2",
+            "nativeDataType": "TEXT",
+            "description": "历史 SQL 中常被别名为“年月”；格式待确认。",
+            "nullable": false
+          },
+          {
+            "fieldPath": "c27",
+            "nativeDataType": "NUMERIC",
+            "description": "历史 SQL 中常以 SUM(c27) 命名为设备订货。",
+            "nullable": false
+          },
+          {
+            "fieldPath": "c28",
+            "nativeDataType": "NUMERIC",
+            "description": "历史 SQL 中常以 SUM(c28) 命名为设备利润。",
+            "nullable": false
+          },
+          {
+            "fieldPath": "c7",
+            "nativeDataType": "TEXT",
+            "description": "历史 SQL 中常被别名为“产品LV1”。",
+            "nullable": false
+          }
+        ],
+        "totalFields": 5,
+        "returned": 5,
+        "remainingCount": 0,
+        "matchingCount": null,
+        "offset": 0
+      },
+      "is_error": false
+    }
+  },
+  {
+    "operation": "tools/call",
+    "tool": "get_lineage",
+    "arguments": {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+      "upstream": false,
+      "max_hops": 2
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"downstreams\":{\"total\":2,\"facets\":[{\"field\":\"degree\",\"displayName\":\"Degree of Dependencies\",\"aggregations\":[{\"value\":\"1\",\"count\":0},{\"value\":\"2\",\"count\":0},{\"value\":\"3+\",\"count\":0}]},{\"field\":\"_entityType\",\"displayName\":\"Type\",\"aggregations\":[{\"value\":\"DASHBOARD\",\"count\":1},{\"value\":\"CHART\",\"count\":1}]},{\"field\":\"platform\",\"displayName\":\"Platform\",\"aggregations\":[{\"value\":\"urn:li:dataPlatform:powerbi\",\"count\":2,\"entity\":{\"urn\":\"urn:li:dataPlatform:powerbi\"}}]},{\"field\":\"owners\",\"displayName\":\"Owned By\",\"aggregations\":[{\"value\":\"urn:li:corpuser:zhangsan\",\"count\":2,\"entity\":{\"urn\":\"urn:li:corpuser:zhangsan\"}}]},{\"field\":\"_entityType␞typeNames\",\"displayName\":\"Type␞Sub Type\",\"aggregations\":[{\"value\":\"DASHBOARD\",\"count\":1},{\"value\":\"CHART\",\"count\":1}]},{\"field\":\"removed\",\"displayName\":\"removed\",\"aggregations\":[{\"value\":\"true\",\"count\":0}]},{\"field\":\"type\",\"displayName\":\"Chart Type\",\"aggregations\":[{\"value\":\"BAR\",\"count\":1}]},{\"field\":\"entity\",\"displayName\":\"Type\",\"aggregations\":[{\"value\":\"CHART\",\"count\":1},{\"value\":\"DASHBOARD\",\"count\":1}]}],\"searchResults\":[{\"entity\":{\"urn\":\"urn:li:dashboard:(powerbi,device_business_overview)\",\"type\":\"DASHBOARD\",\"tool\":\"powerbi\",\"dashboardId\":\"device_business_overview\",\"properties\":{\"name\":\"设备业务经营看板\",\"description\":\"实验用 BI 看板资产，只包含元数据关系。\",\"lastModified\":{\"time\":0}},\"ownership\":{\"owners\":[{\"owner\":{\"urn\":\"urn:li:corpuser:zhangsan\"},\"type\":\"TECHNICAL_OWNER\",\"ownershipType\":{\"urn\":\"urn:li:ownershipType:__system__technical_owner\",\"type\":\"CUSTOM_OWNERSHIP_TYPE\",\"info\":{\"name\":\"Technical Owner\",\"description\":\"Involved in the production, maintenance, or distribution of the asset(s).\"}}}]},\"platform\":{\"urn\":\"urn:li:dataPlatform:powerbi\",\"name\":\"powerbi\"},\"health\":[{\"type\":\"INCIDENTS\",\"status\":\"PASS\"}]},\"degree\":1},{\"entity\":{\"urn\":\"urn:li:chart:(powerbi,device_order_profit_by_product)\",\"type\":\"CHART\",\"tool\":\"powerbi\",\"chartId\":\"device_order_profit_by_product\",\"properties\":{\"name\":\"各产品设备订货与利润\",\"description\":\"按产品一级分类和年月汇总设备订货及利润。\",\"type\":\"BAR\",\"lastModified\":{\"time\":0}},\"ownership\":{\"owners\":[{\"owner\":{\"urn\":\"urn:li:corpuser:zhangsan\"},\"type\":\"TECHNICAL_OWNER\",\"ownershipType\":{\"urn\":\"urn:li:ownershipType:__system__technical_owner\",\"type\":\"CUSTOM_OWNERSHIP_TYPE\",\"info\":{\"name\":\"Technical Owner\",\"description\":\"Involved in the production, maintenance, or distribution of the asset(s).\"}}}]},\"platform\":{\"urn\":\"urn:li:dataPlatform:powerbi\",\"name\":\"powerbi\"},\"health\":[{\"type\":\"INCIDENTS\",\"status\":\"PASS\"}]},\"degree\":1}],\"offset\":0,\"returned\":2,\"hasMore\":false}}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "downstreams": {
+          "total": 2,
+          "facets": [
+            {
+              "field": "degree",
+              "displayName": "Degree of Dependencies",
+              "aggregations": [
+                {
+                  "value": "1",
+                  "count": 0
+                },
+                {
+                  "value": "2",
+                  "count": 0
+                },
+                {
+                  "value": "3+",
+                  "count": 0
+                }
+              ]
+            },
+            {
+              "field": "_entityType",
+              "displayName": "Type",
+              "aggregations": [
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                },
+                {
+                  "value": "CHART",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "platform",
+              "displayName": "Platform",
+              "aggregations": [
+                {
+                  "value": "urn:li:dataPlatform:powerbi",
+                  "count": 2,
+                  "entity": {
+                    "urn": "urn:li:dataPlatform:powerbi"
+                  }
+                }
+              ]
+            },
+            {
+              "field": "owners",
+              "displayName": "Owned By",
+              "aggregations": [
+                {
+                  "value": "urn:li:corpuser:zhangsan",
+                  "count": 2,
+                  "entity": {
+                    "urn": "urn:li:corpuser:zhangsan"
+                  }
+                }
+              ]
+            },
+            {
+              "field": "_entityType␞typeNames",
+              "displayName": "Type␞Sub Type",
+              "aggregations": [
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                },
+                {
+                  "value": "CHART",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "removed",
+              "displayName": "removed",
+              "aggregations": [
+                {
+                  "value": "true",
+                  "count": 0
+                }
+              ]
+            },
+            {
+              "field": "type",
+              "displayName": "Chart Type",
+              "aggregations": [
+                {
+                  "value": "BAR",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "entity",
+              "displayName": "Type",
+              "aggregations": [
+                {
+                  "value": "CHART",
+                  "count": 1
+                },
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "searchResults": [
+            {
+              "entity": {
+                "urn": "urn:li:dashboard:(powerbi,device_business_overview)",
+                "type": "DASHBOARD",
+                "tool": "powerbi",
+                "dashboardId": "device_business_overview",
+                "properties": {
+                  "name": "设备业务经营看板",
+                  "description": "实验用 BI 看板资产，只包含元数据关系。",
+                  "lastModified": {
+                    "time": 0
+                  }
+                },
+                "ownership": {
+                  "owners": [
+                    {
+                      "owner": {
+                        "urn": "urn:li:corpuser:zhangsan"
+                      },
+                      "type": "TECHNICAL_OWNER",
+                      "ownershipType": {
+                        "urn": "urn:li:ownershipType:__system__technical_owner",
+                        "type": "CUSTOM_OWNERSHIP_TYPE",
+                        "info": {
+                          "name": "Technical Owner",
+                          "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                        }
+                      }
+                    }
+                  ]
+                },
+                "platform": {
+                  "urn": "urn:li:dataPlatform:powerbi",
+                  "name": "powerbi"
+                },
+                "health": [
+                  {
+                    "type": "INCIDENTS",
+                    "status": "PASS"
+                  }
+                ]
+              },
+              "degree": 1
+            },
+            {
+              "entity": {
+                "urn": "urn:li:chart:(powerbi,device_order_profit_by_product)",
+                "type": "CHART",
+                "tool": "powerbi",
+                "chartId": "device_order_profit_by_product",
+                "properties": {
+                  "name": "各产品设备订货与利润",
+                  "description": "按产品一级分类和年月汇总设备订货及利润。",
+                  "type": "BAR",
+                  "lastModified": {
+                    "time": 0
+                  }
+                },
+                "ownership": {
+                  "owners": [
+                    {
+                      "owner": {
+                        "urn": "urn:li:corpuser:zhangsan"
+                      },
+                      "type": "TECHNICAL_OWNER",
+                      "ownershipType": {
+                        "urn": "urn:li:ownershipType:__system__technical_owner",
+                        "type": "CUSTOM_OWNERSHIP_TYPE",
+                        "info": {
+                          "name": "Technical Owner",
+                          "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                        }
+                      }
+                    }
+                  ]
+                },
+                "platform": {
+                  "urn": "urn:li:dataPlatform:powerbi",
+                  "name": "powerbi"
+                },
+                "health": [
+                  {
+                    "type": "INCIDENTS",
+                    "status": "PASS"
+                  }
+                ]
+              },
+              "degree": 1
+            }
+          ],
+          "offset": 0,
+          "returned": 2,
+          "hasMore": false
+        }
+      },
+      "meta": null,
+      "data": {
+        "downstreams": {
+          "total": 2,
+          "facets": [
+            {
+              "field": "degree",
+              "displayName": "Degree of Dependencies",
+              "aggregations": [
+                {
+                  "value": "1",
+                  "count": 0
+                },
+                {
+                  "value": "2",
+                  "count": 0
+                },
+                {
+                  "value": "3+",
+                  "count": 0
+                }
+              ]
+            },
+            {
+              "field": "_entityType",
+              "displayName": "Type",
+              "aggregations": [
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                },
+                {
+                  "value": "CHART",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "platform",
+              "displayName": "Platform",
+              "aggregations": [
+                {
+                  "value": "urn:li:dataPlatform:powerbi",
+                  "count": 2,
+                  "entity": {
+                    "urn": "urn:li:dataPlatform:powerbi"
+                  }
+                }
+              ]
+            },
+            {
+              "field": "owners",
+              "displayName": "Owned By",
+              "aggregations": [
+                {
+                  "value": "urn:li:corpuser:zhangsan",
+                  "count": 2,
+                  "entity": {
+                    "urn": "urn:li:corpuser:zhangsan"
+                  }
+                }
+              ]
+            },
+            {
+              "field": "_entityType␞typeNames",
+              "displayName": "Type␞Sub Type",
+              "aggregations": [
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                },
+                {
+                  "value": "CHART",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "removed",
+              "displayName": "removed",
+              "aggregations": [
+                {
+                  "value": "true",
+                  "count": 0
+                }
+              ]
+            },
+            {
+              "field": "type",
+              "displayName": "Chart Type",
+              "aggregations": [
+                {
+                  "value": "BAR",
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "field": "entity",
+              "displayName": "Type",
+              "aggregations": [
+                {
+                  "value": "CHART",
+                  "count": 1
+                },
+                {
+                  "value": "DASHBOARD",
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "searchResults": [
+            {
+              "entity": {
+                "urn": "urn:li:dashboard:(powerbi,device_business_overview)",
+                "type": "DASHBOARD",
+                "tool": "powerbi",
+                "dashboardId": "device_business_overview",
+                "properties": {
+                  "name": "设备业务经营看板",
+                  "description": "实验用 BI 看板资产，只包含元数据关系。",
+                  "lastModified": {
+                    "time": 0
+                  }
+                },
+                "ownership": {
+                  "owners": [
+                    {
+                      "owner": {
+                        "urn": "urn:li:corpuser:zhangsan"
+                      },
+                      "type": "TECHNICAL_OWNER",
+                      "ownershipType": {
+                        "urn": "urn:li:ownershipType:__system__technical_owner",
+                        "type": "CUSTOM_OWNERSHIP_TYPE",
+                        "info": {
+                          "name": "Technical Owner",
+                          "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                        }
+                      }
+                    }
+                  ]
+                },
+                "platform": {
+                  "urn": "urn:li:dataPlatform:powerbi",
+                  "name": "powerbi"
+                },
+                "health": [
+                  {
+                    "type": "INCIDENTS",
+                    "status": "PASS"
+                  }
+                ]
+              },
+              "degree": 1
+            },
+            {
+              "entity": {
+                "urn": "urn:li:chart:(powerbi,device_order_profit_by_product)",
+                "type": "CHART",
+                "tool": "powerbi",
+                "chartId": "device_order_profit_by_product",
+                "properties": {
+                  "name": "各产品设备订货与利润",
+                  "description": "按产品一级分类和年月汇总设备订货及利润。",
+                  "type": "BAR",
+                  "lastModified": {
+                    "time": 0
+                  }
+                },
+                "ownership": {
+                  "owners": [
+                    {
+                      "owner": {
+                        "urn": "urn:li:corpuser:zhangsan"
+                      },
+                      "type": "TECHNICAL_OWNER",
+                      "ownershipType": {
+                        "urn": "urn:li:ownershipType:__system__technical_owner",
+                        "type": "CUSTOM_OWNERSHIP_TYPE",
+                        "info": {
+                          "name": "Technical Owner",
+                          "description": "Involved in the production, maintenance, or distribution of the asset(s)."
+                        }
+                      }
+                    }
+                  ]
+                },
+                "platform": {
+                  "urn": "urn:li:dataPlatform:powerbi",
+                  "name": "powerbi"
+                },
+                "health": [
+                  {
+                    "type": "INCIDENTS",
+                    "status": "PASS"
+                  }
+                ]
+              },
+              "degree": 1
+            }
+          ],
+          "offset": 0,
+          "returned": 2,
+          "hasMore": false
+        }
+      },
+      "is_error": false
+    }
+  },
+  {
+    "operation": "tools/call",
+    "tool": "get_dataset_queries",
+    "arguments": {
+      "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+      "count": 10
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"start\":0,\"total\":2,\"count\":10,\"queries\":[{\"urn\":\"urn:li:query:2e0dd2daa8323f092571cee502c25f8407060600b546e041366ac1645bca0f87\",\"properties\":{\"source\":\"SYSTEM\",\"statement\":{\"value\":\"SELECT c7, SUM(c27) AS device_order_amount FROM device_order_profit WHERE c0 = 'ORG_1001' GROUP BY c7 ORDER BY device_order_amount DESC\",\"language\":\"SQL\"},\"lastModified\":{\"actor\":\"urn:li:corpuser:zhangsan\"}},\"platform\":{\"urn\":\"urn:li:dataPlatform:sqlite\",\"name\":\"sqlite\"},\"subjects\":[\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)\"]},{\"urn\":\"urn:li:query:9dad8475daa3ea0489a130066f0945cc36254c0567a89fceb021ec2faccc61e6\",\"properties\":{\"source\":\"SYSTEM\",\"statement\":{\"value\":\"SELECT c7 AS product_l1, c2 AS year_month, SUM(c27) AS device_order_amount, SUM(c28) AS device_profit_amount FROM device_order_profit WHERE c2 BETWEEN '202601' AND '202606' AND c0 = 'ORG_1001' GROUP BY c7, c2\",\"language\":\"SQL\"},\"lastModified\":{\"actor\":\"urn:li:corpuser:zhangsan\"}},\"platform\":{\"urn\":\"urn:li:dataPlatform:sqlite\",\"name\":\"sqlite\"},\"subjects\":[\"urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)\"]}]}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "start": 0,
+        "total": 2,
+        "count": 10,
+        "queries": [
+          {
+            "urn": "urn:li:query:2e0dd2daa8323f092571cee502c25f8407060600b546e041366ac1645bca0f87",
+            "properties": {
+              "source": "SYSTEM",
+              "statement": {
+                "value": "SELECT c7, SUM(c27) AS device_order_amount FROM device_order_profit WHERE c0 = 'ORG_1001' GROUP BY c7 ORDER BY device_order_amount DESC",
+                "language": "SQL"
+              },
+              "lastModified": {
+                "actor": "urn:li:corpuser:zhangsan"
+              }
+            },
+            "platform": {
+              "urn": "urn:li:dataPlatform:sqlite",
+              "name": "sqlite"
+            },
+            "subjects": [
+              "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)"
+            ]
+          },
+          {
+            "urn": "urn:li:query:9dad8475daa3ea0489a130066f0945cc36254c0567a89fceb021ec2faccc61e6",
+            "properties": {
+              "source": "SYSTEM",
+              "statement": {
+                "value": "SELECT c7 AS product_l1, c2 AS year_month, SUM(c27) AS device_order_amount, SUM(c28) AS device_profit_amount FROM device_order_profit WHERE c2 BETWEEN '202601' AND '202606' AND c0 = 'ORG_1001' GROUP BY c7, c2",
+                "language": "SQL"
+              },
+              "lastModified": {
+                "actor": "urn:li:corpuser:zhangsan"
+              }
+            },
+            "platform": {
+              "urn": "urn:li:dataPlatform:sqlite",
+              "name": "sqlite"
+            },
+            "subjects": [
+              "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)"
+            ]
+          }
+        ]
+      },
+      "meta": null,
+      "data": {
+        "start": 0,
+        "total": 2,
+        "count": 10,
+        "queries": [
+          {
+            "urn": "urn:li:query:2e0dd2daa8323f092571cee502c25f8407060600b546e041366ac1645bca0f87",
+            "properties": {
+              "source": "SYSTEM",
+              "statement": {
+                "value": "SELECT c7, SUM(c27) AS device_order_amount FROM device_order_profit WHERE c0 = 'ORG_1001' GROUP BY c7 ORDER BY device_order_amount DESC",
+                "language": "SQL"
+              },
+              "lastModified": {
+                "actor": "urn:li:corpuser:zhangsan"
+              }
+            },
+            "platform": {
+              "urn": "urn:li:dataPlatform:sqlite",
+              "name": "sqlite"
+            },
+            "subjects": [
+              "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)"
+            ]
+          },
+          {
+            "urn": "urn:li:query:9dad8475daa3ea0489a130066f0945cc36254c0567a89fceb021ec2faccc61e6",
+            "properties": {
+              "source": "SYSTEM",
+              "statement": {
+                "value": "SELECT c7 AS product_l1, c2 AS year_month, SUM(c27) AS device_order_amount, SUM(c28) AS device_profit_amount FROM device_order_profit WHERE c2 BETWEEN '202601' AND '202606' AND c0 = 'ORG_1001' GROUP BY c7, c2",
+                "language": "SQL"
+              },
+              "lastModified": {
+                "actor": "urn:li:corpuser:zhangsan"
+              }
+            },
+            "platform": {
+              "urn": "urn:li:dataPlatform:sqlite",
+              "name": "sqlite"
+            },
+            "subjects": [
+              "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)"
+            ]
+          }
+        ]
+      },
+      "is_error": false
+    }
+  }
+]

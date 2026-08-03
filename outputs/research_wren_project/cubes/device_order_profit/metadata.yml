@@ -1,0 +1,23 @@
+name: device_order_profit
+base_object: device_order_profit
+measures:
+  - name: total_device_orders
+    expression: SUM(device_order_amount)
+    type: DOUBLE
+  - name: total_device_profit
+    expression: SUM(device_profit_amount)
+    type: DOUBLE
+dimensions:
+  - name: year_month
+    expression: year_month
+    type: VARCHAR
+  - name: product_l1
+    expression: product_l1
+    type: VARCHAR
+  - name: internal_category
+    expression: internal_category
+    type: VARCHAR
+properties:
+  description: >
+    仅用于验证语义层消费链路。两个 SUM 公式来自现有 BI SQL 的重复证据，
+    不是已审批的企业级指标；在单位、过滤条件和统计边界确认前不得标记为 certified。

@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.2,
+  "stdout_sha256": "7e35e889b37a4e7f5cd079ae6d58b32676d81281fb5b8f28821864f413ab4d7d",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/wrenai/device_project/target/mdl.json",
+      "exists": true,
+      "size": 2609,
+      "sha256": "4f77e3eb53a745c447d7464f68947e8a0d22d15be628b5d9af2bb6319ec97050"
+    }
+  ]
+}

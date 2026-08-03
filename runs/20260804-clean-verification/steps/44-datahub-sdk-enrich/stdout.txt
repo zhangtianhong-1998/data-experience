@@ -1,0 +1,5 @@
+{
+  "dataset": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+  "chart": "urn:li:chart:(powerbi,device_orders_by_product)",
+  "dashboard": "urn:li:dashboard:(powerbi,device_business_h1_2026)"
+}

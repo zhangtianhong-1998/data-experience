@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.029,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "2c29ef9af16b75571caff4c5488dced64a69afe17cbb562526d5606434eeebaf",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/metricflow-venv/pyvenv.cfg",
+      "exists": true,
+      "size": 188,
+      "sha256": "6ffb6e8e9ead260d9d9ae6ee7de3027cc11918428288565d8cbf604b1f9ff56a"
+    }
+  ]
+}

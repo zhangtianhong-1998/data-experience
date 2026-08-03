@@ -1,0 +1,317 @@
+{
+  "paper_algorithm": "FastICA soft clustering over user-dataset access counts",
+  "production_constants_from_paper": {
+    "n_components": 200,
+    "tables_per_cluster": 20
+  },
+  "demo_constants": {
+    "n_components": 3,
+    "tables_per_cluster": 3
+  },
+  "users": [
+    "analyst_a",
+    "analyst_b",
+    "analyst_c",
+    "engineer_device",
+    "engineer_sales",
+    "legacy_user",
+    "pm_device",
+    "pm_sales"
+  ],
+  "tables": [
+    "deprecated_device_orders",
+    "device_orders",
+    "product_master",
+    "sales_orders"
+  ],
+  "raw_access_matrix_table_by_user": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      0.0,
+      28.0,
+      1.0,
+      0.0
+    ],
+    [
+      48.0,
+      41.0,
+      0.0,
+      37.0,
+      0.0,
+      3.0,
+      31.0,
+      0.0
+    ],
+    [
+      12.0,
+      16.0,
+      11.0,
+      25.0,
+      14.0,
+      0.0,
+      9.0,
+      8.0
+    ],
+    [
+      1.0,
+      2.0,
+      52.0,
+      0.0,
+      35.0,
+      0.0,
+      0.0,
+      44.0
+    ]
+  ],
+  "scaled_matrix_table_by_user": [
+    [
+      -0.423784,
+      -0.423784,
+      -0.423784,
+      -0.205057,
+      -0.423784,
+      2.638395,
+      -0.31442,
+      -0.423784
+    ],
+    [
+      1.416927,
+      1.062695,
+      -1.012091,
+      0.860277,
+      -1.012091,
+      -0.860277,
+      0.55665,
+      -1.012091
+    ],
+    [
+      0.018663,
+      0.615882,
+      -0.130642,
+      1.959624,
+      0.317272,
+      -1.772993,
+      -0.429251,
+      -0.578556
+    ],
+    [
+      -0.739846,
+      -0.692872,
+      1.655847,
+      -0.786821,
+      0.857282,
+      -0.786821,
+      -0.786821,
+      1.280052
+    ]
+  ],
+  "component_scores_table_by_component": [
+    [
+      -1.0,
+      -1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      -1.0,
+      1.0,
+      -1.0
+    ],
+    [
+      1.0,
+      -1.0,
+      -1.0
+    ]
+  ],
+  "clusters": {
+    "cluster_0": [
+      "device_orders",
+      "product_master",
+      "deprecated_device_orders"
+    ],
+    "cluster_1": [
+      "deprecated_device_orders",
+      "product_master",
+      "device_orders"
+    ],
+    "cluster_2": [
+      "sales_orders",
+      "device_orders",
+      "deprecated_device_orders"
+    ]
+  },
+  "extended_clusters": {
+    "cluster_0": [
+      "device_orders",
+      "product_master",
+      "deprecated_device_orders"
+    ],
+    "cluster_1": [
+      "deprecated_device_orders",
+      "product_master",
+      "device_orders"
+    ],
+    "cluster_2": [
+      "sales_orders",
+      "device_orders",
+      "deprecated_device_orders"
+    ]
+  },
+  "user_clusters": {
+    "analyst_a": [
+      {
+        "cluster": "cluster_0",
+        "access_count": 60
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 60
+      },
+      {
+        "cluster": "cluster_2",
+        "access_count": 49
+      }
+    ],
+    "analyst_b": [
+      {
+        "cluster": "cluster_0",
+        "access_count": 57
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 57
+      },
+      {
+        "cluster": "cluster_2",
+        "access_count": 43
+      }
+    ],
+    "analyst_c": [
+      {
+        "cluster": "cluster_2",
+        "access_count": 52
+      },
+      {
+        "cluster": "cluster_0",
+        "access_count": 11
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 11
+      }
+    ],
+    "engineer_device": [
+      {
+        "cluster": "cluster_0",
+        "access_count": 64
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 64
+      },
+      {
+        "cluster": "cluster_2",
+        "access_count": 39
+      }
+    ],
+    "engineer_sales": [
+      {
+        "cluster": "cluster_2",
+        "access_count": 35
+      },
+      {
+        "cluster": "cluster_0",
+        "access_count": 14
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 14
+      }
+    ],
+    "legacy_user": [
+      {
+        "cluster": "cluster_0",
+        "access_count": 31
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 31
+      },
+      {
+        "cluster": "cluster_2",
+        "access_count": 31
+      }
+    ],
+    "pm_device": [
+      {
+        "cluster": "cluster_0",
+        "access_count": 41
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 41
+      },
+      {
+        "cluster": "cluster_2",
+        "access_count": 32
+      }
+    ],
+    "pm_sales": [
+      {
+        "cluster": "cluster_2",
+        "access_count": 44
+      },
+      {
+        "cluster": "cluster_0",
+        "access_count": 8
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 8
+      }
+    ]
+  },
+  "product_area_clusters": {
+    "device_business": [
+      {
+        "cluster": "cluster_0",
+        "unique_users": 4,
+        "access_count": 222
+      },
+      {
+        "cluster": "cluster_1",
+        "unique_users": 4,
+        "access_count": 222
+      },
+      {
+        "cluster": "cluster_2",
+        "unique_users": 4,
+        "access_count": 163
+      }
+    ],
+    "sales": [
+      {
+        "cluster": "cluster_2",
+        "unique_users": 3,
+        "access_count": 131
+      },
+      {
+        "cluster": "cluster_0",
+        "unique_users": 3,
+        "access_count": 33
+      },
+      {
+        "cluster": "cluster_1",
+        "unique_users": 3,
+        "access_count": 33
+      }
+    ]
+  }
+}

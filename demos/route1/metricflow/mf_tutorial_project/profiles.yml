@@ -1,0 +1,7 @@
+mf_tutorial:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/metricflow/mf_tutorial_project/mf_tutorial.duckdb'
+

@@ -1,0 +1,39 @@
+/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/openmetadata-venv/lib/python3.11/site-packages/pydantic/_internal/_fields.py:198: UserWarning: Field name "schema" in "PostgresStoredProcedure" shadows an attribute in parent "BaseModel"
+  warnings.warn(
+[2026-08-04 01:45:21] INFO     {metadata.OMetaAPI:server_mixin:97} - OpenMetadata client running with Server version [1.13.0] and Client version [1.13.0.0]
+/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/openmetadata-venv/lib/python3.11/site-packages/pydantic/_internal/_fields.py:198: UserWarning: Field name "schema" in "MysqlRoutine" shadows an attribute in parent "BaseModel"
+  warnings.warn(
+[2026-08-04 01:45:21] INFO     {metadata.Metadata:test_connections:204} - Running CheckAccess...
+[2026-08-04 01:45:21] INFO     {metadata.Metadata:test_connections:204} - Running GetSchemas...
+[2026-08-04 01:45:21] INFO     {metadata.Metadata:test_connections:204} - Running GetTables...
+[2026-08-04 01:45:21] INFO     {metadata.Metadata:test_connections:204} - Running GetViews...
+[2026-08-04 01:45:21] INFO     {metadata.Metadata:test_connections:204} - Running GetQueries...
+[2026-08-04 01:45:21] ERROR    {metadata.Metadata:test_connections:215} - GetQueries-(pymysql.err.OperationalError) (1142, "SELECT command denied to user 'demo_reader'@'192.168.65.1' for table 'general_log'")
+[SQL: /* {"app": "OpenMetadata", "version": "1.13.0.0"} */
+
+SELECT `argument` from mysql.general_log limit 1;
+]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-08-04 01:45:21] INFO     {metadata.Metadata:test_connections:229} - Test connection results:
+[2026-08-04 01:45:21] INFO     {metadata.Metadata:test_connections:230} - lastUpdatedAt=None status=<StatusType.Running: 'Running'> steps=[TestConnectionStepResult(name='CheckAccess', mandatory=True, passed=True, message=None, errorLog=None), TestConnectionStepResult(name='GetSchemas', mandatory=True, passed=True, message=None, errorLog=None), TestConnectionStepResult(name='GetTables', mandatory=True, passed=True, message=None, errorLog=None), TestConnectionStepResult(name='GetViews', mandatory=False, passed=True, message=None, errorLog=None), TestConnectionStepResult(name='GetQueries', mandatory=False, passed=False, message='Failed to fetch queries, please validate if user can access the mysql.general_log table to get query logs.', errorLog='(pymysql.err.OperationalError) (1142, "SELECT command denied to user \'demo_reader\'@\'192.168.65.1\' for table \'general_log\'")\n[SQL: /* {"app": "OpenMetadata", "version": "1.13.0.0"} */\n\nSELECT `argument` from mysql.general_log limit 1;\n]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)')]
+[2026-08-04 01:45:21] WARNING  {metadata.Metadata:test_connections:243} - You might be missing metadata in: GetQueries due to Failed to fetch queries, please validate if user can access the mysql.general_log table to get query logs.
+[2026-08-04 01:45:22] INFO     {metadata.Ingestion:database_service:890} - Mark Deleted Schemas set to True. Processing database [default]
+[2026-08-04 01:45:22] INFO     {metadata.Ingestion:database_service:804} - Mark Deleted Tables set to True. Processing database [default]
+[2026-08-04 01:45:22] INFO     {metadata.Ingestion:database_service:825} - Mark Deleted Stored Procedures Processing database [default]
+[2026-08-04 01:45:22] INFO     {metadata.Ingestion:database_service:847} - Mark Deleted Databases set to True. Processing service [enterprise_mysql]
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - [1mWorkflow Mysql Summary:[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Processed records: 6[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Updated records: 0[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Warnings: 0[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Filtered: 1[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Errors: 0[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Success %: 100.0[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - [1mWorkflow OpenMetadata Summary:[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Processed records: 2[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Updated records: 0[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Warnings: 0[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Errors: 0[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - Success %: 100.0[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - [1m[36;1mWorkflow Success %: 100.0[0m
+[2026-08-04 01:45:22] INFO     {metadata.Utils:logger:220} - [1m[36;1mWorkflow finished in time: 398.981ms[0m
+[2026-08-04 01:45:22] INFO     {metadata.Ingestion:metadata_rest:1213} - Flushing 5 remaining entities on close

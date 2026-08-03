@@ -1,0 +1,13 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 7.928,
+  "stdout_sha256": "de0a3e38bb3b31c69ebaac3e1fa2f2b0400b8985c969135fac926c6b76fdc307",
+  "stderr_sha256": "742fe8e697bea6a76888998a28b14a92c80b3c68fc034d0d151e3a73502267c5",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/datahub/results/query_ingest_report.txt",
+      "exists": false
+    }
+  ]
+}

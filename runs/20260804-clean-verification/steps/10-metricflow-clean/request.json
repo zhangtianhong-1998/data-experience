@@ -1,0 +1,22 @@
+{
+  "step": "10-metricflow-clean",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/metricflow/device_project",
+  "argv": [
+    "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/metricflow-venv/bin/dbt",
+    "clean",
+    "--profiles-dir",
+    "."
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785778291.739905
+}

@@ -1,0 +1,12 @@
+datahub_api:
+  server: http://localhost:8080
+source:
+  type: sql-queries
+  config:
+    platform: sqlite
+    default_schema: main
+    query_file: /Users/sanjiuganmaoling/Desktop/code/data-experience/lab/input/bi_queries.ndjson
+sink:
+  type: datahub-rest
+  config:
+    server: http://localhost:8080

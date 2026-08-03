@@ -1,0 +1,24 @@
+{
+  "step": "11-metricflow-install",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "uv",
+    "pip",
+    "install",
+    "--python",
+    "runtime/metricflow-venv/bin/python",
+    "dbt-metricflow[dbt-duckdb]"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785775230.344791
+}

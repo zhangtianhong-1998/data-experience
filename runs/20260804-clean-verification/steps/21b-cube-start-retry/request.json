@@ -1,0 +1,22 @@
+{
+  "step": "21b-cube-start-retry",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/cube",
+  "argv": [
+    "docker",
+    "compose",
+    "up",
+    "-d"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785778373.033182
+}

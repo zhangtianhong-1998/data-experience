@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 2.563,
+  "stdout_sha256": "7a8c3c8f2eafbc5df01e66235968ba0a8abe84f932cc2f32367ff79442d52d00",
+  "stderr_sha256": "eec5af5ed8dac74e77087c46d589c524bc83e8967c06e404e0ff7e69d9484d30",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/results/sdk_context.json",
+      "exists": true,
+      "size": 1885,
+      "sha256": "330280990a68f6c9d0798931f4c133a4d9cae4e04eea810da72f5dfc70b7cbff"
+    }
+  ]
+}

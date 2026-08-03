@@ -1,0 +1,20 @@
+{
+  "step": "00b-common-rebuild-retry",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/common",
+  "argv": [
+    "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/.venv-tools/bin/python",
+    "build_and_verify.py"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785778291.642092
+}

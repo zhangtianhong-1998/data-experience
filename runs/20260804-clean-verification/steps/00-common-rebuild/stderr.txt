@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/common/build_and_verify.py", line 64, in <module>
+    main()
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/common/build_and_verify.py", line 40, in main
+    connection.execute(create_sql)
+_duckdb.IOException: IO Error: No files found that match the pattern "data/device_orders.csv"
+
+LINE 2: SELECT * FROM read_csv_auto('data/device_orders.csv', header = true)
+                      ^

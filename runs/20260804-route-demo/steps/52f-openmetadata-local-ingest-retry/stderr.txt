@@ -1,0 +1,15 @@
+/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/openmetadata-venv/lib/python3.11/site-packages/pydantic/_internal/_fields.py:198: UserWarning: Field name "schema" in "PostgresStoredProcedure" shadows an attribute in parent "BaseModel"
+  warnings.warn(
+[2026-08-04 01:15:57] INFO     {metadata.OMetaAPI:server_mixin:97} - OpenMetadata client running with Server version [1.13.0] and Client version [1.13.0.0]
+/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/openmetadata-venv/lib/python3.11/site-packages/pydantic/_internal/_fields.py:198: UserWarning: Field name "schema" in "MysqlRoutine" shadows an attribute in parent "BaseModel"
+  warnings.warn(
+[2026-08-04 01:15:57] INFO     {metadata.Metadata:test_connections:204} - Running CheckAccess...
+[2026-08-04 01:15:57] ERROR    {metadata.Metadata:test_connections:215} - CheckAccess-(pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'192.168.65.1' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-08-04 01:15:57] INFO     {metadata.Metadata:test_connections:229} - Test connection results:
+[2026-08-04 01:15:57] INFO     {metadata.Metadata:test_connections:230} - lastUpdatedAt=None status=<StatusType.Running: 'Running'> steps=[TestConnectionStepResult(name='CheckAccess', mandatory=True, passed=False, message='Failed to connect to mysql, please validate the credentials', errorLog='(pymysql.err.OperationalError) (1045, "Access denied for user \'root\'@\'192.168.65.1\' (using password: YES)")\n(Background on this error at: https://sqlalche.me/e/20/e3q8)')]
+[2026-08-04 01:15:57] ERROR    {metadata.Utils:logger:220} - [31;1m
+Error initializing metadata: Failed to run the test connection step: CheckAccess[0m
+[2026-08-04 01:15:57] INFO     {metadata.Utils:logger:220} - 
+For more information, please visit: https://docs.open-metadata.org/connectors/ingestion/workflows/metadata
+Or join us in Slack: https://slack.open-metadata.org/[0m

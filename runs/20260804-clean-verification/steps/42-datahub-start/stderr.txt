@@ -1,0 +1,453 @@
+Python versions above 3.11 are not actively tested with yet. Please use Python 3.11 for now.
+[2026-08-04 01:34:50,573] INFO     {datahub.cli.quickstart_versioning:181} - Saved quickstart config to /Users/sanjiuganmaoling/.datahub/quickstart/quickstart_version_mapping.yaml.
+[2026-08-04 01:34:50,575] INFO     {datahub.cli.docker_cli:676} - Using quickstart plan: composefile_git_ref='v1.5.0.6' docker_tag='v1.5.0.6' mysql_tag='8.2'
+[2026-08-04 01:34:50,827] INFO     {datahub.cli.docker_cli:694} - compose file name /Users/sanjiuganmaoling/.datahub/quickstart/docker-compose.yml
+[2026-08-04 01:34:50,828] INFO     {datahub.cli.docker_cli:879} - Fetching docker-compose file https://raw.githubusercontent.com/datahub-project/datahub/v1.5.0.6/docker/quickstart/docker-compose.quickstart-profile.yml from GitHub
+ Network datahub_network  Creating
+ Network datahub_network  Created
+ Volume "datahub_osdata"  Creating
+ Volume "datahub_osdata"  Created
+ Volume "datahub_broker"  Creating
+ Volume "datahub_broker"  Created
+ Volume "datahub_mysqldata"  Creating
+ Volume "datahub_mysqldata"  Created
+ Container datahub-opensearch-1  Creating
+ Container datahub-kafka-broker-1  Creating
+ Container datahub-mysql-1  Creating
+ Container datahub-opensearch-1  Created
+ Container datahub-mysql-1  Created
+ Container datahub-kafka-broker-1  Created
+ Container datahub-system-update-quickstart-1  Creating
+ Container datahub-system-update-quickstart-1  Created
+ Container datahub-datahub-gms-quickstart-1  Creating
+ Container datahub-frontend-quickstart-1  Creating
+ Container datahub-frontend-quickstart-1  Created
+ Container datahub-datahub-gms-quickstart-1  Created
+ Container datahub-datahub-actions-quickstart-1  Creating
+ Container datahub-datahub-actions-quickstart-1  Created
+ Container datahub-mysql-1  Starting
+ Container datahub-kafka-broker-1  Starting
+ Container datahub-opensearch-1  Starting
+ Container datahub-opensearch-1  Started
+ Container datahub-kafka-broker-1  Started
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (28a2d210173c78012d757b55382a7e66509416431f27d206535252acb42b7298): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (b3634059f7775fefb4e6ead9fb8ca7dfe60356cd9e5ed466897d0a9884d1be8a): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (847b77007b10bb135e3625ae484c9aa2fa6ea643aeb9998b3ae4a1846b894eae): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (59f920b36e33855ed44264d27dde76145ed21173bfd88fbccd831b966e1e61a7): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (38ac882d069d46bc5d49ec158dfc5a9c093b40c9f67b1192a7a65a663b38c021): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (4fde04b004fc62354b50b7d5998415d8843f1e29883927e069a5ae8d979bbee5): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (c4faee73ea1a72ec61abe99d08f92cc61d4b9bbec1ecd2fd1dfbd4acf3a532d4): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (cfd54772057cc88fcaf2135701dd6f0c6dc06f71674f1f5f5d45635841e74ff3): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (96a518679c64b8099bdbae38c1406f5a034a0e6d649630b9b61239586dd4f07d): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (a2f4be0d958ac2291598e62d581d86b149347c94b7e465608b5b6090655f10ca): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (57c3a895db4da18fbdb247a75bbf87bfabac07a284d1be54796ab612526f1f3f): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (3b36cbbd20c1096405fceee6b20b53fffa31f3b44d2c58f7362b563293a782e5): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (65a791172c8acabb2cec9308bc99bc168367f809990fea9887dd7c0497dbaa70): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (a781f4cb1acd61b536465470362713e63ac67ed21037fe8a634eaef55359e9c3): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (f4691c7da4cdbf5782aa5dc33e2d472dccca54d69dcdcaca69b0a4441a4a1885): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (fc738b47c280bb1f5f05f46eda93e9a8b18ad0c73a279c6d54b012ba742aa8e5): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (6e81832f9257525968ca9646dcdffd5f3983265dc347707f39f1e26335b33d32): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (0857d404f921b77f65186d1e8d4948670bd9aa1f9479b5d0aee4fb76b9a9750a): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (29c0f8f569eec068bf1c361314628fdba77989c23538bd420b4f9b068ddc444e): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (eb72796b9e9ed8a0dabc5982ded3a5c1b7f8a4d9f8016c3f9bc04529b76e0553): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (579682e02366dfa0340149461eedd7f53c10f67f187d5738b0a1215ea5cbc780): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (f010b5c49aa7b9d4a54af1264142d2ecd183dbd6cd14df1891c0a712d76fb5b6): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (b051a0541c83241e973e3be5e706df23c037df521ca340f6e140fced1806b9c5): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (b19bee0ce3845dbb56c5a698af847929346198b91af5d5ffbd8cc5870d8ace96): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (d362a1b39b0a2a4e3ad17f5fa922d33be81a7c3b9d2ba2236ae2fbb9935ccc5c): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (2282727a238426579dac2b82982c4a36b07615bd0ea59ce646eca1dbafff825b): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (92f0c91e2cc67f16e65f0a5edf8c4a28c9caf1260c1106998bdf1b57174ac5b9): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (e145c0276539f42eb31f65783d6870d4200f71e3a1a22339167b66a8336a0710): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (9810199ab442144646e852c98cea7cec94a5a44d1c8fac7f00f09aefa242cc84): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (e7c415f2ea39660cc039b293b18cd53bb2c8ff34dc7c8a72332349a81ea808a6): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (924263c3d8529871223eb873e5aacb3cfe99e5969bc93b2b1cb2f109f3199336): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (ca89246b85cbfe500b3032c4802b5a934f3ab553fe165d134ba3599d15da9582): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (3969596c9f9d257ea44fd9f9f473455133005470e43a3f34c34ab4f2bdf01843): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (55a4e394c1e657b01e1a155fe8f670fb25ab442c6186837d1f22d27bf900bfaf): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (66af0361c77322713087624b66c5ce4677fb03b06017b1fae038ec261ca1b644): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (30e99e4ad6cf8981ed67461b0702bbd633d1ae5f86bdb6fac3ceb4fbe49aeb54): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (e3fb58f2afb88f73630b20bc3de019eba298a7241c9a6b1c6c4a5f5ca648075c): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (c27d82014fe15725fa7dcdbdb14b8fe7c763be531bb1c418e4b04ce0712ae3d3): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (911977fba191321ae53b937011516d824fa0308b064f10a3e3b1fa903b3a2e54): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (e655caa021b465c34170acc0d50396c71bd2e843bd7175f17b057a0a2562e1f7): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (970a44be524367519fd7d332009dab357f4e3e9cf07ebe8b02c8ae732df02c01): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (b0ed775296ef243d4bb2a1be52b6dd122c3621559ff823d27969c047290a281d): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (b363599cfbcb54f4e66c65c7d4075ea1af1a1962bba18982c98041cb5c74286b): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (91ae3264227411522d0ba059c8f5b8b05c3136ac09447981b1f1e0a541ded4a2): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (2837a7cef977b1059b2019453eae13a1633ba9cce4a222311205eac0f31cc991): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (658051f7cff046a97b2b23a738ee2f5d3a394ddffd920137232aa6377014953c): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (b40c94de772dc753bab6c8b82860f49f07f27539bbd898bd492c3bf1b5c74c64): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (227cff18fb9cf32606c2a6c54368097ace88ac86e90e40db1259a92ad3552106): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (5b2aa8bf40e86101983a2a1551abf33829ff5c569ad0a8e9244f69515f7325d5): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (40392f09e14ba5dc29e5b9b8704023f91a7afc92f5d31899319ed24301e4d3cb): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (134b92db13a7ff8419ccf8d664985a0cea6d8d4cb157234ec004e148d7ecefe1): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (063c22c7183f9396d84572d289f59b77034650bd49f7052edc2841a090e25105): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (975488a06e6d857742b369c78f0d6a0362e889d2df329ab7f69b0042634afc1a): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (03e5298c3555ff25d1da363c3d6c4ea83c402113c82e205868aaf9c793ffbf42): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (44d728012eb31b935a6828d678042c4ba2ab6646f3bc1aa79f19a8da4e2e6fa6): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (09043771b34c0699f76bf5e3be184dfc134e2fcf5329e3ad16feab8f950037b7): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (36ada5c76db6f76806eb9ba6eafdcfe874d38b273ac23cd94db7eb619cb8f403): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (f1cadae1643fcbd9d860e1bf77909135f0cb9759436d487573632b685027cf1a): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (7ce54079515b4af481b279e359bb9ed4a0daebc4220f183ca44a1f588bfca841): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (99c7cd2aa3ac2c345aa8fe919c2c70085dcbfd31b78f4658e603e9ebb272ff67): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (79fb74a290836d8c9c9648692c06affc5162efb9be9f01781cfc93cad97b862e): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (be5d04e644f9f2e252096925fba092714805afb7a383983f18736ff12e7b4dbf): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (f79a30e13b61480e40879c6fa9e802c79db5656de278ae7de21fa3f8e0259581): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (1eca750e93c953f630512769b9a6707e722966605393e70924021f98e9c491fd): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (af02f779120bfd712abc0ec57af24282d24a5279bebf137e202fffb41f2fd4ac): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (567349b35a409fa34d66c31f51601efad37be3836b3eda09bd52c93dc9c7ff37): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (d6f10e5bbc7c60377cad41bcf4a9dd2e1af92c26392afe08daea91191a77cecb): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (542eef96a8b3558f6270b753b042fef6c7e772216e5c9905e1dfc458cd2c105d): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (1ac061b45d9379e4439c6e0c4509c85c4311d1e6195dfbe6c8d5bc29afbf6081): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (c0544257b928138a167a600f95edcd8591eddd5ae46d088ce312dc763863e32d): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (037a7393c4aa29cd2aa423cda0d32a1634ba1a86d628e021958dd73882e487d0): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (1499bdddcc5ac894763763ec662b27c83199c7956751bc00093331b93c185b54): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (d6b8ee22805ac1a50e4d5de5808a892cf0f57eea1584fec141ce8ba0596c915d): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (a500b106dc0f74ad7591cc1dc67b52501dc8c9ccf414d94bd58c59e6607f0393): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (d3f81fc07a5de24c5a05e1c40a5e039a34a7c9859e2e226c21f4c9f8b19e204f): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (e2d200204fe01acc88da95d8a1590f3c3bec0c819dc536d592a0669ee22ba73c): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (70408cbd0e7053411ef3a8fd3f5babfd64f3b83af2a653cd69635d0cc5788ed8): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (f3b23546fe11f29a3f231bd134e09686e340b86da0d9b8eb78efa2ba056f38ce): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (c946b8848388362dbc08eb271b5c34c677b1fc458c4a8c1503882ef1c0a9359a): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (b7a8d44ae4b82dbee518cc0c2033345c2ce790f0b5c8eadfe8b950ff7c9fe890): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (57936cdbd9d56c54e3acfbd823f472155737dc76bfb85871d324af82196a0cb0): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (ab922f35398a408e1800678e738df0d2daba4ebc456133f8ffa630255a3656b1): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (89d39daf8640b1dcaab26ac30048a8fe8769e5c94cf5a74f7dd1117954cdf549): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (31e507907f6fc51ff82a83ca8f2d9f0adfe787c63f39e424878d2331e03fcace): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (bf940a951400b54332360d0e8611388f523fcbd5caae1e19191aa556b769d12e): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (d5a2f9201215e65ec73ec8b17df9750c545b819ca8e4683b0e64d681e74bfa6f): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (54109ad720c596a783fc11067c438f1e0ebbf58da46b522c7b093d8ffcd15973): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (8e9b3857c3c86bbf3ea287446db154e81917fbf1cfa739c5802c0964c94d6f10): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (ee73f8136b3e1365a65a9429dee261d04322045f5f9f8e560164c00bad2b473c): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (72d0563e6310351e6026172aa842ff1a8013ff14c58440c2f9aee9c7e760fe2e): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (ca4782d87dbfb822de1d4b9ef736aca8488217f9f09113b30b291e6ba9f5e515): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (7c74d8f62f8c2131cdb6d8d18ca675550e047e42a03a2e6b130c11439b580e06): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (675f472b89357a26cdbaf0f6c30e0d408afd373ac2ce4d8e0e43b4c9d5db730a): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (35ac0416dac0b6d3f12b57dda972498c4803897dc16741ec0012c781bab0efda): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (97aad3b176b752aea03322878f13c3b8ad71ec754ee463115fa55bc11916a6e3): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (5fcfbddf257f511e52a8b08cafbc248c2f6f9b458b3cf3e14c62ede3eda8e145): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (3fa634fbc01ee3a531ad8f5ddb288bd18a2b714417b5262425f8ed7e8b66ced2): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (c2b48770232f7a69b5c2289d04b1e19c47defbed738121872d9030c9d749d9ea): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (83319965e1d02131ed20a57663a1ae7259deb5b08470f7afc03641d7be3ed92c): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-kafka-broker-1  Running
+ Container datahub-opensearch-1  Running
+ Container datahub-mysql-1  Starting
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint datahub-mysql-1 (85be831bbe37fc18b9946702648eb9069cf11730ed8fe07492b29e522ec8dd02): Bind for 0.0.0.0:3306 failed: port is already allocated
+ Container datahub-opensearch-1  Running
+ Container datahub-kafka-broker-1  Running
+ Container datahub-mysql-1  Starting
+ Container datahub-mysql-1  Started
+ Container datahub-mysql-1  Waiting
+ Container datahub-opensearch-1  Waiting
+ Container datahub-kafka-broker-1  Waiting
+ Container datahub-opensearch-1  Healthy
+ Container datahub-kafka-broker-1  Healthy
+ Container datahub-mysql-1  Healthy
+ Container datahub-system-update-quickstart-1  Starting
+ Container datahub-system-update-quickstart-1  Started
+ Container datahub-system-update-quickstart-1  Waiting
+ Container datahub-system-update-quickstart-1  Waiting
+ Container datahub-system-update-quickstart-1  Exited
+ Container datahub-datahub-gms-quickstart-1  Starting
+ Container datahub-system-update-quickstart-1  Exited
+ Container datahub-frontend-quickstart-1  Starting
+ Container datahub-frontend-quickstart-1  Started
+ Container datahub-datahub-gms-quickstart-1  Started
+ Container datahub-datahub-gms-quickstart-1  Waiting
+ Container datahub-datahub-gms-quickstart-1  Healthy
+ Container datahub-datahub-actions-quickstart-1  Starting
+ Container datahub-datahub-actions-quickstart-1  Started

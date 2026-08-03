@@ -1,0 +1,4 @@
+Unable to find image 'docker.getcollate.io/openmetadata/ingestion:1.13.0' locally
+docker: Error response from daemon: Head "https://registry-1.docker.io/v2/openmetadata/ingestion/manifests/1.13.0": Get "https://auth.docker.io/token?scope=repository%3Aopenmetadata%2Fingestion%3Apull&service=registry.docker.io": net/http: TLS handshake timeout
+
+Run 'docker run --help' for more information

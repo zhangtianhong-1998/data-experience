@@ -1,0 +1,179 @@
+
+
+⠋ Initiating query…
+
+⠙ Initiating query…
+✔ Success 🦄 - query completed after 0.03 seconds
+🔎 Generated Dataflow Plan + SQL (remove --explain to see data):
+-- Metric Dataflow Plan:
+--     <DataflowPlan>
+--         <WriteToResultDataTableNode>
+--             <!-- description = 'Write to DataTable' -->
+--             <!-- node_id = NodeId(id_str='wrd_1') -->
+--             <OrderByLimitNode>
+--                 <!-- description = "Order By ['device_order__product_l1']" -->
+--                 <!-- node_id = NodeId(id_str='obl_1') -->
+--                 <!-- order_by_spec =                                                     -->
+--                 <!--   OrderBySpec(                                                      -->
+--                 <!--     instance_spec=DimensionSpec(                                    -->
+--                 <!--       element_name='product_l1',                                    -->
+--                 <!--       entity_links=(EntityReference(element_name='device_order'),), -->
+--                 <!--     ),                                                              -->
+--                 <!--     descending=False,                                               -->
+--                 <!--   )                                                                 -->
+--                 <!-- limit = 'None' -->
+--                 <ComputeMetricsNode>
+--                     <!-- description = 'Compute Metrics via Expressions' -->
+--                     <!-- node_id = NodeId(id_str='cm_4') -->
+--                     <!-- metric_spec =                                            -->
+--                     <!--   MetricSpec(                                            -->
+--                     <!--     element_name='device_order_amount',                  -->
+--                     <!--     where_filter_specs=(                                 -->
+--                     <!--       WhereFilterSpec(                                   -->
+--                     <!--         where_sql="device_order__org_code = 'ORG_1001'", -->
+--                     <!--         bind_parameters=SqlBindParameterSet(),           -->
+--                     <!--         element_set=GroupByItemSet(                      -->
+--                     <!--           annotated_specs=(                              -->
+--                     <!--             AnnotatedSpec(                               -->
+--                     <!--               element_type=DIMENSION,                    -->
+--                     <!--               element_name='org_code',                   -->
+--                     <!--               entity_link_names=('device_order',),       -->
+--                     <!--               element_properties=(LOCAL,),               -->
+--                     <!--               origin_semantic_model_names=(              -->
+--                     <!--                 'device_orders',                         -->
+--                     <!--               ),                                         -->
+--                     <!--               derived_from_semantic_model_names=(        -->
+--                     <!--                 'device_orders',                         -->
+--                     <!--               ),                                         -->
+--                     <!--             ),                                           -->
+--                     <!--           ),                                             -->
+--                     <!--         ),                                               -->
+--                     <!--       ),                                                 -->
+--                     <!--     ),                                                   -->
+--                     <!--   )                                                      -->
+--                     <!-- metric_spec =                                            -->
+--                     <!--   MetricSpec(                                            -->
+--                     <!--     element_name='device_profit_amount',                 -->
+--                     <!--     where_filter_specs=(                                 -->
+--                     <!--       WhereFilterSpec(                                   -->
+--                     <!--         where_sql="device_order__org_code = 'ORG_1001'", -->
+--                     <!--         bind_parameters=SqlBindParameterSet(),           -->
+--                     <!--         element_set=GroupByItemSet(                      -->
+--                     <!--           annotated_specs=(                              -->
+--                     <!--             AnnotatedSpec(                               -->
+--                     <!--               element_type=DIMENSION,                    -->
+--                     <!--               element_name='org_code',                   -->
+--                     <!--               entity_link_names=('device_order',),       -->
+--                     <!--               element_properties=(LOCAL,),               -->
+--                     <!--               origin_semantic_model_names=(              -->
+--                     <!--                 'device_orders',                         -->
+--                     <!--               ),                                         -->
+--                     <!--               derived_from_semantic_model_names=(        -->
+--                     <!--                 'device_orders',                         -->
+--                     <!--               ),                                         -->
+--                     <!--             ),                                           -->
+--                     <!--           ),                                             -->
+--                     <!--         ),                                               -->
+--                     <!--       ),                                                 -->
+--                     <!--     ),                                                   -->
+--                     <!--   )                                                      -->
+--                     <AggregateSimpleMetricInputsNode>
+--                         <!-- description = 'Aggregate Inputs for Simple Metrics' -->
+--                         <!-- node_id = NodeId(id_str='am_2') -->
+--                         <!-- null_fill_value_mapping = {'device_order_amount': None, 'device_profit_amount': None} -->
+--                         <SelectorNode>
+--                             <!-- description =                                                                               -->
+--                             <!--   "Select: ['__device_order_amount', '__device_profit_amount', 'device_order__product_l1']" -->
+--                             <!-- node_id = NodeId(id_str='pfe_5') -->
+--                             <!-- include_spec = SimpleMetricInputSpec(element_name='device_order_amount') -->
+--                             <!-- include_spec = SimpleMetricInputSpec(element_name='device_profit_amount') -->
+--                             <!-- include_spec =                                                    -->
+--                             <!--   DimensionSpec(                                                  -->
+--                             <!--     element_name='product_l1',                                    -->
+--                             <!--     entity_links=(EntityReference(element_name='device_order'),), -->
+--                             <!--   )                                                               -->
+--                             <!-- distinct = False -->
+--                             <WhereFilterNode>
+--                                 <!-- description = 'Filter Output with WHERE' -->
+--                                 <!-- node_id = NodeId(id_str='wcc_2') -->
+--                                 <!-- filter_spec =                                             -->
+--                                 <!--   WhereFilterSpec(                                        -->
+--                                 <!--     where_sql="device_order__org_code = 'ORG_1001'",      -->
+--                                 <!--     bind_parameters=SqlBindParameterSet(),                -->
+--                                 <!--     element_set=GroupByItemSet(                           -->
+--                                 <!--       annotated_specs=(                                   -->
+--                                 <!--         AnnotatedSpec(                                    -->
+--                                 <!--           element_type=DIMENSION,                         -->
+--                                 <!--           element_name='org_code',                        -->
+--                                 <!--           entity_link_names=('device_order',),            -->
+--                                 <!--           element_properties=(LOCAL,),                    -->
+--                                 <!--           origin_semantic_model_names=('device_orders',), -->
+--                                 <!--           derived_from_semantic_model_names=(             -->
+--                                 <!--             'device_orders',                              -->
+--                                 <!--           ),                                              -->
+--                                 <!--         ),                                                -->
+--                                 <!--       ),                                                  -->
+--                                 <!--     ),                                                    -->
+--                                 <!--   )                                                       -->
+--                                 <SelectorNode>
+--                                     <!-- description =                                                     -->
+--                                     <!--   ("Select: ['__device_order_amount', '__device_profit_amount', " -->
+--                                     <!--    "'device_order__product_l1', 'device_order__org_code']")       -->
+--                                     <!-- node_id = NodeId(id_str='pfe_4') -->
+--                                     <!-- include_spec = SimpleMetricInputSpec(element_name='device_order_amount') -->
+--                                     <!-- include_spec = SimpleMetricInputSpec(element_name='device_profit_amount') -->
+--                                     <!-- include_spec =                                                    -->
+--                                     <!--   DimensionSpec(                                                  -->
+--                                     <!--     element_name='product_l1',                                    -->
+--                                     <!--     entity_links=(EntityReference(element_name='device_order'),), -->
+--                                     <!--   )                                                               -->
+--                                     <!-- include_spec =                                                    -->
+--                                     <!--   DimensionSpec(                                                  -->
+--                                     <!--     element_name='org_code',                                      -->
+--                                     <!--     entity_links=(EntityReference(element_name='device_order'),), -->
+--                                     <!--   )                                                               -->
+--                                     <!-- distinct = False -->
+--                                     <ConstrainTimeRangeNode>
+--                                         <!-- description =                                                          -->
+--                                         <!--   'Constrain Time Range to [2026-01-01T00:00:00, 2026-06-30T00:00:00]' -->
+--                                         <!-- node_id = NodeId(id_str='ctr_2') -->
+--                                         <!-- time_range_start = '2026-01-01T00:00:00' -->
+--                                         <!-- time_range_end = '2026-06-30T00:00:00' -->
+--                                         <MetricTimeDimensionTransformNode>
+--                                             <!-- description = "Metric Time Dimension 'order_date'" -->
+--                                             <!-- node_id = NodeId(id_str='sma_10001') -->
+--                                             <!-- aggregation_time_dimension = 'order_date' -->
+--                                             <ReadSqlSourceNode>
+--                                                 <!-- description = "Read From SemanticModelDataSet('device_orders')" -->
+--                                                 <!-- node_id = NodeId(id_str='rss_10001') -->
+--                                                 <!-- data_set = SemanticModelDataSet('device_orders') -->
+--                                             </ReadSqlSourceNode>
+--                                         </MetricTimeDimensionTransformNode>
+--                                     </ConstrainTimeRangeNode>
+--                                 </SelectorNode>
+--                             </WhereFilterNode>
+--                         </SelectorNode>
+--                     </AggregateSimpleMetricInputsNode>
+--                 </ComputeMetricsNode>
+--             </OrderByLimitNode>
+--         </WriteToResultDataTableNode>
+--     </DataflowPlan>
+
+SELECT
+  device_order__product_l1
+  , SUM(device_order_amount) AS device_order_amount
+  , SUM(device_profit_amount) AS device_profit_amount
+FROM (
+  SELECT
+    org_code AS device_order__org_code
+    , product_l1 AS device_order__product_l1
+    , CASE WHEN status = 'confirmed' THEN order_amount ELSE 0 END AS device_order_amount
+    , CASE WHEN status = 'confirmed' THEN profit_amount ELSE 0 END AS device_profit_amount
+  FROM "metricflow-device"."main"."device_orders" device_orders_src_10000
+  WHERE DATE_TRUNC('day', order_date) BETWEEN '2026-01-01' AND '2026-06-30'
+) subq_5
+WHERE device_order__org_code = 'ORG_1001'
+GROUP BY
+  device_order__product_l1
+ORDER BY device_order__product_l1
+

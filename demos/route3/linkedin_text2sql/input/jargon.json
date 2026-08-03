@@ -1,0 +1,7 @@
+{
+  "设备订货": "设备产品订单，不是 sales_orders 中的销售收入；使用 device_orders。",
+  "设备订货金额": "confirmed 设备订单的 order_amount 合计，单位 CNY。",
+  "设备利润": "与设备订货金额同口径订单的 profit_amount 合计，单位 CNY。",
+  "上半年": "自然年 1 月到 6 月，本数据中 year_month BETWEEN YYYY01 AND YYYY06。"
+}
+

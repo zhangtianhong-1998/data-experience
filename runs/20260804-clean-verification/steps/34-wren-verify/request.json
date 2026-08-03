@@ -1,0 +1,21 @@
+{
+  "step": "34-wren-verify",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "runtime/.venv-tools/bin/python",
+    "demos/route1/wrenai/verify_result.py",
+    "runs/20260804-clean-verification/steps/33-wren-query/stdout.txt"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785778388.400074
+}

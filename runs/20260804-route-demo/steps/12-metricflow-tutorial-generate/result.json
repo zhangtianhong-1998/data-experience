@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 7.648,
+  "stdout_sha256": "0fd0f1d6d5f1daafb976ae76d83600d473e338d4f258edcae6fcb8ea3ab0143d",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/metricflow/mf_tutorial_project/dbt_project.yml",
+      "exists": true,
+      "size": 128,
+      "sha256": "477d46dbdc33b998187958331959196ca9ff0da69d500f41795c984c68d28204"
+    }
+  ]
+}

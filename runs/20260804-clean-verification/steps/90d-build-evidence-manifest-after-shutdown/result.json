@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.032,
+  "stdout_sha256": "3e9e8f23b048751af6dab46292aebf67a58e34ecb0f65d559cf3d9a6627192ff",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/reports/evidence_manifest.json",
+      "exists": true,
+      "size": 40648,
+      "sha256": "e0ab43b350932164840bbb147e4db51680d42343a4a42736ecceb37a82e70be1"
+    }
+  ]
+}

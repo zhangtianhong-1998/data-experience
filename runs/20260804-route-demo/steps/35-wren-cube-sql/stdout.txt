@@ -1,0 +1,1 @@
+SELECT product_l1 AS product_l1, SUM(CASE WHEN status = 'confirmed' THEN order_amount ELSE 0 END) AS device_order_amount, SUM(CASE WHEN status = 'confirmed' THEN profit_amount ELSE 0 END) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month >= 202601 AND year_month <= 202606 GROUP BY 1

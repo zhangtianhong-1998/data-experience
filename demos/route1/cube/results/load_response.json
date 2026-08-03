@@ -1,0 +1,242 @@
+{
+  "query": {
+    "measures": [
+      "DeviceOrders.deviceOrderAmount",
+      "DeviceOrders.deviceProfitAmount"
+    ],
+    "dimensions": [
+      "DeviceOrders.productL1"
+    ],
+    "timeDimensions": [
+      {
+        "dimension": "DeviceOrders.orderDate",
+        "dateRange": [
+          "2026-01-01T00:00:00.000",
+          "2026-06-30T23:59:59.999"
+        ]
+      }
+    ],
+    "limit": 10000,
+    "timezone": "UTC",
+    "filters": [
+      {
+        "member": "DeviceOrders.orgCode",
+        "operator": "equals",
+        "values": [
+          "ORG_1001"
+        ]
+      }
+    ],
+    "rowLimit": 10000,
+    "order": [
+      {
+        "id": "DeviceOrders.productL1",
+        "desc": false
+      }
+    ]
+  },
+  "lastRefreshTime": "2026-08-03T17:32:54.881Z",
+  "refreshKeyValues": [
+    {
+      "isWrapper": true,
+      "cache": [
+        {
+          "refresh_key": "178577837"
+        }
+      ],
+      "cached": true,
+      "isNative": true,
+      "jsResult": null,
+      "transformData": null,
+      "rootResultObject": {},
+      "0": {
+        "refresh_key": "178577837"
+      },
+      "length": 1
+    }
+  ],
+  "usedPreAggregations": {},
+  "transformedQuery": {
+    "sortedDimensions": [
+      "DeviceOrders.orgCode",
+      "DeviceOrders.productL1"
+    ],
+    "sortedTimeDimensions": [
+      [
+        "DeviceOrders.orderDate",
+        "month"
+      ]
+    ],
+    "timeDimensions": [
+      [
+        "DeviceOrders.orderDate",
+        null
+      ]
+    ],
+    "measures": [
+      "DeviceOrders.deviceOrderAmount",
+      "DeviceOrders.deviceProfitAmount"
+    ],
+    "leafMeasureAdditive": true,
+    "leafMeasures": [
+      "DeviceOrders.deviceOrderAmount",
+      "DeviceOrders.deviceProfitAmount"
+    ],
+    "leafMeasuresFullPaths": [
+      "DeviceOrders.deviceOrderAmount",
+      "DeviceOrders.deviceProfitAmount"
+    ],
+    "measureToLeafMeasures": {
+      "DeviceOrders.deviceOrderAmount": [
+        {
+          "measure": "DeviceOrders.deviceOrderAmount",
+          "additive": true,
+          "type": "sum"
+        }
+      ],
+      "DeviceOrders.deviceProfitAmount": [
+        {
+          "measure": "DeviceOrders.deviceProfitAmount",
+          "additive": true,
+          "type": "sum"
+        }
+      ]
+    },
+    "hasNoTimeDimensionsWithoutGranularity": false,
+    "allFiltersWithinSelectedDimensions": false,
+    "isAdditive": true,
+    "granularityHierarchies": {
+      "DeviceOrders.orderDate.year": [
+        "year",
+        "quarter",
+        "month",
+        "day",
+        "hour",
+        "minute",
+        "second"
+      ],
+      "DeviceOrders.orderDate.quarter": [
+        "quarter",
+        "month",
+        "day",
+        "hour",
+        "minute",
+        "second"
+      ],
+      "DeviceOrders.orderDate.month": [
+        "month",
+        "day",
+        "hour",
+        "minute",
+        "second"
+      ],
+      "DeviceOrders.orderDate.week": [
+        "week",
+        "day",
+        "hour",
+        "minute",
+        "second"
+      ],
+      "DeviceOrders.orderDate.day": [
+        "day",
+        "hour",
+        "minute",
+        "second"
+      ],
+      "DeviceOrders.orderDate.hour": [
+        "hour",
+        "minute",
+        "second"
+      ],
+      "DeviceOrders.orderDate.minute": [
+        "minute",
+        "second"
+      ],
+      "DeviceOrders.orderDate.second": [
+        "second"
+      ]
+    },
+    "hasMultipliedMeasures": false,
+    "hasCumulativeMeasures": false,
+    "windowGranularity": null,
+    "filterDimensionsSingleValueEqual": {},
+    "ownedDimensions": [
+      "DeviceOrders.orgCode",
+      "DeviceOrders.productL1"
+    ],
+    "ownedTimeDimensionsWithRollupGranularity": [
+      [
+        "DeviceOrders.orderDate",
+        "month"
+      ]
+    ],
+    "ownedTimeDimensionsAsIs": [
+      [
+        "DeviceOrders.orderDate",
+        null
+      ]
+    ],
+    "allBackAliasMembers": {},
+    "ungrouped": null,
+    "sortedUsedCubePrimaryKeys": null,
+    "sortedAllCubeNames": null,
+    "hasMultiStage": false
+  },
+  "requestId": "d2f03fa6-e68f-4a7c-9927-f561ccafbb61-span-1",
+  "annotation": {
+    "timeDimensions": {},
+    "dimensions": {
+      "DeviceOrders.productL1": {
+        "title": "设备订货事实 产品一级分类",
+        "shortTitle": "产品一级分类",
+        "type": "string"
+      }
+    },
+    "measures": {
+      "DeviceOrders.deviceProfitAmount": {
+        "title": "设备订货事实 设备利润金额",
+        "shortTitle": "设备利润金额",
+        "type": "number",
+        "drillMembers": [],
+        "drillMembersGrouped": {
+          "measures": [],
+          "dimensions": []
+        }
+      },
+      "DeviceOrders.deviceOrderAmount": {
+        "title": "设备订货事实 设备订货金额",
+        "shortTitle": "设备订货金额",
+        "description": "已确认设备订货单的 order_amount 合计，演示单位 CNY.",
+        "type": "number",
+        "drillMembers": [],
+        "drillMembersGrouped": {
+          "measures": [],
+          "dimensions": []
+        }
+      }
+    },
+    "segments": {}
+  },
+  "dataSource": "default",
+  "dbType": "duckdb",
+  "extDbType": "cubestore",
+  "external": false,
+  "slowQuery": false,
+  "data": [
+    {
+      "DeviceOrders.productL1": "Compute",
+      "DeviceOrders.deviceOrderAmount": "7500",
+      "DeviceOrders.deviceProfitAmount": "1560"
+    },
+    {
+      "DeviceOrders.productL1": "IoT",
+      "DeviceOrders.deviceOrderAmount": "3400",
+      "DeviceOrders.deviceProfitAmount": "650"
+    },
+    {
+      "DeviceOrders.productL1": "Network",
+      "DeviceOrders.deviceOrderAmount": "3800",
+      "DeviceOrders.deviceProfitAmount": "730"
+    }
+  ]
+}

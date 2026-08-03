@@ -1,0 +1,27 @@
+{
+  "exit_code": 1,
+  "launch_error": null,
+  "duration_seconds": 39.104,
+  "stdout_sha256": "60f77006deabfff33d04f8aeeb9c2e737946a0caddfa783f87be9eca4239e6e2",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route3/linkedin_text2sql/results/agent/07_final_response.json",
+      "exists": true,
+      "size": 1235,
+      "sha256": "8c07fbbce52b486b80a0ae884e7b4a30d6f3eebbe8ace5d5faa3af4bb2c674bc"
+    },
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route3/linkedin_text2sql/results/agent/final_query.sql",
+      "exists": true,
+      "size": 238,
+      "sha256": "bd2cfcb2974e9e057bc6feb5f2abb124a02710c8f4b6a71f5bc1ad6ad2898ef9"
+    },
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route3/linkedin_text2sql/results/agent/query_result.csv",
+      "exists": true,
+      "size": 104,
+      "sha256": "652d38675f174a8a487baf54d9276c67bdc1b0a1ed70fbc17b09bd757185225c"
+    }
+  ]
+}

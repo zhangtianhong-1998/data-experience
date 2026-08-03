@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/bootstrap_source.py", line 31, in <module>
+    loaded = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Users/sanjiuganmaoling/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['docker', 'exec', '-i', 'openmetadata_mysql', 'mysql', '--local-infile=1', '-uroot', '-ppassword']' returned non-zero exit status 1.

@@ -1,0 +1,2 @@
+{"query":"SELECT product_l1, SUM(order_amount) AS device_order_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1","timestamp":"2026-08-03T10:00:00+08:00","user":"urn:li:corpuser:analyst_a"}
+{"query":"SELECT year_month, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND status = 'confirmed' GROUP BY year_month","timestamp":"2026-08-03T11:00:00+08:00","user":"urn:li:corpuser:analyst_b"}

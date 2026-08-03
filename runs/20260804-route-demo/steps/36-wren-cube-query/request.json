@@ -1,0 +1,27 @@
+{
+  "step": "36-wren-cube-query",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/wrenai/device_project",
+  "argv": [
+    "/Users/sanjiuganmaoling/Desktop/code/data-experience/runtime/wren-venv/bin/wren",
+    "cube",
+    "query",
+    "--from",
+    "cube_query.json",
+    "--connection-file",
+    "connection.json",
+    "--output",
+    "json"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785775720.0154612
+}

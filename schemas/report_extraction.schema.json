@@ -1,0 +1,425 @@
+{
+  "$defs": {
+    "LocalConcept": {
+      "additionalProperties": false,
+      "properties": {
+        "local_ref": {
+          "pattern": "^C\\d{2,3}$",
+          "title": "Local Ref",
+          "type": "string"
+        },
+        "concept_type": {
+          "enum": [
+            "business_entity",
+            "business_event",
+            "metric",
+            "measure",
+            "dimension",
+            "attribute",
+            "business_term",
+            "enum",
+            "business_rule"
+          ],
+          "title": "Concept Type",
+          "type": "string"
+        },
+        "label": {
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "normalized_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Normalized Label"
+        },
+        "definition": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Definition"
+        },
+        "observed_labels": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Observed Labels",
+          "type": "array"
+        },
+        "qualifiers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Qualifiers",
+          "type": "array"
+        },
+        "asset_refs": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Asset Refs",
+          "type": "array"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "metric_definition": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetricDefinitionCandidate"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "missing_information": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Information",
+          "type": "array"
+        }
+      },
+      "required": [
+        "local_ref",
+        "concept_type",
+        "label",
+        "asset_refs",
+        "evidence_refs"
+      ],
+      "title": "LocalConcept",
+      "type": "object"
+    },
+    "LocalRelation": {
+      "additionalProperties": false,
+      "properties": {
+        "relation_ref": {
+          "pattern": "^R\\d{2,3}$",
+          "title": "Relation Ref",
+          "type": "string"
+        },
+        "subject_ref": {
+          "pattern": "^C\\d{2,3}$",
+          "title": "Subject Ref",
+          "type": "string"
+        },
+        "predicate": {
+          "enum": [
+            "measures_entity",
+            "analyzed_by",
+            "attribute_of",
+            "event_involves_entity",
+            "calculated_from",
+            "filtered_by",
+            "synonym_candidate",
+            "variant_candidate",
+            "broader_candidate",
+            "related_candidate",
+            "conflict_candidate"
+          ],
+          "title": "Predicate",
+          "type": "string"
+        },
+        "object_ref": {
+          "pattern": "^C\\d{2,3}$",
+          "title": "Object Ref",
+          "type": "string"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "relation_ref",
+        "subject_ref",
+        "predicate",
+        "object_ref",
+        "rationale",
+        "evidence_refs"
+      ],
+      "title": "LocalRelation",
+      "type": "object"
+    },
+    "MetricDefinitionCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "expression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expression"
+        },
+        "aggregation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aggregation"
+        },
+        "numerator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Numerator"
+        },
+        "denominator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Denominator"
+        },
+        "filters": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Filters",
+          "type": "array"
+        },
+        "dimensions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Dimensions",
+          "type": "array"
+        },
+        "grain": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Grain",
+          "type": "array"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "time_semantics": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Time Semantics"
+        }
+      },
+      "title": "MetricDefinitionCandidate",
+      "type": "object"
+    },
+    "ReportSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "business_purpose": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Business Purpose"
+        },
+        "analysis_objects": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Analysis Objects",
+          "type": "array"
+        },
+        "organization_candidates": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Organization Candidates",
+          "type": "array"
+        },
+        "time_scope_candidates": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Time Scope Candidates",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "title": "ReportSummary",
+      "type": "object"
+    },
+    "UnresolvedItem": {
+      "additionalProperties": false,
+      "properties": {
+        "item_ref": {
+          "pattern": "^U\\d{2,3}$",
+          "title": "Item Ref",
+          "type": "string"
+        },
+        "question": {
+          "title": "Question",
+          "type": "string"
+        },
+        "related_asset_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Related Asset Refs",
+          "type": "array"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "item_ref",
+        "question"
+      ],
+      "title": "UnresolvedItem",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "report-extraction-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "package_ref": {
+      "title": "Package Ref",
+      "type": "string"
+    },
+    "report_ref": {
+      "title": "Report Ref",
+      "type": "string"
+    },
+    "summary": {
+      "$ref": "#/$defs/ReportSummary"
+    },
+    "concepts": {
+      "items": {
+        "$ref": "#/$defs/LocalConcept"
+      },
+      "maxItems": 60,
+      "title": "Concepts",
+      "type": "array"
+    },
+    "relations": {
+      "items": {
+        "$ref": "#/$defs/LocalRelation"
+      },
+      "maxItems": 80,
+      "title": "Relations",
+      "type": "array"
+    },
+    "unresolved": {
+      "items": {
+        "$ref": "#/$defs/UnresolvedItem"
+      },
+      "maxItems": 30,
+      "title": "Unresolved",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "package_ref",
+    "report_ref",
+    "summary"
+  ],
+  "title": "ReportExtraction",
+  "type": "object"
+}

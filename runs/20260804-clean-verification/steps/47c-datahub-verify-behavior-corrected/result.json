@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.022,
+  "stdout_sha256": "15aa6aef777c1768dd4558afbc70c1a801cf5306104e5963deb81b0d43159c4a",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/datahub/results/verification.json",
+      "exists": true,
+      "size": 730,
+      "sha256": "352e8e1fc1790f73f93191815bbd0f1ba5864751a8f6b236bf583427d202ae34"
+    }
+  ]
+}

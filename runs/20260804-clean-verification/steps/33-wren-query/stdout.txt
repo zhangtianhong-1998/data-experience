@@ -1,0 +1,4 @@
+{"product_l1":"Network","device_order_amount":"3800","device_profit_amount":"730"}
+{"product_l1":"IoT","device_order_amount":"3400","device_profit_amount":"650"}
+{"product_l1":"Compute","device_order_amount":"7500","device_profit_amount":"1560"}
+

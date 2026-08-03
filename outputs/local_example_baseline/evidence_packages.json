@@ -1,0 +1,4364 @@
+[
+  {
+    "package_id": "PKG-R_f7dfc55e4317",
+    "task_type": "report_component_semantic_extraction",
+    "subject_type": "report",
+    "subject_id": "RPT_0001",
+    "report": {
+      "report_id": "RPT_0001",
+      "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+      "report_path_segments": [
+        "ipfm",
+        "w79184",
+        "【202606】Orange系统部设备订货制毛看板"
+      ],
+      "components": [
+        {
+          "component_no": 1,
+          "component_name": "图表4",
+          "dataset": {
+            "dataset_path": "ipfm/w79184/集05订货利润",
+            "dataset_path_segments": [
+              "ipfm",
+              "w79184",
+              "集05订货利润"
+            ],
+            "sql_list": [
+              {
+                "sql": "SELECT datain_1783070589517_temp.\"c7\" AS \"产品LV1\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+                "physical_tables": [
+                  "dmprjdis_pfa.datain_1783070589517_temp"
+                ],
+                "occurrence_count": 1
+              }
+            ],
+            "physical_tables": [
+              "dmprjdis_pfa.datain_1783070589517_temp"
+            ]
+          }
+        },
+        {
+          "component_no": 2,
+          "component_name": "图表3",
+          "dataset": {
+            "dataset_path": "ipfm/w79184/集05订货利润",
+            "dataset_path_segments": [
+              "ipfm",
+              "w79184",
+              "集05订货利润"
+            ],
+            "sql_list": [
+              {
+                "sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+                "physical_tables": [
+                  "dmprjdis_pfa.datain_1783070589517_temp"
+                ],
+                "occurrence_count": 1
+              }
+            ],
+            "physical_tables": [
+              "dmprjdis_pfa.datain_1783070589517_temp"
+            ]
+          }
+        },
+        {
+          "component_no": 3,
+          "component_name": "图表6",
+          "dataset": {
+            "dataset_path": "ipfm/w79184/集05订货利润",
+            "dataset_path_segments": [
+              "ipfm",
+              "w79184",
+              "集05订货利润"
+            ],
+            "sql_list": [
+              {
+                "sql": "SELECT datain_1783070589517_temp.\"c6\" AS \"国家\", datain_1783070589517_temp.\"c12\" AS \"合同名称\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2, 3_x000D_\nORDER BY 1 ASC, 2 ASC, 3 DESC_x000D_\nLIMIT 1000000",
+                "physical_tables": [
+                  "dmprjdis_pfa.datain_1783070589517_temp"
+                ],
+                "occurrence_count": 1
+              }
+            ],
+            "physical_tables": [
+              "dmprjdis_pfa.datain_1783070589517_temp"
+            ]
+          }
+        },
+        {
+          "component_no": 4,
+          "component_name": "图表5",
+          "dataset": {
+            "dataset_path": "ipfm/w79184/集05订货利润",
+            "dataset_path_segments": [
+              "ipfm",
+              "w79184",
+              "集05订货利润"
+            ],
+            "sql_list": [
+              {
+                "sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1_x000D_\nORDER BY 1 ASC_x000D_\nLIMIT 1000000",
+                "physical_tables": [
+                  "dmprjdis_pfa.datain_1783070589517_temp"
+                ],
+                "occurrence_count": 1
+              }
+            ],
+            "physical_tables": [
+              "dmprjdis_pfa.datain_1783070589517_temp"
+            ]
+          }
+        },
+        {
+          "component_no": 5,
+          "component_name": "图表2",
+          "dataset": {
+            "dataset_path": "ipfm/w79184/集05订货利润",
+            "dataset_path_segments": [
+              "ipfm",
+              "w79184",
+              "集05订货利润"
+            ],
+            "sql_list": [
+              {
+                "sql": "SELECT datain_1783070589517_temp.\"c2\" AS \"年月\", datain_1783070589517_temp.\"c7\" AS \"产品LV1\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 ASC_x000D_\nLIMIT 1000000",
+                "physical_tables": [
+                  "dmprjdis_pfa.datain_1783070589517_temp"
+                ],
+                "occurrence_count": 1
+              }
+            ],
+            "physical_tables": [
+              "dmprjdis_pfa.datain_1783070589517_temp"
+            ]
+          }
+        }
+      ],
+      "status": "信息不充分：组件1使用系统默认名称“图表4”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件2使用系统默认名称“图表3”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件3使用系统默认名称“图表6”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件4使用系统默认名称“图表5”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件5使用系统默认名称“图表2”；物理表匹配异常：组件5的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp"
+    },
+    "components": [
+      {
+        "component_id": "RPT_0001.component.1",
+        "component_no": 1,
+        "component_name": "图表4",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润"
+      },
+      {
+        "component_id": "RPT_0001.component.2",
+        "component_no": 2,
+        "component_name": "图表3",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润"
+      },
+      {
+        "component_id": "RPT_0001.component.3",
+        "component_no": 3,
+        "component_name": "图表6",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润"
+      },
+      {
+        "component_id": "RPT_0001.component.4",
+        "component_no": 4,
+        "component_name": "图表5",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润"
+      },
+      {
+        "component_id": "RPT_0001.component.5",
+        "component_no": 5,
+        "component_name": "图表2",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润"
+      }
+    ],
+    "datasets": [
+      {
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "dataset_path": "ipfm/w79184/集05订货利润",
+        "dataset_path_segments": [
+          "ipfm",
+          "w79184",
+          "集05订货利润"
+        ],
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ]
+      }
+    ],
+    "usages": [],
+    "queries": [
+      {
+        "query_id": "RPT_0001.component.1.sql.1",
+        "component_id": "RPT_0001.component.1",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "sql": "SELECT datain_1783070589517_temp.\"c7\" AS \"产品LV1\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ],
+        "occurrence_count": 1
+      },
+      {
+        "query_id": "RPT_0001.component.2.sql.1",
+        "component_id": "RPT_0001.component.2",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ],
+        "occurrence_count": 1
+      },
+      {
+        "query_id": "RPT_0001.component.3.sql.1",
+        "component_id": "RPT_0001.component.3",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "sql": "SELECT datain_1783070589517_temp.\"c6\" AS \"国家\", datain_1783070589517_temp.\"c12\" AS \"合同名称\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2, 3_x000D_\nORDER BY 1 ASC, 2 ASC, 3 DESC_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ],
+        "occurrence_count": 1
+      },
+      {
+        "query_id": "RPT_0001.component.4.sql.1",
+        "component_id": "RPT_0001.component.4",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1_x000D_\nORDER BY 1 ASC_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ],
+        "occurrence_count": 1
+      },
+      {
+        "query_id": "RPT_0001.component.5.sql.1",
+        "component_id": "RPT_0001.component.5",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "sql": "SELECT datain_1783070589517_temp.\"c2\" AS \"年月\", datain_1783070589517_temp.\"c7\" AS \"产品LV1\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 ASC_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ],
+        "occurrence_count": 1
+      }
+    ],
+    "dataset_fields": [],
+    "physical_tables": [],
+    "physical_fields": [],
+    "field_lineages": [],
+    "evidences": [
+      {
+        "evidence_id": "E_462bd68dc37f",
+        "source_type": "report_path_segment",
+        "source_locator": "RPT_0001.report_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.report_segment.1"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_1ce06ba9d93b",
+        "source_type": "report_path_segment",
+        "source_locator": "RPT_0001.report_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.report_segment.2"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_4bcd92245baa",
+        "source_type": "report_path_segment",
+        "source_locator": "RPT_0001.report_segment.3",
+        "content": "【202606】Orange系统部设备订货制毛看板",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.report_segment.3"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": [
+            "contains_yyyymm",
+            "contains_brackets",
+            "contains_asset_word",
+            "contains_org_word"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_efbadd76243a",
+        "source_type": "component_name",
+        "source_locator": "RPT_0001.component.1",
+        "content": "图表4",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1"
+        ],
+        "metadata": {
+          "name_kind": "system_generated"
+        }
+      },
+      {
+        "evidence_id": "E_07b5ab33abda",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.1.dataset_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.dataset_segment.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_14ddc4c69288",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.1.dataset_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.dataset_segment.2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_40afa83492ef",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.1.dataset_segment.3",
+        "content": "集05订货利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.dataset_segment.3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_18bbf09dd82c",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0001.component.1.sql.1",
+        "content": "SELECT datain_1783070589517_temp.\"c7\" AS \"产品LV1\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ],
+          "occurrence_count": 1
+        }
+      },
+      {
+        "evidence_id": "E_2b4fd1640ca1",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.1.sql.1-O1",
+        "content": "产品LV1",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_06c73401b7ce",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.1.sql.1-O1",
+        "content": "datain_1783070589517_temp.\"c7\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_27e44e345ead",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.1.sql.1-O2",
+        "content": "年月",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_e72ae1f811f7",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.1.sql.1-O2",
+        "content": "datain_1783070589517_temp.\"c2\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_c6e64b6ebf1a",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.1.sql.1-O3",
+        "content": "Sum_设备订货",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_9cc51f614b57",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.1.sql.1-O3",
+        "content": "SUM(datain_1783070589517_temp.\"c27\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_ada463c76c01",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.1.sql.1-O4",
+        "content": "Sum_设备利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_daf2c95d3428",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.1.sql.1-O4",
+        "content": "SUM(datain_1783070589517_temp.\"c28\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_166ebf105856",
+        "source_type": "component_name",
+        "source_locator": "RPT_0001.component.2",
+        "content": "图表3",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2"
+        ],
+        "metadata": {
+          "name_kind": "system_generated"
+        }
+      },
+      {
+        "evidence_id": "E_5eb3aa9e5e82",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.2.dataset_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.dataset_segment.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_35d268c53952",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.2.dataset_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.dataset_segment.2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_8597d34decf7",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.2.dataset_segment.3",
+        "content": "集05订货利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.dataset_segment.3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_07bf75740fd0",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0001.component.2.sql.1",
+        "content": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ],
+          "occurrence_count": 1
+        }
+      },
+      {
+        "evidence_id": "E_423cf305e63d",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.2.sql.1-O1",
+        "content": "内部分类",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_5085a6c1d759",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.2.sql.1-O1",
+        "content": "datain_1783070589517_temp.\"c10\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_4a256a62e771",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.2.sql.1-O2",
+        "content": "年月",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_6bf32c27daf3",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.2.sql.1-O2",
+        "content": "datain_1783070589517_temp.\"c2\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_42edeeebe1c4",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.2.sql.1-O3",
+        "content": "Sum_设备订货",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_38325cbe1c9c",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.2.sql.1-O3",
+        "content": "SUM(datain_1783070589517_temp.\"c27\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_1db161c75bc3",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.2.sql.1-O4",
+        "content": "Sum_设备利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_199b0362f138",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.2.sql.1-O4",
+        "content": "SUM(datain_1783070589517_temp.\"c28\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_6740422af290",
+        "source_type": "component_name",
+        "source_locator": "RPT_0001.component.3",
+        "content": "图表6",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3"
+        ],
+        "metadata": {
+          "name_kind": "system_generated"
+        }
+      },
+      {
+        "evidence_id": "E_19d32933d31f",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.3.dataset_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.dataset_segment.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_04488a0fe9ad",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.3.dataset_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.dataset_segment.2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_0a32d08716f0",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.3.dataset_segment.3",
+        "content": "集05订货利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.dataset_segment.3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_c09a46881bba",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0001.component.3.sql.1",
+        "content": "SELECT datain_1783070589517_temp.\"c6\" AS \"国家\", datain_1783070589517_temp.\"c12\" AS \"合同名称\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2, 3_x000D_\nORDER BY 1 ASC, 2 ASC, 3 DESC_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ],
+          "occurrence_count": 1
+        }
+      },
+      {
+        "evidence_id": "E_f69e7a8f64f3",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.3.sql.1-O1",
+        "content": "国家",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_5a63a172e2dd",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.3.sql.1-O1",
+        "content": "datain_1783070589517_temp.\"c6\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_017e2087582e",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.3.sql.1-O2",
+        "content": "合同名称",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_f6cb2b4d6229",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.3.sql.1-O2",
+        "content": "datain_1783070589517_temp.\"c12\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_1d49c63d1977",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.3.sql.1-O3",
+        "content": "年月",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_87d81c306f6c",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.3.sql.1-O3",
+        "content": "datain_1783070589517_temp.\"c2\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_a48a86e8bb47",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.3.sql.1-O4",
+        "content": "Sum_设备订货",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_223e124fe1f7",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.3.sql.1-O4",
+        "content": "SUM(datain_1783070589517_temp.\"c27\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_cb831027a6db",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.3.sql.1-O5",
+        "content": "Sum_设备利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O5",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_1f2365d46349",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.3.sql.1-O5",
+        "content": "SUM(datain_1783070589517_temp.\"c28\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O5",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_2423ce864b41",
+        "source_type": "component_name",
+        "source_locator": "RPT_0001.component.4",
+        "content": "图表5",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4"
+        ],
+        "metadata": {
+          "name_kind": "system_generated"
+        }
+      },
+      {
+        "evidence_id": "E_413f9e9710e7",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.4.dataset_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.dataset_segment.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_860a037caf42",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.4.dataset_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.dataset_segment.2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_5c486a08bec9",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.4.dataset_segment.3",
+        "content": "集05订货利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.dataset_segment.3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_b22ec566b88b",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0001.component.4.sql.1",
+        "content": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1_x000D_\nORDER BY 1 ASC_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ],
+          "occurrence_count": 1
+        }
+      },
+      {
+        "evidence_id": "E_602bb2e78d63",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.4.sql.1-O1",
+        "content": "内部分类",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_8393b79e04bd",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.4.sql.1-O1",
+        "content": "datain_1783070589517_temp.\"c10\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_8c0a3647ba0d",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.4.sql.1-O2",
+        "content": "Sum_设备订货",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_b20c5969e7a9",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.4.sql.1-O2",
+        "content": "SUM(datain_1783070589517_temp.\"c27\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_1120e4bc079e",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.4.sql.1-O3",
+        "content": "Sum_设备利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_0bae704418b3",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.4.sql.1-O3",
+        "content": "SUM(datain_1783070589517_temp.\"c28\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_f64243ce9907",
+        "source_type": "component_name",
+        "source_locator": "RPT_0001.component.5",
+        "content": "图表2",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5"
+        ],
+        "metadata": {
+          "name_kind": "system_generated"
+        }
+      },
+      {
+        "evidence_id": "E_70e4318d752a",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.5.dataset_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.dataset_segment.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_2ead202eb10e",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.5.dataset_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.dataset_segment.2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_5b1f2f16a722",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.5.dataset_segment.3",
+        "content": "集05订货利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.dataset_segment.3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_2dd05f12612b",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0001.component.5.sql.1",
+        "content": "SELECT datain_1783070589517_temp.\"c2\" AS \"年月\", datain_1783070589517_temp.\"c7\" AS \"产品LV1\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 ASC_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ],
+          "occurrence_count": 1
+        }
+      },
+      {
+        "evidence_id": "E_0033c9474eb5",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.5.sql.1-O1",
+        "content": "年月",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_facec308fc3b",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.5.sql.1-O1",
+        "content": "datain_1783070589517_temp.\"c2\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_6dcb3a960fb3",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.5.sql.1-O2",
+        "content": "产品LV1",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_5a6dadc26836",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.5.sql.1-O2",
+        "content": "datain_1783070589517_temp.\"c7\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_6df3445b1b8f",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.5.sql.1-O3",
+        "content": "Sum_设备订货",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_6e39e0dd6d17",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.5.sql.1-O3",
+        "content": "SUM(datain_1783070589517_temp.\"c27\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      }
+    ],
+    "allowed_target_ids": [
+      "RPT_0001",
+      "RPT_0001.component.1",
+      "RPT_0001.component.1.dataset_segment.1",
+      "RPT_0001.component.1.dataset_segment.2",
+      "RPT_0001.component.1.dataset_segment.3",
+      "RPT_0001.component.1.sql.1",
+      "RPT_0001.component.1.sql.1-O1",
+      "RPT_0001.component.1.sql.1-O2",
+      "RPT_0001.component.1.sql.1-O3",
+      "RPT_0001.component.1.sql.1-O4",
+      "RPT_0001.component.2",
+      "RPT_0001.component.2.dataset_segment.1",
+      "RPT_0001.component.2.dataset_segment.2",
+      "RPT_0001.component.2.dataset_segment.3",
+      "RPT_0001.component.2.sql.1",
+      "RPT_0001.component.2.sql.1-O1",
+      "RPT_0001.component.2.sql.1-O2",
+      "RPT_0001.component.2.sql.1-O3",
+      "RPT_0001.component.2.sql.1-O4",
+      "RPT_0001.component.3",
+      "RPT_0001.component.3.dataset_segment.1",
+      "RPT_0001.component.3.dataset_segment.2",
+      "RPT_0001.component.3.dataset_segment.3",
+      "RPT_0001.component.3.sql.1",
+      "RPT_0001.component.3.sql.1-O1",
+      "RPT_0001.component.3.sql.1-O2",
+      "RPT_0001.component.3.sql.1-O3",
+      "RPT_0001.component.3.sql.1-O4",
+      "RPT_0001.component.3.sql.1-O5",
+      "RPT_0001.component.4",
+      "RPT_0001.component.4.dataset_segment.1",
+      "RPT_0001.component.4.dataset_segment.2",
+      "RPT_0001.component.4.dataset_segment.3",
+      "RPT_0001.component.4.sql.1",
+      "RPT_0001.component.4.sql.1-O1",
+      "RPT_0001.component.4.sql.1-O2",
+      "RPT_0001.component.4.sql.1-O3",
+      "RPT_0001.component.5",
+      "RPT_0001.component.5.dataset_segment.1",
+      "RPT_0001.component.5.dataset_segment.2",
+      "RPT_0001.component.5.dataset_segment.3",
+      "RPT_0001.component.5.sql.1",
+      "RPT_0001.component.5.sql.1-O1",
+      "RPT_0001.component.5.sql.1-O2",
+      "RPT_0001.component.5.sql.1-O3",
+      "RPT_0001.report_segment.1",
+      "RPT_0001.report_segment.2",
+      "RPT_0001.report_segment.3",
+      "dataset:ipfm/w79184/集05订货利润"
+    ]
+  },
+  {
+    "package_id": "PKG-R_2738968ee2f4",
+    "task_type": "report_component_semantic_extraction",
+    "subject_type": "report",
+    "subject_id": "RPT_0002",
+    "report": {
+      "report_id": "RPT_0002",
+      "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+      "report_path_segments": [
+        "Management_Analysis",
+        "w00819891",
+        "【北京代表处大屏】"
+      ],
+      "components": [
+        {
+          "component_no": 1,
+          "component_name": "图表2",
+          "dataset": {
+            "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+            "dataset_path_segments": [
+              "Management_Analysis",
+              "w00819891",
+              "北京区域大屏"
+            ],
+            "sql_list": [
+              {
+                "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+                "physical_tables": [
+                  "dmgeorcdis.datain_1727073357645_temp"
+                ],
+                "occurrence_count": 2
+              }
+            ],
+            "physical_tables": [
+              "dmgeorcdis.datain_1727073357645_temp"
+            ]
+          }
+        },
+        {
+          "component_no": 2,
+          "component_name": "图表10",
+          "dataset": {
+            "dataset_path": "Management_Analysis/w00819891/ToB补录表250511",
+            "dataset_path_segments": [
+              "Management_Analysis",
+              "w00819891",
+              "ToB补录表250511"
+            ],
+            "sql_list": [
+              {
+                "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+                "physical_tables": [
+                  "dmgeorcdis.datain_1727073357645_temp"
+                ],
+                "occurrence_count": 2
+              },
+              {
+                "sql": "SELECT MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmregdis.datain_1757258241454_temp datain_1757258241454_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( datain_1757258241454_temp.\"c0\" =  ?  )_x000D_\nLIMIT 1000000",
+                "physical_tables": [
+                  "dmregdis.datain_1757258241454_temp"
+                ],
+                "occurrence_count": 2
+              }
+            ],
+            "physical_tables": [
+              "dmgeorcdis.datain_1727073357645_temp",
+              "dmregdis.datain_1757258241454_temp"
+            ]
+          }
+        },
+        {
+          "component_no": 3,
+          "component_name": "图表12",
+          "dataset": {
+            "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+            "dataset_path_segments": [
+              "Management_Analysis",
+              "w00819891",
+              "北京区域大屏"
+            ],
+            "sql_list": [
+              {
+                "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+                "physical_tables": [
+                  "dmgeorcdis.datain_1727073357645_temp"
+                ],
+                "occurrence_count": 2
+              }
+            ],
+            "physical_tables": [
+              "dmgeorcdis.datain_1727073357645_temp"
+            ]
+          }
+        },
+        {
+          "component_no": 4,
+          "component_name": "图表16",
+          "dataset": {
+            "dataset_path": "Management_Analysis/w00819891/【北京】经营月报",
+            "dataset_path_segments": [
+              "Management_Analysis",
+              "w00819891",
+              "【北京】经营月报"
+            ],
+            "sql_list": [
+              {
+                "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+                "physical_tables": [
+                  "dmgeorcdis.datain_1727073357645_temp"
+                ],
+                "occurrence_count": 2
+              }
+            ],
+            "physical_tables": [
+              "dmgeorcdis.datain_1727073357645_temp"
+            ]
+          }
+        }
+      ],
+      "status": "信息不充分：组件1使用系统默认名称“图表2”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件2使用系统默认名称“图表10”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmregdis.datain_1757258241454_temp；信息不充分：组件3使用系统默认名称“图表12”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件4使用系统默认名称“图表16”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp"
+    },
+    "components": [
+      {
+        "component_id": "RPT_0002.component.1",
+        "component_no": 1,
+        "component_name": "图表2",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏"
+      },
+      {
+        "component_id": "RPT_0002.component.2",
+        "component_no": 2,
+        "component_name": "图表10",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/ToB补录表250511"
+      },
+      {
+        "component_id": "RPT_0002.component.3",
+        "component_no": 3,
+        "component_name": "图表12",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏"
+      },
+      {
+        "component_id": "RPT_0002.component.4",
+        "component_no": 4,
+        "component_name": "图表16",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/【北京】经营月报"
+      }
+    ],
+    "datasets": [
+      {
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏",
+        "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+        "dataset_path_segments": [
+          "Management_Analysis",
+          "w00819891",
+          "北京区域大屏"
+        ],
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ]
+      },
+      {
+        "dataset_id": "dataset:Management_Analysis/w00819891/ToB补录表250511",
+        "dataset_path": "Management_Analysis/w00819891/ToB补录表250511",
+        "dataset_path_segments": [
+          "Management_Analysis",
+          "w00819891",
+          "ToB补录表250511"
+        ],
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp",
+          "dmregdis.datain_1757258241454_temp"
+        ]
+      },
+      {
+        "dataset_id": "dataset:Management_Analysis/w00819891/【北京】经营月报",
+        "dataset_path": "Management_Analysis/w00819891/【北京】经营月报",
+        "dataset_path_segments": [
+          "Management_Analysis",
+          "w00819891",
+          "【北京】经营月报"
+        ],
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ]
+      }
+    ],
+    "usages": [],
+    "queries": [
+      {
+        "query_id": "RPT_0002.component.1.sql.1",
+        "component_id": "RPT_0002.component.1",
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏",
+        "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ],
+        "occurrence_count": 2
+      },
+      {
+        "query_id": "RPT_0002.component.2.sql.1",
+        "component_id": "RPT_0002.component.2",
+        "dataset_id": "dataset:Management_Analysis/w00819891/ToB补录表250511",
+        "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ],
+        "occurrence_count": 2
+      },
+      {
+        "query_id": "RPT_0002.component.2.sql.2",
+        "component_id": "RPT_0002.component.2",
+        "dataset_id": "dataset:Management_Analysis/w00819891/ToB补录表250511",
+        "sql": "SELECT MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmregdis.datain_1757258241454_temp datain_1757258241454_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( datain_1757258241454_temp.\"c0\" =  ?  )_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmregdis.datain_1757258241454_temp"
+        ],
+        "occurrence_count": 2
+      },
+      {
+        "query_id": "RPT_0002.component.3.sql.1",
+        "component_id": "RPT_0002.component.3",
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏",
+        "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ],
+        "occurrence_count": 2
+      },
+      {
+        "query_id": "RPT_0002.component.4.sql.1",
+        "component_id": "RPT_0002.component.4",
+        "dataset_id": "dataset:Management_Analysis/w00819891/【北京】经营月报",
+        "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ],
+        "occurrence_count": 2
+      }
+    ],
+    "dataset_fields": [],
+    "physical_tables": [],
+    "physical_fields": [],
+    "field_lineages": [],
+    "evidences": [
+      {
+        "evidence_id": "E_b44c4bda2103",
+        "source_type": "report_path_segment",
+        "source_locator": "RPT_0002.report_segment.1",
+        "content": "Management_Analysis",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.report_segment.1"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_c9f14bc8102c",
+        "source_type": "report_path_segment",
+        "source_locator": "RPT_0002.report_segment.2",
+        "content": "w00819891",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.report_segment.2"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_ce5633ad1932",
+        "source_type": "report_path_segment",
+        "source_locator": "RPT_0002.report_segment.3",
+        "content": "【北京代表处大屏】",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.report_segment.3"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": [
+            "contains_brackets",
+            "contains_asset_word",
+            "contains_org_word"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_6c04c5f397f5",
+        "source_type": "component_name",
+        "source_locator": "RPT_0002.component.1",
+        "content": "图表2",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1"
+        ],
+        "metadata": {
+          "name_kind": "system_generated"
+        }
+      },
+      {
+        "evidence_id": "E_76aa0e900bc0",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.1.dataset_segment.1",
+        "content": "Management_Analysis",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.dataset_segment.1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_873b90bf82ae",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.1.dataset_segment.2",
+        "content": "w00819891",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.dataset_segment.2",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_84800445d859",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.1.dataset_segment.3",
+        "content": "北京区域大屏",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.dataset_segment.3",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": [
+            "contains_asset_word",
+            "contains_org_word"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_60d84356a22c",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0002.component.1.sql.1",
+        "content": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.sql.1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ],
+          "occurrence_count": 2
+        }
+      },
+      {
+        "evidence_id": "E_46923f5a5781",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0002.component.1.sql.1-O1",
+        "content": "LONG_COL_0",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.sql.1",
+          "RPT_0002.component.1.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_605a35b25b2b",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0002.component.1.sql.1-O1",
+        "content": "SUM(datain_1727073357645_temp.\"c2\")",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.sql.1",
+          "RPT_0002.component.1.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_d762a3d0a43c",
+        "source_type": "component_name",
+        "source_locator": "RPT_0002.component.2",
+        "content": "图表10",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2"
+        ],
+        "metadata": {
+          "name_kind": "system_generated"
+        }
+      },
+      {
+        "evidence_id": "E_c528eebcdcb1",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.2.dataset_segment.1",
+        "content": "Management_Analysis",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.dataset_segment.1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_df2462e58b15",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.2.dataset_segment.2",
+        "content": "w00819891",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.dataset_segment.2",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_57db1998e4eb",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.2.dataset_segment.3",
+        "content": "ToB补录表250511",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.dataset_segment.3",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_5de174d885be",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0002.component.2.sql.1",
+        "content": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ],
+          "occurrence_count": 2
+        }
+      },
+      {
+        "evidence_id": "E_b0fdf502ca95",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0002.component.2.sql.1-O1",
+        "content": "LONG_COL_0",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.1",
+          "RPT_0002.component.2.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_fcd4ba3cd99c",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0002.component.2.sql.1-O1",
+        "content": "SUM(datain_1727073357645_temp.\"c2\")",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.1",
+          "RPT_0002.component.2.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_1101ccd45595",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0002.component.2.sql.2",
+        "content": "SELECT MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmregdis.datain_1757258241454_temp datain_1757258241454_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( datain_1757258241454_temp.\"c0\" =  ?  )_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.2",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmregdis.datain_1757258241454_temp"
+          ],
+          "occurrence_count": 2
+        }
+      },
+      {
+        "evidence_id": "E_fe48a1f70928",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0002.component.2.sql.2-O1",
+        "content": "LONG_COL_0",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.2",
+          "RPT_0002.component.2.sql.2-O1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "aggregation_function": "MAX",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_5032544864f8",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0002.component.2.sql.2-O1",
+        "content": "MAX(datain_1757258241454_temp.\"c2\")",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.2",
+          "RPT_0002.component.2.sql.2-O1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "aggregation_function": "MAX"
+        }
+      },
+      {
+        "evidence_id": "E_807b684baefc",
+        "source_type": "component_name",
+        "source_locator": "RPT_0002.component.3",
+        "content": "图表12",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3"
+        ],
+        "metadata": {
+          "name_kind": "system_generated"
+        }
+      },
+      {
+        "evidence_id": "E_252241549ebb",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.3.dataset_segment.1",
+        "content": "Management_Analysis",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.dataset_segment.1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_03157828788a",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.3.dataset_segment.2",
+        "content": "w00819891",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.dataset_segment.2",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_aa4e5d604763",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.3.dataset_segment.3",
+        "content": "北京区域大屏",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.dataset_segment.3",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": [
+            "contains_asset_word",
+            "contains_org_word"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_38627af2e20d",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0002.component.3.sql.1",
+        "content": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.sql.1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ],
+          "occurrence_count": 2
+        }
+      },
+      {
+        "evidence_id": "E_3d64ad634da2",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0002.component.3.sql.1-O1",
+        "content": "LONG_COL_0",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.sql.1",
+          "RPT_0002.component.3.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_e8e4b3bed52c",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0002.component.3.sql.1-O1",
+        "content": "SUM(datain_1727073357645_temp.\"c2\")",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.sql.1",
+          "RPT_0002.component.3.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_1304870c5d6e",
+        "source_type": "component_name",
+        "source_locator": "RPT_0002.component.4",
+        "content": "图表16",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4"
+        ],
+        "metadata": {
+          "name_kind": "system_generated"
+        }
+      },
+      {
+        "evidence_id": "E_56fe429ce729",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.4.dataset_segment.1",
+        "content": "Management_Analysis",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.dataset_segment.1",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_a8d1263524e2",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.4.dataset_segment.2",
+        "content": "w00819891",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.dataset_segment.2",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_8984f01a5dca",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.4.dataset_segment.3",
+        "content": "【北京】经营月报",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.dataset_segment.3",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": [
+            "contains_brackets",
+            "contains_asset_word"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_5bed33062c44",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0002.component.4.sql.1",
+        "content": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.sql.1",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ],
+          "occurrence_count": 2
+        }
+      },
+      {
+        "evidence_id": "E_65c1896f6d81",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0002.component.4.sql.1-O1",
+        "content": "LONG_COL_0",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.sql.1",
+          "RPT_0002.component.4.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_705f76329896",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0002.component.4.sql.1-O1",
+        "content": "SUM(datain_1727073357645_temp.\"c2\")",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.sql.1",
+          "RPT_0002.component.4.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      }
+    ],
+    "allowed_target_ids": [
+      "RPT_0002",
+      "RPT_0002.component.1",
+      "RPT_0002.component.1.dataset_segment.1",
+      "RPT_0002.component.1.dataset_segment.2",
+      "RPT_0002.component.1.dataset_segment.3",
+      "RPT_0002.component.1.sql.1",
+      "RPT_0002.component.1.sql.1-O1",
+      "RPT_0002.component.2",
+      "RPT_0002.component.2.dataset_segment.1",
+      "RPT_0002.component.2.dataset_segment.2",
+      "RPT_0002.component.2.dataset_segment.3",
+      "RPT_0002.component.2.sql.1",
+      "RPT_0002.component.2.sql.1-O1",
+      "RPT_0002.component.2.sql.2",
+      "RPT_0002.component.2.sql.2-O1",
+      "RPT_0002.component.3",
+      "RPT_0002.component.3.dataset_segment.1",
+      "RPT_0002.component.3.dataset_segment.2",
+      "RPT_0002.component.3.dataset_segment.3",
+      "RPT_0002.component.3.sql.1",
+      "RPT_0002.component.3.sql.1-O1",
+      "RPT_0002.component.4",
+      "RPT_0002.component.4.dataset_segment.1",
+      "RPT_0002.component.4.dataset_segment.2",
+      "RPT_0002.component.4.dataset_segment.3",
+      "RPT_0002.component.4.sql.1",
+      "RPT_0002.component.4.sql.1-O1",
+      "RPT_0002.report_segment.1",
+      "RPT_0002.report_segment.2",
+      "RPT_0002.report_segment.3",
+      "dataset:Management_Analysis/w00819891/ToB补录表250511",
+      "dataset:Management_Analysis/w00819891/【北京】经营月报",
+      "dataset:Management_Analysis/w00819891/北京区域大屏"
+    ]
+  },
+  {
+    "package_id": "PKG-D_8440e1ec7a24",
+    "task_type": "dataset_semantic_extraction",
+    "subject_type": "dataset",
+    "subject_id": "dataset:ipfm/w79184/集05订货利润",
+    "report": [
+      {
+        "report_id": "RPT_0001",
+        "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+        "status": "信息不充分：组件1使用系统默认名称“图表4”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件2使用系统默认名称“图表3”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件3使用系统默认名称“图表6”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件4使用系统默认名称“图表5”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件5使用系统默认名称“图表2”；物理表匹配异常：组件5的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp"
+      },
+      {
+        "report_id": "RPT_0001",
+        "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+        "status": "信息不充分：组件1使用系统默认名称“图表4”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件2使用系统默认名称“图表3”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件3使用系统默认名称“图表6”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件4使用系统默认名称“图表5”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件5使用系统默认名称“图表2”；物理表匹配异常：组件5的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp"
+      },
+      {
+        "report_id": "RPT_0001",
+        "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+        "status": "信息不充分：组件1使用系统默认名称“图表4”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件2使用系统默认名称“图表3”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件3使用系统默认名称“图表6”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件4使用系统默认名称“图表5”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件5使用系统默认名称“图表2”；物理表匹配异常：组件5的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp"
+      },
+      {
+        "report_id": "RPT_0001",
+        "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+        "status": "信息不充分：组件1使用系统默认名称“图表4”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件2使用系统默认名称“图表3”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件3使用系统默认名称“图表6”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件4使用系统默认名称“图表5”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件5使用系统默认名称“图表2”；物理表匹配异常：组件5的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp"
+      },
+      {
+        "report_id": "RPT_0001",
+        "report_path": "ipfm/w79184/【202606】Orange系统部设备订货制毛看板",
+        "status": "信息不充分：组件1使用系统默认名称“图表4”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件2使用系统默认名称“图表3”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件3使用系统默认名称“图表6”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件4使用系统默认名称“图表5”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp；信息不充分：组件5使用系统默认名称“图表2”；物理表匹配异常：组件5的SQL引用了元数据中不存在的表 dmprjdis_pfa.datain_1783070589517_temp"
+      }
+    ],
+    "components": [
+      {
+        "component_id": "RPT_0001.component.1",
+        "component_no": 1,
+        "component_name": "图表4",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润"
+      },
+      {
+        "component_id": "RPT_0001.component.2",
+        "component_no": 2,
+        "component_name": "图表3",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润"
+      },
+      {
+        "component_id": "RPT_0001.component.3",
+        "component_no": 3,
+        "component_name": "图表6",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润"
+      },
+      {
+        "component_id": "RPT_0001.component.4",
+        "component_no": 4,
+        "component_name": "图表5",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润"
+      },
+      {
+        "component_id": "RPT_0001.component.5",
+        "component_no": 5,
+        "component_name": "图表2",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润"
+      }
+    ],
+    "datasets": [
+      {
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "dataset_path": "ipfm/w79184/集05订货利润",
+        "dataset_path_segments": [
+          "ipfm",
+          "w79184",
+          "集05订货利润"
+        ],
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ]
+      }
+    ],
+    "usages": [
+      {
+        "report_id": "RPT_0001",
+        "component_id": "RPT_0001.component.1",
+        "component_no": 1,
+        "component_name": "图表4",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "dataset_path": "ipfm/w79184/集05订货利润",
+        "dataset_path_segments": [
+          "ipfm",
+          "w79184",
+          "集05订货利润"
+        ],
+        "sql_list": [
+          {
+            "sql": "SELECT datain_1783070589517_temp.\"c7\" AS \"产品LV1\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+            "physical_tables": [
+              "dmprjdis_pfa.datain_1783070589517_temp"
+            ],
+            "occurrence_count": 1
+          }
+        ],
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ]
+      },
+      {
+        "report_id": "RPT_0001",
+        "component_id": "RPT_0001.component.2",
+        "component_no": 2,
+        "component_name": "图表3",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "dataset_path": "ipfm/w79184/集05订货利润",
+        "dataset_path_segments": [
+          "ipfm",
+          "w79184",
+          "集05订货利润"
+        ],
+        "sql_list": [
+          {
+            "sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+            "physical_tables": [
+              "dmprjdis_pfa.datain_1783070589517_temp"
+            ],
+            "occurrence_count": 1
+          }
+        ],
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ]
+      },
+      {
+        "report_id": "RPT_0001",
+        "component_id": "RPT_0001.component.3",
+        "component_no": 3,
+        "component_name": "图表6",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "dataset_path": "ipfm/w79184/集05订货利润",
+        "dataset_path_segments": [
+          "ipfm",
+          "w79184",
+          "集05订货利润"
+        ],
+        "sql_list": [
+          {
+            "sql": "SELECT datain_1783070589517_temp.\"c6\" AS \"国家\", datain_1783070589517_temp.\"c12\" AS \"合同名称\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2, 3_x000D_\nORDER BY 1 ASC, 2 ASC, 3 DESC_x000D_\nLIMIT 1000000",
+            "physical_tables": [
+              "dmprjdis_pfa.datain_1783070589517_temp"
+            ],
+            "occurrence_count": 1
+          }
+        ],
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ]
+      },
+      {
+        "report_id": "RPT_0001",
+        "component_id": "RPT_0001.component.4",
+        "component_no": 4,
+        "component_name": "图表5",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "dataset_path": "ipfm/w79184/集05订货利润",
+        "dataset_path_segments": [
+          "ipfm",
+          "w79184",
+          "集05订货利润"
+        ],
+        "sql_list": [
+          {
+            "sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1_x000D_\nORDER BY 1 ASC_x000D_\nLIMIT 1000000",
+            "physical_tables": [
+              "dmprjdis_pfa.datain_1783070589517_temp"
+            ],
+            "occurrence_count": 1
+          }
+        ],
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ]
+      },
+      {
+        "report_id": "RPT_0001",
+        "component_id": "RPT_0001.component.5",
+        "component_no": 5,
+        "component_name": "图表2",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "dataset_path": "ipfm/w79184/集05订货利润",
+        "dataset_path_segments": [
+          "ipfm",
+          "w79184",
+          "集05订货利润"
+        ],
+        "sql_list": [
+          {
+            "sql": "SELECT datain_1783070589517_temp.\"c2\" AS \"年月\", datain_1783070589517_temp.\"c7\" AS \"产品LV1\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 ASC_x000D_\nLIMIT 1000000",
+            "physical_tables": [
+              "dmprjdis_pfa.datain_1783070589517_temp"
+            ],
+            "occurrence_count": 1
+          }
+        ],
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ]
+      }
+    ],
+    "queries": [
+      {
+        "query_id": "RPT_0001.component.1.sql.1",
+        "component_id": "RPT_0001.component.1",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "sql": "SELECT datain_1783070589517_temp.\"c7\" AS \"产品LV1\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ],
+        "occurrence_count": 1
+      },
+      {
+        "query_id": "RPT_0001.component.2.sql.1",
+        "component_id": "RPT_0001.component.2",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ],
+        "occurrence_count": 1
+      },
+      {
+        "query_id": "RPT_0001.component.3.sql.1",
+        "component_id": "RPT_0001.component.3",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "sql": "SELECT datain_1783070589517_temp.\"c6\" AS \"国家\", datain_1783070589517_temp.\"c12\" AS \"合同名称\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2, 3_x000D_\nORDER BY 1 ASC, 2 ASC, 3 DESC_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ],
+        "occurrence_count": 1
+      },
+      {
+        "query_id": "RPT_0001.component.4.sql.1",
+        "component_id": "RPT_0001.component.4",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "sql": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1_x000D_\nORDER BY 1 ASC_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ],
+        "occurrence_count": 1
+      },
+      {
+        "query_id": "RPT_0001.component.5.sql.1",
+        "component_id": "RPT_0001.component.5",
+        "dataset_id": "dataset:ipfm/w79184/集05订货利润",
+        "sql": "SELECT datain_1783070589517_temp.\"c2\" AS \"年月\", datain_1783070589517_temp.\"c7\" AS \"产品LV1\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 ASC_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmprjdis_pfa.datain_1783070589517_temp"
+        ],
+        "occurrence_count": 1
+      }
+    ],
+    "dataset_fields": [],
+    "physical_tables": [
+      {
+        "physical_table_name": "dmprjdis_pfa.datain_1783070589517_temp",
+        "cn_name": null,
+        "status": "元数据中不存在"
+      }
+    ],
+    "physical_fields": [],
+    "field_lineages": [],
+    "evidences": [
+      {
+        "evidence_id": "E_07b5ab33abda",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.1.dataset_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.dataset_segment.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_14ddc4c69288",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.1.dataset_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.dataset_segment.2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_40afa83492ef",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.1.dataset_segment.3",
+        "content": "集05订货利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.dataset_segment.3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_18bbf09dd82c",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0001.component.1.sql.1",
+        "content": "SELECT datain_1783070589517_temp.\"c7\" AS \"产品LV1\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ],
+          "occurrence_count": 1
+        }
+      },
+      {
+        "evidence_id": "E_2b4fd1640ca1",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.1.sql.1-O1",
+        "content": "产品LV1",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_06c73401b7ce",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.1.sql.1-O1",
+        "content": "datain_1783070589517_temp.\"c7\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_27e44e345ead",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.1.sql.1-O2",
+        "content": "年月",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_e72ae1f811f7",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.1.sql.1-O2",
+        "content": "datain_1783070589517_temp.\"c2\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_c6e64b6ebf1a",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.1.sql.1-O3",
+        "content": "Sum_设备订货",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_9cc51f614b57",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.1.sql.1-O3",
+        "content": "SUM(datain_1783070589517_temp.\"c27\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_ada463c76c01",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.1.sql.1-O4",
+        "content": "Sum_设备利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_daf2c95d3428",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.1.sql.1-O4",
+        "content": "SUM(datain_1783070589517_temp.\"c28\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.1",
+          "RPT_0001.component.1.sql.1",
+          "RPT_0001.component.1.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_5eb3aa9e5e82",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.2.dataset_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.dataset_segment.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_35d268c53952",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.2.dataset_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.dataset_segment.2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_8597d34decf7",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.2.dataset_segment.3",
+        "content": "集05订货利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.dataset_segment.3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_07bf75740fd0",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0001.component.2.sql.1",
+        "content": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 DESC_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ],
+          "occurrence_count": 1
+        }
+      },
+      {
+        "evidence_id": "E_423cf305e63d",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.2.sql.1-O1",
+        "content": "内部分类",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_5085a6c1d759",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.2.sql.1-O1",
+        "content": "datain_1783070589517_temp.\"c10\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_4a256a62e771",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.2.sql.1-O2",
+        "content": "年月",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_6bf32c27daf3",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.2.sql.1-O2",
+        "content": "datain_1783070589517_temp.\"c2\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_42edeeebe1c4",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.2.sql.1-O3",
+        "content": "Sum_设备订货",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_38325cbe1c9c",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.2.sql.1-O3",
+        "content": "SUM(datain_1783070589517_temp.\"c27\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_1db161c75bc3",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.2.sql.1-O4",
+        "content": "Sum_设备利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_199b0362f138",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.2.sql.1-O4",
+        "content": "SUM(datain_1783070589517_temp.\"c28\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.2",
+          "RPT_0001.component.2.sql.1",
+          "RPT_0001.component.2.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_19d32933d31f",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.3.dataset_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.dataset_segment.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_04488a0fe9ad",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.3.dataset_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.dataset_segment.2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_0a32d08716f0",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.3.dataset_segment.3",
+        "content": "集05订货利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.dataset_segment.3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_c09a46881bba",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0001.component.3.sql.1",
+        "content": "SELECT datain_1783070589517_temp.\"c6\" AS \"国家\", datain_1783070589517_temp.\"c12\" AS \"合同名称\", datain_1783070589517_temp.\"c2\" AS \"年月\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2, 3_x000D_\nORDER BY 1 ASC, 2 ASC, 3 DESC_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ],
+          "occurrence_count": 1
+        }
+      },
+      {
+        "evidence_id": "E_f69e7a8f64f3",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.3.sql.1-O1",
+        "content": "国家",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_5a63a172e2dd",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.3.sql.1-O1",
+        "content": "datain_1783070589517_temp.\"c6\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_017e2087582e",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.3.sql.1-O2",
+        "content": "合同名称",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_f6cb2b4d6229",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.3.sql.1-O2",
+        "content": "datain_1783070589517_temp.\"c12\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_1d49c63d1977",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.3.sql.1-O3",
+        "content": "年月",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_87d81c306f6c",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.3.sql.1-O3",
+        "content": "datain_1783070589517_temp.\"c2\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_a48a86e8bb47",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.3.sql.1-O4",
+        "content": "Sum_设备订货",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_223e124fe1f7",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.3.sql.1-O4",
+        "content": "SUM(datain_1783070589517_temp.\"c27\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O4",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_cb831027a6db",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.3.sql.1-O5",
+        "content": "Sum_设备利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O5",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_1f2365d46349",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.3.sql.1-O5",
+        "content": "SUM(datain_1783070589517_temp.\"c28\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.3",
+          "RPT_0001.component.3.sql.1",
+          "RPT_0001.component.3.sql.1-O5",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_413f9e9710e7",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.4.dataset_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.dataset_segment.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_860a037caf42",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.4.dataset_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.dataset_segment.2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_5c486a08bec9",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.4.dataset_segment.3",
+        "content": "集05订货利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.dataset_segment.3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_b22ec566b88b",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0001.component.4.sql.1",
+        "content": "SELECT datain_1783070589517_temp.\"c10\" AS \"内部分类\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\", SUM(datain_1783070589517_temp.\"c28\") AS \"Sum_设备利润\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1_x000D_\nORDER BY 1 ASC_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ],
+          "occurrence_count": 1
+        }
+      },
+      {
+        "evidence_id": "E_602bb2e78d63",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.4.sql.1-O1",
+        "content": "内部分类",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_8393b79e04bd",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.4.sql.1-O1",
+        "content": "datain_1783070589517_temp.\"c10\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_8c0a3647ba0d",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.4.sql.1-O2",
+        "content": "Sum_设备订货",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_b20c5969e7a9",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.4.sql.1-O2",
+        "content": "SUM(datain_1783070589517_temp.\"c27\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_1120e4bc079e",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.4.sql.1-O3",
+        "content": "Sum_设备利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_0bae704418b3",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.4.sql.1-O3",
+        "content": "SUM(datain_1783070589517_temp.\"c28\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.4",
+          "RPT_0001.component.4.sql.1",
+          "RPT_0001.component.4.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_70e4318d752a",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.5.dataset_segment.1",
+        "content": "ipfm",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.dataset_segment.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_2ead202eb10e",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.5.dataset_segment.2",
+        "content": "w79184",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.dataset_segment.2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_5b1f2f16a722",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0001.component.5.dataset_segment.3",
+        "content": "集05订货利润",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.dataset_segment.3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_2dd05f12612b",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0001.component.5.sql.1",
+        "content": "SELECT datain_1783070589517_temp.\"c2\" AS \"年月\", datain_1783070589517_temp.\"c7\" AS \"产品LV1\", SUM(datain_1783070589517_temp.\"c27\") AS \"Sum_设备订货\"_x000D_\nFROM dmprjdis_pfa.datain_1783070589517_temp datain_1783070589517_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1783070589517_temp.\"c7\" =  ?  ) AND ( datain_1783070589517_temp.\"c0\" =  ?  ))_x000D_\nGROUP BY 1, 2_x000D_\nORDER BY 1 ASC, 2 ASC_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmprjdis_pfa.datain_1783070589517_temp"
+          ],
+          "occurrence_count": 1
+        }
+      },
+      {
+        "evidence_id": "E_0033c9474eb5",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.5.sql.1-O1",
+        "content": "年月",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_facec308fc3b",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.5.sql.1-O1",
+        "content": "datain_1783070589517_temp.\"c2\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O1",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_6dcb3a960fb3",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.5.sql.1-O2",
+        "content": "产品LV1",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null,
+          "expression_type": "projection"
+        }
+      },
+      {
+        "evidence_id": "E_5a6dadc26836",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.5.sql.1-O2",
+        "content": "datain_1783070589517_temp.\"c7\"",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O2",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": null
+        }
+      },
+      {
+        "evidence_id": "E_6df3445b1b8f",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0001.component.5.sql.1-O3",
+        "content": "Sum_设备订货",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_6e39e0dd6d17",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0001.component.5.sql.1-O3",
+        "content": "SUM(datain_1783070589517_temp.\"c27\")",
+        "asset_refs": [
+          "RPT_0001",
+          "RPT_0001.component.5",
+          "RPT_0001.component.5.sql.1",
+          "RPT_0001.component.5.sql.1-O3",
+          "dataset:ipfm/w79184/集05订货利润"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      }
+    ],
+    "allowed_target_ids": [
+      "RPT_0001",
+      "RPT_0001.component.1",
+      "RPT_0001.component.1.dataset_segment.1",
+      "RPT_0001.component.1.dataset_segment.2",
+      "RPT_0001.component.1.dataset_segment.3",
+      "RPT_0001.component.1.sql.1",
+      "RPT_0001.component.1.sql.1-O1",
+      "RPT_0001.component.1.sql.1-O2",
+      "RPT_0001.component.1.sql.1-O3",
+      "RPT_0001.component.1.sql.1-O4",
+      "RPT_0001.component.2",
+      "RPT_0001.component.2.dataset_segment.1",
+      "RPT_0001.component.2.dataset_segment.2",
+      "RPT_0001.component.2.dataset_segment.3",
+      "RPT_0001.component.2.sql.1",
+      "RPT_0001.component.2.sql.1-O1",
+      "RPT_0001.component.2.sql.1-O2",
+      "RPT_0001.component.2.sql.1-O3",
+      "RPT_0001.component.2.sql.1-O4",
+      "RPT_0001.component.3",
+      "RPT_0001.component.3.dataset_segment.1",
+      "RPT_0001.component.3.dataset_segment.2",
+      "RPT_0001.component.3.dataset_segment.3",
+      "RPT_0001.component.3.sql.1",
+      "RPT_0001.component.3.sql.1-O1",
+      "RPT_0001.component.3.sql.1-O2",
+      "RPT_0001.component.3.sql.1-O3",
+      "RPT_0001.component.3.sql.1-O4",
+      "RPT_0001.component.3.sql.1-O5",
+      "RPT_0001.component.4",
+      "RPT_0001.component.4.dataset_segment.1",
+      "RPT_0001.component.4.dataset_segment.2",
+      "RPT_0001.component.4.dataset_segment.3",
+      "RPT_0001.component.4.sql.1",
+      "RPT_0001.component.4.sql.1-O1",
+      "RPT_0001.component.4.sql.1-O2",
+      "RPT_0001.component.4.sql.1-O3",
+      "RPT_0001.component.5",
+      "RPT_0001.component.5.dataset_segment.1",
+      "RPT_0001.component.5.dataset_segment.2",
+      "RPT_0001.component.5.dataset_segment.3",
+      "RPT_0001.component.5.sql.1",
+      "RPT_0001.component.5.sql.1-O1",
+      "RPT_0001.component.5.sql.1-O2",
+      "RPT_0001.component.5.sql.1-O3",
+      "dataset:ipfm/w79184/集05订货利润"
+    ]
+  },
+  {
+    "package_id": "PKG-D_e65f9df8deb3",
+    "task_type": "dataset_semantic_extraction",
+    "subject_type": "dataset",
+    "subject_id": "dataset:Management_Analysis/w00819891/北京区域大屏",
+    "report": [
+      {
+        "report_id": "RPT_0002",
+        "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+        "status": "信息不充分：组件1使用系统默认名称“图表2”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件2使用系统默认名称“图表10”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmregdis.datain_1757258241454_temp；信息不充分：组件3使用系统默认名称“图表12”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件4使用系统默认名称“图表16”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp"
+      },
+      {
+        "report_id": "RPT_0002",
+        "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+        "status": "信息不充分：组件1使用系统默认名称“图表2”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件2使用系统默认名称“图表10”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmregdis.datain_1757258241454_temp；信息不充分：组件3使用系统默认名称“图表12”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件4使用系统默认名称“图表16”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp"
+      }
+    ],
+    "components": [
+      {
+        "component_id": "RPT_0002.component.1",
+        "component_no": 1,
+        "component_name": "图表2",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏"
+      },
+      {
+        "component_id": "RPT_0002.component.3",
+        "component_no": 3,
+        "component_name": "图表12",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏"
+      }
+    ],
+    "datasets": [
+      {
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏",
+        "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+        "dataset_path_segments": [
+          "Management_Analysis",
+          "w00819891",
+          "北京区域大屏"
+        ],
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ]
+      }
+    ],
+    "usages": [
+      {
+        "report_id": "RPT_0002",
+        "component_id": "RPT_0002.component.1",
+        "component_no": 1,
+        "component_name": "图表2",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏",
+        "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+        "dataset_path_segments": [
+          "Management_Analysis",
+          "w00819891",
+          "北京区域大屏"
+        ],
+        "sql_list": [
+          {
+            "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+            "physical_tables": [
+              "dmgeorcdis.datain_1727073357645_temp"
+            ],
+            "occurrence_count": 2
+          }
+        ],
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ]
+      },
+      {
+        "report_id": "RPT_0002",
+        "component_id": "RPT_0002.component.3",
+        "component_no": 3,
+        "component_name": "图表12",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏",
+        "dataset_path": "Management_Analysis/w00819891/北京区域大屏",
+        "dataset_path_segments": [
+          "Management_Analysis",
+          "w00819891",
+          "北京区域大屏"
+        ],
+        "sql_list": [
+          {
+            "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+            "physical_tables": [
+              "dmgeorcdis.datain_1727073357645_temp"
+            ],
+            "occurrence_count": 2
+          }
+        ],
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ]
+      }
+    ],
+    "queries": [
+      {
+        "query_id": "RPT_0002.component.1.sql.1",
+        "component_id": "RPT_0002.component.1",
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏",
+        "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ],
+        "occurrence_count": 2
+      },
+      {
+        "query_id": "RPT_0002.component.3.sql.1",
+        "component_id": "RPT_0002.component.3",
+        "dataset_id": "dataset:Management_Analysis/w00819891/北京区域大屏",
+        "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ],
+        "occurrence_count": 2
+      }
+    ],
+    "dataset_fields": [],
+    "physical_tables": [
+      {
+        "physical_table_name": "dmgeorcdis.datain_1727073357645_temp",
+        "cn_name": null,
+        "status": "元数据中不存在"
+      }
+    ],
+    "physical_fields": [],
+    "field_lineages": [],
+    "evidences": [
+      {
+        "evidence_id": "E_76aa0e900bc0",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.1.dataset_segment.1",
+        "content": "Management_Analysis",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.dataset_segment.1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_873b90bf82ae",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.1.dataset_segment.2",
+        "content": "w00819891",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.dataset_segment.2",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_84800445d859",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.1.dataset_segment.3",
+        "content": "北京区域大屏",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.dataset_segment.3",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": [
+            "contains_asset_word",
+            "contains_org_word"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_60d84356a22c",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0002.component.1.sql.1",
+        "content": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.sql.1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ],
+          "occurrence_count": 2
+        }
+      },
+      {
+        "evidence_id": "E_46923f5a5781",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0002.component.1.sql.1-O1",
+        "content": "LONG_COL_0",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.sql.1",
+          "RPT_0002.component.1.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_605a35b25b2b",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0002.component.1.sql.1-O1",
+        "content": "SUM(datain_1727073357645_temp.\"c2\")",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.1",
+          "RPT_0002.component.1.sql.1",
+          "RPT_0002.component.1.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_252241549ebb",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.3.dataset_segment.1",
+        "content": "Management_Analysis",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.dataset_segment.1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_03157828788a",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.3.dataset_segment.2",
+        "content": "w00819891",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.dataset_segment.2",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_aa4e5d604763",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.3.dataset_segment.3",
+        "content": "北京区域大屏",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.dataset_segment.3",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": [
+            "contains_asset_word",
+            "contains_org_word"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_38627af2e20d",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0002.component.3.sql.1",
+        "content": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.sql.1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ],
+          "occurrence_count": 2
+        }
+      },
+      {
+        "evidence_id": "E_3d64ad634da2",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0002.component.3.sql.1-O1",
+        "content": "LONG_COL_0",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.sql.1",
+          "RPT_0002.component.3.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_e8e4b3bed52c",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0002.component.3.sql.1-O1",
+        "content": "SUM(datain_1727073357645_temp.\"c2\")",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.3",
+          "RPT_0002.component.3.sql.1",
+          "RPT_0002.component.3.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/北京区域大屏"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      }
+    ],
+    "allowed_target_ids": [
+      "RPT_0002",
+      "RPT_0002.component.1",
+      "RPT_0002.component.1.dataset_segment.1",
+      "RPT_0002.component.1.dataset_segment.2",
+      "RPT_0002.component.1.dataset_segment.3",
+      "RPT_0002.component.1.sql.1",
+      "RPT_0002.component.1.sql.1-O1",
+      "RPT_0002.component.3",
+      "RPT_0002.component.3.dataset_segment.1",
+      "RPT_0002.component.3.dataset_segment.2",
+      "RPT_0002.component.3.dataset_segment.3",
+      "RPT_0002.component.3.sql.1",
+      "RPT_0002.component.3.sql.1-O1",
+      "dataset:Management_Analysis/w00819891/北京区域大屏"
+    ]
+  },
+  {
+    "package_id": "PKG-D_c66383c9e626",
+    "task_type": "dataset_semantic_extraction",
+    "subject_type": "dataset",
+    "subject_id": "dataset:Management_Analysis/w00819891/ToB补录表250511",
+    "report": [
+      {
+        "report_id": "RPT_0002",
+        "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+        "status": "信息不充分：组件1使用系统默认名称“图表2”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件2使用系统默认名称“图表10”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmregdis.datain_1757258241454_temp；信息不充分：组件3使用系统默认名称“图表12”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件4使用系统默认名称“图表16”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp"
+      }
+    ],
+    "components": [
+      {
+        "component_id": "RPT_0002.component.2",
+        "component_no": 2,
+        "component_name": "图表10",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/ToB补录表250511"
+      }
+    ],
+    "datasets": [
+      {
+        "dataset_id": "dataset:Management_Analysis/w00819891/ToB补录表250511",
+        "dataset_path": "Management_Analysis/w00819891/ToB补录表250511",
+        "dataset_path_segments": [
+          "Management_Analysis",
+          "w00819891",
+          "ToB补录表250511"
+        ],
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp",
+          "dmregdis.datain_1757258241454_temp"
+        ]
+      }
+    ],
+    "usages": [
+      {
+        "report_id": "RPT_0002",
+        "component_id": "RPT_0002.component.2",
+        "component_no": 2,
+        "component_name": "图表10",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/ToB补录表250511",
+        "dataset_path": "Management_Analysis/w00819891/ToB补录表250511",
+        "dataset_path_segments": [
+          "Management_Analysis",
+          "w00819891",
+          "ToB补录表250511"
+        ],
+        "sql_list": [
+          {
+            "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+            "physical_tables": [
+              "dmgeorcdis.datain_1727073357645_temp"
+            ],
+            "occurrence_count": 2
+          },
+          {
+            "sql": "SELECT MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmregdis.datain_1757258241454_temp datain_1757258241454_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( datain_1757258241454_temp.\"c0\" =  ?  )_x000D_\nLIMIT 1000000",
+            "physical_tables": [
+              "dmregdis.datain_1757258241454_temp"
+            ],
+            "occurrence_count": 2
+          }
+        ],
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp",
+          "dmregdis.datain_1757258241454_temp"
+        ]
+      }
+    ],
+    "queries": [
+      {
+        "query_id": "RPT_0002.component.2.sql.1",
+        "component_id": "RPT_0002.component.2",
+        "dataset_id": "dataset:Management_Analysis/w00819891/ToB补录表250511",
+        "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ],
+        "occurrence_count": 2
+      },
+      {
+        "query_id": "RPT_0002.component.2.sql.2",
+        "component_id": "RPT_0002.component.2",
+        "dataset_id": "dataset:Management_Analysis/w00819891/ToB补录表250511",
+        "sql": "SELECT MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmregdis.datain_1757258241454_temp datain_1757258241454_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( datain_1757258241454_temp.\"c0\" =  ?  )_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmregdis.datain_1757258241454_temp"
+        ],
+        "occurrence_count": 2
+      }
+    ],
+    "dataset_fields": [],
+    "physical_tables": [
+      {
+        "physical_table_name": "dmgeorcdis.datain_1727073357645_temp",
+        "cn_name": null,
+        "status": "元数据中不存在"
+      },
+      {
+        "physical_table_name": "dmregdis.datain_1757258241454_temp",
+        "cn_name": null,
+        "status": "元数据中不存在"
+      }
+    ],
+    "physical_fields": [],
+    "field_lineages": [],
+    "evidences": [
+      {
+        "evidence_id": "E_c528eebcdcb1",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.2.dataset_segment.1",
+        "content": "Management_Analysis",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.dataset_segment.1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_df2462e58b15",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.2.dataset_segment.2",
+        "content": "w00819891",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.dataset_segment.2",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_57db1998e4eb",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.2.dataset_segment.3",
+        "content": "ToB补录表250511",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.dataset_segment.3",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_5de174d885be",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0002.component.2.sql.1",
+        "content": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ],
+          "occurrence_count": 2
+        }
+      },
+      {
+        "evidence_id": "E_b0fdf502ca95",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0002.component.2.sql.1-O1",
+        "content": "LONG_COL_0",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.1",
+          "RPT_0002.component.2.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_fcd4ba3cd99c",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0002.component.2.sql.1-O1",
+        "content": "SUM(datain_1727073357645_temp.\"c2\")",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.1",
+          "RPT_0002.component.2.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      },
+      {
+        "evidence_id": "E_1101ccd45595",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0002.component.2.sql.2",
+        "content": "SELECT MAX(datain_1757258241454_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmregdis.datain_1757258241454_temp datain_1757258241454_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( datain_1757258241454_temp.\"c0\" =  ?  )_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.2",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmregdis.datain_1757258241454_temp"
+          ],
+          "occurrence_count": 2
+        }
+      },
+      {
+        "evidence_id": "E_fe48a1f70928",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0002.component.2.sql.2-O1",
+        "content": "LONG_COL_0",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.2",
+          "RPT_0002.component.2.sql.2-O1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "aggregation_function": "MAX",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_5032544864f8",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0002.component.2.sql.2-O1",
+        "content": "MAX(datain_1757258241454_temp.\"c2\")",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.2",
+          "RPT_0002.component.2.sql.2",
+          "RPT_0002.component.2.sql.2-O1",
+          "dataset:Management_Analysis/w00819891/ToB补录表250511"
+        ],
+        "metadata": {
+          "aggregation_function": "MAX"
+        }
+      }
+    ],
+    "allowed_target_ids": [
+      "RPT_0002",
+      "RPT_0002.component.2",
+      "RPT_0002.component.2.dataset_segment.1",
+      "RPT_0002.component.2.dataset_segment.2",
+      "RPT_0002.component.2.dataset_segment.3",
+      "RPT_0002.component.2.sql.1",
+      "RPT_0002.component.2.sql.1-O1",
+      "RPT_0002.component.2.sql.2",
+      "RPT_0002.component.2.sql.2-O1",
+      "dataset:Management_Analysis/w00819891/ToB补录表250511"
+    ]
+  },
+  {
+    "package_id": "PKG-D_c7bab13da287",
+    "task_type": "dataset_semantic_extraction",
+    "subject_type": "dataset",
+    "subject_id": "dataset:Management_Analysis/w00819891/【北京】经营月报",
+    "report": [
+      {
+        "report_id": "RPT_0002",
+        "report_path": "Management_Analysis/w00819891/【北京代表处大屏】",
+        "status": "信息不充分：组件1使用系统默认名称“图表2”；物理表匹配异常：组件1的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件2使用系统默认名称“图表10”；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；物理表匹配异常：组件2的SQL引用了元数据中不存在的表 dmregdis.datain_1757258241454_temp；信息不充分：组件3使用系统默认名称“图表12”；物理表匹配异常：组件3的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp；信息不充分：组件4使用系统默认名称“图表16”；物理表匹配异常：组件4的SQL引用了元数据中不存在的表 dmgeorcdis.datain_1727073357645_temp"
+      }
+    ],
+    "components": [
+      {
+        "component_id": "RPT_0002.component.4",
+        "component_no": 4,
+        "component_name": "图表16",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/【北京】经营月报"
+      }
+    ],
+    "datasets": [
+      {
+        "dataset_id": "dataset:Management_Analysis/w00819891/【北京】经营月报",
+        "dataset_path": "Management_Analysis/w00819891/【北京】经营月报",
+        "dataset_path_segments": [
+          "Management_Analysis",
+          "w00819891",
+          "【北京】经营月报"
+        ],
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ]
+      }
+    ],
+    "usages": [
+      {
+        "report_id": "RPT_0002",
+        "component_id": "RPT_0002.component.4",
+        "component_no": 4,
+        "component_name": "图表16",
+        "component_name_kind": "system_generated",
+        "dataset_id": "dataset:Management_Analysis/w00819891/【北京】经营月报",
+        "dataset_path": "Management_Analysis/w00819891/【北京】经营月报",
+        "dataset_path_segments": [
+          "Management_Analysis",
+          "w00819891",
+          "【北京】经营月报"
+        ],
+        "sql_list": [
+          {
+            "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+            "physical_tables": [
+              "dmgeorcdis.datain_1727073357645_temp"
+            ],
+            "occurrence_count": 2
+          }
+        ],
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ]
+      }
+    ],
+    "queries": [
+      {
+        "query_id": "RPT_0002.component.4.sql.1",
+        "component_id": "RPT_0002.component.4",
+        "dataset_id": "dataset:Management_Analysis/w00819891/【北京】经营月报",
+        "sql": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "physical_tables": [
+          "dmgeorcdis.datain_1727073357645_temp"
+        ],
+        "occurrence_count": 2
+      }
+    ],
+    "dataset_fields": [],
+    "physical_tables": [
+      {
+        "physical_table_name": "dmgeorcdis.datain_1727073357645_temp",
+        "cn_name": null,
+        "status": "元数据中不存在"
+      }
+    ],
+    "physical_fields": [],
+    "field_lineages": [],
+    "evidences": [
+      {
+        "evidence_id": "E_56fe429ce729",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.4.dataset_segment.1",
+        "content": "Management_Analysis",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.dataset_segment.1",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "position": 1,
+          "features": []
+        }
+      },
+      {
+        "evidence_id": "E_a8d1263524e2",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.4.dataset_segment.2",
+        "content": "w00819891",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.dataset_segment.2",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "position": 2,
+          "features": [
+            "looks_like_identifier"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_8984f01a5dca",
+        "source_type": "dataset_path_segment",
+        "source_locator": "RPT_0002.component.4.dataset_segment.3",
+        "content": "【北京】经营月报",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.dataset_segment.3",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "position": 3,
+          "features": [
+            "contains_brackets",
+            "contains_asset_word"
+          ]
+        }
+      },
+      {
+        "evidence_id": "E_5bed33062c44",
+        "source_type": "sql_text",
+        "source_locator": "RPT_0002.component.4.sql.1",
+        "content": "SELECT SUM(datain_1727073357645_temp.\"c2\") AS \"LONG_COL_0\"_x000D_\nFROM dmgeorcdis.datain_1727073357645_temp datain_1727073357645_temp_x000D_\nWHERE 1 = 1_x000D_\n\tAND ( ( datain_1727073357645_temp.\"c0\" =  ?  ) AND ( datain_1727073357645_temp.\"c1\" =  ?  ))_x000D_\nLIMIT 1000000",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.sql.1",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "physical_tables": [
+            "dmgeorcdis.datain_1727073357645_temp"
+          ],
+          "occurrence_count": 2
+        }
+      },
+      {
+        "evidence_id": "E_65c1896f6d81",
+        "source_type": "sql_output_alias",
+        "source_locator": "RPT_0002.component.4.sql.1-O1",
+        "content": "LONG_COL_0",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.sql.1",
+          "RPT_0002.component.4.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM",
+          "expression_type": "aggregation"
+        }
+      },
+      {
+        "evidence_id": "E_705f76329896",
+        "source_type": "sql_expression",
+        "source_locator": "RPT_0002.component.4.sql.1-O1",
+        "content": "SUM(datain_1727073357645_temp.\"c2\")",
+        "asset_refs": [
+          "RPT_0002",
+          "RPT_0002.component.4",
+          "RPT_0002.component.4.sql.1",
+          "RPT_0002.component.4.sql.1-O1",
+          "dataset:Management_Analysis/w00819891/【北京】经营月报"
+        ],
+        "metadata": {
+          "aggregation_function": "SUM"
+        }
+      }
+    ],
+    "allowed_target_ids": [
+      "RPT_0002",
+      "RPT_0002.component.4",
+      "RPT_0002.component.4.dataset_segment.1",
+      "RPT_0002.component.4.dataset_segment.2",
+      "RPT_0002.component.4.dataset_segment.3",
+      "RPT_0002.component.4.sql.1",
+      "RPT_0002.component.4.sql.1-O1",
+      "dataset:Management_Analysis/w00819891/【北京】经营月报"
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+name: device_order_profit_raw
+table_reference:
+  catalog: ""
+  schema: dmprjdis_pfa
+  table: datain_1783070589517_temp
+columns:
+  - name: c0
+    type: VARCHAR
+    properties:
+      description: "BI SQL 中反复出现的过滤字段；业务含义未知。"
+  - name: c2
+    type: VARCHAR
+    properties:
+      description: "BI 输出别名证据指向‘年月’，但值格式尚未验证。"
+  - name: c7
+    type: VARCHAR
+    properties:
+      description: "BI 输出别名证据指向‘产品LV1’，同时被用作过滤字段。"
+  - name: c10
+    type: VARCHAR
+    properties:
+      description: "BI 输出别名证据指向‘内部分类’。"
+  - name: c27
+    type: DOUBLE
+    properties:
+      description: "BI SQL 以 SUM(c27) 输出为‘Sum_设备订货’；单位与可加性边界未知。"
+  - name: c28
+    type: DOUBLE
+    properties:
+      description: "BI SQL 以 SUM(c28) 输出为‘Sum_设备利润’；币种、税口径与可加性边界未知。"
+cached: false
+properties:
+  description: "从 BI SQL 反向观察到的临时物理表。这里只承载可追溯事实，不宣称它是企业权威表。"

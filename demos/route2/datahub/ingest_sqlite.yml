@@ -1,0 +1,16 @@
+source:
+  type: sqlalchemy
+  config:
+    platform: sqlite
+    connect_uri: "sqlite:///${DEMO_SQLITE_PATH}"
+    include_tables: true
+    include_views: true
+    profiling:
+      enabled: false
+sink:
+  type: datahub-rest
+  config:
+    server: http://localhost:8080
+datahub_api:
+  server: http://localhost:8080
+

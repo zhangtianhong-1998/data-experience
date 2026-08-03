@@ -1,0 +1,21 @@
+{
+  "step": "51b-openmetadata-archive-failed-volume",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "/bin/mv",
+    "demos/route2/openmetadata/official/docker-volume-failed-no-auth",
+    "runtime/openmetadata-1.13.0/clean-predecessors/docker-volume-failed-no-auth"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785779028.873726
+}

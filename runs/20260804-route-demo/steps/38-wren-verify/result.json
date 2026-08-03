@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.021,
+  "stdout_sha256": "481a83ece4979b1893028e67d67b5e5b512d3dc695549d542b918d120f357cff",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/wrenai/device_project/results/verification.json",
+      "exists": true,
+      "size": 753,
+      "sha256": "cda109912a47f0625c2879957d028d97468633f6eefbdb9a20cd6524166aebee"
+    }
+  ]
+}

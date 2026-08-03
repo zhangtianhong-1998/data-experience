@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": {
+    "clean_source_counts": true,
+    "connector_discovered_three_assets": true,
+    "sdk_business_rule_persisted": true,
+    "chinese_column_comments_preserved": true,
+    "embedded_mcp_exposes_sixteen_tools": true,
+    "mcp_search_returns_only_two_matching_tables": true,
+    "mcp_details_returns_ten_columns": true,
+    "mcp_returns_permission_rule": true
+  },
+  "evidence": {
+    "server_version": "1.13.0",
+    "selected_fqn": "enterprise_mysql.default.enterprise_demo.device_orders",
+    "mcp_tool_count": 16,
+    "mcp_search_total": 2,
+    "mcp_column_count": 10
+  }
+}

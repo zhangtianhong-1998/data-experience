@@ -1,0 +1,65 @@
+{
+  "sdk_package": "openmetadata-ingestion==1.13.0.0",
+  "server_version": "1.13.0",
+  "tables_discovered": [
+    "enterprise_mysql.default.enterprise_demo.device_orders",
+    "enterprise_mysql.default.enterprise_demo.device_orders_by_product",
+    "enterprise_mysql.default.enterprise_demo.sales_orders"
+  ],
+  "selected_fqn": "enterprise_mysql.default.enterprise_demo.device_orders",
+  "description_after_patch": "设备订货事实表。指标“设备订货金额”&#61; confirmed 订单的 order_amount 合计&#xff1b;必须显式限定 org_code&#xff1b;单位 CNY&#xff1b;取消单不得计入。",
+  "columns": [
+    {
+      "name": "order_id",
+      "data_type": "VARCHAR",
+      "description": "è®¾å¤‡è®¢è´§å•å”¯ä¸€ç¼–å·"
+    },
+    {
+      "name": "order_date",
+      "data_type": "DATE",
+      "description": "è®¢è´§æ—¥æœŸ"
+    },
+    {
+      "name": "year_month",
+      "data_type": "INT",
+      "description": "è‡ªç„¶å¹´æœˆï¼ŒYYYYMM"
+    },
+    {
+      "name": "org_code",
+      "data_type": "VARCHAR",
+      "description": "æ•°æ®æƒé™ç»„ç»‡ç¼–ç ï¼ŒæŸ¥è¯¢å¿…é¡»æ˜¾å¼é™å®š"
+    },
+    {
+      "name": "product_code",
+      "data_type": "VARCHAR",
+      "description": "äº§å“ç¼–ç "
+    },
+    {
+      "name": "product_l1",
+      "data_type": "VARCHAR",
+      "description": "ä¸€çº§äº§å“åˆ†ç±»"
+    },
+    {
+      "name": "country",
+      "data_type": "VARCHAR",
+      "description": "å®¢æˆ·å›½å®¶"
+    },
+    {
+      "name": "status",
+      "data_type": "VARCHAR",
+      "description": "confirmed æ‰è®¡å…¥è®¾å¤‡è®¢è´§æŒ‡æ ‡"
+    },
+    {
+      "name": "order_amount",
+      "data_type": "DECIMAL",
+      "description": "è®¾å¤‡è®¢è´§é‡‘é¢ï¼ŒCNY"
+    },
+    {
+      "name": "profit_amount",
+      "data_type": "DECIMAL",
+      "description": "è®¾å¤‡æ¯›åˆ©é‡‘é¢ï¼ŒCNY"
+    }
+  ],
+  "intermediate_entity_id": "32dfde75-a848-41ad-afec-dd6d9b007e47",
+  "passed": true
+}

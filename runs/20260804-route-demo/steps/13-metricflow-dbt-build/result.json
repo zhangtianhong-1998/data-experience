@@ -1,0 +1,13 @@
+{
+  "exit_code": 2,
+  "launch_error": null,
+  "duration_seconds": 6.549,
+  "stdout_sha256": "48f37312437276597f259b906cb0d2c0451684de64dea8f847d10bc1d1cfa2a4",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/metricflow/device_project/target/semantic_manifest.json",
+      "exists": false
+    }
+  ]
+}

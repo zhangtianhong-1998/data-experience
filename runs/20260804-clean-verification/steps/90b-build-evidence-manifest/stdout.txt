@@ -1,0 +1,37 @@
+{
+  "output": "reports/evidence_manifest.json",
+  "step_count": 61,
+  "terminal_checks": {
+    "common": {
+      "path": "demos/common/expected/baseline_verification.json",
+      "passed": true
+    },
+    "metricflow": {
+      "path": "demos/route1/metricflow/device_project/results/verification.json",
+      "passed": true
+    },
+    "cube": {
+      "path": "demos/route1/cube/results/verification.json",
+      "passed": true
+    },
+    "wrenai": {
+      "path": "demos/route1/wrenai/device_project/results/verification.json",
+      "passed": true
+    },
+    "datahub": {
+      "path": "demos/route2/datahub/results/verification.json",
+      "passed": true
+    },
+    "openmetadata": {
+      "path": "demos/route2/openmetadata/results/verification.json",
+      "passed": true
+    },
+    "linkedin_text2sql": {
+      "path": "demos/route3/linkedin_text2sql/results/verification.json",
+      "passed": true
+    }
+  },
+  "all_terminal_checks_passed": true,
+  "diagnostic_failure_count": 7,
+  "unexpected_failure_count": 1
+}

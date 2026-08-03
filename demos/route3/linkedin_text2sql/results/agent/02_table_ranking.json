@@ -1,0 +1,37 @@
+{
+  "ranking": [
+    {
+      "table": "device_orders",
+      "llm_score": 10,
+      "final_score": 11.48,
+      "explanation": "设备订货事实表且为认证表。包含问题所需的 order_amount、profit_amount、status、org_code、year_month 等字段，完美匹配设备订货金额、设备利润、已确认订单、ORG_1001 及 2026 年上半年的统计需求。",
+      "deprecated": false
+    },
+    {
+      "table": "product_master",
+      "llm_score": 8,
+      "final_score": 9.26,
+      "explanation": "产品主数据表且为认证表。问题要求按产品一级分类统计，通常需要通过 product_code 与 device_orders 表连接，以获取产品一级分类信息。",
+      "deprecated": false
+    },
+    {
+      "table": "sales_orders",
+      "llm_score": 2,
+      "final_score": 3.41,
+      "explanation": "销售订单事实表。业务术语明确指出设备订货应使用 device_orders，且 sales_amount 是销售额而非设备订货金额，不符合问题口径。",
+      "deprecated": false
+    },
+    {
+      "table": "deprecated_device_orders",
+      "llm_score": 1,
+      "final_score": -98.88,
+      "explanation": "已废弃的设备订货兼容视图，明确标注不得用于新查询，严格遵循废弃状态要求，不推荐使用。",
+      "deprecated": true
+    }
+  ],
+  "selected_tables": [
+    "device_orders",
+    "product_master",
+    "sales_orders"
+  ]
+}

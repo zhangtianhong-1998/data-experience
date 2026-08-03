@@ -1,0 +1,13 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 3.197,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "a057a1854a46bbfeb39115f50d9a46c1c06ed07b70fc34ed1b285f31ac283129",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/results/utf8_reingestion_report.txt",
+      "exists": false
+    }
+  ]
+}

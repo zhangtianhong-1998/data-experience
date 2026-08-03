@@ -1,0 +1,21 @@
+{
+  "step": "40-datahub-nuke",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "/Users/sanjiuganmaoling/Desktop/code/data-experience/lab/.venv/bin/datahub",
+    "docker",
+    "nuke"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785778479.861808
+}

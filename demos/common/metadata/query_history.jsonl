@@ -1,0 +1,4 @@
+{"team":"device_analytics","user":"analyst_a","quality":"approved","query":"SELECT product_l1, SUM(order_amount) AS device_order_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1"}
+{"team":"device_analytics","user":"analyst_b","quality":"approved","query":"SELECT year_month, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND status = 'confirmed' GROUP BY year_month"}
+{"team":"sales_analytics","user":"analyst_c","quality":"approved","query":"SELECT product_l1, SUM(sales_amount) AS sales_amount FROM sales_orders WHERE org_code = 'ORG_1001' GROUP BY product_l1"}
+

@@ -1,0 +1,454 @@
+[
+  {
+    "id": "table:device_orders",
+    "type": "table",
+    "name": "device_orders",
+    "description": "设备订货事实表。每行是一张设备订货单；取消单不得计入订货指标。",
+    "domain": "device_business",
+    "certified": true,
+    "deprecated": false,
+    "owners": [
+      "device_analytics"
+    ],
+    "popularity": 98,
+    "columns": {
+      "order_date": "订货日期",
+      "year_month": "YYYYMM 整数月份",
+      "org_code": "组织编码，分析必须显式限定",
+      "product_l1": "产品一级分类",
+      "order_amount": "设备订货金额，演示单位为 CNY",
+      "profit_amount": "设备利润金额，演示单位为 CNY",
+      "status": "confirmed 或 cancelled；指标只统计 confirmed"
+    }
+  },
+  {
+    "id": "column:device_orders.order_date",
+    "type": "column",
+    "table": "device_orders",
+    "name": "order_date",
+    "description": "订货日期"
+  },
+  {
+    "id": "column:device_orders.year_month",
+    "type": "column",
+    "table": "device_orders",
+    "name": "year_month",
+    "description": "YYYYMM 整数月份"
+  },
+  {
+    "id": "column:device_orders.org_code",
+    "type": "column",
+    "table": "device_orders",
+    "name": "org_code",
+    "description": "组织编码，分析必须显式限定"
+  },
+  {
+    "id": "column:device_orders.product_l1",
+    "type": "column",
+    "table": "device_orders",
+    "name": "product_l1",
+    "description": "产品一级分类"
+  },
+  {
+    "id": "column:device_orders.order_amount",
+    "type": "column",
+    "table": "device_orders",
+    "name": "order_amount",
+    "description": "设备订货金额，演示单位为 CNY"
+  },
+  {
+    "id": "column:device_orders.profit_amount",
+    "type": "column",
+    "table": "device_orders",
+    "name": "profit_amount",
+    "description": "设备利润金额，演示单位为 CNY"
+  },
+  {
+    "id": "column:device_orders.status",
+    "type": "column",
+    "table": "device_orders",
+    "name": "status",
+    "description": "confirmed 或 cancelled；指标只统计 confirmed"
+  },
+  {
+    "id": "table:sales_orders",
+    "type": "table",
+    "name": "sales_orders",
+    "description": "销售订单事实表，sales_amount 是销售额，不是设备订货金额。",
+    "domain": "sales",
+    "certified": true,
+    "deprecated": false,
+    "owners": [
+      "sales_analytics"
+    ],
+    "popularity": 91,
+    "columns": {
+      "sales_amount": "销售金额"
+    }
+  },
+  {
+    "id": "column:sales_orders.sales_amount",
+    "type": "column",
+    "table": "sales_orders",
+    "name": "sales_amount",
+    "description": "销售金额"
+  },
+  {
+    "id": "table:deprecated_device_orders",
+    "type": "table",
+    "name": "deprecated_device_orders",
+    "description": "已废弃的设备订货兼容视图，不得用于新查询。",
+    "domain": "device_business",
+    "certified": false,
+    "deprecated": true,
+    "owners": [
+      "legacy_platform"
+    ],
+    "popularity": 12,
+    "columns": {}
+  },
+  {
+    "id": "table:product_master",
+    "type": "table",
+    "name": "product_master",
+    "description": "产品主数据，可以通过 product_code 与设备订货表连接。",
+    "domain": "master_data",
+    "certified": true,
+    "deprecated": false,
+    "owners": [
+      "master_data"
+    ],
+    "popularity": 76,
+    "columns": {
+      "product_code": "产品编码",
+      "product_l1": "产品一级分类",
+      "product_name": "产品名称"
+    }
+  },
+  {
+    "id": "column:product_master.product_code",
+    "type": "column",
+    "table": "product_master",
+    "name": "product_code",
+    "description": "产品编码"
+  },
+  {
+    "id": "column:product_master.product_l1",
+    "type": "column",
+    "table": "product_master",
+    "name": "product_l1",
+    "description": "产品一级分类"
+  },
+  {
+    "id": "column:product_master.product_name",
+    "type": "column",
+    "table": "product_master",
+    "name": "product_name",
+    "description": "产品名称"
+  },
+  {
+    "id": "example:0",
+    "type": "example_query",
+    "team": "device_analytics",
+    "user": "analyst_a",
+    "quality": "approved",
+    "query": "SELECT product_l1, SUM(order_amount) AS device_order_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month BETWEEN 202601 AND 202606 AND status = 'confirmed' GROUP BY product_l1",
+    "description": "按产品一级分类统计指定组织、月份区间内的已确认设备订货金额。",
+    "tables": [
+      "device_orders"
+    ]
+  },
+  {
+    "id": "example:1",
+    "type": "example_query",
+    "team": "device_analytics",
+    "user": "analyst_b",
+    "quality": "approved",
+    "query": "SELECT year_month, SUM(order_amount) AS device_order_amount, SUM(profit_amount) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND status = 'confirmed' GROUP BY year_month",
+    "description": "按月统计指定组织的已确认设备订货金额和设备利润。",
+    "tables": [
+      "device_orders"
+    ]
+  },
+  {
+    "id": "example:2",
+    "type": "example_query",
+    "team": "sales_analytics",
+    "user": "analyst_c",
+    "quality": "approved",
+    "query": "SELECT product_l1, SUM(sales_amount) AS sales_amount FROM sales_orders WHERE org_code = 'ORG_1001' GROUP BY product_l1",
+    "description": "按产品一级分类统计销售订单金额；这不是设备订货口径。",
+    "tables": [
+      "sales_orders"
+    ]
+  },
+  {
+    "id": "user:analyst_a",
+    "type": "user",
+    "clusters": [
+      {
+        "cluster": "cluster_0",
+        "access_count": 60
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 60
+      },
+      {
+        "cluster": "cluster_2",
+        "access_count": 49
+      }
+    ]
+  },
+  {
+    "id": "user:analyst_b",
+    "type": "user",
+    "clusters": [
+      {
+        "cluster": "cluster_0",
+        "access_count": 57
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 57
+      },
+      {
+        "cluster": "cluster_2",
+        "access_count": 43
+      }
+    ]
+  },
+  {
+    "id": "user:analyst_c",
+    "type": "user",
+    "clusters": [
+      {
+        "cluster": "cluster_2",
+        "access_count": 52
+      },
+      {
+        "cluster": "cluster_0",
+        "access_count": 11
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 11
+      }
+    ]
+  },
+  {
+    "id": "user:engineer_device",
+    "type": "user",
+    "clusters": [
+      {
+        "cluster": "cluster_0",
+        "access_count": 64
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 64
+      },
+      {
+        "cluster": "cluster_2",
+        "access_count": 39
+      }
+    ]
+  },
+  {
+    "id": "user:engineer_sales",
+    "type": "user",
+    "clusters": [
+      {
+        "cluster": "cluster_2",
+        "access_count": 35
+      },
+      {
+        "cluster": "cluster_0",
+        "access_count": 14
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 14
+      }
+    ]
+  },
+  {
+    "id": "user:legacy_user",
+    "type": "user",
+    "clusters": [
+      {
+        "cluster": "cluster_0",
+        "access_count": 31
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 31
+      },
+      {
+        "cluster": "cluster_2",
+        "access_count": 31
+      }
+    ]
+  },
+  {
+    "id": "user:pm_device",
+    "type": "user",
+    "clusters": [
+      {
+        "cluster": "cluster_0",
+        "access_count": 41
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 41
+      },
+      {
+        "cluster": "cluster_2",
+        "access_count": 32
+      }
+    ]
+  },
+  {
+    "id": "user:pm_sales",
+    "type": "user",
+    "clusters": [
+      {
+        "cluster": "cluster_2",
+        "access_count": 44
+      },
+      {
+        "cluster": "cluster_0",
+        "access_count": 8
+      },
+      {
+        "cluster": "cluster_1",
+        "access_count": 8
+      }
+    ]
+  },
+  {
+    "id": "product_area:device_business",
+    "type": "product_area",
+    "clusters": [
+      {
+        "cluster": "cluster_0",
+        "unique_users": 4,
+        "access_count": 222
+      },
+      {
+        "cluster": "cluster_1",
+        "unique_users": 4,
+        "access_count": 222
+      },
+      {
+        "cluster": "cluster_2",
+        "unique_users": 4,
+        "access_count": 163
+      }
+    ]
+  },
+  {
+    "id": "product_area:sales",
+    "type": "product_area",
+    "clusters": [
+      {
+        "cluster": "cluster_2",
+        "unique_users": 3,
+        "access_count": 131
+      },
+      {
+        "cluster": "cluster_0",
+        "unique_users": 3,
+        "access_count": 33
+      },
+      {
+        "cluster": "cluster_1",
+        "unique_users": 3,
+        "access_count": 33
+      }
+    ]
+  },
+  {
+    "type": "domain_knowledge",
+    "id": "dk_device_metric",
+    "product_area": "device_business",
+    "tables": [
+      "device_orders"
+    ],
+    "columns": [
+      "order_amount",
+      "profit_amount",
+      "status",
+      "org_code"
+    ],
+    "text": "设备订货金额仅统计 status='confirmed' 的 order_amount；设备利润统计同一批订单的 profit_amount；所有查询必须显式限定 org_code，金额单位 CNY。"
+  },
+  {
+    "type": "domain_knowledge",
+    "id": "dk_half_year",
+    "product_area": "device_business",
+    "tables": [
+      "device_orders"
+    ],
+    "columns": [
+      "year_month"
+    ],
+    "text": "2026 年上半年在 year_month 整数列上表示为 202601 到 202606（含边界）。"
+  },
+  {
+    "type": "domain_knowledge",
+    "id": "dk_sales_not_order",
+    "product_area": "sales",
+    "tables": [
+      "sales_orders"
+    ],
+    "columns": [
+      "sales_amount"
+    ],
+    "text": "销售额是 sales_orders.sales_amount，不等同于设备订货金额。"
+  },
+  {
+    "id": "glossary:设备订货金额",
+    "type": "glossary",
+    "name": "设备订货金额",
+    "definition": "已确认设备订货单的 order_amount 合计。",
+    "sql_expression": "SUM(device_orders.order_amount)",
+    "required_filters": [
+      "device_orders.status = 'confirmed'",
+      "显式 org_code"
+    ],
+    "unit": "CNY",
+    "owner": "device_analytics"
+  },
+  {
+    "id": "glossary:产品一级分类",
+    "type": "glossary",
+    "name": "产品一级分类",
+    "definition": "device_orders.product_l1，也可由 product_master.product_l1 取得。",
+    "owner": "master_data"
+  },
+  {
+    "id": "jargon:设备订货",
+    "type": "jargon",
+    "name": "设备订货",
+    "explanation": "设备产品订单，不是 sales_orders 中的销售收入；使用 device_orders。"
+  },
+  {
+    "id": "jargon:设备订货金额",
+    "type": "jargon",
+    "name": "设备订货金额",
+    "explanation": "confirmed 设备订单的 order_amount 合计，单位 CNY。"
+  },
+  {
+    "id": "jargon:设备利润",
+    "type": "jargon",
+    "name": "设备利润",
+    "explanation": "与设备订货金额同口径订单的 profit_amount 合计，单位 CNY。"
+  },
+  {
+    "id": "jargon:上半年",
+    "type": "jargon",
+    "name": "上半年",
+    "explanation": "自然年 1 月到 6 月，本数据中 year_month BETWEEN YYYY01 AND YYYY06。"
+  }
+]

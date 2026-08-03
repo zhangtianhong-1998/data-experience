@@ -1,0 +1,3 @@
+Built: 1 models, 0 views → /Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/wrenai/device_project/target/mdl.json
+
+Next: wren --sql 'SELECT ...' to query your data.

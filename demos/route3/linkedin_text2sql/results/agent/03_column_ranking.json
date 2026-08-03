@@ -1,0 +1,153 @@
+{
+  "schemas": {
+    "device_orders": [
+      {
+        "name": "order_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": null
+      },
+      {
+        "name": "order_date",
+        "type": "DATE",
+        "nullable": true,
+        "description": "订货日期"
+      },
+      {
+        "name": "year_month",
+        "type": "INTEGER",
+        "nullable": true,
+        "description": "YYYYMM 整数月份"
+      },
+      {
+        "name": "org_code",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": "组织编码，分析必须显式限定"
+      },
+      {
+        "name": "product_code",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": null
+      },
+      {
+        "name": "product_l1",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": "产品一级分类"
+      },
+      {
+        "name": "order_amount",
+        "type": "INTEGER",
+        "nullable": true,
+        "description": "设备订货金额，演示单位为 CNY"
+      },
+      {
+        "name": "profit_amount",
+        "type": "INTEGER",
+        "nullable": true,
+        "description": "设备利润金额，演示单位为 CNY"
+      },
+      {
+        "name": "country",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": null
+      },
+      {
+        "name": "status",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": "confirmed 或 cancelled；指标只统计 confirmed"
+      }
+    ],
+    "product_master": [
+      {
+        "name": "product_code",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": "产品编码"
+      },
+      {
+        "name": "product_l1",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": "产品一级分类"
+      },
+      {
+        "name": "product_name",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": "产品名称"
+      }
+    ],
+    "sales_orders": [
+      {
+        "name": "sales_order_id",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": null
+      },
+      {
+        "name": "order_date",
+        "type": "DATE",
+        "nullable": true,
+        "description": null
+      },
+      {
+        "name": "org_code",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": null
+      },
+      {
+        "name": "product_l1",
+        "type": "VARCHAR",
+        "nullable": true,
+        "description": null
+      },
+      {
+        "name": "sales_amount",
+        "type": "BIGINT",
+        "nullable": true,
+        "description": "销售金额"
+      }
+    ]
+  },
+  "selected_columns": {
+    "device_orders": {
+      "relevant": [
+        "org_code",
+        "year_month",
+        "status",
+        "product_l1",
+        "order_amount",
+        "profit_amount"
+      ],
+      "potentially_relevant": [
+        "order_date",
+        "product_code",
+        "country",
+        "order_id"
+      ]
+    },
+    "product_master": {
+      "relevant": [],
+      "potentially_relevant": [
+        "product_code",
+        "product_l1",
+        "product_name"
+      ]
+    },
+    "sales_orders": {
+      "relevant": [],
+      "potentially_relevant": [
+        "org_code",
+        "product_l1",
+        "sales_amount",
+        "order_date"
+      ]
+    }
+  }
+}

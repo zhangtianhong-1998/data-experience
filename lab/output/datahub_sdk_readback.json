@@ -1,0 +1,49 @@
+{
+  "python_type": "datahub.sdk.dataset.Dataset",
+  "urn": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_order_profit,PROD)",
+  "display_name": "设备订货与利润事实表",
+  "description": "实验资产：字段来自 BI 中间表头，不含业务行数据。c27、c28 的中文含义来自历史 SQL 别名，尚不能据此认定正式口径。",
+  "custom_properties": {
+    "evidence_status": "observed_not_certified",
+    "source_kind": "BI_SQL_and_physical_header"
+  },
+  "owners": [
+    {
+      "owner": "urn:li:corpuser:zhangsan",
+      "type": "TECHNICAL_OWNER"
+    }
+  ],
+  "tags": [
+    "urn:li:tag:FinancialMetricCandidate"
+  ],
+  "terms": [
+    "urn:li:glossaryTerm:device_order_amount"
+  ],
+  "schema": [
+    {
+      "field_path": "c0",
+      "native_type": "TEXT",
+      "description": "历史 SQL 中的必填过滤字段；业务含义待确认。"
+    },
+    {
+      "field_path": "c2",
+      "native_type": "TEXT",
+      "description": "历史 SQL 中常被别名为“年月”；格式待确认。"
+    },
+    {
+      "field_path": "c7",
+      "native_type": "TEXT",
+      "description": "历史 SQL 中常被别名为“产品LV1”。"
+    },
+    {
+      "field_path": "c27",
+      "native_type": "NUMERIC",
+      "description": "历史 SQL 中常以 SUM(c27) 命名为设备订货。"
+    },
+    {
+      "field_path": "c28",
+      "native_type": "NUMERIC",
+      "description": "历史 SQL 中常以 SUM(c28) 命名为设备利润。"
+    }
+  ]
+}

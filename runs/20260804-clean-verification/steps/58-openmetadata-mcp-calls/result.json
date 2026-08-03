@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.979,
+  "stdout_sha256": "dc7b7bb46af1868243850adbd9ed8857ca3b0b6cd4249500a0846d2a4820c297",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route2/openmetadata/results/mcp_calls.json",
+      "exists": true,
+      "size": 51939,
+      "sha256": "fb59c394347e5e51248cab64061ad1fdff936c9f8e2f0c471b9867f69b0288d1"
+    }
+  ]
+}

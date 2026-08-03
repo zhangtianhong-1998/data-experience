@@ -1,0 +1,40 @@
+source:
+  type: mysql
+  serviceName: enterprise_mysql
+  serviceConnection:
+    config:
+      type: Mysql
+      username: demo_reader
+      authType:
+        password: reader_password
+      hostPort: mysql:3306
+      databaseSchema: enterprise_demo
+      connectionArguments:
+        charset: utf8mb4
+  sourceConfig:
+    config:
+      type: DatabaseMetadata
+      includeTables: true
+      includeViews: true
+      includeDDL: true
+      overrideMetadata: true
+      databaseFilterPattern:
+        includes:
+          - enterprise_demo
+      schemaFilterPattern:
+        includes:
+          - enterprise_demo
+      markDeletedTables: true
+      markDeletedSchemas: true
+      markDeletedDatabases: true
+sink:
+  type: metadata-rest
+  config: {}
+workflowConfig:
+  loggerLevel: INFO
+  openMetadataServerConfig:
+    hostPort: http://openmetadata-server:8585/api
+    authProvider: openmetadata
+    securityConfig:
+      jwtToken: ${OM_JWT_TOKEN}
+    storeServiceConnection: false

@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "checks": {
+    "official_mcp_tools_exposed": true,
+    "search_finds_governed_dataset": true,
+    "business_description_returned": true,
+    "required_filter_returned": true,
+    "glossary_term_returned": true,
+    "ten_schema_fields_returned": true,
+    "two_real_query_examples_returned": true,
+    "bi_downstream_lineage_returned": true
+  },
+  "evidence": {
+    "tool_names": [
+      "search",
+      "get_lineage",
+      "get_dataset_queries",
+      "get_entities",
+      "list_schema_fields",
+      "get_lineage_paths_between"
+    ],
+    "dataset": "urn:li:dataset:(urn:li:dataPlatform:sqlite,main.device_orders,PROD)",
+    "schema_field_count": 10,
+    "query_count": 2,
+    "downstream_count": 2
+  }
+}

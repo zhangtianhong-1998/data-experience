@@ -1,0 +1,27 @@
+{
+  "step": "61-openmetadata-stop",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "docker",
+    "compose",
+    "-p",
+    "data-experience-openmetadata",
+    "-f",
+    "demos/route2/openmetadata/official/docker-compose.yml",
+    "-f",
+    "demos/route2/openmetadata/compose.override.yml",
+    "stop"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "started_epoch": 1785777571.2669928
+}

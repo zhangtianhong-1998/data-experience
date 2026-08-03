@@ -1,0 +1,5 @@
+Profile 'route-demo' added.
+→ Validating connection...
+✓ Connection validated
+
+Next: wren context init

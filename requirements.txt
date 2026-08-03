@@ -1,0 +1,4 @@
+openpyxl>=3.1,<4
+pydantic>=2.12,<3
+jsonschema>=4.25,<5
+sqlglot>=30.14,<31

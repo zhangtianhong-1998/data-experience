@@ -1,0 +1,13 @@
+{
+  "设备订货金额": {
+    "definition": "已确认设备订货单的 order_amount 合计。",
+    "sql_expression": "SUM(device_orders.order_amount)",
+    "required_filters": ["device_orders.status = 'confirmed'", "显式 org_code"],
+    "unit": "CNY",
+    "owner": "device_analytics"
+  },
+  "产品一级分类": {
+    "definition": "device_orders.product_l1，也可由 product_master.product_l1 取得。",
+    "owner": "master_data"
+  }
+}

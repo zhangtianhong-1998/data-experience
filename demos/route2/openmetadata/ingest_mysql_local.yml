@@ -1,0 +1,40 @@
+# Host-run fallback for the same official 1.13.0 ingestion package. The Docker
+# image pull was attempted first and its network failure is retained in runs/.
+source:
+  type: mysql
+  serviceName: enterprise_mysql
+  serviceConnection:
+    config:
+      type: Mysql
+      username: demo_reader
+      authType:
+        password: reader_password
+      hostPort: 127.0.0.1:3306
+      databaseSchema: enterprise_demo
+      connectionArguments:
+        charset: utf8mb4
+  sourceConfig:
+    config:
+      type: DatabaseMetadata
+      includeTables: true
+      includeViews: true
+      includeDDL: true
+      overrideMetadata: true
+      databaseFilterPattern:
+        includes: [enterprise_demo]
+      schemaFilterPattern:
+        includes: [enterprise_demo]
+      markDeletedTables: true
+      markDeletedSchemas: true
+      markDeletedDatabases: true
+sink:
+  type: metadata-rest
+  config: {}
+workflowConfig:
+  loggerLevel: INFO
+  openMetadataServerConfig:
+    hostPort: http://127.0.0.1:8585/api
+    authProvider: openmetadata
+    securityConfig:
+      jwtToken: ${OM_JWT_TOKEN}
+    storeServiceConnection: false
