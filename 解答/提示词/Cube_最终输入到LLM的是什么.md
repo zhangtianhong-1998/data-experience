@@ -49,6 +49,8 @@ Cube 官方也明确区分了两种产品：
 
 因此，任何人如果声称下面展示的是“Cube Cloud 官方原始提示词”，都需要拿出可核验的公开源码或请求日志。我们目前没有这样的证据。
 
+在这份说明写成以后，仓库又增加了一个独立的外部 Agent 实验。它确实调用了真实 LLM，但调用方是我们可检查的 [`nl_to_dsl`](../../demos/route1/nl_to_dsl/README.md)，不是 Cube Core，也不冒充 Cube Cloud。最终 LLM 请求的两条完整 message 和原始回答在 [`calls/cube/01_exact.json`](../../demos/route1/nl_to_dsl/results/calls/cube/01_exact.json)。
+
 ## Cube 真正能公开给智能体的是什么？
 
 Cube Core 的 `/cubejs-api/v1/meta` 会返回当前身份可见的语义对象。为了避免只读配置文件后凭印象描述，我重新启动了本机 Cube 容器并实际调用了 `/meta`。与本问题相关的返回可以精简为：
@@ -57,18 +59,24 @@ Cube Core 的 `/cubejs-api/v1/meta` 会返回当前身份可见的语义对象�
 {
   "name": "DeviceOrders",
   "title": "设备订货事实",
-  "description": "合成数据。每行是一张设备订货单；指标只统计 confirmed 状态。",
+  "description": "每行是一张设备订货单；指标只统计 confirmed 状态。本模型不用于销售金额。",
   "measures": [
     {
       "name": "DeviceOrders.deviceOrderAmount",
       "title": "设备订货事实 设备订货金额",
       "description": "已确认设备订货单的 order_amount 合计，演示单位 CNY.",
+      "meta": {
+        "ai_context": "同义词包括设备订货额；只说金额时必须追问；不能用于销售金额。"
+      },
       "type": "number"
     },
     {
       "name": "DeviceOrders.deviceProfitAmount",
       "title": "设备订货事实 设备利润金额",
-      "description": null,
+      "description": "已确认设备订货单的设备利润合计；不能解释为净利润。",
+      "meta": {
+        "ai_context": "同义词包括设备利润额；只说金额时必须追问。"
+      },
       "type": "number"
     },
     {
@@ -82,7 +90,11 @@ Cube Core 的 `/cubejs-api/v1/meta` 会返回当前身份可见的语义对象�
     {"name": "DeviceOrders.orderId", "type": "string"},
     {"name": "DeviceOrders.orderDate", "type": "time"},
     {"name": "DeviceOrders.yearMonth", "type": "number"},
-    {"name": "DeviceOrders.orgCode", "type": "string"},
+    {
+      "name": "DeviceOrders.orgCode",
+      "description": "组织编码；每次分析必须由用户显式给出。",
+      "type": "string"
+    },
     {
       "name": "DeviceOrders.productL1",
       "title": "设备订货事实 产品一级分类",
@@ -97,7 +109,7 @@ Cube Core 的 `/cubejs-api/v1/meta` 会返回当前身份可见的语义对象�
 
 ## 如果用自己的 LLM 接 Cube，拼装后的输入长什么样？
 
-下面给出一份**可复现的参考拼装**。它使用了上面实际返回的 Meta 和真实问题，但这段系统指令是我们为了展示外部 Agent 怎样接 Cube 而写的，**不是 Cube Cloud 内部提示词**。
+下面先用人能读懂的方式拆开这份**可复现外部 Agent 拼装**。它使用真实 Meta 和真实问题，但系统指令由本仓库定义，**不是 Cube Cloud 内部提示词**。可运行版本及未经删节的输入以 [`run_experiment.py`](../../demos/route1/nl_to_dsl/run_experiment.py) 和最终调用记录为准。
 
 真实 LLM API 通常不会只有一个长字符串，而是由 `messages` 和一个限制输出形状的工具定义组成。为了方便人阅读，先展开成四块。
 
@@ -227,9 +239,9 @@ ORG_1001 在 2026 年上半年，按产品一级分类统计设备订货金额�
 
 ## 这份示例证明了什么，又没有证明什么？
 
-它清楚展示了一个外部 LLM 怎样使用 Cube Meta 生成查询 DSL，也说明了最终上下文中不必包含物理表的全部字段和指标 SQL。
+它清楚展示了一个外部 LLM 怎样使用 Cube Meta 生成查询 DSL，也说明了最终上下文中不必包含物理表的全部字段和指标 SQL。现在这条外部链路已经用 5 类问题实际运行：最终 5/5 判断正确，两份可执行 Cube Query 均与 golden result 一致。
 
-但它仍然只是我们根据公开接口构造的参考 Agent 输入，没有证明 Cube Cloud Analytics Chat 内部使用相同措辞、相同 JSON Schema 或相同检索顺序。要验证托管版原始请求，必须获得 Cube 官方公开源码、可观测日志或官方提供的 Prompt 调试界面。
+但它仍然是我们根据公开接口构造的外部 Agent，没有证明 Cube Cloud Analytics Chat 内部使用相同措辞、相同 JSON Schema 或相同检索顺序。要验证托管版原始请求，必须获得 Cube 官方公开源码、可观测日志或官方提供的 Prompt 调试界面。
 
 ## 可核对的文件和官方资料
 
@@ -238,6 +250,8 @@ ORG_1001 在 2026 年上半年，按产品一级分类统计设备订货金额�
 - 本机真实查询对象：[query.json](../../demos/route1/cube/query.json)
 - 本机真实编译结果：[sql_response.json](../../demos/route1/cube/results/sql_response.json)
 - 本次洁净补充运行：[20260804-prompt-inspection](../../runs/20260804-prompt-inspection/README.md)
+- 真实自然语言规划实验：[自然语言 → Cube/Wren DSL](../../demos/route1/nl_to_dsl/README.md)
+- 最终 Cube 标准问题完整 LLM 请求：[01_exact.json](../../demos/route1/nl_to_dsl/results/calls/cube/01_exact.json)
 - [Cube Core 不包含 AI 功能](https://docs.cube.dev/docs/getting-started)
 - [Cube View 是提供给用户和 AI 的精选语义界面](https://docs.cube.dev/docs/data-modeling/views)
 - [Cube description 与 meta.ai_context 怎样供 AI 使用](https://docs.cube.dev/docs/data-modeling/ai-context)

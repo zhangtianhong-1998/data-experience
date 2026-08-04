@@ -35,13 +35,13 @@
       }
     ]
   },
-  "lastRefreshTime": "2026-08-04T08:38:24.444Z",
+  "lastRefreshTime": "2026-08-04T08:53:06.964Z",
   "refreshKeyValues": [
     {
       "isWrapper": true,
       "cache": [
         {
-          "refresh_key": "178583270"
+          "refresh_key": "178583356"
         }
       ],
       "cached": true,
@@ -50,7 +50,7 @@
       "transformData": null,
       "rootResultObject": {},
       "0": {
-        "refresh_key": "178583270"
+        "refresh_key": "178583356"
       },
       "length": 1
     }
@@ -182,26 +182,42 @@
     "sortedAllCubeNames": null,
     "hasMultiStage": false
   },
-  "requestId": "f4159d39-8ba0-4bc0-b667-d85a41272c3f-span-1",
+  "requestId": "da962fed-574a-44c5-8d7e-17deb0bcf9d9-span-1",
   "annotation": {
     "segments": {},
-    "timeDimensions": {},
+    "dimensions": {
+      "DeviceOrders.productL1": {
+        "title": "设备订货事实 产品一级分类",
+        "shortTitle": "产品一级分类",
+        "type": "string",
+        "meta": {
+          "ai_context": "“产品大类”在本模型中指产品一级分类。"
+        }
+      }
+    },
     "measures": {
-      "DeviceOrders.deviceProfitAmount": {
-        "title": "设备订货事实 设备利润金额",
-        "shortTitle": "设备利润金额",
+      "DeviceOrders.deviceOrderAmount": {
+        "title": "设备订货事实 设备订货金额",
+        "shortTitle": "设备订货金额",
+        "description": "已确认设备订货单的 order_amount 合计，演示单位 CNY.",
         "type": "number",
+        "meta": {
+          "ai_context": "同义词包括“设备订货额”和“设备订单金额”。不能用于“销售金额”。用户只说“金额”时，无法区分订货金额和利润金额，必须追问。"
+        },
         "drillMembers": [],
         "drillMembersGrouped": {
           "measures": [],
           "dimensions": []
         }
       },
-      "DeviceOrders.deviceOrderAmount": {
-        "title": "设备订货事实 设备订货金额",
-        "shortTitle": "设备订货金额",
-        "description": "已确认设备订货单的 order_amount 合计，演示单位 CNY.",
+      "DeviceOrders.deviceProfitAmount": {
+        "title": "设备订货事实 设备利润金额",
+        "shortTitle": "设备利润金额",
+        "description": "已确认设备订货单的设备利润合计；不能解释为净利润。",
         "type": "number",
+        "meta": {
+          "ai_context": "同义词包括“设备利润额”。用户明确询问净利润时不得使用本指标。用户只说“金额”时，无法区分订货金额和利润金额，必须追问。"
+        },
         "drillMembers": [],
         "drillMembersGrouped": {
           "measures": [],
@@ -209,13 +225,7 @@
         }
       }
     },
-    "dimensions": {
-      "DeviceOrders.productL1": {
-        "title": "设备订货事实 产品一级分类",
-        "shortTitle": "产品一级分类",
-        "type": "string"
-      }
-    }
+    "timeDimensions": {}
   },
   "dataSource": "default",
   "dbType": "duckdb",

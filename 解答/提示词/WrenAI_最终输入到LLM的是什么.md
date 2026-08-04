@@ -10,7 +10,9 @@
 
 所以“Wren 最终给 LLM 一个完整字符串”并不是最准确的理解。在 MCP 模式下，LLM 会分多轮看到：用户问题、Wren 工作流、可用工具定义，以及工具调用返回的语义上下文。
 
-还有一个实验边界必须提前说明：当前 [`invoke_mcp.py`](../../demos/route1/wrenai/invoke_mcp.py) 是测试脚本，它直接调用了 `get_context` 和 `query_cube`，中间没有 LLM。下面的提示词来自已安装包的真实模板；工具返回来自本机真实 MCP 调用，但“由模型自动选出查询参数”尚未在当前 Demo 中发生。
+还有一个实验边界必须提前说明：基础 [`invoke_mcp.py`](../../demos/route1/wrenai/invoke_mcp.py) 是测试脚本，它直接调用 `get_context` 和 `query_cube`，中间没有 LLM。下面的提示词来自已安装包的真实模板，工具返回来自本机真实 MCP 调用。
+
+仓库随后增加了独立的 [`nl_to_dsl`](../../demos/route1/nl_to_dsl/README.md) 外部 Agent 实验，真实 LLM 已经自动选择 Wren Cube、Measures、Dimensions 和 Filters。最终标准问题的完整 LLM 输入、原始响应与校验在 [`calls/wren/01_exact.json`](../../demos/route1/nl_to_dsl/results/calls/wren/01_exact.json)。这证明了本仓库的可复现编排，不代表 Wren Cloud 使用同一私有系统提示词。
 
 ## 第一种接法：`wren ask --guided` 实际打印什么？
 
@@ -242,7 +244,7 @@ Catalog: wren, Schema: public
 }
 ```
 
-在当前 Demo 中，这些参数是我们预先写进脚本的，不是 LLM 自动生成的。MCP 工具收到它以后，真实返回：
+在基础 MCP Demo 中，这些参数是预先写进脚本的。新增 `nl_to_dsl` 实验中，同样形状的参数已经由真实 LLM 生成、经过白名单和粒度校验，然后由 Wren CLI 实际执行。基础 MCP 工具收到参数后的真实返回是：
 
 ```json
 {
@@ -286,6 +288,8 @@ Wren 没有把“全部 MDL + 问题 + SQL 指令”永远塞进同一个静态�
 - 本机业务规则：[device_metrics.md](../../demos/route1/wrenai/device_project/knowledge/rules/device_metrics.md)
 - 本机 Wren Cube 查询对象：[cube_query.json](../../demos/route1/wrenai/device_project/cube_query.json)
 - 本次两种 Prompt 的实际运行记录：[20260804-prompt-inspection](../../runs/20260804-prompt-inspection/README.md)
+- 真实自然语言规划实验：[自然语言 → Cube/Wren DSL](../../demos/route1/nl_to_dsl/README.md)
+- 最终 Wren 标准问题完整 LLM 请求：[01_exact.json](../../demos/route1/nl_to_dsl/results/calls/wren/01_exact.json)
 - [Wren MCP Server 暴露的工具、资源和 Prompt](https://docs.getwren.ai/oss/guides/mcp)
 - [Wren memory fetch 的 30,000 字符阈值和默认 Top 5](https://docs.getwren.ai/oss/reference/cli)
 - [Wren Memory 的 Schema 与历史查询召回机制](https://docs.getwren.ai/oss/concepts/memory_system)

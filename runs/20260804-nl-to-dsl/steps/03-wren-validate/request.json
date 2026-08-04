@@ -1,0 +1,22 @@
+{
+  "step": "03-wren-validate",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/wrenai/device_project",
+  "argv": [
+    "runtime/wren-venv/bin/wren",
+    "context",
+    "validate",
+    "--strict"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.9.6"
+  },
+  "started_epoch": 1785833373.120981
+}

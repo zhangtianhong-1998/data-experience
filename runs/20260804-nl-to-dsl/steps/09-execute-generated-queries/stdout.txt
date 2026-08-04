@@ -1,0 +1,27 @@
+{
+  "executed_queries": 4,
+  "matched": 4,
+  "all_match": true,
+  "results": [
+    {
+      "framework": "cube",
+      "case_id": "01_exact",
+      "match": true
+    },
+    {
+      "framework": "cube",
+      "case_id": "02_synonyms",
+      "match": true
+    },
+    {
+      "framework": "wren",
+      "case_id": "01_exact",
+      "match": true
+    },
+    {
+      "framework": "wren",
+      "case_id": "02_synonyms",
+      "match": true
+    }
+  ]
+}

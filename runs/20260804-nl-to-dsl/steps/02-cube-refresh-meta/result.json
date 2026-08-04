@@ -1,0 +1,24 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.484,
+  "stdout_sha256": "4704e484b60059c34ad63eeeb0c45685d6fd9416b371ba1b381495c20aceaff4",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/nl_to_dsl/results/attempts/01_before_cube_ambiguity_context/cube_meta_response.json",
+      "exists": true,
+      "size": 5084,
+      "sha256": "0fe592c213249d73e4e92532af2b2457f0e95b87ddb3fec5a0e09b46ba515b93",
+      "original_run_size": 5083,
+      "original_run_sha256": "3515fc57cbee82529dc2f556d873853f3bf8c16dd290ef78ac78b0777c662ed3",
+      "snapshot_note": "Semantic snapshot reconstructed after the later Meta refresh; JSON differs from the original run only by final newline normalization. The exact initial semantic context is also embedded in attempt 01 LLM requests."
+    },
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/cube/results/verification.json",
+      "exists": true,
+      "size": 5423,
+      "sha256": "21b02174cb5341906c5762060175adb13d858e02562575e367536c3523b28621"
+    }
+  ]
+}

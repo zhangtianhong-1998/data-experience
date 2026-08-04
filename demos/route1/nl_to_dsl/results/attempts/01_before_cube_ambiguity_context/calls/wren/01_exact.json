@@ -1,0 +1,79 @@
+{
+  "framework": "wren",
+  "case": {
+    "id": "01_exact",
+    "question": "ORG_1001 在 2026 年上半年，按产品一级分类统计设备订货金额和设备利润。",
+    "expected_status": "ready"
+  },
+  "context_source": "actual compiled Wren target/mdl.json plus knowledge/rules",
+  "context_strategy": "full context because the MDL is below Wren's 30,000-character threshold",
+  "llm": {
+    "successful_request": {
+      "model": "glm-5.2",
+      "temperature": 0,
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是企业语义查询规划器。你不写物理 SQL，只能从给定语义上下文中选择正式对象并生成结构化查询。\n\n必须遵守：\n1. 只能使用上下文出现的正式 Cube、Measure、Dimension 和操作符，绝不发明字段、指标、公式或 Join。\n2. 先判断问题是否具备唯一且可执行的业务含义。只有全部指标、分组、组织和时间范围都明确时才能返回 ready。\n3. 缺少必填条件或存在多个合理指标时返回 needs_clarification，并提出一个具体问题；query 必须为 null。\n4. 问题明确要求语义层声明不可替代或不支持的概念时返回 unsupported；query 必须为 null。\n5. 不要把“销售金额”解释成“设备订货金额”，不要把“净利润”解释成“设备利润”。\n6. 时间范围必须使用闭区间：2026 年上半年是 2026-01-01 至 2026-06-30；Wren 的 year_month 范围是 202601 至 202606。\n7. 只返回一个 JSON 对象，不要输出 Markdown。"
+        },
+        {
+          "role": "user",
+          "content": "{\n  \"framework\": \"wren\",\n  \"question\": \"ORG_1001 在 2026 年上半年，按产品一级分类统计设备订货金额和设备利润。\",\n  \"current_date\": \"2026-08-04\",\n  \"semantic_context\": {\n    \"source\": \"actual compiled Wren target/mdl.json plus knowledge/rules\",\n    \"scope_strategy\": \"full context because the MDL is below Wren's 30,000-character threshold\",\n    \"model\": {\n      \"name\": \"device_orders\",\n      \"tableReference\": {\n        \"catalog\": \"demo\",\n        \"schema\": \"main\",\n        \"table\": \"device_orders\"\n      },\n      \"columns\": [\n        {\n          \"name\": \"order_id\",\n          \"type\": \"VARCHAR\",\n          \"isPrimaryKey\": true\n        },\n        {\n          \"name\": \"order_date\",\n          \"type\": \"DATE\"\n        },\n        {\n          \"name\": \"year_month\",\n          \"type\": \"INTEGER\"\n        },\n        {\n          \"name\": \"org_code\",\n          \"type\": \"VARCHAR\",\n          \"properties\": {\n            \"description\": \"组织编码；分析必须显式限定。\"\n          }\n        },\n        {\n          \"name\": \"product_code\",\n          \"type\": \"VARCHAR\"\n        },\n        {\n          \"name\": \"product_l1\",\n          \"type\": \"VARCHAR\",\n          \"properties\": {\n            \"description\": \"产品一级分类。\"\n          }\n        },\n        {\n          \"name\": \"order_amount\",\n          \"type\": \"DOUBLE\"\n        },\n        {\n          \"name\": \"profit_amount\",\n          \"type\": \"DOUBLE\"\n        },\n        {\n          \"name\": \"country\",\n          \"type\": \"VARCHAR\"\n        },\n        {\n          \"name\": \"status\",\n          \"type\": \"VARCHAR\"\n        }\n      ],\n      \"properties\": {\n        \"description\": \"合成设备订货事实表。每行一张订货单，取消单不得计入指标。\"\n      }\n    },\n    \"cube\": {\n      \"name\": \"device_business\",\n      \"baseObject\": \"device_orders\",\n      \"measures\": [\n        {\n          \"name\": \"device_order_amount\",\n          \"expression\": \"SUM(CASE WHEN status = 'confirmed' THEN order_amount ELSE 0 END)\",\n          \"type\": \"DOUBLE\"\n        },\n        {\n          \"name\": \"device_profit_amount\",\n          \"expression\": \"SUM(CASE WHEN status = 'confirmed' THEN profit_amount ELSE 0 END)\",\n          \"type\": \"DOUBLE\"\n        }\n      ],\n      \"dimensions\": [\n        {\n          \"name\": \"product_l1\",\n          \"expression\": \"product_l1\",\n          \"type\": \"VARCHAR\"\n        },\n        {\n          \"name\": \"org_code\",\n          \"expression\": \"org_code\",\n          \"type\": \"VARCHAR\"\n        },\n        {\n          \"name\": \"year_month\",\n          \"expression\": \"year_month\",\n          \"type\": \"INTEGER\"\n        },\n        {\n          \"name\": \"status\",\n          \"expression\": \"status\",\n          \"type\": \"VARCHAR\"\n        }\n      ],\n      \"properties\": {\n        \"description\": \"已确认设备订货金额和利润的可执行 cube。\"\n      }\n    },\n    \"business_rules\": \"# 设备业务规则\\n\\n- `device_order_amount` 只合计 `status = 'confirmed'` 的 `order_amount`。\\n- 查询必须显式给出 `org_code`，不得默认跨组织汇总。\\n- 演示金额单位为 CNY。\\n- “设备订货额”“设备订单金额”都指 `device_order_amount`；“设备利润额”指 `device_profit_amount`。\\n- 用户只说“金额”时，无法区分订货金额和利润金额，必须追问。\\n- `device_profit_amount` 是设备利润，不是净利润；用户明确询问净利润时不得替代。\\n- “销售金额”属于 `sales_orders`，不能代替设备订货金额。\\n\"\n  },\n  \"required_output\": {\n    \"status\": \"ready | needs_clarification | unsupported\",\n    \"reason\": \"简洁说明为什么做出这一判断\",\n    \"clarification_question\": \"需要追问时填写字符串，否则为 null\",\n    \"query\": {\n      \"cube\": \"仅允许 device_business\",\n      \"measures\": \"仅允许 device_order_amount、device_profit_amount\",\n      \"dimensions\": \"仅允许 product_l1、org_code、year_month、status\",\n      \"filters\": [\n        \"dimension:operator:value；操作符只允许 eq、gte、lte\"\n      ]\n    },\n    \"query_note\": \"status 不是 ready 时，query 必须为 null\"\n  }\n}"
+        }
+      ],
+      "response_format": {
+        "type": "json_object"
+      },
+      "api_key_included_in_record": false,
+      "base_url_included_in_record": false
+    },
+    "format_mode": "json_object",
+    "raw_response": "```json\n{\n  \"status\": \"ready\",\n  \"reason\": \"指标明确：设备订货金额对应 device_order_amount、设备利润对应 device_profit_amount；分组为 product_l1；组织为 ORG_1001；时间为 2026 上半年 year_month 202601-202606。status='confirmed' 条件已内置于 measure 表达式，无需在 filters 中重复。\",\n  \"clarification_question\": null,\n  \"query\": {\n    \"cube\": \"device_business\",\n    \"measures\": [\n      \"device_order_amount\",\n      \"device_profit_amount\"\n    ],\n    \"dimensions\": [\n      \"product_l1\"\n    ],\n    \"filters\": [\n      \"org_code:eq:ORG_1001\",\n      \"year_month:gte:202601\",\n      \"year_month:lte:202606\"\n    ]\n  },\n  \"query_note\": \"measure 表达式已内置 status='confirmed' 过滤，仅统计已确认订单；按 product_l1 分组返回两项指标。\"\n}\n```",
+    "parsed_response": {
+      "status": "ready",
+      "reason": "指标明确：设备订货金额对应 device_order_amount、设备利润对应 device_profit_amount；分组为 product_l1；组织为 ORG_1001；时间为 2026 上半年 year_month 202601-202606。status='confirmed' 条件已内置于 measure 表达式，无需在 filters 中重复。",
+      "clarification_question": null,
+      "query": {
+        "cube": "device_business",
+        "measures": [
+          "device_order_amount",
+          "device_profit_amount"
+        ],
+        "dimensions": [
+          "product_l1"
+        ],
+        "filters": [
+          "org_code:eq:ORG_1001",
+          "year_month:gte:202601",
+          "year_month:lte:202606"
+        ]
+      },
+      "query_note": "measure 表达式已内置 status='confirmed' 过滤，仅统计已确认订单；按 product_l1 分组返回两项指标。"
+    },
+    "response_metadata": {
+      "id": "02178583344948476f8256debb8f03d2da9dea6cc2a650df5c2a6",
+      "model": "glm-5.2",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 927,
+        "prompt_tokens": 1231,
+        "total_tokens": 2158,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        }
+      }
+    },
+    "failed_attempts": []
+  },
+  "validation": {
+    "passed": true,
+    "errors": []
+  }
+}

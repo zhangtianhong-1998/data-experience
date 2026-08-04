@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01_exact",
+    "question": "ORG_1001 在 2026 年上半年，按产品一级分类统计设备订货金额和设备利润。",
+    "expected_status": "ready"
+  },
+  {
+    "id": "02_synonyms",
+    "question": "请看 ORG_1001 在 2026 年 1 月到 6 月各产品大类的设备订货额和设备利润额。",
+    "expected_status": "ready"
+  },
+  {
+    "id": "03_ambiguous_amount",
+    "question": "ORG_1001 在 2026 年上半年，按产品一级分类统计金额。",
+    "expected_status": "needs_clarification"
+  },
+  {
+    "id": "04_missing_org",
+    "question": "2026 年上半年按产品一级分类统计设备订货金额和设备利润。",
+    "expected_status": "needs_clarification"
+  },
+  {
+    "id": "05_out_of_domain",
+    "question": "ORG_1001 在 2026 年上半年，按产品一级分类统计销售金额。",
+    "expected_status": "unsupported"
+  }
+]

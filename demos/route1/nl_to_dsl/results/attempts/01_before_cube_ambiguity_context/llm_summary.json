@@ -1,0 +1,97 @@
+{
+  "model": "glm-5.2",
+  "real_llm_calls": 10,
+  "fallback_results": 0,
+  "api_key_logged": false,
+  "base_url_logged": false,
+  "passed": 9,
+  "failed": 1,
+  "all_passed": false,
+  "results": [
+    {
+      "framework": "cube",
+      "case_id": "01_exact",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "framework": "cube",
+      "case_id": "02_synonyms",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "framework": "cube",
+      "case_id": "03_ambiguous_amount",
+      "expected_status": "needs_clarification",
+      "actual_status": "ready",
+      "passed": false,
+      "errors": [
+        "expected status 'needs_clarification', got 'ready'",
+        "Cube measures do not match the governed pair",
+        "Cube query must use deterministic product ordering"
+      ]
+    },
+    {
+      "framework": "cube",
+      "case_id": "04_missing_org",
+      "expected_status": "needs_clarification",
+      "actual_status": "needs_clarification",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "framework": "cube",
+      "case_id": "05_out_of_domain",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "framework": "wren",
+      "case_id": "01_exact",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "framework": "wren",
+      "case_id": "02_synonyms",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "framework": "wren",
+      "case_id": "03_ambiguous_amount",
+      "expected_status": "needs_clarification",
+      "actual_status": "needs_clarification",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "framework": "wren",
+      "case_id": "04_missing_org",
+      "expected_status": "needs_clarification",
+      "actual_status": "needs_clarification",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "framework": "wren",
+      "case_id": "05_out_of_domain",
+      "expected_status": "unsupported",
+      "actual_status": "unsupported",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "scope_note": "External reproducible agent harness; not a claim about private Cube Cloud or Wren Cloud prompts."
+}

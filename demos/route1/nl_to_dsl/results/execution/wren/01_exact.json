@@ -1,0 +1,84 @@
+{
+  "generated_tool_query_path": "demos/route1/nl_to_dsl/results/generated/wren/01_exact.json",
+  "tool_query": {
+    "cube": "device_business",
+    "measures": [
+      "device_order_amount",
+      "device_profit_amount"
+    ],
+    "dimensions": [
+      "product_l1"
+    ],
+    "filters": [
+      "org_code:eq:ORG_1001",
+      "year_month:gte:202601",
+      "year_month:lte:202606"
+    ]
+  },
+  "deterministic_mcp_to_cli_transformation": {
+    "cube": "device_business",
+    "measures": [
+      "device_order_amount",
+      "device_profit_amount"
+    ],
+    "dimensions": [
+      "product_l1"
+    ],
+    "filters": [
+      {
+        "dimension": "org_code",
+        "operator": "eq",
+        "value": "ORG_1001"
+      },
+      {
+        "dimension": "year_month",
+        "operator": "gte",
+        "value": 202601
+      },
+      {
+        "dimension": "year_month",
+        "operator": "lte",
+        "value": 202606
+      }
+    ]
+  },
+  "generated_sql": "SELECT product_l1 AS product_l1, SUM(CASE WHEN status = 'confirmed' THEN order_amount ELSE 0 END) AS device_order_amount, SUM(CASE WHEN status = 'confirmed' THEN profit_amount ELSE 0 END) AS device_profit_amount FROM device_orders WHERE org_code = 'ORG_1001' AND year_month >= 202601 AND year_month <= 202606 GROUP BY 1",
+  "engine_stderr": "",
+  "actual": [
+    {
+      "product_l1": "Compute",
+      "device_order_amount": "7500",
+      "device_profit_amount": "1560"
+    },
+    {
+      "product_l1": "IoT",
+      "device_order_amount": "3400",
+      "device_profit_amount": "650"
+    },
+    {
+      "product_l1": "Network",
+      "device_order_amount": "3800",
+      "device_profit_amount": "730"
+    }
+  ],
+  "expected": [
+    {
+      "product_l1": "Compute",
+      "device_order_amount": "7500",
+      "device_profit_amount": "1560"
+    },
+    {
+      "product_l1": "IoT",
+      "device_order_amount": "3400",
+      "device_profit_amount": "650"
+    },
+    {
+      "product_l1": "Network",
+      "device_order_amount": "3800",
+      "device_profit_amount": "730"
+    }
+  ],
+  "match": true,
+  "framework": "wren",
+  "case_id": "01_exact"
+}

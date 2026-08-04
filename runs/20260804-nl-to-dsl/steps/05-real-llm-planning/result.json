@@ -1,0 +1,15 @@
+{
+  "exit_code": 1,
+  "launch_error": null,
+  "duration_seconds": 122.676,
+  "stdout_sha256": "b0005d1c825f9e38892ba9802ff866251bc4ada2746fa35210bcca516ce0e943",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/nl_to_dsl/results/attempts/01_before_cube_ambiguity_context/llm_summary.json",
+      "exists": true,
+      "size": 2441,
+      "sha256": "5d39afab5b91e883afde3e3f7f70349f974df962791f289513cd5301f4e45fc4"
+    }
+  ]
+}

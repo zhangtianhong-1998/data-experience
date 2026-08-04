@@ -1,0 +1,8 @@
+{
+  "exit_code": 127,
+  "launch_error": "FileNotFoundError: [Errno 2] No such file or directory: 'runtime/wren-venv/bin/wren'",
+  "duration_seconds": 0.001,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "adc466f6943b7ad633e18a6e5e06a938ced702e83a3988cd7a1d13e88dd4de5a",
+  "outputs": []
+}

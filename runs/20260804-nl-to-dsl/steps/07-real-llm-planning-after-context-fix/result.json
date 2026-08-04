@@ -1,0 +1,15 @@
+{
+  "exit_code": 1,
+  "launch_error": null,
+  "duration_seconds": 92.913,
+  "stdout_sha256": "6aa61fbb2c4a46c472ee4374d227f27f925718407fb3ad84754de5936686b9a6",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/nl_to_dsl/results/attempts/02_after_cube_context_before_planner_rule/llm_summary.json",
+      "exists": true,
+      "size": 2389,
+      "sha256": "b74edf4f01d6617ea545f27e845f59ec84d4a92c0c5eff8f8b534fdd87709372"
+    }
+  ]
+}

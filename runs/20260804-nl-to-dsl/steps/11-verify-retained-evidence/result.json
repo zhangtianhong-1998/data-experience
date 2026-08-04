@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.02,
+  "stdout_sha256": "9e9cca2bcc06bc1db6e41e6f3110932792eabf20226b6ad9f76fdb2b76d5a96f",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/nl_to_dsl/results/verification.json",
+      "exists": true,
+      "size": 2803,
+      "sha256": "7662c0573b0424f8be75051c3f612f2aa173c526624ed00a8ec2c38fee16698a"
+    }
+  ]
+}
