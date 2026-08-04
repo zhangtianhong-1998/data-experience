@@ -25,6 +25,71 @@
 
 图的可编辑源码在 [`路线一从问题到SQL.mmd`](./assets/路线一从问题到SQL.mmd)。
 
+## 先用一分钟认识 Cube 和 MDL 里的对象
+
+### Cube 中的 `cube` 对象
+
+这里第一个 `Cube` 是产品名称；配置里的 `cube(...)` 是这个产品中的一种模型对象。
+
+一个 `cube` 通常围绕一类业务记录组织内容：它从哪张表取数，有哪些可以分组的维度，有哪些可以计算的指标，以及怎样与其他对象连接。
+
+例如，我们的 `DeviceOrders` 对象可以精简成：
+
+```javascript
+cube('DeviceOrders', {
+  sql: 'SELECT * FROM device_orders',
+
+  measures: {
+    deviceOrderAmount: {
+      sql: `CASE WHEN status = 'confirmed'
+            THEN order_amount ELSE 0 END`,
+      type: 'sum'
+    }
+  },
+
+  dimensions: {
+    productL1: { sql: 'product_l1', type: 'string' },
+    orgCode:   { sql: 'org_code',   type: 'string' },
+    orderDate: { sql: 'order_date', type: 'time' }
+  }
+});
+```
+
+用人话说，它告诉系统：数据来自 `device_orders`；“设备订货金额”是一项指标；“产品一级分类、组织、日期”是查询时可以选择的观察角度。
+
+### WrenAI 中的 MDL
+
+MDL 是“建模描述语言”的名称，不是单独一张表，也不是单独一个指标。它描述的是整个可查询业务世界，里面可以包含：
+
+- **Model**：把物理表包装成语义对象，例如 `device_orders` 对应数据库中的同名表。
+- **Relationship**：说明两个 Model 怎样连接。
+- **View**：从多个对象中挑选并整理一组适合用户查询的字段。
+- **Cube**：在 Wren MDL 中集中声明一组可复用指标和分组维度。
+- **Knowledge**：补充“取消单不统计”“组织条件必须填写”等文字规则和历史成功问法。
+
+我们的 Wren Cube 精简后是：
+
+```yaml
+name: device_business
+base_object: device_orders
+
+measures:
+  - name: device_order_amount
+    expression: >
+      SUM(CASE WHEN status = 'confirmed'
+          THEN order_amount ELSE 0 END)
+
+dimensions:
+  - name: product_l1
+    expression: product_l1
+  - name: org_code
+    expression: org_code
+```
+
+它的意思是：`device_business` 建立在 `device_orders` 之上，对外提供“设备订货金额”，允许按产品和组织观察。
+
+两边都用了 `cube` 这个词，但对象边界不完全相同：Cube 产品中的 `cube` 是基础业务数据模型；WrenAI 的 MDL 是整套语言，而 `Cube` 只是 MDL 里面负责聚合查询的一类对象。它们共同的目标都是把物理字段包装成稳定、可查询的业务成员。
+
 ## 一、Cube 和 MDL 不是用户提问时才生成的
 
 还是使用我们 Demo 中的问题：
