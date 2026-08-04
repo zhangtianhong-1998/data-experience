@@ -20,12 +20,11 @@ def get_json(url: str) -> dict:
         return json.loads(response.read().decode("utf-8"))
 
 
-def wait_until_ready() -> None:
+def wait_until_ready() -> dict:
     last_error = None
     for _ in range(60):
         try:
-            get_json(f"{API}/meta")
-            return
+            return get_json(f"{API}/meta")
         except (URLError, TimeoutError, OSError, json.JSONDecodeError) as error:
             last_error = error
             time.sleep(1)
@@ -39,12 +38,15 @@ def expected_rows() -> list[dict[str, str]]:
 
 
 def main() -> None:
-    wait_until_ready()
+    meta_response = wait_until_ready()
     query = json.loads((ROOT / "query.json").read_text(encoding="utf-8"))
     encoded = quote(json.dumps(query, separators=(",", ":")))
     sql_response = get_json(f"{API}/sql?query={encoded}")
     load_response = get_json(f"{API}/load?query={encoded}")
     (ROOT / "results").mkdir(exist_ok=True)
+    (ROOT / "results" / "meta_response.json").write_text(
+        json.dumps(meta_response, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     (ROOT / "results" / "sql_response.json").write_text(
         json.dumps(sql_response, ensure_ascii=False, indent=2), encoding="utf-8"
     )

@@ -35,13 +35,13 @@
       }
     ]
   },
-  "lastRefreshTime": "2026-08-03T17:32:54.881Z",
+  "lastRefreshTime": "2026-08-04T08:38:24.444Z",
   "refreshKeyValues": [
     {
       "isWrapper": true,
       "cache": [
         {
-          "refresh_key": "178577837"
+          "refresh_key": "178583270"
         }
       ],
       "cached": true,
@@ -50,7 +50,7 @@
       "transformData": null,
       "rootResultObject": {},
       "0": {
-        "refresh_key": "178577837"
+        "refresh_key": "178583270"
       },
       "length": 1
     }
@@ -182,16 +182,10 @@
     "sortedAllCubeNames": null,
     "hasMultiStage": false
   },
-  "requestId": "d2f03fa6-e68f-4a7c-9927-f561ccafbb61-span-1",
+  "requestId": "f4159d39-8ba0-4bc0-b667-d85a41272c3f-span-1",
   "annotation": {
+    "segments": {},
     "timeDimensions": {},
-    "dimensions": {
-      "DeviceOrders.productL1": {
-        "title": "设备订货事实 产品一级分类",
-        "shortTitle": "产品一级分类",
-        "type": "string"
-      }
-    },
     "measures": {
       "DeviceOrders.deviceProfitAmount": {
         "title": "设备订货事实 设备利润金额",
@@ -215,7 +209,13 @@
         }
       }
     },
-    "segments": {}
+    "dimensions": {
+      "DeviceOrders.productL1": {
+        "title": "设备订货事实 产品一级分类",
+        "shortTitle": "产品一级分类",
+        "type": "string"
+      }
+    }
   },
   "dataSource": "default",
   "dbType": "duckdb",

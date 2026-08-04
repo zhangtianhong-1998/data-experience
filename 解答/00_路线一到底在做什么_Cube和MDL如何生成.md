@@ -317,9 +317,116 @@ WrenAI 的 MCP 调用表达的是同一件事，只是接口不同：
 
 ### 第二步：检索与问题相关的少量语义对象
 
-系统根据“设备订货”“利润”“产品一级分类”等词，只取回相关的 Cube、Measure、Dimension、业务说明和历史成功问法。
+先回答一个很容易被“向量检索”四个字糊弄过去的问题：**系统究竟怎样从几万个语义对象里，只拿出眼前问题需要的几个？**
 
-WrenAI Demo 的 `get_context` 已经展示了这个调用面：输入一个自然语言问题，返回相关 Model、Cube、指标公式、维度以及业务说明。这样大模型看到的是几十个相关候选，而不是全公司的几十万个字段。
+一般不会让大模型先阅读完整语义库再自己删减，而是分成下面几层。越靠前的步骤越确定，越不能交给大模型自由判断。
+
+#### 1. 先做硬过滤，不让无权对象进入候选集
+
+系统先根据租户、用户权限、业务域、Agent 所属空间和对象是否公开，排除根本不该看见的内容。
+
+例如公司总共有 8 万个字段，当前用户只属于“设备事业部”，Agent 又被限定只能使用“设备经营分析”空间，那么销售、人事和财务空间里的对象会在检索以前就被排除。权限过滤后的候选也许只剩下 3 个业务 View 和其中的 180 个成员。
+
+这一步不是相关性搜索，而是确定性的访问控制。
+
+#### 2. 把语义模型拆成可以独立召回的对象
+
+索引通常不会只保存一整份巨大的 Cube/MDL 文件，而会拆成较小的检索单元，例如：
+
+- 一个 Model 或 View；
+- 一个 Measure；
+- 一个 Dimension；
+- 一条 Relationship；
+- 一条业务规则；
+- 一组同义词；
+- 一条已经确认正确的“问题 → SQL”样例。
+
+每个检索单元不仅保存英文 ID，还会保存标题、中文说明、公式、所属模型、别名以及必要的约束。因此“订货额”和 `device_order_amount` 即使字面不同，也有机会通过描述、同义词或历史问法建立联系。
+
+#### 3. 用问题召回第一批候选
+
+常见实现是关键词匹配、向量相似度或两者结合。关键词擅长找精确 ID、编码和专有词；向量擅长处理“订货额”和“设备订单金额”这类不同措辞。生产系统还可能把以下信号加入排序：
+
+- 名称或别名是否精确命中；
+- 描述与问题是否相似；
+- 对象是否经过认证；
+- 过去成功查询是否经常使用它；
+- 当前业务域是否优先推荐它。
+
+这里先得到的是一批“可能相关”的对象，不是最终查询。`Top 5`、`Top 20` 都只是候选数量，不能把相似度最高直接等同于业务含义正确。
+
+#### 4. 沿语义关系补齐依赖
+
+单独召回一个指标通常还不能查询。系统还要补齐它所属的 Cube/View、可搭配的维度、时间字段、必要 Join、权限规则和口径说明。
+
+以这个问题为例：
+
+```text
+ORG_1001 在 2026 年上半年，
+按产品一级分类统计设备订货金额和利润
+```
+
+第一轮可能命中：
+
+```text
+device_order_amount
+device_profit_amount
+product_l1
+```
+
+沿依赖关系补齐后，交给大模型的候选包才会变成：
+
+```text
+所属 Cube：device_business
+指标：device_order_amount、device_profit_amount
+维度：product_l1、org_code、year_month
+口径：两个指标只统计 confirmed 状态
+约束：查询必须显式限定 org_code
+可用过滤操作：eq、gte、lte
+```
+
+这一步很关键。所谓“只检索少量对象”，并不是只给大模型三个孤零零的名字，而是给它一小块**能够闭合并真正执行**的语义子图。
+
+#### 5. 在上下文预算内重新排序和封装
+
+最后才把候选对象、规则和少量成功样例拼成 LLM 上下文。如果“利润”同时命中设备毛利润、净利润和贡献利润，而且没有足够证据区分，系统应保留歧义并要求大模型追问，不能为了凑出一个答案擅自删掉另外两个。
+
+上面是业界常见的通用结构。具体到我们正在看的两个实现，它们公开出来的程度并不相同。
+
+**WrenAI 0.13.2 的实现可以从本机安装包中完整看到：**
+
+- 它先把完整 MDL 转成一份结构化文本。
+- 文本不超过 30,000 个字符时，不做 Top-K，直接返回完整 Schema。代码注释给出的理由是：小规模 Schema 完整放入上下文，通常比打碎后检索更能保留模型、字段和 Join 关系。
+- 超过 30,000 个字符时，才把 Model、Column、Relationship、View、Cube、Measure、Cube Dimension 和 Time Dimension 分别建成索引记录。
+- 默认使用多语言句向量模型 `paraphrase-multilingual-MiniLM-L12-v2` 和 LanceDB 做相似度检索，`get_context` 默认返回 5 条；还可以按对象类型或所属模型过滤。
+- 已确认的历史“问题 → SQL”由 `recall_queries` 另行检索，默认返回 3 条；没有安装向量依赖时，这部分退化为关键词重合和整句包含匹配。
+
+我们这次 WrenAI Demo 的真实返回是：
+
+```json
+{
+  "strategy": "full",
+  "schema": "Catalog: wren, Schema: public\n\n### Model: device_orders ...\n### Cube: device_business ...",
+  "note": "Install wrenai[memory] ... for embedding-based schema search on large schemas."
+}
+```
+
+因此需要纠正前一版文档里的表述：**这次 Demo 并没有从几十个候选里检索出少量对象。因为 Schema 很小，Wren 实际选择的是把完整 MDL 描述返回给智能体。**只有大 Schema 才进入向量 Top-K 路径。
+
+**Cube 公开资料能够确认的是“怎样先缩小可见范围”，但没有公开 Cube Cloud 内部的完整检索排序代码：**
+
+- Cube Core 本身没有 LLM 功能；外部智能体通常从 Meta API 读取当前身份可见的语义对象，再自行选择上下文。
+- Cube Cloud 建议让 AI 通过小而专用的 View 查询，而不是面对一个包含数百字段的万能 View。
+- Agent 可以配置 `accessible_views`；Space 隔离各自的规则、认证查询和记忆；View 的公开性和访问策略继续做成员级、行级限制。
+- View、Measure 和 Dimension 的 `description` 与 `meta.ai_context` 会提供给 AI，帮助它判断什么时候使用哪个对象。
+- Cube 的公开文档没有说明 Analytics Chat 最终使用了哪一种向量模型、取多少个对象、怎样计算最终分数。因此我们不能把一套自拟的 Top-K 算法说成 Cube 的官方实现。
+
+所以两者的真实差异可以概括为：Wren 把“小 Schema 全量给出、大 Schema 向量检索”的代码公开了；Cube 更强调用权限、Space 和专用 View 预先控制 AI 能看见的语义面，托管版内部如何继续检索没有公开。
+
+如果要直接查看这两个框架最终送给 LLM 的内容，请继续看：
+
+- [Cube：实际没有的提示词、Meta 返回和可复现拼装示例](./提示词/Cube_最终输入到LLM的是什么.md)
+- [WrenAI：真实引导提示词、MCP 工具和第二轮上下文](./提示词/WrenAI_最终输入到LLM的是什么.md)
 
 ### 第三步：让大模型只能选择已有对象
 
@@ -470,6 +577,10 @@ WrenAI 的 `get_context` 确实接受了自然语言问题并返回了相关上�
 - [Cube：创建初始数据模型](https://docs.cube.dev/cube-core/getting-started/create-a-project)
 - [Cube：REST 查询对象格式](https://docs.cube.dev/reference/core-data-apis/rest-api/query-format)
 - [Cube：AI context](https://docs.cube.dev/docs/data-modeling/ai-context)
+- [Cube：用专用 View 控制 AI 可见的语义面](https://docs.cube.dev/docs/data-modeling/views)
+- [Cube：Agent、Space 与 accessible_views](https://docs.cube.dev/admin/ai/multi-agent)
 - [WrenAI：Model your business](https://docs.getwren.ai/oss/guides/model)
 - [WrenAI：MDL schema reference](https://docs.getwren.ai/oss/reference/mdl)
 - [WrenAI：Agent-assisted query 架构](https://docs.getwren.ai/oss/concepts/architecture/)
+- [WrenAI：MCP 工具、资源与 wren_workflow Prompt](https://docs.getwren.ai/oss/guides/mcp)
+- [WrenAI：memory fetch 的阈值、过滤和 Top-K 参数](https://docs.getwren.ai/oss/reference/cli)

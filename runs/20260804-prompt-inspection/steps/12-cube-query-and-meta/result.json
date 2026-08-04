@@ -1,0 +1,27 @@
+{
+  "exit_code": 0,
+  "launch_error": null,
+  "duration_seconds": 0.484,
+  "stdout_sha256": "4704e484b60059c34ad63eeeb0c45685d6fd9416b371ba1b381495c20aceaff4",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outputs": [
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/cube/results/meta_response.json",
+      "exists": true,
+      "size": 4249,
+      "sha256": "d5931bb90f949778a95fe93462e898d3c79f1df036a2abfaa68537db5ca81098"
+    },
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/cube/results/sql_response.json",
+      "exists": true,
+      "size": 4689,
+      "sha256": "174c902f737ace96a8d7ff5bc90645c356b77cde1df4bf57d96abda469065822"
+    },
+    {
+      "path": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/cube/results/load_response.json",
+      "exists": true,
+      "size": 5586,
+      "sha256": "abeabd2144677e91397a10103a29bd612c54b967e2d0e7415b10586e18e5f173"
+    }
+  ]
+}

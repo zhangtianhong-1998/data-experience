@@ -1,0 +1,22 @@
+{
+  "step": "01-wren-direct",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "runtime/wren-venv/bin/wren",
+    "ask",
+    "ORG_1001 在 2026 年上半年，按产品一级分类统计设备订货金额和利润",
+    "--direct"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.9.6"
+  },
+  "started_epoch": 1785832693.0688891
+}
