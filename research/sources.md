@@ -1,6 +1,26 @@
 # 一手资料索引
 
-检索与验证日期：2026-08-03。
+检索与验证日期：2026-08-04。
+
+## 2026 Data Agent 上下文工程与知识图谱
+
+- [OpenAI 内部数据智能体](https://openai.com/zh-Hans-CN/index/inside-our-in-house-data-agent/)
+- [OpenAI MCP and Connectors](https://developers.openai.com/api/docs/guides/tools-connectors-mcp)
+- [OpenAI File Search](https://developers.openai.com/api/docs/guides/tools-file-search)
+- [美团 BI 在指标平台和分析引擎上的探索和实践](https://tech.meituan.com/2026/03/20/Busniness-Intelligence-practice-in-meituan.html)
+- [阿里云 DMS Knowledge Base](https://www.alibabacloud.com/help/en/dms/knowledge-base-management)
+- [阿里云 Meta Agent 知识管理](https://www.alibabacloud.com/help/zh/aidbs/latest/meta-agent-knowledge-management)
+- [阿里云 DataWorks Code Assistant](https://www.alibabacloud.com/help/en/dataworks/user-guide/data-agent-coding-assistant)
+- [阿里云 AI-Native Database Service](https://www.alibabacloud.com/help/en/aidbs/latest/what-is-ai-native-database-service)
+- [EntSQL](https://arxiv.org/abs/2606.03363)
+- [Ant Group Agentar-Scale-SQL](https://github.com/antgroup/Agentar-Scale-SQL)
+- [Every Step Counts / FineStep](https://arxiv.org/abs/2605.04719)
+- [JD SHERLOCK](https://arxiv.org/abs/2510.08948)
+- [JD Oxygen AI Item Center](https://arxiv.org/abs/2606.28070)
+- [喜马拉雅 ChatBI 分享（DataFunSummit 整理）](https://www.53ai.com/news/zhinenghuagaizao/2025010809175.html)
+- [火山引擎 DataAgent 智能问答](https://www.volcengine.com/docs/86760/2280244)
+- [Database Context Compression for Text-to-SQL](https://arxiv.org/abs/2606.28601)
+- [CSR-RAG](https://arxiv.org/abs/2601.06564)
 
 ## 企业 Data Agent 与评测
 
