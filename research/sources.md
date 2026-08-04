@@ -22,6 +22,35 @@
 - [Database Context Compression for Text-to-SQL](https://arxiv.org/abs/2606.28601)
 - [CSR-RAG](https://arxiv.org/abs/2601.06564)
 
+## 主流厂商知识体系与 Data Agent 接入实践
+
+- [京东：基于大模型搭建运力业务的“小红书”](https://developer.jdcloud.com/article/4044)
+- [京东：零售数据资产能力升级与实践](https://developer.jdcloud.com/article/3663)
+- [京东：九数算法中台 RAG 实践](https://developer.jdcloud.com/article/3674)
+- [蚂蚁 DeepInsight 智能分析 Agent 在业务场景的落地实践](https://www.wesee.club/usr/uploads/2025/11/2676871471.pdf)
+- [阿里云 Meta Agent 知识库管理](https://www.alibabacloud.com/help/zh/aidbs/latest/meta-agent-knowledge-management)
+- [阿里云 DMS Data Copilot](https://www.alibabacloud.com/help/dms/dms-data-copilot-intelligent-assistant)
+- [阿里云 AI 原生数据库服务](https://www.alibabacloud.com/help/zh/aidbs/latest/what-is-ai-native-database-service)
+- [火山引擎 DataAgent 数据集知识库配置](https://www.volcengine.com/docs/86760/1874927?lang=zh)
+- [火山引擎 DataAgent Prompt 配置](https://www.volcengine.com/docs/86760/1874853?lang=zh)
+- [火山引擎 DataAgent 文档处理算子](https://www.volcengine.com/docs/86760/2280961?lang=zh)
+- [腾讯云 TCDataAgent 配置知识库](https://cloud.tencent.com/document/product/1800/122737)
+- [腾讯云 TCDataAgent API](https://cloud.tencent.com/document/product/1800/125015)
+- [百度千帆知识库与图谱检索增强](https://cloud.baidu.com/doc/qianfan/s/Imh4stpo0)
+- [Google Knowledge Catalog and Agentic Data Cloud](https://cloud.google.com/blog/products/data-analytics/whats-new-in-the-agentic-data-cloud)
+- [Google BigQuery Data Insights](https://docs.cloud.google.com/bigquery/docs/data-insights)
+- [Google Looker Conversational Data Agents](https://cloud.google.com/looker/docs/studio/conversational-data-agents-looker)
+- [Databricks Genie Agent Concepts](https://docs.databricks.com/aws/en/genie-agents/concepts)
+- [Databricks Genie Conversation API](https://docs.databricks.com/aws/en/genie/conversation-api)
+- [Databricks Genie Best Practices](https://docs.databricks.com/aws/en/genie/best-practices)
+- [Snowflake Semantic Views Overview](https://docs.snowflake.com/en/user-guide/views-semantic/overview)
+- [Snowflake Semantic View YAML Specification](https://docs.snowflake.com/en/user-guide/views-semantic/semantic-view-yaml-spec)
+- [Snowflake Cortex Analyst REST API](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst/rest-api)
+- [Snowflake Suggestions and Verified Queries](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst/verified-query-suggestions)
+- [Microsoft Fabric Data Agent](https://learn.microsoft.com/en-us/fabric/data-science/how-to-create-data-agent)
+- [Microsoft Fabric Data Agent Data Sources, Graph and Ontology](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-add-datasources?tabs=gql)
+- [Microsoft Fabric Data Source Routing](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-routing)
+
 ## 企业 Data Agent 与评测
 
 - [Text-to-SQL for Enterprise Data Analytics](https://arxiv.org/abs/2507.14372)

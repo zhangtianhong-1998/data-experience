@@ -15,6 +15,7 @@
 7. [`解答/02_真实LLM如何从语义上下文生成DSL.md`](解答/02_真实LLM如何从语义上下文生成DSL.md)：逐条展示真实 LLM 输入、DSL、失败修复、SQL 和结果。
 8. [`reports/06_项目完成性审计.md`](reports/06_项目完成性审计.md)：逐项核对最初要求、证据和未被证明的边界。
 9. [`reports/07_2026_Data_Agent上下文工程与知识图谱使用.md`](reports/07_2026_Data_Agent上下文工程与知识图谱使用.md)：解释 LinkedIn 的图到底怎样在多次召回中使用，并对照 OpenAI、阿里、蚂蚁、美团、京东、喜马拉雅、字节和 2026 年论文，给出知识图谱进入 Agent 上下文的具体方式。
+10. [`reports/08_主流厂商如何构建知识体系并接入Data_Agent.md`](reports/08_主流厂商如何构建知识体系并接入Data_Agent.md)：不以论文为主，逐家拆解京东、蚂蚁、阿里、字节、美团、OpenAI、Google、Databricks、Snowflake、Microsoft 等厂商怎样生产、治理和召回知识，以及知识、图谱、语义模型通过 Prompt、API、MCP 或确定性引擎进入 Data Agent 的实际过程。
 
 ## 本机最终结果
 
