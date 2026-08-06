@@ -1,0 +1,10 @@
+[
+  {"id": "h1", "question": "monthly gross and net sales by geographic region", "tables": ["fact_orders", "fact_returns", "dim_region"]},
+  {"id": "h2", "question": "top selling products grouped by product category", "tables": ["fact_orders", "dim_product", "dim_category"]},
+  {"id": "h3", "question": "average shipping and delivery duration by sales channel", "tables": ["fact_orders", "fact_shipments", "dim_channel"]},
+  {"id": "h4", "question": "order return rate for each customer segment", "tables": ["fact_orders", "fact_returns", "dim_customer"]},
+  {"id": "h5", "question": "successful payment amount by month", "tables": ["fact_payments", "fact_orders"]},
+  {"id": "h6", "question": "daily inventory units by product", "tables": ["inventory_snapshot", "dim_product"]},
+  {"id": "h7", "question": "marketing campaign budget by channel", "tables": ["marketing_campaign", "dim_channel"]},
+  {"id": "h8", "question": "support ticket resolution time by customer", "tables": ["support_ticket", "dim_customer"]}
+]

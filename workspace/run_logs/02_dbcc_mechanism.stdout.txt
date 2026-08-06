@@ -1,0 +1,31 @@
+{
+  "database_id": "enterprise_sales_demo",
+  "table_count": 8,
+  "raw": {
+    "estimated_units": 58,
+    "context_chars": 4875
+  },
+  "factorization": {
+    "estimated_units": 39,
+    "saved_units": 19,
+    "reduction_ratio": 0.3276,
+    "component_count": 3
+  },
+  "template_hierarchy": {
+    "template_count": 4
+  },
+  "semantic_componentization": {
+    "component_count": 4
+  },
+  "evidence_purification": {
+    "source_count": 5,
+    "selected_count": 3,
+    "selected_types": [
+      "metric_definition",
+      "value_constraint",
+      "concept_to_element"
+    ]
+  },
+  "lossless_schema_recovery": true,
+  "scope": "mechanism-level reproduction on a synthetic enterprise-style schema"
+}

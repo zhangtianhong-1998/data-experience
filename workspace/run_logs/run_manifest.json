@@ -1,0 +1,106 @@
+{
+  "run_started_at": "2026-08-06T17:39:35.746421+00:00",
+  "mode": "tfidf-and-sentence-transformer",
+  "steps": [
+    {
+      "step": "01_dbcc_tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "workspace/dbcc/tests",
+        "-v"
+      ],
+      "started_at": "2026-08-06T17:39:35.746637+00:00",
+      "duration_ms": 46.565,
+      "exit_code": 0,
+      "stdout": "run_logs/01_dbcc_tests.stdout.txt",
+      "stderr": "run_logs/01_dbcc_tests.stderr.txt"
+    },
+    {
+      "step": "02_dbcc_mechanism",
+      "command": [
+        "python3",
+        "workspace/dbcc/src/run_demo.py"
+      ],
+      "started_at": "2026-08-06T17:39:35.793697+00:00",
+      "duration_ms": 38.921,
+      "exit_code": 0,
+      "stdout": "run_logs/02_dbcc_mechanism.stdout.txt",
+      "stderr": "run_logs/02_dbcc_mechanism.stderr.txt"
+    },
+    {
+      "step": "03_dbcc_official",
+      "command": [
+        "python3",
+        "workspace/dbcc/src/run_official_preprocessors.py"
+      ],
+      "started_at": "2026-08-06T17:39:35.832891+00:00",
+      "duration_ms": 59.57,
+      "exit_code": 0,
+      "stdout": "run_logs/03_dbcc_official.stdout.txt",
+      "stderr": "run_logs/03_dbcc_official.stderr.txt"
+    },
+    {
+      "step": "04_csr_tests",
+      "command": [
+        "/Users/sanjiuganmaoling/Desktop/code/data-experience/workspace/csr_rag/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "workspace/csr_rag/tests",
+        "-v"
+      ],
+      "started_at": "2026-08-06T17:39:35.892900+00:00",
+      "duration_ms": 514.106,
+      "exit_code": 0,
+      "stdout": "run_logs/04_csr_tests.stdout.txt",
+      "stderr": "run_logs/04_csr_tests.stderr.txt"
+    },
+    {
+      "step": "05_csr_tfidf",
+      "command": [
+        "/Users/sanjiuganmaoling/Desktop/code/data-experience/workspace/csr_rag/.venv/bin/python",
+        "workspace/csr_rag/src/run_demo.py",
+        "--backend",
+        "tfidf"
+      ],
+      "started_at": "2026-08-06T17:39:36.407374+00:00",
+      "duration_ms": 494.825,
+      "exit_code": 0,
+      "stdout": "run_logs/05_csr_tfidf.stdout.txt",
+      "stderr": "run_logs/05_csr_tfidf.stderr.txt"
+    },
+    {
+      "step": "06_csr_sentence_transformer",
+      "command": [
+        "/Users/sanjiuganmaoling/Desktop/code/data-experience/workspace/csr_rag/.venv/bin/python",
+        "workspace/csr_rag/src/run_demo.py",
+        "--backend",
+        "sentence-transformer"
+      ],
+      "started_at": "2026-08-06T17:39:36.906888+00:00",
+      "duration_ms": 6301.2,
+      "exit_code": 0,
+      "stdout": "run_logs/06_csr_sentence_transformer.stdout.txt",
+      "stderr": "run_logs/06_csr_sentence_transformer.stderr.txt"
+    },
+    {
+      "step": "07_verify",
+      "command": [
+        "python3",
+        "workspace/verify_all.py"
+      ],
+      "started_at": "2026-08-06T17:39:43.208421+00:00",
+      "duration_ms": 29.035,
+      "exit_code": 0,
+      "stdout": "run_logs/07_verify.stdout.txt",
+      "stderr": "run_logs/07_verify.stderr.txt"
+    }
+  ],
+  "status": "pass",
+  "run_finished_at": "2026-08-06T17:39:43.237824+00:00"
+}

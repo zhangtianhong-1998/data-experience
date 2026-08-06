@@ -1,0 +1,17 @@
+{
+  "official_repository": "https://github.com/MrBlankness/SchemaCompression",
+  "source_commit": "8b44e971756e421ade723442dafd17513fd70e1a",
+  "scope": "public preprocessor classes only; no paper benchmark or LLM call",
+  "raw": {
+    "context_chars": 2729,
+    "context_lines": 74
+  },
+  "factorization": {
+    "context_chars": 1419,
+    "context_lines": 56
+  },
+  "inheritance": {
+    "context_chars": 1305,
+    "context_lines": 37
+  }
+}

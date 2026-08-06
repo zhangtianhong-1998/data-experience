@@ -1,0 +1,28 @@
+{
+  "backend": "sentence-transformer",
+  "encoder": "sentence-transformers/all-MiniLM-L6-v2",
+  "encoder_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "case_count": 4,
+  "schema_table_count": 12,
+  "schema_column_count": 52,
+  "history_count": 8,
+  "index_build_ms": 400.968,
+  "config": {
+    "contextual_k": 1,
+    "structural_l": 10,
+    "relational_h": 12
+  },
+  "macro_precision": 0.775,
+  "macro_recall": 1.0,
+  "macro_column_precision": 0.476133,
+  "macro_column_recall": 0.96875,
+  "median_latency_ms": 35.72,
+  "p90_latency_ms": 39.141,
+  "scope": "independent mechanism-level reproduction; not the authors' private enterprise benchmark",
+  "undisclosed_paper_choices": [
+    "exact BERT-like checkpoint",
+    "Relational-RAG semantic operator",
+    "metadata availability rules",
+    "operator weights"
+  ]
+}

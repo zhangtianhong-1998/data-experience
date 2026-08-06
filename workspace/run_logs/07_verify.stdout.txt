@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "dbcc": {
+    "lossless_recovery": true,
+    "raw_units": 58,
+    "factorized_units": 39,
+    "official_source_commit": "8b44e971756e421ade723442dafd17513fd70e1a"
+  },
+  "csr_rag": {
+    "backend": "sentence-transformer",
+    "macro_precision": 0.775,
+    "macro_recall": 1.0,
+    "median_latency_ms": 35.72
+  }
+}

@@ -16,6 +16,10 @@ lab/vendor/
 research/.venv*/
 research/vendor/
 tmp/
+workspace/**/official-source/
+workspace/**/model-cache/
+workspace/**/.venv/
+workspace/**/__pycache__/
 *.duckdb
 *.duckdb.wal
 *.db

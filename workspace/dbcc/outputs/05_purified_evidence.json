@@ -1,0 +1,52 @@
+{
+  "question": "For July 2026, show net revenue by sales region and exclude refunded orders.",
+  "source_count": 5,
+  "selected_count": 3,
+  "selected": [
+    {
+      "id": "metric.net_revenue",
+      "type": "metric_definition",
+      "matched_triggers": [
+        "net revenue",
+        "revenue"
+      ],
+      "text": "Net revenue equals gross_amount minus discount_amount minus refund_amount.",
+      "bindings": [
+        "orders.gross_amount",
+        "orders.discount_amount",
+        "returns.refund_amount"
+      ]
+    },
+    {
+      "id": "rule.refunded_order",
+      "type": "value_constraint",
+      "matched_triggers": [
+        "refunded",
+        "exclude refunded orders"
+      ],
+      "text": "An order is refunded when order_status_code = 40; exclude these rows for the requested report.",
+      "bindings": [
+        "orders.order_status_code"
+      ]
+    },
+    {
+      "id": "term.sales_region",
+      "type": "concept_to_element",
+      "matched_triggers": [
+        "sales region",
+        "region"
+      ],
+      "text": "Sales region is dim_region.region_name joined through orders.region_id = dim_region.region_id.",
+      "bindings": [
+        "orders.region_id",
+        "dim_region.region_id",
+        "dim_region.region_name"
+      ]
+    }
+  ],
+  "rejected_ids": [
+    "term.active_customer",
+    "metric.inventory_turnover"
+  ],
+  "implementation_note": "deterministic stand-in for the paper's LLM evidence purifier"
+}

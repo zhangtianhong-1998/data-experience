@@ -1,0 +1,9 @@
+test_contextual_rag_returns_known_table_set (test_retriever.RetrieverTests.test_contextual_rag_returns_known_table_set) ... ok
+test_precision_recall (test_retriever.RetrieverTests.test_precision_recall) ... ok
+test_relational_stage_never_introduces_out_of_scope_table (test_retriever.RetrieverTests.test_relational_stage_never_introduces_out_of_scope_table) ... ok
+test_structural_rag_returns_triplets (test_retriever.RetrieverTests.test_structural_rag_returns_triplets) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.424s
+
+OK

@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/MrBlankness/SchemaCompression.git",
+  "commit": "8b44e971756e421ade723442dafd17513fd70e1a",
+  "license": "MIT",
+  "checked_at": "2026-08-07",
+  "note": "The local clone is excluded from this repository; run fetch_official_source.sh to reproduce it exactly."
+}

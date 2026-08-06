@@ -1,0 +1,342 @@
+{
+  "components": {
+    "S1": {
+      "tags": [
+        "audit",
+        "datetime"
+      ],
+      "support": 16,
+      "width": 2,
+      "gain": 14
+    },
+    "S2": {
+      "tags": [
+        "foreign_key",
+        "identifier"
+      ],
+      "support": 9,
+      "width": 2,
+      "gain": 7
+    },
+    "S3": {
+      "tags": [
+        "amount",
+        "currency"
+      ],
+      "support": 9,
+      "width": 2,
+      "gain": 7
+    },
+    "S4": {
+      "tags": [
+        "code",
+        "status"
+      ],
+      "support": 6,
+      "width": 2,
+      "gain": 4
+    }
+  },
+  "carrier_refs": {
+    "orders_2026_06.order_id": [],
+    "orders_2026_06.customer_id": [
+      "S2"
+    ],
+    "orders_2026_06.region_id": [
+      "S2"
+    ],
+    "orders_2026_06.gross_amount": [
+      "S3"
+    ],
+    "orders_2026_06.discount_amount": [
+      "S3"
+    ],
+    "orders_2026_06.order_status_code": [
+      "S4"
+    ],
+    "orders_2026_06.created_at": [
+      "S1"
+    ],
+    "orders_2026_06.updated_at": [
+      "S1"
+    ],
+    "orders_2026_06.updated_by": [],
+    "orders_2026_07.order_id": [],
+    "orders_2026_07.customer_id": [
+      "S2"
+    ],
+    "orders_2026_07.region_id": [
+      "S2"
+    ],
+    "orders_2026_07.gross_amount": [
+      "S3"
+    ],
+    "orders_2026_07.discount_amount": [
+      "S3"
+    ],
+    "orders_2026_07.order_status_code": [
+      "S4"
+    ],
+    "orders_2026_07.created_at": [
+      "S1"
+    ],
+    "orders_2026_07.updated_at": [
+      "S1"
+    ],
+    "orders_2026_07.updated_by": [],
+    "orders_2026_08.order_id": [],
+    "orders_2026_08.customer_id": [
+      "S2"
+    ],
+    "orders_2026_08.region_id": [
+      "S2"
+    ],
+    "orders_2026_08.gross_amount": [
+      "S3"
+    ],
+    "orders_2026_08.discount_amount": [
+      "S3"
+    ],
+    "orders_2026_08.order_status_code": [
+      "S4"
+    ],
+    "orders_2026_08.created_at": [
+      "S1"
+    ],
+    "orders_2026_08.updated_at": [
+      "S1"
+    ],
+    "orders_2026_08.updated_by": [],
+    "returns_2026_06.return_id": [],
+    "returns_2026_06.order_id": [
+      "S2"
+    ],
+    "returns_2026_06.refund_amount": [
+      "S3"
+    ],
+    "returns_2026_06.return_reason_code": [
+      "S4"
+    ],
+    "returns_2026_06.created_at": [
+      "S1"
+    ],
+    "returns_2026_06.updated_at": [
+      "S1"
+    ],
+    "returns_2026_06.updated_by": [],
+    "returns_2026_07.return_id": [],
+    "returns_2026_07.order_id": [
+      "S2"
+    ],
+    "returns_2026_07.refund_amount": [
+      "S3"
+    ],
+    "returns_2026_07.return_reason_code": [
+      "S4"
+    ],
+    "returns_2026_07.created_at": [
+      "S1"
+    ],
+    "returns_2026_07.updated_at": [
+      "S1"
+    ],
+    "returns_2026_07.updated_by": [],
+    "returns_2026_08.return_id": [],
+    "returns_2026_08.order_id": [
+      "S2"
+    ],
+    "returns_2026_08.refund_amount": [
+      "S3"
+    ],
+    "returns_2026_08.return_reason_code": [
+      "S4"
+    ],
+    "returns_2026_08.created_at": [
+      "S1"
+    ],
+    "returns_2026_08.updated_at": [
+      "S1"
+    ],
+    "returns_2026_08.updated_by": [],
+    "dim_region.region_id": [],
+    "dim_region.region_name": [],
+    "dim_region.created_at": [
+      "S1"
+    ],
+    "dim_region.updated_at": [
+      "S1"
+    ],
+    "dim_region.updated_by": [],
+    "customers.customer_id": [],
+    "customers.customer_name": [],
+    "customers.created_at": [
+      "S1"
+    ],
+    "customers.updated_at": [
+      "S1"
+    ],
+    "customers.updated_by": []
+  },
+  "residual_tags": {
+    "orders_2026_06.order_id": [
+      "identifier",
+      "order"
+    ],
+    "orders_2026_06.customer_id": [
+      "customer"
+    ],
+    "orders_2026_06.region_id": [
+      "region"
+    ],
+    "orders_2026_06.gross_amount": [
+      "revenue"
+    ],
+    "orders_2026_06.discount_amount": [
+      "revenue"
+    ],
+    "orders_2026_06.order_status_code": [
+      "order"
+    ],
+    "orders_2026_06.created_at": [],
+    "orders_2026_06.updated_at": [],
+    "orders_2026_06.updated_by": [
+      "audit",
+      "identifier"
+    ],
+    "orders_2026_07.order_id": [
+      "identifier",
+      "order"
+    ],
+    "orders_2026_07.customer_id": [
+      "customer"
+    ],
+    "orders_2026_07.region_id": [
+      "region"
+    ],
+    "orders_2026_07.gross_amount": [
+      "revenue"
+    ],
+    "orders_2026_07.discount_amount": [
+      "revenue"
+    ],
+    "orders_2026_07.order_status_code": [
+      "order"
+    ],
+    "orders_2026_07.created_at": [],
+    "orders_2026_07.updated_at": [],
+    "orders_2026_07.updated_by": [
+      "audit",
+      "identifier"
+    ],
+    "orders_2026_08.order_id": [
+      "identifier",
+      "order"
+    ],
+    "orders_2026_08.customer_id": [
+      "customer"
+    ],
+    "orders_2026_08.region_id": [
+      "region"
+    ],
+    "orders_2026_08.gross_amount": [
+      "revenue"
+    ],
+    "orders_2026_08.discount_amount": [
+      "revenue"
+    ],
+    "orders_2026_08.order_status_code": [
+      "order"
+    ],
+    "orders_2026_08.created_at": [],
+    "orders_2026_08.updated_at": [],
+    "orders_2026_08.updated_by": [
+      "audit",
+      "identifier"
+    ],
+    "returns_2026_06.return_id": [
+      "identifier",
+      "return"
+    ],
+    "returns_2026_06.order_id": [
+      "order"
+    ],
+    "returns_2026_06.refund_amount": [
+      "refund"
+    ],
+    "returns_2026_06.return_reason_code": [
+      "return"
+    ],
+    "returns_2026_06.created_at": [],
+    "returns_2026_06.updated_at": [],
+    "returns_2026_06.updated_by": [
+      "audit",
+      "identifier"
+    ],
+    "returns_2026_07.return_id": [
+      "identifier",
+      "return"
+    ],
+    "returns_2026_07.order_id": [
+      "order"
+    ],
+    "returns_2026_07.refund_amount": [
+      "refund"
+    ],
+    "returns_2026_07.return_reason_code": [
+      "return"
+    ],
+    "returns_2026_07.created_at": [],
+    "returns_2026_07.updated_at": [],
+    "returns_2026_07.updated_by": [
+      "audit",
+      "identifier"
+    ],
+    "returns_2026_08.return_id": [
+      "identifier",
+      "return"
+    ],
+    "returns_2026_08.order_id": [
+      "order"
+    ],
+    "returns_2026_08.refund_amount": [
+      "refund"
+    ],
+    "returns_2026_08.return_reason_code": [
+      "return"
+    ],
+    "returns_2026_08.created_at": [],
+    "returns_2026_08.updated_at": [],
+    "returns_2026_08.updated_by": [
+      "audit",
+      "identifier"
+    ],
+    "dim_region.region_id": [
+      "identifier",
+      "region"
+    ],
+    "dim_region.region_name": [
+      "name",
+      "region"
+    ],
+    "dim_region.created_at": [],
+    "dim_region.updated_at": [],
+    "dim_region.updated_by": [
+      "audit",
+      "identifier"
+    ],
+    "customers.customer_id": [
+      "customer",
+      "identifier"
+    ],
+    "customers.customer_name": [
+      "customer",
+      "name"
+    ],
+    "customers.created_at": [],
+    "customers.updated_at": [],
+    "customers.updated_by": [
+      "audit",
+      "identifier"
+    ]
+  }
+}

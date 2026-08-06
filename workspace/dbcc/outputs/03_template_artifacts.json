@@ -1,0 +1,290 @@
+{
+  "templates": [
+    {
+      "id": "T1",
+      "instances": [
+        "customers"
+      ],
+      "columns": [
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "description": "customer key",
+          "tags": [
+            "identifier",
+            "customer"
+          ]
+        },
+        {
+          "name": "customer_name",
+          "type": "VARCHAR",
+          "description": "customer display name",
+          "tags": [
+            "name",
+            "customer"
+          ]
+        },
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "description": "row creation time",
+          "tags": [
+            "datetime",
+            "audit"
+          ]
+        },
+        {
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "description": "last update time",
+          "tags": [
+            "datetime",
+            "audit"
+          ]
+        },
+        {
+          "name": "updated_by",
+          "type": "VARCHAR",
+          "description": "last updater",
+          "tags": [
+            "identifier",
+            "audit"
+          ]
+        }
+      ],
+      "parent": null,
+      "delta_columns": []
+    },
+    {
+      "id": "T2",
+      "instances": [
+        "dim_region"
+      ],
+      "columns": [
+        {
+          "name": "region_id",
+          "type": "BIGINT",
+          "description": "region key",
+          "tags": [
+            "identifier",
+            "region"
+          ]
+        },
+        {
+          "name": "region_name",
+          "type": "VARCHAR",
+          "description": "human-readable sales region",
+          "tags": [
+            "name",
+            "region"
+          ]
+        },
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "description": "row creation time",
+          "tags": [
+            "datetime",
+            "audit"
+          ]
+        },
+        {
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "description": "last update time",
+          "tags": [
+            "datetime",
+            "audit"
+          ]
+        },
+        {
+          "name": "updated_by",
+          "type": "VARCHAR",
+          "description": "last updater",
+          "tags": [
+            "identifier",
+            "audit"
+          ]
+        }
+      ],
+      "parent": null,
+      "delta_columns": []
+    },
+    {
+      "id": "T3",
+      "instances": [
+        "returns_2026_06",
+        "returns_2026_07",
+        "returns_2026_08"
+      ],
+      "columns": [
+        {
+          "name": "return_id",
+          "type": "BIGINT",
+          "description": "unique return identifier",
+          "tags": [
+            "identifier",
+            "return"
+          ]
+        },
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "description": "returned order foreign key",
+          "tags": [
+            "identifier",
+            "order",
+            "foreign_key"
+          ]
+        },
+        {
+          "name": "refund_amount",
+          "type": "DECIMAL",
+          "description": "refunded currency amount",
+          "tags": [
+            "amount",
+            "currency",
+            "refund"
+          ]
+        },
+        {
+          "name": "return_reason_code",
+          "type": "INTEGER",
+          "description": "machine return reason",
+          "tags": [
+            "status",
+            "code",
+            "return"
+          ]
+        },
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "description": "row creation time",
+          "tags": [
+            "datetime",
+            "audit"
+          ]
+        },
+        {
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "description": "last update time",
+          "tags": [
+            "datetime",
+            "audit"
+          ]
+        },
+        {
+          "name": "updated_by",
+          "type": "VARCHAR",
+          "description": "last updater",
+          "tags": [
+            "identifier",
+            "audit"
+          ]
+        }
+      ],
+      "parent": null,
+      "delta_columns": []
+    },
+    {
+      "id": "T4",
+      "instances": [
+        "orders_2026_06",
+        "orders_2026_07",
+        "orders_2026_08"
+      ],
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "description": "unique order identifier",
+          "tags": [
+            "identifier",
+            "order"
+          ]
+        },
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "description": "customer foreign key",
+          "tags": [
+            "identifier",
+            "customer",
+            "foreign_key"
+          ]
+        },
+        {
+          "name": "region_id",
+          "type": "BIGINT",
+          "description": "sales region foreign key",
+          "tags": [
+            "identifier",
+            "region",
+            "foreign_key"
+          ]
+        },
+        {
+          "name": "gross_amount",
+          "type": "DECIMAL",
+          "description": "gross amount before discount",
+          "tags": [
+            "amount",
+            "currency",
+            "revenue"
+          ]
+        },
+        {
+          "name": "discount_amount",
+          "type": "DECIMAL",
+          "description": "discount deducted from gross amount",
+          "tags": [
+            "amount",
+            "currency",
+            "revenue"
+          ]
+        },
+        {
+          "name": "order_status_code",
+          "type": "INTEGER",
+          "description": "machine status code",
+          "tags": [
+            "status",
+            "code",
+            "order"
+          ]
+        },
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "description": "row creation time",
+          "tags": [
+            "datetime",
+            "audit"
+          ]
+        },
+        {
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "description": "last update time",
+          "tags": [
+            "datetime",
+            "audit"
+          ]
+        },
+        {
+          "name": "updated_by",
+          "type": "VARCHAR",
+          "description": "last updater",
+          "tags": [
+            "identifier",
+            "audit"
+          ]
+        }
+      ],
+      "parent": null,
+      "delta_columns": []
+    }
+  ]
+}

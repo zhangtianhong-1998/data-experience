@@ -20,6 +20,7 @@
 - [喜马拉雅 ChatBI 分享（DataFunSummit 整理）](https://www.53ai.com/news/zhinenghuagaizao/2025010809175.html)
 - [火山引擎 DataAgent 智能问答](https://www.volcengine.com/docs/86760/2280244)
 - [Database Context Compression for Text-to-SQL](https://arxiv.org/abs/2606.28601)
+- [DbCC official SchemaCompression implementation](https://github.com/MrBlankness/SchemaCompression)
 - [CSR-RAG](https://arxiv.org/abs/2601.06564)
 
 ## 主流厂商知识体系与 Data Agent 接入实践
