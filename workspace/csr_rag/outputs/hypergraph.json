@@ -1,0 +1,323 @@
+{
+  "node_type": "table",
+  "hyperedge_type": "column_name",
+  "table_nodes": [
+    "dim_category",
+    "dim_channel",
+    "dim_customer",
+    "dim_product",
+    "dim_region",
+    "fact_orders",
+    "fact_payments",
+    "fact_returns",
+    "fact_shipments",
+    "inventory_snapshot",
+    "marketing_campaign",
+    "support_ticket"
+  ],
+  "column_hyperedges": [
+    {
+      "column_name": "budget_amount",
+      "table_nodes": [
+        "marketing_campaign"
+      ]
+    },
+    {
+      "column_name": "campaign_id",
+      "table_nodes": [
+        "marketing_campaign"
+      ]
+    },
+    {
+      "column_name": "campaign_name",
+      "table_nodes": [
+        "marketing_campaign"
+      ]
+    },
+    {
+      "column_name": "carrier_id",
+      "table_nodes": [
+        "fact_shipments"
+      ]
+    },
+    {
+      "column_name": "category_id",
+      "table_nodes": [
+        "dim_category",
+        "dim_product"
+      ]
+    },
+    {
+      "column_name": "category_name",
+      "table_nodes": [
+        "dim_category"
+      ]
+    },
+    {
+      "column_name": "channel_id",
+      "table_nodes": [
+        "dim_channel",
+        "fact_orders",
+        "marketing_campaign"
+      ]
+    },
+    {
+      "column_name": "channel_name",
+      "table_nodes": [
+        "dim_channel"
+      ]
+    },
+    {
+      "column_name": "country_code",
+      "table_nodes": [
+        "dim_region"
+      ]
+    },
+    {
+      "column_name": "created_at",
+      "table_nodes": [
+        "support_ticket"
+      ]
+    },
+    {
+      "column_name": "customer_id",
+      "table_nodes": [
+        "dim_customer",
+        "fact_orders",
+        "support_ticket"
+      ]
+    },
+    {
+      "column_name": "customer_name",
+      "table_nodes": [
+        "dim_customer"
+      ]
+    },
+    {
+      "column_name": "delivered_at",
+      "table_nodes": [
+        "fact_shipments"
+      ]
+    },
+    {
+      "column_name": "discount_amount",
+      "table_nodes": [
+        "fact_orders"
+      ]
+    },
+    {
+      "column_name": "gross_amount",
+      "table_nodes": [
+        "fact_orders"
+      ]
+    },
+    {
+      "column_name": "on_hand_quantity",
+      "table_nodes": [
+        "inventory_snapshot"
+      ]
+    },
+    {
+      "column_name": "order_date",
+      "table_nodes": [
+        "fact_orders"
+      ]
+    },
+    {
+      "column_name": "order_id",
+      "table_nodes": [
+        "fact_orders",
+        "fact_payments",
+        "fact_returns",
+        "fact_shipments"
+      ]
+    },
+    {
+      "column_name": "paid_amount",
+      "table_nodes": [
+        "fact_payments"
+      ]
+    },
+    {
+      "column_name": "paid_at",
+      "table_nodes": [
+        "fact_payments"
+      ]
+    },
+    {
+      "column_name": "parent_category_id",
+      "table_nodes": [
+        "dim_category"
+      ]
+    },
+    {
+      "column_name": "payment_id",
+      "table_nodes": [
+        "fact_payments"
+      ]
+    },
+    {
+      "column_name": "payment_status",
+      "table_nodes": [
+        "fact_payments"
+      ]
+    },
+    {
+      "column_name": "product_id",
+      "table_nodes": [
+        "dim_product",
+        "fact_orders",
+        "inventory_snapshot"
+      ]
+    },
+    {
+      "column_name": "product_name",
+      "table_nodes": [
+        "dim_product"
+      ]
+    },
+    {
+      "column_name": "reason_code",
+      "table_nodes": [
+        "fact_returns"
+      ]
+    },
+    {
+      "column_name": "refund_amount",
+      "table_nodes": [
+        "fact_returns"
+      ]
+    },
+    {
+      "column_name": "region_id",
+      "table_nodes": [
+        "dim_region",
+        "fact_orders"
+      ]
+    },
+    {
+      "column_name": "region_name",
+      "table_nodes": [
+        "dim_region"
+      ]
+    },
+    {
+      "column_name": "resolution_hours",
+      "table_nodes": [
+        "support_ticket"
+      ]
+    },
+    {
+      "column_name": "return_date",
+      "table_nodes": [
+        "fact_returns"
+      ]
+    },
+    {
+      "column_name": "return_id",
+      "table_nodes": [
+        "fact_returns"
+      ]
+    },
+    {
+      "column_name": "segment_name",
+      "table_nodes": [
+        "dim_customer"
+      ]
+    },
+    {
+      "column_name": "shipment_id",
+      "table_nodes": [
+        "fact_shipments"
+      ]
+    },
+    {
+      "column_name": "shipped_at",
+      "table_nodes": [
+        "fact_shipments"
+      ]
+    },
+    {
+      "column_name": "signup_date",
+      "table_nodes": [
+        "dim_customer"
+      ]
+    },
+    {
+      "column_name": "snapshot_date",
+      "table_nodes": [
+        "inventory_snapshot"
+      ]
+    },
+    {
+      "column_name": "status_code",
+      "table_nodes": [
+        "fact_orders"
+      ]
+    },
+    {
+      "column_name": "ticket_id",
+      "table_nodes": [
+        "support_ticket"
+      ]
+    },
+    {
+      "column_name": "unit_cost",
+      "table_nodes": [
+        "dim_product"
+      ]
+    },
+    {
+      "column_name": "warehouse_id",
+      "table_nodes": [
+        "inventory_snapshot"
+      ]
+    }
+  ],
+  "foreign_key_edges": [
+    {
+      "left": "fact_orders.customer_id",
+      "right": "dim_customer.customer_id"
+    },
+    {
+      "left": "fact_orders.product_id",
+      "right": "dim_product.product_id"
+    },
+    {
+      "left": "dim_product.category_id",
+      "right": "dim_category.category_id"
+    },
+    {
+      "left": "fact_orders.channel_id",
+      "right": "dim_channel.channel_id"
+    },
+    {
+      "left": "fact_orders.region_id",
+      "right": "dim_region.region_id"
+    },
+    {
+      "left": "fact_returns.order_id",
+      "right": "fact_orders.order_id"
+    },
+    {
+      "left": "fact_shipments.order_id",
+      "right": "fact_orders.order_id"
+    },
+    {
+      "left": "fact_payments.order_id",
+      "right": "fact_orders.order_id"
+    },
+    {
+      "left": "inventory_snapshot.product_id",
+      "right": "dim_product.product_id"
+    },
+    {
+      "left": "marketing_campaign.channel_id",
+      "right": "dim_channel.channel_id"
+    },
+    {
+      "left": "support_ticket.customer_id",
+      "right": "dim_customer.customer_id"
+    }
+  ]
+}

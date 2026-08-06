@@ -1,0 +1,5 @@
+
+Note: no profile bound to this project. Connection will fall back to the
+  globally active profile in ~/.wren/profiles.yml.
+  Run `wren context set-profile <name>` to pin one explicitly.
+Valid — 1 models, 0 views, 0 relationships.

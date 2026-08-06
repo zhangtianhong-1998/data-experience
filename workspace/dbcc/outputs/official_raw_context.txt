@@ -1,0 +1,74 @@
+[TABLES]
+## orders_2026_06
+order_id: BIGINT | unique order identifier
+customer_id: BIGINT | customer foreign key
+region_id: BIGINT | sales region foreign key
+gross_amount: DECIMAL | gross amount before discount
+discount_amount: DECIMAL | discount deducted from gross amount
+order_status_code: INTEGER | machine status code
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+
+## orders_2026_07
+order_id: BIGINT | unique order identifier
+customer_id: BIGINT | customer foreign key
+region_id: BIGINT | sales region foreign key
+gross_amount: DECIMAL | gross amount before discount
+discount_amount: DECIMAL | discount deducted from gross amount
+order_status_code: INTEGER | machine status code
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+
+## orders_2026_08
+order_id: BIGINT | unique order identifier
+customer_id: BIGINT | customer foreign key
+region_id: BIGINT | sales region foreign key
+gross_amount: DECIMAL | gross amount before discount
+discount_amount: DECIMAL | discount deducted from gross amount
+order_status_code: INTEGER | machine status code
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+
+## returns_2026_06
+return_id: BIGINT | unique return identifier
+order_id: BIGINT | returned order foreign key
+refund_amount: DECIMAL | refunded currency amount
+return_reason_code: INTEGER | machine return reason
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+
+## returns_2026_07
+return_id: BIGINT | unique return identifier
+order_id: BIGINT | returned order foreign key
+refund_amount: DECIMAL | refunded currency amount
+return_reason_code: INTEGER | machine return reason
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+
+## returns_2026_08
+return_id: BIGINT | unique return identifier
+order_id: BIGINT | returned order foreign key
+refund_amount: DECIMAL | refunded currency amount
+return_reason_code: INTEGER | machine return reason
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+
+## dim_region
+region_id: BIGINT | region key
+region_name: VARCHAR | human-readable sales region
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+
+## customers
+customer_id: BIGINT | customer key
+customer_name: VARCHAR | customer display name
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater

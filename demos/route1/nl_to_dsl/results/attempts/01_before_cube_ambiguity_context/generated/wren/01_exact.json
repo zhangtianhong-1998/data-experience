@@ -1,0 +1,15 @@
+{
+  "cube": "device_business",
+  "measures": [
+    "device_order_amount",
+    "device_profit_amount"
+  ],
+  "dimensions": [
+    "product_l1"
+  ],
+  "filters": [
+    "org_code:eq:ORG_1001",
+    "year_month:gte:202601",
+    "year_month:lte:202606"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "tables": [
+    {"name": "fact_orders", "description": "one row per customer order", "columns": [
+      {"name": "order_id", "description": "primary order identifier"},
+      {"name": "customer_id", "description": "customer foreign key"},
+      {"name": "product_id", "description": "product foreign key"},
+      {"name": "channel_id", "description": "sales channel foreign key"},
+      {"name": "region_id", "description": "sales region foreign key"},
+      {"name": "order_date", "description": "calendar date of order"},
+      {"name": "gross_amount", "description": "gross sales amount"},
+      {"name": "discount_amount", "description": "discount amount"},
+      {"name": "status_code", "description": "paid cancelled or refunded status"}
+    ]},
+    {"name": "fact_returns", "description": "one row per returned order", "columns": [
+      {"name": "return_id", "description": "primary return identifier"},
+      {"name": "order_id", "description": "returned order foreign key"},
+      {"name": "return_date", "description": "date of return"},
+      {"name": "refund_amount", "description": "currency amount refunded"},
+      {"name": "reason_code", "description": "return reason code"}
+    ]},
+    {"name": "dim_customer", "description": "customer profile and segmentation", "columns": [
+      {"name": "customer_id", "description": "primary customer identifier"},
+      {"name": "customer_name", "description": "customer display name"},
+      {"name": "segment_name", "description": "customer business segment"},
+      {"name": "signup_date", "description": "customer registration date"}
+    ]},
+    {"name": "dim_product", "description": "product catalog", "columns": [
+      {"name": "product_id", "description": "primary product identifier"},
+      {"name": "product_name", "description": "product display name"},
+      {"name": "category_id", "description": "product category foreign key"},
+      {"name": "unit_cost", "description": "standard unit cost"}
+    ]},
+    {"name": "dim_category", "description": "product category hierarchy", "columns": [
+      {"name": "category_id", "description": "primary category identifier"},
+      {"name": "category_name", "description": "category display name"},
+      {"name": "parent_category_id", "description": "parent category identifier"}
+    ]},
+    {"name": "dim_channel", "description": "sales channel dictionary", "columns": [
+      {"name": "channel_id", "description": "primary channel identifier"},
+      {"name": "channel_name", "description": "online store partner or retail channel"}
+    ]},
+    {"name": "dim_region", "description": "sales geography dictionary", "columns": [
+      {"name": "region_id", "description": "primary region identifier"},
+      {"name": "region_name", "description": "sales region display name"},
+      {"name": "country_code", "description": "country code in region"}
+    ]},
+    {"name": "fact_shipments", "description": "one row per order shipment", "columns": [
+      {"name": "shipment_id", "description": "primary shipment identifier"},
+      {"name": "order_id", "description": "shipped order foreign key"},
+      {"name": "shipped_at", "description": "shipment timestamp"},
+      {"name": "delivered_at", "description": "delivery timestamp"},
+      {"name": "carrier_id", "description": "delivery carrier foreign key"}
+    ]},
+    {"name": "fact_payments", "description": "payment attempts for orders", "columns": [
+      {"name": "payment_id", "description": "primary payment identifier"},
+      {"name": "order_id", "description": "paid order foreign key"},
+      {"name": "paid_amount", "description": "currency amount paid"},
+      {"name": "payment_status", "description": "payment success or failure"},
+      {"name": "paid_at", "description": "payment timestamp"}
+    ]},
+    {"name": "inventory_snapshot", "description": "daily stock by product and warehouse", "columns": [
+      {"name": "snapshot_date", "description": "inventory calendar date"},
+      {"name": "product_id", "description": "stocked product foreign key"},
+      {"name": "warehouse_id", "description": "warehouse foreign key"},
+      {"name": "on_hand_quantity", "description": "units available"}
+    ]},
+    {"name": "marketing_campaign", "description": "campaign budget and channel", "columns": [
+      {"name": "campaign_id", "description": "primary campaign identifier"},
+      {"name": "channel_id", "description": "campaign channel foreign key"},
+      {"name": "campaign_name", "description": "marketing campaign name"},
+      {"name": "budget_amount", "description": "planned campaign budget"}
+    ]},
+    {"name": "support_ticket", "description": "customer service tickets", "columns": [
+      {"name": "ticket_id", "description": "primary support ticket identifier"},
+      {"name": "customer_id", "description": "customer foreign key"},
+      {"name": "created_at", "description": "ticket creation time"},
+      {"name": "resolution_hours", "description": "time to resolve ticket"}
+    ]}
+  ],
+  "foreign_keys": [
+    {"left": "fact_orders.customer_id", "right": "dim_customer.customer_id"},
+    {"left": "fact_orders.product_id", "right": "dim_product.product_id"},
+    {"left": "dim_product.category_id", "right": "dim_category.category_id"},
+    {"left": "fact_orders.channel_id", "right": "dim_channel.channel_id"},
+    {"left": "fact_orders.region_id", "right": "dim_region.region_id"},
+    {"left": "fact_returns.order_id", "right": "fact_orders.order_id"},
+    {"left": "fact_shipments.order_id", "right": "fact_orders.order_id"},
+    {"left": "fact_payments.order_id", "right": "fact_orders.order_id"},
+    {"left": "inventory_snapshot.product_id", "right": "dim_product.product_id"},
+    {"left": "marketing_campaign.channel_id", "right": "dim_channel.channel_id"},
+    {"left": "support_ticket.customer_id", "right": "dim_customer.customer_id"}
+  ]
+}

@@ -1,0 +1,342 @@
+{
+  "components": {
+    "C1": {
+      "support": 8,
+      "width": 3,
+      "gain": 13,
+      "columns": [
+        {
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "description": "row creation time",
+          "tags": [
+            "datetime",
+            "audit"
+          ]
+        },
+        {
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "description": "last update time",
+          "tags": [
+            "datetime",
+            "audit"
+          ]
+        },
+        {
+          "name": "updated_by",
+          "type": "VARCHAR",
+          "description": "last updater",
+          "tags": [
+            "identifier",
+            "audit"
+          ]
+        }
+      ]
+    },
+    "C2": {
+      "support": 3,
+      "width": 3,
+      "gain": 3,
+      "columns": [
+        {
+          "name": "discount_amount",
+          "type": "DECIMAL",
+          "description": "discount deducted from gross amount",
+          "tags": [
+            "amount",
+            "currency",
+            "revenue"
+          ]
+        },
+        {
+          "name": "gross_amount",
+          "type": "DECIMAL",
+          "description": "gross amount before discount",
+          "tags": [
+            "amount",
+            "currency",
+            "revenue"
+          ]
+        },
+        {
+          "name": "order_status_code",
+          "type": "INTEGER",
+          "description": "machine status code",
+          "tags": [
+            "status",
+            "code",
+            "order"
+          ]
+        }
+      ]
+    },
+    "C3": {
+      "support": 3,
+      "width": 3,
+      "gain": 3,
+      "columns": [
+        {
+          "name": "refund_amount",
+          "type": "DECIMAL",
+          "description": "refunded currency amount",
+          "tags": [
+            "amount",
+            "currency",
+            "refund"
+          ]
+        },
+        {
+          "name": "return_id",
+          "type": "BIGINT",
+          "description": "unique return identifier",
+          "tags": [
+            "identifier",
+            "return"
+          ]
+        },
+        {
+          "name": "return_reason_code",
+          "type": "INTEGER",
+          "description": "machine return reason",
+          "tags": [
+            "status",
+            "code",
+            "return"
+          ]
+        }
+      ]
+    }
+  },
+  "tables": [
+    {
+      "name": "orders_2026_06",
+      "component_refs": [
+        "C1",
+        "C2"
+      ],
+      "residual_columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "description": "unique order identifier",
+          "tags": [
+            "identifier",
+            "order"
+          ]
+        },
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "description": "customer foreign key",
+          "tags": [
+            "identifier",
+            "customer",
+            "foreign_key"
+          ]
+        },
+        {
+          "name": "region_id",
+          "type": "BIGINT",
+          "description": "sales region foreign key",
+          "tags": [
+            "identifier",
+            "region",
+            "foreign_key"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "orders_2026_07",
+      "component_refs": [
+        "C1",
+        "C2"
+      ],
+      "residual_columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "description": "unique order identifier",
+          "tags": [
+            "identifier",
+            "order"
+          ]
+        },
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "description": "customer foreign key",
+          "tags": [
+            "identifier",
+            "customer",
+            "foreign_key"
+          ]
+        },
+        {
+          "name": "region_id",
+          "type": "BIGINT",
+          "description": "sales region foreign key",
+          "tags": [
+            "identifier",
+            "region",
+            "foreign_key"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "orders_2026_08",
+      "component_refs": [
+        "C1",
+        "C2"
+      ],
+      "residual_columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "description": "unique order identifier",
+          "tags": [
+            "identifier",
+            "order"
+          ]
+        },
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "description": "customer foreign key",
+          "tags": [
+            "identifier",
+            "customer",
+            "foreign_key"
+          ]
+        },
+        {
+          "name": "region_id",
+          "type": "BIGINT",
+          "description": "sales region foreign key",
+          "tags": [
+            "identifier",
+            "region",
+            "foreign_key"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "returns_2026_06",
+      "component_refs": [
+        "C1",
+        "C3"
+      ],
+      "residual_columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "description": "returned order foreign key",
+          "tags": [
+            "identifier",
+            "order",
+            "foreign_key"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "returns_2026_07",
+      "component_refs": [
+        "C1",
+        "C3"
+      ],
+      "residual_columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "description": "returned order foreign key",
+          "tags": [
+            "identifier",
+            "order",
+            "foreign_key"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "returns_2026_08",
+      "component_refs": [
+        "C1",
+        "C3"
+      ],
+      "residual_columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "description": "returned order foreign key",
+          "tags": [
+            "identifier",
+            "order",
+            "foreign_key"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dim_region",
+      "component_refs": [
+        "C1"
+      ],
+      "residual_columns": [
+        {
+          "name": "region_id",
+          "type": "BIGINT",
+          "description": "region key",
+          "tags": [
+            "identifier",
+            "region"
+          ]
+        },
+        {
+          "name": "region_name",
+          "type": "VARCHAR",
+          "description": "human-readable sales region",
+          "tags": [
+            "name",
+            "region"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "customers",
+      "component_refs": [
+        "C1"
+      ],
+      "residual_columns": [
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "description": "customer key",
+          "tags": [
+            "identifier",
+            "customer"
+          ]
+        },
+        {
+          "name": "customer_name",
+          "type": "VARCHAR",
+          "description": "customer display name",
+          "tags": [
+            "name",
+            "customer"
+          ]
+        }
+      ]
+    }
+  ],
+  "estimated_units": 39,
+  "unit_breakdown": {
+    "component_definitions": 9,
+    "references": 14,
+    "residual_columns": 16
+  }
+}

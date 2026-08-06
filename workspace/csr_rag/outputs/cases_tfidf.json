@@ -1,0 +1,1183 @@
+[
+  {
+    "contextual": {
+      "k": 1,
+      "matches": [
+        {
+          "history_id": "h1",
+          "question": "monthly gross and net sales by geographic region",
+          "score": 0.183478,
+          "tables": [
+            "fact_orders",
+            "fact_returns",
+            "dim_region"
+          ]
+        }
+      ],
+      "tables": [
+        "dim_region",
+        "fact_orders",
+        "fact_returns"
+      ]
+    },
+    "structural": {
+      "l": 10,
+      "triplets": [
+        {
+          "field": "region_id",
+          "relation": "column_of",
+          "table": "fact_orders",
+          "description": "sales region foreign key",
+          "score": 0.178752
+        },
+        {
+          "field": "region_name",
+          "relation": "column_of",
+          "table": "dim_region",
+          "description": "sales region display name",
+          "score": 0.178642
+        },
+        {
+          "field": "region_id",
+          "relation": "column_of",
+          "table": "dim_region",
+          "description": "primary region identifier",
+          "score": 0.0956
+        },
+        {
+          "field": "country_code",
+          "relation": "column_of",
+          "table": "dim_region",
+          "description": "country code in region",
+          "score": 0.083703
+        },
+        {
+          "field": "order_id",
+          "relation": "column_of",
+          "table": "fact_payments",
+          "description": "paid order foreign key",
+          "score": 0.058033
+        },
+        {
+          "field": "paid_at",
+          "relation": "column_of",
+          "table": "fact_payments",
+          "description": "payment timestamp",
+          "score": 0.056322
+        },
+        {
+          "field": "payment_id",
+          "relation": "column_of",
+          "table": "fact_payments",
+          "description": "primary payment identifier",
+          "score": 0.055832
+        },
+        {
+          "field": "paid_amount",
+          "relation": "column_of",
+          "table": "fact_payments",
+          "description": "currency amount paid",
+          "score": 0.055095
+        },
+        {
+          "field": "payment_status",
+          "relation": "column_of",
+          "table": "fact_payments",
+          "description": "payment success or failure",
+          "score": 0.050882
+        },
+        {
+          "field": "product_id",
+          "relation": "column_of",
+          "table": "inventory_snapshot",
+          "description": "stocked product foreign key",
+          "score": 0.045746
+        }
+      ],
+      "tables": [
+        "dim_region",
+        "fact_orders",
+        "fact_payments",
+        "inventory_snapshot"
+      ]
+    },
+    "candidate_union_before_relational_rag": [
+      "dim_region",
+      "fact_orders",
+      "fact_payments",
+      "fact_returns",
+      "inventory_snapshot"
+    ],
+    "relational": {
+      "h": 12,
+      "operator": "cosine(question, table purpose + column name + column description)",
+      "ranked_columns": [
+        {
+          "qualified_name": "fact_orders.region_id",
+          "table": "fact_orders",
+          "column": "region_id",
+          "score": 0.213
+        },
+        {
+          "qualified_name": "dim_region.region_name",
+          "table": "dim_region",
+          "column": "region_name",
+          "score": 0.203456
+        },
+        {
+          "qualified_name": "dim_region.region_id",
+          "table": "dim_region",
+          "column": "region_id",
+          "score": 0.108469
+        },
+        {
+          "qualified_name": "dim_region.country_code",
+          "table": "dim_region",
+          "column": "country_code",
+          "score": 0.094746
+        },
+        {
+          "qualified_name": "fact_payments.order_id",
+          "table": "fact_payments",
+          "column": "order_id",
+          "score": 0.066401
+        },
+        {
+          "qualified_name": "fact_payments.paid_at",
+          "table": "fact_payments",
+          "column": "paid_at",
+          "score": 0.064963
+        },
+        {
+          "qualified_name": "fact_payments.paid_amount",
+          "table": "fact_payments",
+          "column": "paid_amount",
+          "score": 0.0631
+        },
+        {
+          "qualified_name": "fact_payments.payment_id",
+          "table": "fact_payments",
+          "column": "payment_id",
+          "score": 0.062852
+        },
+        {
+          "qualified_name": "fact_payments.payment_status",
+          "table": "fact_payments",
+          "column": "payment_status",
+          "score": 0.056983
+        },
+        {
+          "qualified_name": "fact_orders.channel_id",
+          "table": "fact_orders",
+          "column": "channel_id",
+          "score": 0.052733
+        },
+        {
+          "qualified_name": "inventory_snapshot.warehouse_id",
+          "table": "inventory_snapshot",
+          "column": "warehouse_id",
+          "score": 0.051779
+        },
+        {
+          "qualified_name": "inventory_snapshot.on_hand_quantity",
+          "table": "inventory_snapshot",
+          "column": "on_hand_quantity",
+          "score": 0.051634
+        }
+      ],
+      "valid_join_edges_in_scope": [
+        {
+          "left": "fact_orders.region_id",
+          "right": "dim_region.region_id"
+        },
+        {
+          "left": "fact_returns.order_id",
+          "right": "fact_orders.order_id"
+        },
+        {
+          "left": "fact_payments.order_id",
+          "right": "fact_orders.order_id"
+        }
+      ],
+      "join_edges_added_to_prediction": [
+        {
+          "left": "fact_orders.region_id",
+          "right": "dim_region.region_id"
+        },
+        {
+          "left": "fact_returns.order_id",
+          "right": "fact_orders.order_id"
+        },
+        {
+          "left": "fact_payments.order_id",
+          "right": "fact_orders.order_id"
+        }
+      ],
+      "predicted_columns": [
+        "dim_region.country_code",
+        "dim_region.region_id",
+        "dim_region.region_name",
+        "fact_orders.channel_id",
+        "fact_orders.order_id",
+        "fact_orders.region_id",
+        "fact_payments.order_id",
+        "fact_payments.paid_amount",
+        "fact_payments.paid_at",
+        "fact_payments.payment_id",
+        "fact_payments.payment_status",
+        "fact_returns.order_id",
+        "inventory_snapshot.on_hand_quantity",
+        "inventory_snapshot.warehouse_id"
+      ],
+      "predicted_tables": [
+        "dim_region",
+        "fact_orders",
+        "fact_payments",
+        "fact_returns",
+        "inventory_snapshot"
+      ]
+    },
+    "prediction": {
+      "tables": [
+        "dim_region",
+        "fact_orders",
+        "fact_payments",
+        "fact_returns",
+        "inventory_snapshot"
+      ],
+      "columns": [
+        "dim_region.country_code",
+        "dim_region.region_id",
+        "dim_region.region_name",
+        "fact_orders.channel_id",
+        "fact_orders.order_id",
+        "fact_orders.region_id",
+        "fact_payments.order_id",
+        "fact_payments.paid_amount",
+        "fact_payments.paid_at",
+        "fact_payments.payment_id",
+        "fact_payments.payment_status",
+        "fact_returns.order_id",
+        "inventory_snapshot.on_hand_quantity",
+        "inventory_snapshot.warehouse_id"
+      ]
+    },
+    "retrieval_latency_ms": 0.673,
+    "id": "q1",
+    "question": "For July show net revenue by sales region excluding refunds",
+    "gold": {
+      "tables": [
+        "fact_orders",
+        "fact_returns",
+        "dim_region"
+      ],
+      "columns": [
+        "fact_orders.order_date",
+        "fact_orders.gross_amount",
+        "fact_orders.discount_amount",
+        "fact_orders.region_id",
+        "fact_returns.order_id",
+        "fact_returns.refund_amount",
+        "dim_region.region_id",
+        "dim_region.region_name"
+      ]
+    },
+    "metrics": {
+      "table_precision": 0.6,
+      "table_recall": 1.0,
+      "column_precision": 0.285714,
+      "column_recall": 0.5
+    }
+  },
+  {
+    "contextual": {
+      "k": 1,
+      "matches": [
+        {
+          "history_id": "h5",
+          "question": "successful payment amount by month",
+          "score": 0.245521,
+          "tables": [
+            "fact_payments",
+            "fact_orders"
+          ]
+        }
+      ],
+      "tables": [
+        "fact_orders",
+        "fact_payments"
+      ]
+    },
+    "structural": {
+      "l": 10,
+      "triplets": [
+        {
+          "field": "gross_amount",
+          "relation": "column_of",
+          "table": "fact_orders",
+          "description": "gross sales amount",
+          "score": 0.268061
+        },
+        {
+          "field": "paid_amount",
+          "relation": "column_of",
+          "table": "fact_payments",
+          "description": "currency amount paid",
+          "score": 0.161911
+        },
+        {
+          "field": "region_name",
+          "relation": "column_of",
+          "table": "dim_region",
+          "description": "sales region display name",
+          "score": 0.091245
+        },
+        {
+          "field": "discount_amount",
+          "relation": "column_of",
+          "table": "fact_orders",
+          "description": "discount amount",
+          "score": 0.089903
+        },
+        {
+          "field": "order_id",
+          "relation": "column_of",
+          "table": "fact_payments",
+          "description": "paid order foreign key",
+          "score": 0.089423
+        },
+        {
+          "field": "status_code",
+          "relation": "column_of",
+          "table": "fact_orders",
+          "description": "paid cancelled or refunded status",
+          "score": 0.087251
+        },
+        {
+          "field": "product_id",
+          "relation": "column_of",
+          "table": "dim_product",
+          "description": "primary product identifier",
+          "score": 0.083474
+        },
+        {
+          "field": "refund_amount",
+          "relation": "column_of",
+          "table": "fact_returns",
+          "description": "currency amount refunded",
+          "score": 0.081752
+        },
+        {
+          "field": "category_id",
+          "relation": "column_of",
+          "table": "dim_product",
+          "description": "product category foreign key",
+          "score": 0.079329
+        },
+        {
+          "field": "product_name",
+          "relation": "column_of",
+          "table": "dim_product",
+          "description": "product display name",
+          "score": 0.079099
+        }
+      ],
+      "tables": [
+        "dim_product",
+        "dim_region",
+        "fact_orders",
+        "fact_payments",
+        "fact_returns"
+      ]
+    },
+    "candidate_union_before_relational_rag": [
+      "dim_product",
+      "dim_region",
+      "fact_orders",
+      "fact_payments",
+      "fact_returns"
+    ],
+    "relational": {
+      "h": 12,
+      "operator": "cosine(question, table purpose + column name + column description)",
+      "ranked_columns": [
+        {
+          "qualified_name": "fact_orders.gross_amount",
+          "table": "fact_orders",
+          "column": "gross_amount",
+          "score": 0.324167
+        },
+        {
+          "qualified_name": "fact_payments.paid_amount",
+          "table": "fact_payments",
+          "column": "paid_amount",
+          "score": 0.185436
+        },
+        {
+          "qualified_name": "fact_orders.discount_amount",
+          "table": "fact_orders",
+          "column": "discount_amount",
+          "score": 0.110807
+        },
+        {
+          "qualified_name": "dim_region.region_name",
+          "table": "dim_region",
+          "column": "region_name",
+          "score": 0.103918
+        },
+        {
+          "qualified_name": "fact_payments.order_id",
+          "table": "fact_payments",
+          "column": "order_id",
+          "score": 0.102317
+        },
+        {
+          "qualified_name": "fact_orders.status_code",
+          "table": "fact_orders",
+          "column": "status_code",
+          "score": 0.100926
+        },
+        {
+          "qualified_name": "dim_product.product_id",
+          "table": "dim_product",
+          "column": "product_id",
+          "score": 0.096926
+        },
+        {
+          "qualified_name": "fact_returns.refund_amount",
+          "table": "fact_returns",
+          "column": "refund_amount",
+          "score": 0.094584
+        },
+        {
+          "qualified_name": "dim_product.product_name",
+          "table": "dim_product",
+          "column": "product_name",
+          "score": 0.093542
+        },
+        {
+          "qualified_name": "dim_product.category_id",
+          "table": "dim_product",
+          "column": "category_id",
+          "score": 0.09301
+        },
+        {
+          "qualified_name": "fact_orders.channel_id",
+          "table": "fact_orders",
+          "column": "channel_id",
+          "score": 0.077294
+        },
+        {
+          "qualified_name": "fact_orders.region_id",
+          "table": "fact_orders",
+          "column": "region_id",
+          "score": 0.074947
+        }
+      ],
+      "valid_join_edges_in_scope": [
+        {
+          "left": "fact_orders.product_id",
+          "right": "dim_product.product_id"
+        },
+        {
+          "left": "fact_orders.region_id",
+          "right": "dim_region.region_id"
+        },
+        {
+          "left": "fact_returns.order_id",
+          "right": "fact_orders.order_id"
+        },
+        {
+          "left": "fact_payments.order_id",
+          "right": "fact_orders.order_id"
+        }
+      ],
+      "join_edges_added_to_prediction": [
+        {
+          "left": "fact_orders.product_id",
+          "right": "dim_product.product_id"
+        },
+        {
+          "left": "fact_orders.region_id",
+          "right": "dim_region.region_id"
+        },
+        {
+          "left": "fact_returns.order_id",
+          "right": "fact_orders.order_id"
+        },
+        {
+          "left": "fact_payments.order_id",
+          "right": "fact_orders.order_id"
+        }
+      ],
+      "predicted_columns": [
+        "dim_product.category_id",
+        "dim_product.product_id",
+        "dim_product.product_name",
+        "dim_region.region_id",
+        "dim_region.region_name",
+        "fact_orders.channel_id",
+        "fact_orders.discount_amount",
+        "fact_orders.gross_amount",
+        "fact_orders.order_id",
+        "fact_orders.product_id",
+        "fact_orders.region_id",
+        "fact_orders.status_code",
+        "fact_payments.order_id",
+        "fact_payments.paid_amount",
+        "fact_returns.order_id",
+        "fact_returns.refund_amount"
+      ],
+      "predicted_tables": [
+        "dim_product",
+        "dim_region",
+        "fact_orders",
+        "fact_payments",
+        "fact_returns"
+      ]
+    },
+    "prediction": {
+      "tables": [
+        "dim_product",
+        "dim_region",
+        "fact_orders",
+        "fact_payments",
+        "fact_returns"
+      ],
+      "columns": [
+        "dim_product.category_id",
+        "dim_product.product_id",
+        "dim_product.product_name",
+        "dim_region.region_id",
+        "dim_region.region_name",
+        "fact_orders.channel_id",
+        "fact_orders.discount_amount",
+        "fact_orders.gross_amount",
+        "fact_orders.order_id",
+        "fact_orders.product_id",
+        "fact_orders.region_id",
+        "fact_orders.status_code",
+        "fact_payments.order_id",
+        "fact_payments.paid_amount",
+        "fact_returns.order_id",
+        "fact_returns.refund_amount"
+      ]
+    },
+    "retrieval_latency_ms": 0.542,
+    "id": "q2",
+    "question": "Which product categories had the highest paid sales amount",
+    "gold": {
+      "tables": [
+        "fact_orders",
+        "dim_product",
+        "dim_category"
+      ],
+      "columns": [
+        "fact_orders.product_id",
+        "fact_orders.gross_amount",
+        "fact_orders.status_code",
+        "dim_product.product_id",
+        "dim_product.category_id",
+        "dim_category.category_id",
+        "dim_category.category_name"
+      ]
+    },
+    "metrics": {
+      "table_precision": 0.4,
+      "table_recall": 0.666667,
+      "column_precision": 0.3125,
+      "column_recall": 0.714286
+    }
+  },
+  {
+    "contextual": {
+      "k": 1,
+      "matches": [
+        {
+          "history_id": "h3",
+          "question": "average shipping and delivery duration by sales channel",
+          "score": 0.255759,
+          "tables": [
+            "fact_orders",
+            "fact_shipments",
+            "dim_channel"
+          ]
+        }
+      ],
+      "tables": [
+        "dim_channel",
+        "fact_orders",
+        "fact_shipments"
+      ]
+    },
+    "structural": {
+      "l": 10,
+      "triplets": [
+        {
+          "field": "channel_id",
+          "relation": "column_of",
+          "table": "dim_channel",
+          "description": "primary channel identifier",
+          "score": 0.166969
+        },
+        {
+          "field": "channel_id",
+          "relation": "column_of",
+          "table": "fact_orders",
+          "description": "sales channel foreign key",
+          "score": 0.151794
+        },
+        {
+          "field": "delivered_at",
+          "relation": "column_of",
+          "table": "fact_shipments",
+          "description": "delivery timestamp",
+          "score": 0.149011
+        },
+        {
+          "field": "carrier_id",
+          "relation": "column_of",
+          "table": "fact_shipments",
+          "description": "delivery carrier foreign key",
+          "score": 0.139891
+        },
+        {
+          "field": "channel_name",
+          "relation": "column_of",
+          "table": "dim_channel",
+          "description": "online store partner or retail channel",
+          "score": 0.134883
+        },
+        {
+          "field": "shipped_at",
+          "relation": "column_of",
+          "table": "fact_shipments",
+          "description": "shipment timestamp",
+          "score": 0.100635
+        },
+        {
+          "field": "shipment_id",
+          "relation": "column_of",
+          "table": "fact_shipments",
+          "description": "primary shipment identifier",
+          "score": 0.100337
+        },
+        {
+          "field": "resolution_hours",
+          "relation": "column_of",
+          "table": "support_ticket",
+          "description": "time to resolve ticket",
+          "score": 0.094732
+        },
+        {
+          "field": "channel_id",
+          "relation": "column_of",
+          "table": "marketing_campaign",
+          "description": "campaign channel foreign key",
+          "score": 0.064843
+        },
+        {
+          "field": "region_name",
+          "relation": "column_of",
+          "table": "dim_region",
+          "description": "sales region display name",
+          "score": 0.060213
+        }
+      ],
+      "tables": [
+        "dim_channel",
+        "dim_region",
+        "fact_orders",
+        "fact_shipments",
+        "marketing_campaign",
+        "support_ticket"
+      ]
+    },
+    "candidate_union_before_relational_rag": [
+      "dim_channel",
+      "dim_region",
+      "fact_orders",
+      "fact_shipments",
+      "marketing_campaign",
+      "support_ticket"
+    ],
+    "relational": {
+      "h": 12,
+      "operator": "cosine(question, table purpose + column name + column description)",
+      "ranked_columns": [
+        {
+          "qualified_name": "dim_channel.channel_id",
+          "table": "dim_channel",
+          "column": "channel_id",
+          "score": 0.191416
+        },
+        {
+          "qualified_name": "fact_orders.channel_id",
+          "table": "fact_orders",
+          "column": "channel_id",
+          "score": 0.18159
+        },
+        {
+          "qualified_name": "fact_shipments.delivered_at",
+          "table": "fact_shipments",
+          "column": "delivered_at",
+          "score": 0.171766
+        },
+        {
+          "qualified_name": "fact_shipments.carrier_id",
+          "table": "fact_shipments",
+          "column": "carrier_id",
+          "score": 0.158197
+        },
+        {
+          "qualified_name": "dim_channel.channel_name",
+          "table": "dim_channel",
+          "column": "channel_name",
+          "score": 0.15122
+        },
+        {
+          "qualified_name": "fact_shipments.shipped_at",
+          "table": "fact_shipments",
+          "column": "shipped_at",
+          "score": 0.116499
+        },
+        {
+          "qualified_name": "fact_shipments.shipment_id",
+          "table": "fact_shipments",
+          "column": "shipment_id",
+          "score": 0.112408
+        },
+        {
+          "qualified_name": "support_ticket.resolution_hours",
+          "table": "support_ticket",
+          "column": "resolution_hours",
+          "score": 0.106892
+        },
+        {
+          "qualified_name": "marketing_campaign.channel_id",
+          "table": "marketing_campaign",
+          "column": "channel_id",
+          "score": 0.074111
+        },
+        {
+          "qualified_name": "fact_shipments.order_id",
+          "table": "fact_shipments",
+          "column": "order_id",
+          "score": 0.068648
+        },
+        {
+          "qualified_name": "dim_region.region_name",
+          "table": "dim_region",
+          "column": "region_name",
+          "score": 0.068576
+        },
+        {
+          "qualified_name": "fact_orders.region_id",
+          "table": "fact_orders",
+          "column": "region_id",
+          "score": 0.049458
+        }
+      ],
+      "valid_join_edges_in_scope": [
+        {
+          "left": "fact_orders.channel_id",
+          "right": "dim_channel.channel_id"
+        },
+        {
+          "left": "fact_orders.region_id",
+          "right": "dim_region.region_id"
+        },
+        {
+          "left": "fact_shipments.order_id",
+          "right": "fact_orders.order_id"
+        },
+        {
+          "left": "marketing_campaign.channel_id",
+          "right": "dim_channel.channel_id"
+        }
+      ],
+      "join_edges_added_to_prediction": [
+        {
+          "left": "fact_orders.channel_id",
+          "right": "dim_channel.channel_id"
+        },
+        {
+          "left": "fact_orders.region_id",
+          "right": "dim_region.region_id"
+        },
+        {
+          "left": "fact_shipments.order_id",
+          "right": "fact_orders.order_id"
+        },
+        {
+          "left": "marketing_campaign.channel_id",
+          "right": "dim_channel.channel_id"
+        }
+      ],
+      "predicted_columns": [
+        "dim_channel.channel_id",
+        "dim_channel.channel_name",
+        "dim_region.region_id",
+        "dim_region.region_name",
+        "fact_orders.channel_id",
+        "fact_orders.order_id",
+        "fact_orders.region_id",
+        "fact_shipments.carrier_id",
+        "fact_shipments.delivered_at",
+        "fact_shipments.order_id",
+        "fact_shipments.shipment_id",
+        "fact_shipments.shipped_at",
+        "marketing_campaign.channel_id",
+        "support_ticket.resolution_hours"
+      ],
+      "predicted_tables": [
+        "dim_channel",
+        "dim_region",
+        "fact_orders",
+        "fact_shipments",
+        "marketing_campaign",
+        "support_ticket"
+      ]
+    },
+    "prediction": {
+      "tables": [
+        "dim_channel",
+        "dim_region",
+        "fact_orders",
+        "fact_shipments",
+        "marketing_campaign",
+        "support_ticket"
+      ],
+      "columns": [
+        "dim_channel.channel_id",
+        "dim_channel.channel_name",
+        "dim_region.region_id",
+        "dim_region.region_name",
+        "fact_orders.channel_id",
+        "fact_orders.order_id",
+        "fact_orders.region_id",
+        "fact_shipments.carrier_id",
+        "fact_shipments.delivered_at",
+        "fact_shipments.order_id",
+        "fact_shipments.shipment_id",
+        "fact_shipments.shipped_at",
+        "marketing_campaign.channel_id",
+        "support_ticket.resolution_hours"
+      ]
+    },
+    "retrieval_latency_ms": 0.477,
+    "id": "q3",
+    "question": "Average days from shipment to delivery for every sales channel",
+    "gold": {
+      "tables": [
+        "fact_orders",
+        "fact_shipments",
+        "dim_channel"
+      ],
+      "columns": [
+        "fact_orders.order_id",
+        "fact_orders.channel_id",
+        "fact_shipments.order_id",
+        "fact_shipments.shipped_at",
+        "fact_shipments.delivered_at",
+        "dim_channel.channel_id",
+        "dim_channel.channel_name"
+      ]
+    },
+    "metrics": {
+      "table_precision": 0.5,
+      "table_recall": 1.0,
+      "column_precision": 0.5,
+      "column_recall": 1.0
+    }
+  },
+  {
+    "contextual": {
+      "k": 1,
+      "matches": [
+        {
+          "history_id": "h4",
+          "question": "order return rate for each customer segment",
+          "score": 0.248585,
+          "tables": [
+            "fact_orders",
+            "fact_returns",
+            "dim_customer"
+          ]
+        }
+      ],
+      "tables": [
+        "dim_customer",
+        "fact_orders",
+        "fact_returns"
+      ]
+    },
+    "structural": {
+      "l": 10,
+      "triplets": [
+        {
+          "field": "segment_name",
+          "relation": "column_of",
+          "table": "dim_customer",
+          "description": "customer business segment",
+          "score": 0.314359
+        },
+        {
+          "field": "return_id",
+          "relation": "column_of",
+          "table": "fact_returns",
+          "description": "primary return identifier",
+          "score": 0.057159
+        },
+        {
+          "field": "return_date",
+          "relation": "column_of",
+          "table": "fact_returns",
+          "description": "date of return",
+          "score": 0.055875
+        },
+        {
+          "field": "reason_code",
+          "relation": "column_of",
+          "table": "fact_returns",
+          "description": "return reason code",
+          "score": 0.053829
+        },
+        {
+          "field": "customer_id",
+          "relation": "column_of",
+          "table": "fact_orders",
+          "description": "customer foreign key",
+          "score": 0.035701
+        },
+        {
+          "field": "product_id",
+          "relation": "column_of",
+          "table": "inventory_snapshot",
+          "description": "stocked product foreign key",
+          "score": 0.034718
+        },
+        {
+          "field": "warehouse_id",
+          "relation": "column_of",
+          "table": "inventory_snapshot",
+          "description": "warehouse foreign key",
+          "score": 0.034535
+        },
+        {
+          "field": "on_hand_quantity",
+          "relation": "column_of",
+          "table": "inventory_snapshot",
+          "description": "units available",
+          "score": 0.03446
+        },
+        {
+          "field": "snapshot_date",
+          "relation": "column_of",
+          "table": "inventory_snapshot",
+          "description": "inventory calendar date",
+          "score": 0.033926
+        },
+        {
+          "field": "customer_id",
+          "relation": "column_of",
+          "table": "support_ticket",
+          "description": "customer foreign key",
+          "score": 0.03286
+        }
+      ],
+      "tables": [
+        "dim_customer",
+        "fact_orders",
+        "fact_returns",
+        "inventory_snapshot",
+        "support_ticket"
+      ]
+    },
+    "candidate_union_before_relational_rag": [
+      "dim_customer",
+      "fact_orders",
+      "fact_returns",
+      "inventory_snapshot",
+      "support_ticket"
+    ],
+    "relational": {
+      "h": 12,
+      "operator": "cosine(question, table purpose + column name + column description)",
+      "ranked_columns": [
+        {
+          "qualified_name": "dim_customer.segment_name",
+          "table": "dim_customer",
+          "column": "segment_name",
+          "score": 0.357332
+        },
+        {
+          "qualified_name": "fact_returns.return_date",
+          "table": "fact_returns",
+          "column": "return_date",
+          "score": 0.065818
+        },
+        {
+          "qualified_name": "fact_returns.return_id",
+          "table": "fact_returns",
+          "column": "return_id",
+          "score": 0.065195
+        },
+        {
+          "qualified_name": "fact_returns.reason_code",
+          "table": "fact_returns",
+          "column": "reason_code",
+          "score": 0.062238
+        },
+        {
+          "qualified_name": "fact_orders.customer_id",
+          "table": "fact_orders",
+          "column": "customer_id",
+          "score": 0.043339
+        },
+        {
+          "qualified_name": "inventory_snapshot.warehouse_id",
+          "table": "inventory_snapshot",
+          "column": "warehouse_id",
+          "score": 0.039297
+        },
+        {
+          "qualified_name": "inventory_snapshot.on_hand_quantity",
+          "table": "inventory_snapshot",
+          "column": "on_hand_quantity",
+          "score": 0.039187
+        },
+        {
+          "qualified_name": "inventory_snapshot.product_id",
+          "table": "inventory_snapshot",
+          "column": "product_id",
+          "score": 0.039129
+        },
+        {
+          "qualified_name": "support_ticket.customer_id",
+          "table": "support_ticket",
+          "column": "customer_id",
+          "score": 0.038923
+        },
+        {
+          "qualified_name": "inventory_snapshot.snapshot_date",
+          "table": "inventory_snapshot",
+          "column": "snapshot_date",
+          "score": 0.038406
+        },
+        {
+          "qualified_name": "dim_customer.customer_id",
+          "table": "dim_customer",
+          "column": "customer_id",
+          "score": 0.035497
+        },
+        {
+          "qualified_name": "dim_customer.customer_name",
+          "table": "dim_customer",
+          "column": "customer_name",
+          "score": 0.034446
+        }
+      ],
+      "valid_join_edges_in_scope": [
+        {
+          "left": "fact_orders.customer_id",
+          "right": "dim_customer.customer_id"
+        },
+        {
+          "left": "fact_returns.order_id",
+          "right": "fact_orders.order_id"
+        },
+        {
+          "left": "support_ticket.customer_id",
+          "right": "dim_customer.customer_id"
+        }
+      ],
+      "join_edges_added_to_prediction": [
+        {
+          "left": "fact_orders.customer_id",
+          "right": "dim_customer.customer_id"
+        },
+        {
+          "left": "fact_returns.order_id",
+          "right": "fact_orders.order_id"
+        },
+        {
+          "left": "support_ticket.customer_id",
+          "right": "dim_customer.customer_id"
+        }
+      ],
+      "predicted_columns": [
+        "dim_customer.customer_id",
+        "dim_customer.customer_name",
+        "dim_customer.segment_name",
+        "fact_orders.customer_id",
+        "fact_orders.order_id",
+        "fact_returns.order_id",
+        "fact_returns.reason_code",
+        "fact_returns.return_date",
+        "fact_returns.return_id",
+        "inventory_snapshot.on_hand_quantity",
+        "inventory_snapshot.product_id",
+        "inventory_snapshot.snapshot_date",
+        "inventory_snapshot.warehouse_id",
+        "support_ticket.customer_id"
+      ],
+      "predicted_tables": [
+        "dim_customer",
+        "fact_orders",
+        "fact_returns",
+        "inventory_snapshot",
+        "support_ticket"
+      ]
+    },
+    "prediction": {
+      "tables": [
+        "dim_customer",
+        "fact_orders",
+        "fact_returns",
+        "inventory_snapshot",
+        "support_ticket"
+      ],
+      "columns": [
+        "dim_customer.customer_id",
+        "dim_customer.customer_name",
+        "dim_customer.segment_name",
+        "fact_orders.customer_id",
+        "fact_orders.order_id",
+        "fact_returns.order_id",
+        "fact_returns.reason_code",
+        "fact_returns.return_date",
+        "fact_returns.return_id",
+        "inventory_snapshot.on_hand_quantity",
+        "inventory_snapshot.product_id",
+        "inventory_snapshot.snapshot_date",
+        "inventory_snapshot.warehouse_id",
+        "support_ticket.customer_id"
+      ]
+    },
+    "retrieval_latency_ms": 0.458,
+    "id": "q4",
+    "question": "Return rate by customer business segment",
+    "gold": {
+      "tables": [
+        "fact_orders",
+        "fact_returns",
+        "dim_customer"
+      ],
+      "columns": [
+        "fact_orders.order_id",
+        "fact_orders.customer_id",
+        "fact_returns.order_id",
+        "fact_returns.return_id",
+        "dim_customer.customer_id",
+        "dim_customer.segment_name"
+      ]
+    },
+    "metrics": {
+      "table_precision": 0.6,
+      "table_recall": 1.0,
+      "column_precision": 0.428571,
+      "column_recall": 1.0
+    }
+  }
+]

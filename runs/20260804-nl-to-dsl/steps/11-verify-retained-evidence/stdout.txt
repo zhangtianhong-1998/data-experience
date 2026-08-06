@@ -1,0 +1,118 @@
+{
+  "checks": {
+    "attempt_01_is_retained_failure": true,
+    "attempt_02_is_retained_failure": true,
+    "final_llm_is_10_of_10": true,
+    "no_fallback_results": true,
+    "ten_final_call_records": true,
+    "all_final_call_validations_pass": true,
+    "no_secret_locations_logged": true,
+    "only_four_ready_queries_generated": true,
+    "four_engine_records": true,
+    "four_engine_results_match": true
+  },
+  "all_passed": true,
+  "attempts": {
+    "01": {
+      "passed": 9,
+      "failed": 1
+    },
+    "02": {
+      "passed": 8,
+      "failed": 2
+    },
+    "final": {
+      "passed": 10,
+      "failed": 0
+    }
+  },
+  "execution": {
+    "executed_queries": 4,
+    "matched": 4,
+    "all_match": true,
+    "results": [
+      {
+        "framework": "cube",
+        "case_id": "01_exact",
+        "match": true
+      },
+      {
+        "framework": "cube",
+        "case_id": "02_synonyms",
+        "match": true
+      },
+      {
+        "framework": "wren",
+        "case_id": "01_exact",
+        "match": true
+      },
+      {
+        "framework": "wren",
+        "case_id": "02_synonyms",
+        "match": true
+      }
+    ]
+  },
+  "final_calls": [
+    {
+      "path": "results/calls/cube/01_exact.json",
+      "validation_passed": true,
+      "api_key_logged": false,
+      "base_url_logged": false
+    },
+    {
+      "path": "results/calls/cube/02_synonyms.json",
+      "validation_passed": true,
+      "api_key_logged": false,
+      "base_url_logged": false
+    },
+    {
+      "path": "results/calls/cube/03_ambiguous_amount.json",
+      "validation_passed": true,
+      "api_key_logged": false,
+      "base_url_logged": false
+    },
+    {
+      "path": "results/calls/cube/04_missing_org.json",
+      "validation_passed": true,
+      "api_key_logged": false,
+      "base_url_logged": false
+    },
+    {
+      "path": "results/calls/cube/05_out_of_domain.json",
+      "validation_passed": true,
+      "api_key_logged": false,
+      "base_url_logged": false
+    },
+    {
+      "path": "results/calls/wren/01_exact.json",
+      "validation_passed": true,
+      "api_key_logged": false,
+      "base_url_logged": false
+    },
+    {
+      "path": "results/calls/wren/02_synonyms.json",
+      "validation_passed": true,
+      "api_key_logged": false,
+      "base_url_logged": false
+    },
+    {
+      "path": "results/calls/wren/03_ambiguous_amount.json",
+      "validation_passed": true,
+      "api_key_logged": false,
+      "base_url_logged": false
+    },
+    {
+      "path": "results/calls/wren/04_missing_org.json",
+      "validation_passed": true,
+      "api_key_logged": false,
+      "base_url_logged": false
+    },
+    {
+      "path": "results/calls/wren/05_out_of_domain.json",
+      "validation_passed": true,
+      "api_key_logged": false,
+      "base_url_logged": false
+    }
+  ]
+}

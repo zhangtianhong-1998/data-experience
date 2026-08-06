@@ -1,0 +1,26 @@
+[
+  {
+    "id": "q1",
+    "question": "For July show net revenue by sales region excluding refunds",
+    "gold_tables": ["fact_orders", "fact_returns", "dim_region"],
+    "gold_columns": ["fact_orders.order_date", "fact_orders.gross_amount", "fact_orders.discount_amount", "fact_orders.region_id", "fact_returns.order_id", "fact_returns.refund_amount", "dim_region.region_id", "dim_region.region_name"]
+  },
+  {
+    "id": "q2",
+    "question": "Which product categories had the highest paid sales amount",
+    "gold_tables": ["fact_orders", "dim_product", "dim_category"],
+    "gold_columns": ["fact_orders.product_id", "fact_orders.gross_amount", "fact_orders.status_code", "dim_product.product_id", "dim_product.category_id", "dim_category.category_id", "dim_category.category_name"]
+  },
+  {
+    "id": "q3",
+    "question": "Average days from shipment to delivery for every sales channel",
+    "gold_tables": ["fact_orders", "fact_shipments", "dim_channel"],
+    "gold_columns": ["fact_orders.order_id", "fact_orders.channel_id", "fact_shipments.order_id", "fact_shipments.shipped_at", "fact_shipments.delivered_at", "dim_channel.channel_id", "dim_channel.channel_name"]
+  },
+  {
+    "id": "q4",
+    "question": "Return rate by customer business segment",
+    "gold_tables": ["fact_orders", "fact_returns", "dim_customer"],
+    "gold_columns": ["fact_orders.order_id", "fact_orders.customer_id", "fact_returns.order_id", "fact_returns.return_id", "dim_customer.customer_id", "dim_customer.segment_name"]
+  }
+]

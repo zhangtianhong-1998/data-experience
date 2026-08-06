@@ -1,0 +1,56 @@
+[COMPONENTS]
+@C1
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+
+@C2
+discount_amount: DECIMAL | discount deducted from gross amount
+gross_amount: DECIMAL | gross amount before discount
+order_status_code: INTEGER | machine status code
+
+@C3
+refund_amount: DECIMAL | refunded currency amount
+return_id: BIGINT | unique return identifier
+return_reason_code: INTEGER | machine return reason
+
+[TABLES]
+## orders_2026_06
+@use: [C1, C2]
+order_id: BIGINT | unique order identifier
+customer_id: BIGINT | customer foreign key
+region_id: BIGINT | sales region foreign key
+
+## orders_2026_07
+@use: [C1, C2]
+order_id: BIGINT | unique order identifier
+customer_id: BIGINT | customer foreign key
+region_id: BIGINT | sales region foreign key
+
+## orders_2026_08
+@use: [C1, C2]
+order_id: BIGINT | unique order identifier
+customer_id: BIGINT | customer foreign key
+region_id: BIGINT | sales region foreign key
+
+## returns_2026_06
+@use: [C1, C3]
+order_id: BIGINT | returned order foreign key
+
+## returns_2026_07
+@use: [C1, C3]
+order_id: BIGINT | returned order foreign key
+
+## returns_2026_08
+@use: [C1, C3]
+order_id: BIGINT | returned order foreign key
+
+## dim_region
+@use: [C1]
+region_id: BIGINT | region key
+region_name: VARCHAR | human-readable sales region
+
+## customers
+@use: [C1]
+customer_id: BIGINT | customer key
+customer_name: VARCHAR | customer display name

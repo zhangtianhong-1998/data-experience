@@ -1,0 +1,37 @@
+[TEMPLATES]
+<T1>
+order_id: BIGINT | unique order identifier
+customer_id: BIGINT | customer foreign key
+region_id: BIGINT | sales region foreign key
+gross_amount: DECIMAL | gross amount before discount
+discount_amount: DECIMAL | discount deducted from gross amount
+order_status_code: INTEGER | machine status code
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+@Tables: [orders_2026_06,orders_2026_07,orders_2026_08]
+
+<T2>
+return_id: BIGINT | unique return identifier
+order_id: BIGINT | returned order foreign key
+refund_amount: DECIMAL | refunded currency amount
+return_reason_code: INTEGER | machine return reason
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+@Tables: [returns_2026_06,returns_2026_07,returns_2026_08]
+
+[STANDALONE]
+## customers
+customer_id: BIGINT | customer key
+customer_name: VARCHAR | customer display name
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater
+
+## dim_region
+region_id: BIGINT | region key
+region_name: VARCHAR | human-readable sales region
+created_at: TIMESTAMP | row creation time
+updated_at: TIMESTAMP | last update time
+updated_by: VARCHAR | last updater

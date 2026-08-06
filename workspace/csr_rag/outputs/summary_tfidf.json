@@ -1,0 +1,28 @@
+{
+  "backend": "tfidf",
+  "encoder": "tfidf-word-bigram-fallback",
+  "encoder_revision": null,
+  "case_count": 4,
+  "schema_table_count": 12,
+  "schema_column_count": 52,
+  "history_count": 8,
+  "index_build_ms": 3.152,
+  "config": {
+    "contextual_k": 1,
+    "structural_l": 10,
+    "relational_h": 12
+  },
+  "macro_precision": 0.525,
+  "macro_recall": 0.916667,
+  "macro_column_precision": 0.381696,
+  "macro_column_recall": 0.803571,
+  "median_latency_ms": 0.51,
+  "p90_latency_ms": 0.542,
+  "scope": "independent mechanism-level reproduction; not the authors' private enterprise benchmark",
+  "undisclosed_paper_choices": [
+    "exact BERT-like checkpoint",
+    "Relational-RAG semantic operator",
+    "metadata availability rules",
+    "operator weights"
+  ]
+}

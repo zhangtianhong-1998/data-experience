@@ -1,0 +1,37 @@
+[
+  {
+    "id": "metric.net_revenue",
+    "type": "metric_definition",
+    "triggers": ["net revenue", "revenue"],
+    "text": "Net revenue equals gross_amount minus discount_amount minus refund_amount.",
+    "bindings": ["orders.gross_amount", "orders.discount_amount", "returns.refund_amount"]
+  },
+  {
+    "id": "rule.refunded_order",
+    "type": "value_constraint",
+    "triggers": ["refunded", "exclude refunded orders"],
+    "text": "An order is refunded when order_status_code = 40; exclude these rows for the requested report.",
+    "bindings": ["orders.order_status_code"]
+  },
+  {
+    "id": "term.sales_region",
+    "type": "concept_to_element",
+    "triggers": ["sales region", "region"],
+    "text": "Sales region is dim_region.region_name joined through orders.region_id = dim_region.region_id.",
+    "bindings": ["orders.region_id", "dim_region.region_id", "dim_region.region_name"]
+  },
+  {
+    "id": "term.active_customer",
+    "type": "domain_definition",
+    "triggers": ["active customer", "retention"],
+    "text": "An active customer placed at least one paid order in the preceding 90 days.",
+    "bindings": ["customers.customer_id", "orders.paid_at"]
+  },
+  {
+    "id": "metric.inventory_turnover",
+    "type": "metric_definition",
+    "triggers": ["inventory turnover", "stock"],
+    "text": "Inventory turnover equals cost of goods sold divided by average inventory.",
+    "bindings": ["inventory.cogs", "inventory.average_stock"]
+  }
+]

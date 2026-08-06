@@ -1,0 +1,23 @@
+{
+  "step": "00-cube-clean",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/cube",
+  "argv": [
+    "docker",
+    "compose",
+    "down",
+    "-v",
+    "--remove-orphans"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.9.6"
+  },
+  "started_epoch": 1785833343.31105
+}

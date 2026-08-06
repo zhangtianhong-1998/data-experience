@@ -1,0 +1,20 @@
+{
+  "step": "12-cube-query-and-meta",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience/demos/route1/cube",
+  "argv": [
+    "python3",
+    "run_query.py"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.9.6"
+  },
+  "started_epoch": 1785832703.981345
+}

@@ -1,0 +1,31 @@
+[TEMPLATES]
+<T1> tables=['customers']
+- customer_id: BIGINT
+- customer_name: VARCHAR
+- created_at: TIMESTAMP
+- updated_at: TIMESTAMP
+- updated_by: VARCHAR
+<T2> tables=['dim_region']
+- region_id: BIGINT
+- region_name: VARCHAR
+- created_at: TIMESTAMP
+- updated_at: TIMESTAMP
+- updated_by: VARCHAR
+<T3> tables=['returns_2026_06', 'returns_2026_07', 'returns_2026_08']
+- return_id: BIGINT
+- order_id: BIGINT
+- refund_amount: DECIMAL
+- return_reason_code: INTEGER
+- created_at: TIMESTAMP
+- updated_at: TIMESTAMP
+- updated_by: VARCHAR
+<T4> tables=['orders_2026_06', 'orders_2026_07', 'orders_2026_08']
+- order_id: BIGINT
+- customer_id: BIGINT
+- region_id: BIGINT
+- gross_amount: DECIMAL
+- discount_amount: DECIMAL
+- order_status_code: INTEGER
+- created_at: TIMESTAMP
+- updated_at: TIMESTAMP
+- updated_by: VARCHAR

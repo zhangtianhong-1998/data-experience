@@ -1,0 +1,8 @@
+test_evidence_is_question_specific (test_compression.CompressionTests) ... ok
+test_factorization_is_lossless (test_compression.CompressionTests) ... ok
+test_gain_is_plain_saving_minus_overhead (test_compression.CompressionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

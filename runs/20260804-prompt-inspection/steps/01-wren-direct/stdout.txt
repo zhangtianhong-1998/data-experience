@@ -1,0 +1,4 @@
+You have access to Wren CLI for semantic SQL queries.
+Run `wren skills list` or `wren --help` to discover capabilities.
+
+User question: ORG_1001 在 2026 年上半年，按产品一级分类统计设备订货金额和利润

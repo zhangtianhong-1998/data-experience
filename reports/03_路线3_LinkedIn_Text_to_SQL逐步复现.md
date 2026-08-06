@@ -13,6 +13,8 @@ LinkedIn 公开了论文和工程文章，但没有公开生产系统源码、�
 
 本实验重点复现前两部分，因为它们正对应“怎样构建语义知识”和“构建后怎样让智能体使用”。
 
+如果你的疑问是“知识图谱到底在哪一步被用、为什么要多次召回、2026 年的新方案怎样做上下文”，请先读新增的 [`07_2026_Data_Agent上下文工程与知识图谱使用.md`](07_2026_Data_Agent上下文工程与知识图谱使用.md)。那份报告把 LinkedIn、本机运行结果、OpenAI、阿里、蚂蚁、美团、京东、喜马拉雅、字节和 2026 年论文放在同一条问题执行链上比较。
+
 ---
 
 ## 一、LinkedIn 公开方法到底怎样构建知识
@@ -154,6 +156,21 @@ LinkedIn 没有发布其 embedding model/index。本次使用确定性的中文�
 2. 按月统计指定组织的 confirmed 设备订货金额和利润。
 
 还命中两个 domain knowledge 和四个 jargon。完整结果在 [`01_retrieval_trace.json`](../demos/route3/linkedin_text2sql/results/agent/01_retrieval_trace.json)。
+
+#### 这一步中“图”具体做了什么
+
+图没有被完整转换成文本交给模型。不同关系在不同位置被消费：
+
+| 图关系或索引 | 本步用途 | 返回给下游的内容 |
+|---|---|---|
+| `user → cluster → table` | 根据用户历史使用习惯缩小全局表空间 | 当前用户的候选表 ID |
+| `product_area → cluster → table` | 限定当前业务域 | 当前业务域候选表 ID |
+| 表描述向量索引 | 按问题语义搜索候选表 | 表名、描述、相似度和治理属性 |
+| `example_query → table` | 给候选表附着相近的权威写法 | 少量 approved SQL 和描述 |
+| `domain_knowledge → table/column` | 给候选表字段附着过滤和统计口径 | 与当前域、表和字段有关的规则 |
+| jargon 索引 | 解释问题中的企业黑话 | 本题命中的术语解释 |
+
+这几路结果先求并集、过滤和重排；只有压缩后的小结果才进入后续 LLM。多次召回的原因不是同一份知识重复检索，而是表、字段、示例和业务规则是不同对象，分别解决选表、选列、写法参考和统计口径问题。
 
 ### 第 2 步：第一次 LLM 调用——表重排
 
@@ -353,4 +370,3 @@ Fixer 将 `device_order_fact` 替换为 `device_orders`，同时保留组织、�
 - [`verification.json`](../demos/route3/linkedin_text2sql/results/verification.json)：11 项检查全部通过。
 - [`72b clean-run log`](../runs/20260804-clean-verification/steps/72b-linkedin-agent-real-llm/stdout.txt)：洁净复跑的原始输出。
 - 公开依据：[论文](https://arxiv.org/abs/2507.14372)、[LinkedIn 工程文章](https://www.linkedin.com/blog/engineering/ai/practical-text-to-sql-for-data-analytics)。
-

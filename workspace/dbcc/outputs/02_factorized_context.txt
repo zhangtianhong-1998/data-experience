@@ -1,0 +1,39 @@
+[COMPONENTS]
+<C1> support=8 width=3 gain=13
+- created_at: TIMESTAMP
+- updated_at: TIMESTAMP
+- updated_by: VARCHAR
+<C2> support=3 width=3 gain=3
+- discount_amount: DECIMAL
+- gross_amount: DECIMAL
+- order_status_code: INTEGER
+<C3> support=3 width=3 gain=3
+- refund_amount: DECIMAL
+- return_id: BIGINT
+- return_reason_code: INTEGER
+
+[TABLES]
+## orders_2026_06 uses=['C1', 'C2']
+- order_id: BIGINT
+- customer_id: BIGINT
+- region_id: BIGINT
+## orders_2026_07 uses=['C1', 'C2']
+- order_id: BIGINT
+- customer_id: BIGINT
+- region_id: BIGINT
+## orders_2026_08 uses=['C1', 'C2']
+- order_id: BIGINT
+- customer_id: BIGINT
+- region_id: BIGINT
+## returns_2026_06 uses=['C1', 'C3']
+- order_id: BIGINT
+## returns_2026_07 uses=['C1', 'C3']
+- order_id: BIGINT
+## returns_2026_08 uses=['C1', 'C3']
+- order_id: BIGINT
+## dim_region uses=['C1']
+- region_id: BIGINT
+- region_name: VARCHAR
+## customers uses=['C1']
+- customer_id: BIGINT
+- customer_name: VARCHAR

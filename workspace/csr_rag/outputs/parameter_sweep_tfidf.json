@@ -1,0 +1,54 @@
+[
+  {
+    "config": {
+      "contextual_k": 1,
+      "structural_l": 6,
+      "relational_h": 8
+    },
+    "macro_precision": 0.708333,
+    "macro_recall": 0.833333,
+    "macro_column_precision": 0.480808,
+    "macro_column_recall": 0.696429,
+    "median_latency_ms": 0.462,
+    "p90_latency_ms": 0.464
+  },
+  {
+    "config": {
+      "contextual_k": 1,
+      "structural_l": 10,
+      "relational_h": 12
+    },
+    "macro_precision": 0.525,
+    "macro_recall": 0.916667,
+    "macro_column_precision": 0.381696,
+    "macro_column_recall": 0.803571,
+    "median_latency_ms": 0.469,
+    "p90_latency_ms": 0.477
+  },
+  {
+    "config": {
+      "contextual_k": 2,
+      "structural_l": 10,
+      "relational_h": 12
+    },
+    "macro_precision": 0.507143,
+    "macro_recall": 1.0,
+    "macro_column_precision": 0.382878,
+    "macro_column_recall": 0.839286,
+    "median_latency_ms": 0.446,
+    "p90_latency_ms": 0.45
+  },
+  {
+    "config": {
+      "contextual_k": 2,
+      "structural_l": 18,
+      "relational_h": 18
+    },
+    "macro_precision": 0.444643,
+    "macro_recall": 1.0,
+    "macro_column_precision": 0.294694,
+    "macro_column_recall": 0.870536,
+    "median_latency_ms": 0.462,
+    "p90_latency_ms": 0.468
+  }
+]

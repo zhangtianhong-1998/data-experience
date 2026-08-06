@@ -1,0 +1,91 @@
+{
+  "framework": "cube",
+  "case": {
+    "id": "01_exact",
+    "question": "ORG_1001 在 2026 年上半年，按产品一级分类统计设备订货金额和设备利润。",
+    "expected_status": "ready"
+  },
+  "context_source": "actual Cube Core /cubejs-api/v1/meta response",
+  "context_strategy": "full metadata after hard scoping to the device domain",
+  "llm": {
+    "successful_request": {
+      "model": "glm-5.2",
+      "temperature": 0,
+      "messages": [
+        {
+          "role": "system",
+          "content": "你是企业语义查询规划器。你不写物理 SQL，只能从给定语义上下文中选择正式对象并生成结构化查询。\n\n必须遵守：\n1. 只能使用上下文出现的正式 Cube、Measure、Dimension 和操作符，绝不发明字段、指标、公式或 Join。\n2. 先判断问题是否具备唯一且可执行的业务含义。只有全部指标、分组、组织和时间范围都明确时才能返回 ready。\n3. 缺少必填条件或存在多个合理指标时返回 needs_clarification，并提出一个具体问题；query 必须为 null。\n4. 问题明确要求语义层声明不可替代或不支持的概念时返回 unsupported；query 必须为 null。\n5. 不要把“销售金额”解释成“设备订货金额”，不要把“净利润”解释成“设备利润”。\n6. 时间范围必须使用闭区间：2026 年上半年是 2026-01-01 至 2026-06-30；Wren 的 year_month 范围是 202601 至 202606。\n7. dimensions 只放用户明确要求的分组字段。作为过滤条件的组织和时间字段不能同时放进 dimensions，除非用户明确要求按组织或时间分组。\n8. 只返回一个 JSON 对象，不要输出 Markdown。"
+        },
+        {
+          "role": "user",
+          "content": "{\n  \"framework\": \"cube\",\n  \"question\": \"ORG_1001 在 2026 年上半年，按产品一级分类统计设备订货金额和设备利润。\",\n  \"current_date\": \"2026-08-04\",\n  \"semantic_context\": {\n    \"source\": \"actual Cube Core /cubejs-api/v1/meta response\",\n    \"scope_strategy\": \"full metadata after hard scoping to the device domain\",\n    \"cube\": {\n      \"name\": \"DeviceOrders\",\n      \"title\": \"设备订货事实\",\n      \"description\": \"合成数据。每行是一张设备订货单；指标只统计 confirmed 状态。本模型用于设备订货，不用于销售金额。\",\n      \"measures\": [\n        {\n          \"name\": \"DeviceOrders.deviceOrderAmount\",\n          \"title\": \"设备订货事实 设备订货金额\",\n          \"description\": \"已确认设备订货单的 order_amount 合计，演示单位 CNY.\",\n          \"type\": \"number\",\n          \"meta\": {\n            \"ai_context\": \"同义词包括“设备订货额”和“设备订单金额”。不能用于“销售金额”。用户只说“金额”时，无法区分订货金额和利润金额，必须追问。\"\n          }\n        },\n        {\n          \"name\": \"DeviceOrders.deviceProfitAmount\",\n          \"title\": \"设备订货事实 设备利润金额\",\n          \"description\": \"已确认设备订货单的设备利润合计；不能解释为净利润。\",\n          \"type\": \"number\",\n          \"meta\": {\n            \"ai_context\": \"同义词包括“设备利润额”。用户明确询问净利润时不得使用本指标。用户只说“金额”时，无法区分订货金额和利润金额，必须追问。\"\n          }\n        },\n        {\n          \"name\": \"DeviceOrders.orderCount\",\n          \"title\": \"设备订货事实 Order Count\",\n          \"type\": \"number\"\n        }\n      ],\n      \"dimensions\": [\n        {\n          \"name\": \"DeviceOrders.orderId\",\n          \"title\": \"设备订货事实 Order ID\",\n          \"type\": \"string\"\n        },\n        {\n          \"name\": \"DeviceOrders.orderDate\",\n          \"title\": \"设备订货事实 Order Date\",\n          \"type\": \"time\"\n        },\n        {\n          \"name\": \"DeviceOrders.yearMonth\",\n          \"title\": \"设备订货事实 Year Month\",\n          \"type\": \"number\"\n        },\n        {\n          \"name\": \"DeviceOrders.orgCode\",\n          \"title\": \"设备订货事实 Org Code\",\n          \"description\": \"组织编码；每次设备经营分析必须由用户显式给出。\",\n          \"type\": \"string\",\n          \"meta\": {\n            \"ai_context\": \"必填过滤维度；不得默认跨组织汇总，也不得猜测组织编码。\"\n          }\n        },\n        {\n          \"name\": \"DeviceOrders.productL1\",\n          \"title\": \"设备订货事实 产品一级分类\",\n          \"type\": \"string\",\n          \"meta\": {\n            \"ai_context\": \"“产品大类”在本模型中指产品一级分类。\"\n          }\n        },\n        {\n          \"name\": \"DeviceOrders.status\",\n          \"title\": \"设备订货事实 Status\",\n          \"type\": \"string\"\n        }\n      ]\n    }\n  },\n  \"required_output\": {\n    \"status\": \"ready | needs_clarification | unsupported\",\n    \"reason\": \"简洁说明为什么做出这一判断\",\n    \"clarification_question\": \"需要追问时填写字符串，否则为 null\",\n    \"query\": {\n      \"measures\": \"仅允许 DeviceOrders.deviceOrderAmount、DeviceOrders.deviceProfitAmount、DeviceOrders.orderCount\",\n      \"dimensions\": \"仅允许 DeviceOrders.productL1、DeviceOrders.yearMonth、DeviceOrders.orgCode、DeviceOrders.status\",\n      \"timeDimensions\": [\n        {\n          \"dimension\": \"仅允许 DeviceOrders.orderDate\",\n          \"dateRange\": [\n            \"YYYY-MM-DD\",\n            \"YYYY-MM-DD\"\n          ]\n        }\n      ],\n      \"filters\": [\n        {\n          \"member\": \"上下文中的正式 Dimension ID\",\n          \"operator\": \"equals\",\n          \"values\": [\n            \"过滤值\"\n          ]\n        }\n      ],\n      \"order\": \"可选；如提供，只能写 {正式 Dimension ID: asc | desc}。省略时由程序确定性排序\"\n    },\n    \"query_note\": \"status 不是 ready 时，query 必须为 null\"\n  }\n}"
+        }
+      ],
+      "response_format": {
+        "type": "json_object"
+      },
+      "api_key_included_in_record": false,
+      "base_url_included_in_record": false
+    },
+    "format_mode": "json_object",
+    "raw_response": "{\n  \"status\": \"ready\",\n  \"reason\": \"组织编码 ORG_1001 已显式给出，时间范围为 2026 年上半年闭区间，分组字段为产品一级分类，指标为设备订货金额和设备利润，均与语义层定义一致且无歧义。\",\n  \"clarification_question\": null,\n  \"query\": {\n    \"measures\": [\n      \"DeviceOrders.deviceOrderAmount\",\n      \"DeviceOrders.deviceProfitAmount\"\n    ],\n    \"dimensions\": [\n      \"DeviceOrders.productL1\"\n    ],\n    \"timeDimensions\": [\n      {\n        \"dimension\": \"DeviceOrders.orderDate\",\n        \"dateRange\": [\n          \"2026-01-01\",\n          \"2026-06-30\"\n        ]\n      }\n    ],\n    \"filters\": [\n      {\n        \"member\": \"DeviceOrders.orgCode\",\n        \"operator\": \"equals\",\n        \"values\": [\n          \"ORG_1001\"\n        ]\n      }\n    ]\n  },\n  \"query_note\": null\n}",
+    "parsed_response": {
+      "status": "ready",
+      "reason": "组织编码 ORG_1001 已显式给出，时间范围为 2026 年上半年闭区间，分组字段为产品一级分类，指标为设备订货金额和设备利润，均与语义层定义一致且无歧义。",
+      "clarification_question": null,
+      "query": {
+        "measures": [
+          "DeviceOrders.deviceOrderAmount",
+          "DeviceOrders.deviceProfitAmount"
+        ],
+        "dimensions": [
+          "DeviceOrders.productL1"
+        ],
+        "timeDimensions": [
+          {
+            "dimension": "DeviceOrders.orderDate",
+            "dateRange": [
+              "2026-01-01",
+              "2026-06-30"
+            ]
+          }
+        ],
+        "filters": [
+          {
+            "member": "DeviceOrders.orgCode",
+            "operator": "equals",
+            "values": [
+              "ORG_1001"
+            ]
+          }
+        ]
+      },
+      "query_note": null
+    },
+    "response_metadata": {
+      "id": "0217858337643510d3bea96652985f3709b7c7ee1b15ac41b441d",
+      "model": "glm-5.2",
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 470,
+        "prompt_tokens": 1223,
+        "total_tokens": 1693,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cached_tokens": 0
+        }
+      }
+    },
+    "failed_attempts": []
+  },
+  "validation": {
+    "passed": true,
+    "errors": []
+  }
+}

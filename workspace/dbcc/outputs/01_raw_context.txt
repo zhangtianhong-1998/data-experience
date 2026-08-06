@@ -1,0 +1,74 @@
+[RAW_SCHEMA]
+## orders_2026_06
+- order_id: BIGINT | unique order identifier | tags=['identifier', 'order']
+- customer_id: BIGINT | customer foreign key | tags=['identifier', 'customer', 'foreign_key']
+- region_id: BIGINT | sales region foreign key | tags=['identifier', 'region', 'foreign_key']
+- gross_amount: DECIMAL | gross amount before discount | tags=['amount', 'currency', 'revenue']
+- discount_amount: DECIMAL | discount deducted from gross amount | tags=['amount', 'currency', 'revenue']
+- order_status_code: INTEGER | machine status code | tags=['status', 'code', 'order']
+- created_at: TIMESTAMP | row creation time | tags=['datetime', 'audit']
+- updated_at: TIMESTAMP | last update time | tags=['datetime', 'audit']
+- updated_by: VARCHAR | last updater | tags=['identifier', 'audit']
+
+## orders_2026_07
+- order_id: BIGINT | unique order identifier | tags=['identifier', 'order']
+- customer_id: BIGINT | customer foreign key | tags=['identifier', 'customer', 'foreign_key']
+- region_id: BIGINT | sales region foreign key | tags=['identifier', 'region', 'foreign_key']
+- gross_amount: DECIMAL | gross amount before discount | tags=['amount', 'currency', 'revenue']
+- discount_amount: DECIMAL | discount deducted from gross amount | tags=['amount', 'currency', 'revenue']
+- order_status_code: INTEGER | machine status code | tags=['status', 'code', 'order']
+- created_at: TIMESTAMP | row creation time | tags=['datetime', 'audit']
+- updated_at: TIMESTAMP | last update time | tags=['datetime', 'audit']
+- updated_by: VARCHAR | last updater | tags=['identifier', 'audit']
+
+## orders_2026_08
+- order_id: BIGINT | unique order identifier | tags=['identifier', 'order']
+- customer_id: BIGINT | customer foreign key | tags=['identifier', 'customer', 'foreign_key']
+- region_id: BIGINT | sales region foreign key | tags=['identifier', 'region', 'foreign_key']
+- gross_amount: DECIMAL | gross amount before discount | tags=['amount', 'currency', 'revenue']
+- discount_amount: DECIMAL | discount deducted from gross amount | tags=['amount', 'currency', 'revenue']
+- order_status_code: INTEGER | machine status code | tags=['status', 'code', 'order']
+- created_at: TIMESTAMP | row creation time | tags=['datetime', 'audit']
+- updated_at: TIMESTAMP | last update time | tags=['datetime', 'audit']
+- updated_by: VARCHAR | last updater | tags=['identifier', 'audit']
+
+## returns_2026_06
+- return_id: BIGINT | unique return identifier | tags=['identifier', 'return']
+- order_id: BIGINT | returned order foreign key | tags=['identifier', 'order', 'foreign_key']
+- refund_amount: DECIMAL | refunded currency amount | tags=['amount', 'currency', 'refund']
+- return_reason_code: INTEGER | machine return reason | tags=['status', 'code', 'return']
+- created_at: TIMESTAMP | row creation time | tags=['datetime', 'audit']
+- updated_at: TIMESTAMP | last update time | tags=['datetime', 'audit']
+- updated_by: VARCHAR | last updater | tags=['identifier', 'audit']
+
+## returns_2026_07
+- return_id: BIGINT | unique return identifier | tags=['identifier', 'return']
+- order_id: BIGINT | returned order foreign key | tags=['identifier', 'order', 'foreign_key']
+- refund_amount: DECIMAL | refunded currency amount | tags=['amount', 'currency', 'refund']
+- return_reason_code: INTEGER | machine return reason | tags=['status', 'code', 'return']
+- created_at: TIMESTAMP | row creation time | tags=['datetime', 'audit']
+- updated_at: TIMESTAMP | last update time | tags=['datetime', 'audit']
+- updated_by: VARCHAR | last updater | tags=['identifier', 'audit']
+
+## returns_2026_08
+- return_id: BIGINT | unique return identifier | tags=['identifier', 'return']
+- order_id: BIGINT | returned order foreign key | tags=['identifier', 'order', 'foreign_key']
+- refund_amount: DECIMAL | refunded currency amount | tags=['amount', 'currency', 'refund']
+- return_reason_code: INTEGER | machine return reason | tags=['status', 'code', 'return']
+- created_at: TIMESTAMP | row creation time | tags=['datetime', 'audit']
+- updated_at: TIMESTAMP | last update time | tags=['datetime', 'audit']
+- updated_by: VARCHAR | last updater | tags=['identifier', 'audit']
+
+## dim_region
+- region_id: BIGINT | region key | tags=['identifier', 'region']
+- region_name: VARCHAR | human-readable sales region | tags=['name', 'region']
+- created_at: TIMESTAMP | row creation time | tags=['datetime', 'audit']
+- updated_at: TIMESTAMP | last update time | tags=['datetime', 'audit']
+- updated_by: VARCHAR | last updater | tags=['identifier', 'audit']
+
+## customers
+- customer_id: BIGINT | customer key | tags=['identifier', 'customer']
+- customer_name: VARCHAR | customer display name | tags=['name', 'customer']
+- created_at: TIMESTAMP | row creation time | tags=['datetime', 'audit']
+- updated_at: TIMESTAMP | last update time | tags=['datetime', 'audit']
+- updated_by: VARCHAR | last updater | tags=['identifier', 'audit']

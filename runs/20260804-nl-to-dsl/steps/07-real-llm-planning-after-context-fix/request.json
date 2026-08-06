@@ -1,0 +1,20 @@
+{
+  "step": "07-real-llm-planning-after-context-fix",
+  "cwd": "/Users/sanjiuganmaoling/Desktop/code/data-experience",
+  "argv": [
+    "runtime/.venv-tools/bin/python",
+    "demos/route1/nl_to_dsl/run_experiment.py"
+  ],
+  "environment_names_recorded": [
+    "LANG",
+    "LC_ALL",
+    "PATH"
+  ],
+  "secret_values_recorded": false,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.9.6"
+  },
+  "started_epoch": 1785833591.970794
+}

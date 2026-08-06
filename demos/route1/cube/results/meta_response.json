@@ -1,0 +1,159 @@
+{
+  "cubes": [
+    {
+      "name": "DeviceOrders",
+      "type": "cube",
+      "title": "设备订货事实",
+      "isVisible": true,
+      "public": true,
+      "description": "合成数据。每行是一张设备订货单；指标只统计 confirmed 状态。本模型用于设备订货，不用于销售金额。",
+      "measures": [
+        {
+          "name": "DeviceOrders.deviceOrderAmount",
+          "title": "设备订货事实 设备订货金额",
+          "description": "已确认设备订货单的 order_amount 合计，演示单位 CNY.",
+          "shortTitle": "设备订货金额",
+          "formatDescription": {
+            "name": "number",
+            "specifier": ",.2~f"
+          },
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "ai_context": "同义词包括“设备订货额”和“设备订单金额”。不能用于“销售金额”。用户只说“金额”时，无法区分订货金额和利润金额，必须追问。"
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "DeviceOrders.deviceProfitAmount",
+          "title": "设备订货事实 设备利润金额",
+          "description": "已确认设备订货单的设备利润合计；不能解释为净利润。",
+          "shortTitle": "设备利润金额",
+          "formatDescription": {
+            "name": "number",
+            "specifier": ",.2~f"
+          },
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "sum",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "meta": {
+            "ai_context": "同义词包括“设备利润额”。用户明确询问净利润时不得使用本指标。用户只说“金额”时，无法区分订货金额和利润金额，必须追问。"
+          },
+          "isVisible": true,
+          "public": true
+        },
+        {
+          "name": "DeviceOrders.orderCount",
+          "title": "设备订货事实 Order Count",
+          "shortTitle": "Order Count",
+          "formatDescription": {
+            "name": "number",
+            "specifier": ",.2~f"
+          },
+          "cumulativeTotal": false,
+          "cumulative": false,
+          "type": "number",
+          "aggType": "count",
+          "drillMembers": [],
+          "drillMembersGrouped": {
+            "measures": [],
+            "dimensions": []
+          },
+          "isVisible": true,
+          "public": true
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "DeviceOrders.orderId",
+          "title": "设备订货事实 Order ID",
+          "type": "string",
+          "shortTitle": "Order ID",
+          "suggestFilterValues": true,
+          "isVisible": false,
+          "public": false,
+          "primaryKey": true
+        },
+        {
+          "name": "DeviceOrders.orderDate",
+          "title": "设备订货事实 Order Date",
+          "type": "time",
+          "shortTitle": "Order Date",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "DeviceOrders.yearMonth",
+          "title": "设备订货事实 Year Month",
+          "type": "number",
+          "shortTitle": "Year Month",
+          "suggestFilterValues": true,
+          "formatDescription": {
+            "name": "number",
+            "specifier": ",.2~f"
+          },
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "DeviceOrders.orgCode",
+          "title": "设备订货事实 Org Code",
+          "type": "string",
+          "description": "组织编码；每次设备经营分析必须由用户显式给出。",
+          "shortTitle": "Org Code",
+          "suggestFilterValues": true,
+          "meta": {
+            "ai_context": "必填过滤维度；不得默认跨组织汇总，也不得猜测组织编码。"
+          },
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "DeviceOrders.productL1",
+          "title": "设备订货事实 产品一级分类",
+          "type": "string",
+          "shortTitle": "产品一级分类",
+          "suggestFilterValues": true,
+          "meta": {
+            "ai_context": "“产品大类”在本模型中指产品一级分类。"
+          },
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        },
+        {
+          "name": "DeviceOrders.status",
+          "title": "设备订货事实 Status",
+          "type": "string",
+          "shortTitle": "Status",
+          "suggestFilterValues": true,
+          "isVisible": true,
+          "public": true,
+          "primaryKey": false
+        }
+      ],
+      "segments": [],
+      "hierarchies": [],
+      "folders": [],
+      "nestedFolders": []
+    }
+  ]
+}

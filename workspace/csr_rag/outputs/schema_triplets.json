@@ -1,0 +1,366 @@
+[
+  {
+    "field": "order_id",
+    "relation": "column_of",
+    "table": "fact_orders",
+    "description": "primary order identifier",
+    "text": "field order_id is a column of table fact_orders; table purpose: one row per customer order; field meaning: primary order identifier"
+  },
+  {
+    "field": "customer_id",
+    "relation": "column_of",
+    "table": "fact_orders",
+    "description": "customer foreign key",
+    "text": "field customer_id is a column of table fact_orders; table purpose: one row per customer order; field meaning: customer foreign key"
+  },
+  {
+    "field": "product_id",
+    "relation": "column_of",
+    "table": "fact_orders",
+    "description": "product foreign key",
+    "text": "field product_id is a column of table fact_orders; table purpose: one row per customer order; field meaning: product foreign key"
+  },
+  {
+    "field": "channel_id",
+    "relation": "column_of",
+    "table": "fact_orders",
+    "description": "sales channel foreign key",
+    "text": "field channel_id is a column of table fact_orders; table purpose: one row per customer order; field meaning: sales channel foreign key"
+  },
+  {
+    "field": "region_id",
+    "relation": "column_of",
+    "table": "fact_orders",
+    "description": "sales region foreign key",
+    "text": "field region_id is a column of table fact_orders; table purpose: one row per customer order; field meaning: sales region foreign key"
+  },
+  {
+    "field": "order_date",
+    "relation": "column_of",
+    "table": "fact_orders",
+    "description": "calendar date of order",
+    "text": "field order_date is a column of table fact_orders; table purpose: one row per customer order; field meaning: calendar date of order"
+  },
+  {
+    "field": "gross_amount",
+    "relation": "column_of",
+    "table": "fact_orders",
+    "description": "gross sales amount",
+    "text": "field gross_amount is a column of table fact_orders; table purpose: one row per customer order; field meaning: gross sales amount"
+  },
+  {
+    "field": "discount_amount",
+    "relation": "column_of",
+    "table": "fact_orders",
+    "description": "discount amount",
+    "text": "field discount_amount is a column of table fact_orders; table purpose: one row per customer order; field meaning: discount amount"
+  },
+  {
+    "field": "status_code",
+    "relation": "column_of",
+    "table": "fact_orders",
+    "description": "paid cancelled or refunded status",
+    "text": "field status_code is a column of table fact_orders; table purpose: one row per customer order; field meaning: paid cancelled or refunded status"
+  },
+  {
+    "field": "return_id",
+    "relation": "column_of",
+    "table": "fact_returns",
+    "description": "primary return identifier",
+    "text": "field return_id is a column of table fact_returns; table purpose: one row per returned order; field meaning: primary return identifier"
+  },
+  {
+    "field": "order_id",
+    "relation": "column_of",
+    "table": "fact_returns",
+    "description": "returned order foreign key",
+    "text": "field order_id is a column of table fact_returns; table purpose: one row per returned order; field meaning: returned order foreign key"
+  },
+  {
+    "field": "return_date",
+    "relation": "column_of",
+    "table": "fact_returns",
+    "description": "date of return",
+    "text": "field return_date is a column of table fact_returns; table purpose: one row per returned order; field meaning: date of return"
+  },
+  {
+    "field": "refund_amount",
+    "relation": "column_of",
+    "table": "fact_returns",
+    "description": "currency amount refunded",
+    "text": "field refund_amount is a column of table fact_returns; table purpose: one row per returned order; field meaning: currency amount refunded"
+  },
+  {
+    "field": "reason_code",
+    "relation": "column_of",
+    "table": "fact_returns",
+    "description": "return reason code",
+    "text": "field reason_code is a column of table fact_returns; table purpose: one row per returned order; field meaning: return reason code"
+  },
+  {
+    "field": "customer_id",
+    "relation": "column_of",
+    "table": "dim_customer",
+    "description": "primary customer identifier",
+    "text": "field customer_id is a column of table dim_customer; table purpose: customer profile and segmentation; field meaning: primary customer identifier"
+  },
+  {
+    "field": "customer_name",
+    "relation": "column_of",
+    "table": "dim_customer",
+    "description": "customer display name",
+    "text": "field customer_name is a column of table dim_customer; table purpose: customer profile and segmentation; field meaning: customer display name"
+  },
+  {
+    "field": "segment_name",
+    "relation": "column_of",
+    "table": "dim_customer",
+    "description": "customer business segment",
+    "text": "field segment_name is a column of table dim_customer; table purpose: customer profile and segmentation; field meaning: customer business segment"
+  },
+  {
+    "field": "signup_date",
+    "relation": "column_of",
+    "table": "dim_customer",
+    "description": "customer registration date",
+    "text": "field signup_date is a column of table dim_customer; table purpose: customer profile and segmentation; field meaning: customer registration date"
+  },
+  {
+    "field": "product_id",
+    "relation": "column_of",
+    "table": "dim_product",
+    "description": "primary product identifier",
+    "text": "field product_id is a column of table dim_product; table purpose: product catalog; field meaning: primary product identifier"
+  },
+  {
+    "field": "product_name",
+    "relation": "column_of",
+    "table": "dim_product",
+    "description": "product display name",
+    "text": "field product_name is a column of table dim_product; table purpose: product catalog; field meaning: product display name"
+  },
+  {
+    "field": "category_id",
+    "relation": "column_of",
+    "table": "dim_product",
+    "description": "product category foreign key",
+    "text": "field category_id is a column of table dim_product; table purpose: product catalog; field meaning: product category foreign key"
+  },
+  {
+    "field": "unit_cost",
+    "relation": "column_of",
+    "table": "dim_product",
+    "description": "standard unit cost",
+    "text": "field unit_cost is a column of table dim_product; table purpose: product catalog; field meaning: standard unit cost"
+  },
+  {
+    "field": "category_id",
+    "relation": "column_of",
+    "table": "dim_category",
+    "description": "primary category identifier",
+    "text": "field category_id is a column of table dim_category; table purpose: product category hierarchy; field meaning: primary category identifier"
+  },
+  {
+    "field": "category_name",
+    "relation": "column_of",
+    "table": "dim_category",
+    "description": "category display name",
+    "text": "field category_name is a column of table dim_category; table purpose: product category hierarchy; field meaning: category display name"
+  },
+  {
+    "field": "parent_category_id",
+    "relation": "column_of",
+    "table": "dim_category",
+    "description": "parent category identifier",
+    "text": "field parent_category_id is a column of table dim_category; table purpose: product category hierarchy; field meaning: parent category identifier"
+  },
+  {
+    "field": "channel_id",
+    "relation": "column_of",
+    "table": "dim_channel",
+    "description": "primary channel identifier",
+    "text": "field channel_id is a column of table dim_channel; table purpose: sales channel dictionary; field meaning: primary channel identifier"
+  },
+  {
+    "field": "channel_name",
+    "relation": "column_of",
+    "table": "dim_channel",
+    "description": "online store partner or retail channel",
+    "text": "field channel_name is a column of table dim_channel; table purpose: sales channel dictionary; field meaning: online store partner or retail channel"
+  },
+  {
+    "field": "region_id",
+    "relation": "column_of",
+    "table": "dim_region",
+    "description": "primary region identifier",
+    "text": "field region_id is a column of table dim_region; table purpose: sales geography dictionary; field meaning: primary region identifier"
+  },
+  {
+    "field": "region_name",
+    "relation": "column_of",
+    "table": "dim_region",
+    "description": "sales region display name",
+    "text": "field region_name is a column of table dim_region; table purpose: sales geography dictionary; field meaning: sales region display name"
+  },
+  {
+    "field": "country_code",
+    "relation": "column_of",
+    "table": "dim_region",
+    "description": "country code in region",
+    "text": "field country_code is a column of table dim_region; table purpose: sales geography dictionary; field meaning: country code in region"
+  },
+  {
+    "field": "shipment_id",
+    "relation": "column_of",
+    "table": "fact_shipments",
+    "description": "primary shipment identifier",
+    "text": "field shipment_id is a column of table fact_shipments; table purpose: one row per order shipment; field meaning: primary shipment identifier"
+  },
+  {
+    "field": "order_id",
+    "relation": "column_of",
+    "table": "fact_shipments",
+    "description": "shipped order foreign key",
+    "text": "field order_id is a column of table fact_shipments; table purpose: one row per order shipment; field meaning: shipped order foreign key"
+  },
+  {
+    "field": "shipped_at",
+    "relation": "column_of",
+    "table": "fact_shipments",
+    "description": "shipment timestamp",
+    "text": "field shipped_at is a column of table fact_shipments; table purpose: one row per order shipment; field meaning: shipment timestamp"
+  },
+  {
+    "field": "delivered_at",
+    "relation": "column_of",
+    "table": "fact_shipments",
+    "description": "delivery timestamp",
+    "text": "field delivered_at is a column of table fact_shipments; table purpose: one row per order shipment; field meaning: delivery timestamp"
+  },
+  {
+    "field": "carrier_id",
+    "relation": "column_of",
+    "table": "fact_shipments",
+    "description": "delivery carrier foreign key",
+    "text": "field carrier_id is a column of table fact_shipments; table purpose: one row per order shipment; field meaning: delivery carrier foreign key"
+  },
+  {
+    "field": "payment_id",
+    "relation": "column_of",
+    "table": "fact_payments",
+    "description": "primary payment identifier",
+    "text": "field payment_id is a column of table fact_payments; table purpose: payment attempts for orders; field meaning: primary payment identifier"
+  },
+  {
+    "field": "order_id",
+    "relation": "column_of",
+    "table": "fact_payments",
+    "description": "paid order foreign key",
+    "text": "field order_id is a column of table fact_payments; table purpose: payment attempts for orders; field meaning: paid order foreign key"
+  },
+  {
+    "field": "paid_amount",
+    "relation": "column_of",
+    "table": "fact_payments",
+    "description": "currency amount paid",
+    "text": "field paid_amount is a column of table fact_payments; table purpose: payment attempts for orders; field meaning: currency amount paid"
+  },
+  {
+    "field": "payment_status",
+    "relation": "column_of",
+    "table": "fact_payments",
+    "description": "payment success or failure",
+    "text": "field payment_status is a column of table fact_payments; table purpose: payment attempts for orders; field meaning: payment success or failure"
+  },
+  {
+    "field": "paid_at",
+    "relation": "column_of",
+    "table": "fact_payments",
+    "description": "payment timestamp",
+    "text": "field paid_at is a column of table fact_payments; table purpose: payment attempts for orders; field meaning: payment timestamp"
+  },
+  {
+    "field": "snapshot_date",
+    "relation": "column_of",
+    "table": "inventory_snapshot",
+    "description": "inventory calendar date",
+    "text": "field snapshot_date is a column of table inventory_snapshot; table purpose: daily stock by product and warehouse; field meaning: inventory calendar date"
+  },
+  {
+    "field": "product_id",
+    "relation": "column_of",
+    "table": "inventory_snapshot",
+    "description": "stocked product foreign key",
+    "text": "field product_id is a column of table inventory_snapshot; table purpose: daily stock by product and warehouse; field meaning: stocked product foreign key"
+  },
+  {
+    "field": "warehouse_id",
+    "relation": "column_of",
+    "table": "inventory_snapshot",
+    "description": "warehouse foreign key",
+    "text": "field warehouse_id is a column of table inventory_snapshot; table purpose: daily stock by product and warehouse; field meaning: warehouse foreign key"
+  },
+  {
+    "field": "on_hand_quantity",
+    "relation": "column_of",
+    "table": "inventory_snapshot",
+    "description": "units available",
+    "text": "field on_hand_quantity is a column of table inventory_snapshot; table purpose: daily stock by product and warehouse; field meaning: units available"
+  },
+  {
+    "field": "campaign_id",
+    "relation": "column_of",
+    "table": "marketing_campaign",
+    "description": "primary campaign identifier",
+    "text": "field campaign_id is a column of table marketing_campaign; table purpose: campaign budget and channel; field meaning: primary campaign identifier"
+  },
+  {
+    "field": "channel_id",
+    "relation": "column_of",
+    "table": "marketing_campaign",
+    "description": "campaign channel foreign key",
+    "text": "field channel_id is a column of table marketing_campaign; table purpose: campaign budget and channel; field meaning: campaign channel foreign key"
+  },
+  {
+    "field": "campaign_name",
+    "relation": "column_of",
+    "table": "marketing_campaign",
+    "description": "marketing campaign name",
+    "text": "field campaign_name is a column of table marketing_campaign; table purpose: campaign budget and channel; field meaning: marketing campaign name"
+  },
+  {
+    "field": "budget_amount",
+    "relation": "column_of",
+    "table": "marketing_campaign",
+    "description": "planned campaign budget",
+    "text": "field budget_amount is a column of table marketing_campaign; table purpose: campaign budget and channel; field meaning: planned campaign budget"
+  },
+  {
+    "field": "ticket_id",
+    "relation": "column_of",
+    "table": "support_ticket",
+    "description": "primary support ticket identifier",
+    "text": "field ticket_id is a column of table support_ticket; table purpose: customer service tickets; field meaning: primary support ticket identifier"
+  },
+  {
+    "field": "customer_id",
+    "relation": "column_of",
+    "table": "support_ticket",
+    "description": "customer foreign key",
+    "text": "field customer_id is a column of table support_ticket; table purpose: customer service tickets; field meaning: customer foreign key"
+  },
+  {
+    "field": "created_at",
+    "relation": "column_of",
+    "table": "support_ticket",
+    "description": "ticket creation time",
+    "text": "field created_at is a column of table support_ticket; table purpose: customer service tickets; field meaning: ticket creation time"
+  },
+  {
+    "field": "resolution_hours",
+    "relation": "column_of",
+    "table": "support_ticket",
+    "description": "time to resolve ticket",
+    "text": "field resolution_hours is a column of table support_ticket; table purpose: customer service tickets; field meaning: time to resolve ticket"
+  }
+]
